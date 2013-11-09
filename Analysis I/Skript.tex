@@ -1,4 +1,4 @@
-\documentclass[a4paper]{scarticl}
+\documentclass{scrartcl}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -862,11 +862,11 @@ $\Longleftrightarrow M = N$
 \item[$b$  )] Sei $k \in A, k \neq 1 \implies 1 \leq k - 1 \in \mathbb{N}$\\
 folgt $1 + 1 \leq (k - 1) + 1 = k \in \mathbb{N}$\\und $(k + 1) - 1 = k \geq 1 + 1 \geq 1 \implies k + 1 \in A$\\ $\implies A \subset \mathbb{N}$ ist induktiv $\implies A = \mathbb{N} \implies \underline{1)}$ \\
 \end{description}
-$B := \{n \in \mathbb{N}:$ fuer $m \in \mathbb{N}$ mit $m \leq n \implies n-m \in \mathbb{N}_0$
+$B := \{n \in \mathbb{N}:$ für $m \in \mathbb{N}$ mit $m \leq n \implies n-m \in \mathbb{N}_0$
 \begin{description}
 \item[$a$  )] $1 \in B$, da $m \in \mathbb{N}$ und $m \leq 1 \underbrace{\implies}_{1)} m = 1 \implies n-m = 1-1 = 0$
 \item[$b$  )] Sei $k \in B$ und $m \in \mathbb{N}$ mit $m \leq k + 1$ \\Falls $m = 1 \implies (k + 1) - 1 = k \in \mathbb{N} \implies k + 1 \in B$\\ Falls $1 < m \in \mathbb{N} \implies m - 1 \in \mathbb{N}$ (da $A = \mathbb{N}$)\\ $\implies \mathbb{N}_0 \ni k - (m - 1) = (k + 1) - m \implies k + 1 \in B$\\$\implies B$ ist induktiv $\implies B = \mathbb{N} \implies \underline{3)}$
-\item[2)] Gegeben: $m \in \mathbb{N}: C:=\{n \in \mathbb{N} | n + m \in \mathbb{N}\}$\\Zeige C ist induktiv!\\Fuer $m * n $ analog
+\item[2)] Gegeben: $m \in \mathbb{N}: C:=\{n \in \mathbb{N} | n + m \in \mathbb{N}\}$\\Zeige C ist induktiv!\\Für $m * n $ analog
 \item[4)] Aus $n,m \in \mathbb{N} und n < m < n + 1$\\$\implies 0 < \underbrace{m-n}_{\in \mathbb{N}\texttt{ nach 3)}}<1$ (Widerspruch! zu 1))
 \item[5)] Sei $M \subset \mathbb{N}$, ohne ein kleinstes Element\\$\implies 1$ ist kleinste Element von $\mathbb{N} \implies 1 \notin M$
 \end{description}
@@ -876,23 +876,23 @@ $D:=\{n \in \mathbb{N}: n < M\} = \{n \in \mathbb{N}: \forall m \in M: n < m\}$\
 \item[b)] Sei $k \in D$ d.h. $k < m \forall m \in M$\\$\implies D$ ist induktiv$\implies D = \mathbb{N} \implies M \subset \mathbb{N} \backslash D = \mathbb{N} \backslash M = \emptyset$ (q.ed)
 \end{description}
 \end{proof}
-\subsubsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschraenkt\\ insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n * a > b$
+\subsubsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschränkt\\ insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n * a > b$
 
 \begin{proof}
-\paragraph*{Angenommen} $\mathbb{N}$ ist nach oben beschraenkt $\underbrace{\implies}_{vollst. Axiom} a = Sup\mathbb{N}\in\mathbb{R}$\\$\implies \alpha - 1$ ist keine obere Schranke fuer $\mathbb{N}$\\$\implies \exists n \in \mathbb{N}, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \mathbb{N}} > \alpha$ (Widerspruch!)
-\subparagraph{Waehle}
+\paragraph*{Angenommen} $\mathbb{N}$ ist nach oben beschränkt $\underbrace{\implies}_{vollst. Axiom} a = Sup\mathbb{N}\in\mathbb{R}$\\$\implies \alpha - 1$ ist keine obere Schranke für $\mathbb{N}$\\$\implies \exists n \in \mathbb{N}, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \mathbb{N}} > \alpha$ (Widerspruch!)
+\subparagraph{Wähle}
 $x = \frac{b}{a} \in \mathbb{R} \implies \exists n \in \mathbb{N}: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n* a > b$ (q.ed)
 \end{proof}
 \subsection{Grenze und rationale Zahlen}
 $\mathbb{Z} := \mathbb{N}_0 \land (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mathbb{N}\}$\\$\mathbb{Q}=\{\frac{m}{n}: m\in\mathbb{Z},n \in\mathbb{N}\}$
 \subsubsection{Satz 24}
-($\mathbb{Z}, +, *$) ist ein kommutativer Ring mit Eins, d.h. alle Koerperaxiome sind erfuellt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +, *$) ist ein angeordneter Koerper.
+($\mathbb{Z}, +, *$) ist ein kommutativer Ring mit Eins, d.h. alle Körperaxiome sind erfüllt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +, *$) ist ein angeordneter Körper.
 
 \begin{proof}
 	Nachrechnen
 \end{proof}
 \paragraph{Notation}$\mathbb{Z}_p := \{ m\in\mathbb{Z}: m\geq p\}$\\$p \in \mathbb{Z} := p + \mathbb{N}_0$
-\paragraph{Alle} $k \mapsto k + p - 1$ bildet $\mathbb{N}$ bijektiv auf $\mathbb{Z}_p$ ab. \\$\Rightarrow$ Alle Eigenschaften von $\mathbb{N}$ gelten auch fuer $\mathbb{Z}_p \forall p \in \mathbb{Z}$\\$\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschraenkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
+\paragraph{Alle} $k \mapsto k + p - 1$ bildet $\mathbb{N}$ bijektiv auf $\mathbb{Z}_p$ ab. \\$\Rightarrow$ Alle Eigenschaften von $\mathbb{N}$ gelten auch für $\mathbb{Z}_p \forall p \in \mathbb{Z}$\\$\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschränkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
 \subsubsection{Korollar 26}
 \begin{enumerate}[1)]
 \item Seien $x,y \in \mathbb{R}, y*x > 1$\\$\implies m\in\mathbb{Z}, x < m < y$
@@ -903,26 +903,26 @@ $\mathbb{Z} := \mathbb{N}_0 \land (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mat
 \item Sei $y - x > 1, A := \{ m \in \mathbb{Z}: m > y\} \neq \emptyset$\\$\implies$ Sei $n_0 = min(A)$ existiert $\in \mathbb{Z}$\\$\implies n_0 \in A: n_0 \geq y$ und $n_0 -1 < y$\\$m:=n_0 -1 \in \mathbb{Z}$ und $m + 1 \geq y, n <y$\\$\implies m \geq y -1 > x \implies x < m < y$
 \item Sei $x,y \in \mathbb{R}: x < y \iff a: -y -x > 0$\\S.23 $\implies \exists n \in \mathbb{N}: n * a > 1 \iff n * x - n * y > 1$\\$\implies \exists m \in \mathbb{Z}: n*x<m<n*y \iff x <\frac{m}{n} < y$
 \end{enumerate}
-\subsection{Endliche und abzaehlbare Mengen}
-\subsubsection{Definition 27 (Cantor)} A, B Mengen heissen gleichmaechtig (oder aequivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.\\B heisst maechtiger als A, $|A| \leq |B|$, falls es eine Injektion $f: A \rightarrow B$ gibt.
+\subsection{Endliche und abzählbare Mengen}
+\subsubsection{Definition 27 (Cantor)} A, B Mengen heissen gleichmächtig (oder äquivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.\\B heisst mächtiger als A, $|A| \leq |B|$, falls es eine Injektion $f: A \rightarrow B$ gibt.
 \paragraph{Bemerkung}
 \begin{enumerate}[1)]
-\item $A \sim B$ ist eine Aequivalenzrelation, d.h. reflexiv ($A \sim A$), symmetrisch ($A \sim B \implies B \sim A$) und transitiv ($A \sim B, B \sim C \implies A \sim C$)
+\item $A \sim B$ ist eine äquivalenzrelation, d.h. reflexiv ($A \sim A$), symmetrisch ($A \sim B \implies B \sim A$) und transitiv ($A \sim B, B \sim C \implies A \sim C$)
 \item $A \leq \mathbb{R} \iff \exists$ Surjektion $h: B \rightarrow B$
-\item (Cantor) Bernsten-Schroeder-Theorie $|A| \leq |B|$ und $|B| \leq |A| \iff A \sim B$
+\item (Cantor) Bernsten-Schröder-Theorie $|A| \leq |B|$ und $|B| \leq |A| \iff A \sim B$
 \end{enumerate}
-\subsubsection{Definition 28} Sei $n \in \mathbb{N}_0 [0] := \emptyset$ und rekrusiv $[n + 1] = [n] \cup [n+1]$\\($\implies([n]:=\{k \in \mathbb{N}: 1\leq k \leq n \}$)\\Eine Menge A heisst endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalitaet)\\$card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.\\\\A heisst abzaehlbar (abzaehlbar unendlich), falls $A \sim \mathbb{N}$\\A ist hoechstens abzaehlbar, falls A endlich ist oder abzaehlbar ist, ansonsten heisst sie ueberabzaehlbar.
+\subsubsection{Definition 28} Sei $n \in \mathbb{N}_0 [0] := \emptyset$ und rekrusiv $[n + 1] = [n] \cup [n+1]$\\($\implies([n]:=\{k \in \mathbb{N}: 1\leq k \leq n \}$)\\Eine Menge A heisst endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)\\$card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.\\\\A heisst abzählbar (abzählbar unendlich), falls $A \sim \mathbb{N}$\\A ist höchstens abzählbar, falls A endlich ist oder abzählbar ist, ansonsten heisst sie überabzählbar.
 \paragraph{Beweis}
 \begin{enumerate}[1)]
-\item A hoechstens abzaehlbar $\iff \exists$ Surjektion $f: \mathbb{N} \rightarrow A$
+\item A höchstens abzählbar $\iff \exists$ Surjektion $f: \mathbb{N} \rightarrow A$
 \item Unendliche Mengen sind tricky\\$G = \{ n \in \mathbb{N}: $n ist gerade$\} = \{2*n: n \in \mathbb{N}\}$\\$f:\mathbb{N}\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\mathbb{N} \sim G$
 \item Hilkerts Hotel
 \item $[0,1]\sim [0,1)$
-\subparagraph{Beweis} Konstruieren $f: [0,1] \rightarrow [0,1)$\\Fuer $x \in [0,1]\backslash (\bigcup_{n\in\mathbb{N}} \{\frac{1}{n}\}):f(x)=x$\\$n\in\mathbb{N}:f(\frac{1}{n}):=\frac{1}{n+1}$ Rechne nach f ist bijektiv!
+\subparagraph{Beweis} Konstruieren $f: [0,1] \rightarrow [0,1)$\\Für $x \in [0,1]\backslash (\bigcup_{n\in\mathbb{N}} \{\frac{1}{n}\}):f(x)=x$\\$n\in\mathbb{N}:f(\frac{1}{n}):=\frac{1}{n+1}$ Rechne nach f ist bijektiv!
 \end{enumerate}
 \subsubsection{Satz 29}
 \begin{enumerate}[1)]
-\item $A\sim [n], A\sim [m] \implies n = m$ (d.h. Kardinalitaet ist eindeutig)
+\item $A\sim [n], A\sim [m] \implies n = m$ (d.h. Kardinalität ist eindeutig)
 \item ist $A \in B, B endlich \implies A endlich$
 \item $A, B$ endlich und desjunkt $\implies card(A\cup B) = (cardA + cardB)$
 \end{enumerate}
@@ -939,21 +939,21 @@ $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA
 \end{proof}
 \subsubsection{Satz 31}
 \begin{enumerate}[1)]
-\item Ist $A<B,B$ hoechstens abzaehlbar $\implies A$ hoechstens abzaehlbar
-\item Jede unendliche Menge besitzt eine abzaehlbare Teilmenge
-\item A, B abzaehlbar $\implies A \times B$ abzaehlbar\\ insbesondere $\mathbb{N} \times \mathbb{N}$ abzaehlbar
-\item Sei $\{A_k\}$ eine hoechstens abzaehlbare Menge von Menge $A_3, A_2$ hoechstens abzaehlber $\implies$ $\bigcap_k$ $A_k$ ist hoechstens abzaehlbar
+\item Ist $A<B,B$ höchstens abzählbar $\implies A$ höchstens abzählbar
+\item Jede unendliche Menge besitzt eine abzählbare Teilmenge
+\item A, B abzählbar $\implies A \times B$ abzählbar\\ insbesondere $\mathbb{N} \times \mathbb{N}$ abzählbar
+\item Sei $\{A_k\}$ eine höchstens abzählbare Menge von Menge $A_3, A_2$ höchstens abzählber $\implies$ $\bigcap_k$ $A_k$ ist höchstens abzählbar
 \end{enumerate}
 
 \begin{proof}
 \begin{enumerate}[1)]
-\item O.B.d.A $B = \mathbb{N}$, also $A \subset \mathbb{N}$\\$\implies A$ hat ein kleinstes Element $a_1$\\$\implies A \{a_1\}$ hat ein kleinnstes Element $a_2$\\usw...\\ist $A_n = \emptyset \implies A$ ist endlich, ansonsten $A = \{a_1, a_2, a_3, ...\}$\\Bijektion $f:\mathbb{N}\rightarrow A, n\mapsto a_n \implies A$ ist abzaehlbar
-\item ist $A$ unendlich $\implies$ waehle $a_1 \in A$\\
+\item O.B.d.A $B = \mathbb{N}$, also $A \subset \mathbb{N}$\\$\implies A$ hat ein kleinstes Element $a_1$\\$\implies A \{a_1\}$ hat ein kleinnstes Element $a_2$\\usw...\\ist $A_n = \emptyset \implies A$ ist endlich, ansonsten $A = \{a_1, a_2, a_3, ...\}$\\Bijektion $f:\mathbb{N}\rightarrow A, n\mapsto a_n \implies A$ ist abzählbar
+\item ist $A$ unendlich $\implies$ wähle $a_1 \in A$\\
 	$a_2 \in A \backslash \{a_1\} =: A_1$
 	induktiv $a_{n+1} \in A_n := A_{n+1} \backslash \{a_n\}$\\
-	$\implies \{a_1, a_2, ...\}$ abzaehlbar
-\item Da $A \sim \mathbb{N}, B \sim \mathbb{N} \implies$ reicht zu zeigen $\mathbb{N} \times \mathbb{N}$ ist abzaehlbar, da $\mathbb{N} \times \mathbb{N}$ unendlich ist $\implies$ zu zeigen $\mathbb{N} \times \mathbb{N}$
-\item ist hoechstens abzaehlbar\\
+	$\implies \{a_1, a_2, ...\}$ abzählbar
+\item Da $A \sim \mathbb{N}, B \sim \mathbb{N} \implies$ reicht zu zeigen $\mathbb{N} \times \mathbb{N}$ ist abzählbar, da $\mathbb{N} \times \mathbb{N}$ unendlich ist $\implies$ zu zeigen $\mathbb{N} \times \mathbb{N}$
+\item ist höchstens abzählbar\\
 	$\phi (m,n) = 2^m * 3^n$\\
 	$\phi : \mathbb{N} \times \mathbb{N} \implies \mathbb{N}$ ist injektiv\\
 	In der Tat: Sei $\phi (m,n) = \phi (p,q)$\\
@@ -964,26 +964,26 @@ $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA
 	$\implies n = q$\\
 \item Schreiben $A_k = \{a_{kn} :\underbrace{1\leq n \leq P_k}_{endlich}, P_k \in \mathbb{N}$ oder $\underbrace{1 \leq n \in \mathbb{N}}_{unendlich}\}$\\
 	Falls $A_k$ paarweise disjunkt sind. Dann erzeugt diese Nummerierung von $A_k$ eine Injektion.
-	$$a_{kn} \mapsto (kn) \textbf{ von } A = \bigcup_{k \in I} A_k \rightarrow \mathbb{N} \times \mathbb{N} \leftarrow \textbf{abzaehlbar}$$\\
+	$$a_{kn} \mapsto (kn) \textbf{ von } A = \bigcup_{k \in I} A_k \rightarrow \mathbb{N} \times \mathbb{N} \leftarrow \textbf{abzählbar}$$\\
 	sind $A_k, k \in I$ nicht paarweise disjunkt:\\
 	$B_1 = A_1, B_2 = A_2 \backslash A_1,$\\
 	$B_{n+1} = A_{n+1} \backslash \{A_1 \cup A_2 \cup ... \cup A_n\}$\\
-	$\implies B_k$ sind paarweise disjunkt und hoechstens abzaehlbar\\
-	$\implies \bigcup_{k} A_k$ ist hoechstens abzaehlbar
+	$\implies B_k$ sind paarweise disjunkt und höchstens abzählbar\\
+	$\implies \bigcup_{k} A_k$ ist höchstens abzählbar
 \end{enumerate}
 \end{proof}
-\subsubsection{Korollar 32} $\mathbb{G}$ ist abzaehlbar\\
+\subsubsection{Korollar 32} $\mathbb{G}$ ist abzählbar\\
 \begin{proof}
 $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,n), m \in \mathbb{Z}, n \in \mathbb{N}\}$
 \end{proof}
 \paragraph{Bemerkung} Es gibt eine explizite Abbildung von $\mathbb{G}$ mittels eines Baumes. Literatur: Neil Calkin, Herbert Will: Recounting the Rationals
-\subsubsection{Satz 33} A enthalte mindestens 2 Elemente, $\implies A^\mathbb{N} = \{ f: \mathbb{N} \rightarrow A\}$ ueberabzaehlbar
+\subsubsection{Satz 33} A enthalte mindestens 2 Elemente, $\implies A^\mathbb{N} = \{ f: \mathbb{N} \rightarrow A\}$ überabzählbar
 \subsubsection{Lemma 34 (Cantor)} Sei A meinge $\implies$ existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
 \begin{proof}
 	Sei $f: A \rightarrow P(A)$\\
 	d.h. $\forall x \in A: 2(x) \subset A$\\
 	$B:=\{ x \in A: x \notin f(x)\} \subset A$\\
-	waere f surjektiv\\
+	wäre f surjektiv\\
 	$\implies \exists x \in A, f(x) = B$\\
 	\begin{enumerate}[1. {Fall}:]
 		\item $x \in B = f(x) \implies x \notin f(x)$ (WIDERSPRUCH!)
@@ -992,7 +992,7 @@ $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,
 	\end{enumerate}
 \end{proof}
 \subsubsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \mathbb{R}$\\
-$a < b> \implies I$ ist ueberabzaehlbar
+$a < b> \implies I$ ist überabzählbar
 
 \begin{proof}
 Skalieren $\implies$ o.B.d.A. $a = o, b = 1$ zu $f \in \{0,1\}^\mathbb{N}$
@@ -1012,13 +1012,13 @@ $\forall x \in \mathbb{N}, x > -1 (1+x)^n \geq 1 + nx$ und Ungleichung ist strik
 \subsubsection{Definition 38} 0! = 1\\
 	$n \in \mathbb{N}_0 | (n + 1)! := ...$\\
 	d.h. $n! = 1 * 2 * 3 ... n)$\\
-	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binomialkoeffizient
+	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binomialköffizient
 \subsubsection{Lemma 39} $$1 \leq k \leq n$$ $$\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}$$
 \begin{proof}
 	$$ \binom {n}{k-1} + \binom{n}{k} = \frac{(k-1)!}{(k-1)!(n-k-1)!} + \frac{k!}{k!(n-k)!}$$
 	$$ = \frac{kn! + (n -1 -k)n!}{k!(n+1-k)!} = \binom{n+1}{k}$$
 \end{proof}
-\subsubsection{Binomischer Lehrsatz} $\forall a,b \in \mathbb{R}$ oder $a,b, \in \mathbb{K}$ (Koerper) $\forall n \in \mathbb{N}_0$\\
+\subsubsection{Binomischer Lehrsatz} $\forall a,b \in \mathbb{R}$ oder $a,b, \in \mathbb{K}$ (Körper) $\forall n \in \mathbb{N}_0$\\
 	$$(a+b)^n = \sum_{l=0}^n \binom{n}{l} a^{n-l}b^l$$
 	$$=a^n + \binom{n}{1}a^{n-1}b^1+\binom{n}{2}a^{n-2}b^2+...+\binom{n}{n-1}ab^{n-1}+b^n$$
 	\begin{proof}
@@ -1027,10 +1027,10 @@ $\forall x \in \mathbb{N}, x > -1 (1+x)^n \geq 1 + nx$ und Ungleichung ist strik
 		\begin{enumerate}[a)]
 			\item $n = 0$\\
 				$$(1 + x)^0 = 1 = \sum_{l=0}^0 \binom{0}{l}x^l$$
-			\item Induktionsannahme fuer n = k gilt:\\
+			\item Induktionsannahme für n = k gilt:\\
 				$$(1+x)^2 = \sum_{l=0}^k \binom{k}{l}x^l+\underbrace{\sum_{l=0}^k\binom{k}{l}x^{l+1}}_{\sum_{l=1}^{k+1}\binom{k}{l-1}x^l}$$
 				$$\binom{k}{0} + \sum_{l=1}^k \binom{k}{l}x^l + \sum_{l=1}^k \binom{k}{l-1}x^l + x^{k+1} $$
-				$$1+\sum_{l=1}^k\right(\underbrace{\binom{k}{l}+\binom{k}{l-1}}_{=\binom{k+1}{l}}\right)x^l + x^{l+1}$$
+				$$1+\sum_{l=1}^k\underbrace{\left(\binom{k}{l}+\binom{k}{l-1}\right)}_{=\binom{k+1}{l}}x^l + x^{l+1}$$
 		\end{enumerate}
 	\end{proof}
 \section{Folgen und Konvergenz} $(a_1, a_2 ... a_n)$ $a_n$ Zahlen
