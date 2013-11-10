@@ -1,8 +1,5 @@
 \documentclass{scrartcl}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{enumerate}
+
 %% Support for the target language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[ngerman]{babel}
 
@@ -23,6 +20,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+%\usepackage{stmaryrd}
 
 %% Table with extended features %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tabularx}
@@ -32,6 +30,9 @@
 
 %% Table coloring %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[table]{xcolor}
+
+%% Custom enumeration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumerate}
 
 \usepackage{setspace}
 
@@ -74,7 +75,7 @@ bekannte Mengen:
   \item $\mathbb{Q} = \left\lbrace \frac{m}{n}|m \in \mathbb{Z},n \in \mathbb{N} \right\rbrace$ Rationale Zahlen
 \end{itemize}
 
-\textbf{Achtung:} $\left\lbrace \emptyset \right\rbrace$ hat ein Element (nämlich eine leere Menge)!
+\textbf{Achtung:} $\left\lbrace \emptyset \right\rbrace$ hat ein Element (nämlich die leere Menge)!
 
 \subsubsection{Syntax}
 
@@ -86,12 +87,12 @@ bekannte Mengen:
   \textbf{Achtung:} Bei $M \subset N $ ist auch $M = N$ möglich \\
   \textbf{Immer:} $\emptyset \subset M$,in jeder Menge
   \item $M=N: M \subset N \wedge N \subset N$
-  \item $M \cup N := \left\lbrace x|x \in M \wedge x \in N\right\rbrace$ \\
-  \textbf{Disjunktion:} $M$ und $N$ sind disjunkt wenn $M  \cup N = \emptyset$ Schnittmenge
-  \item $M \cap N := \left\lbrace x|x \in M \vee x \in N\right\rbrace$ Vereinigungsmenge
-  \item $M \backslash N := \left\lbrace x|x \in M \vee x \notin N \right\rbrace$ Differenz
-  \item $M \times N:= \left\lbrace (x,y)|x \in M, y \in N \right\rbrace$ Produktmenge \\
-  $M_1 \times N_2 \times \ldots \times M_n := \left\lbrace \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \right\rbrace$
+  \item Vereinigungsmenge: $M \cup N := \left\lbrace x|x \in M \wedge x \in N\right\rbrace$ \\
+  \item Disjunktion: $M$ und $N$ sind disjunkt wenn $M  \cup N = \emptyset$ 
+  \item Schnittmenge: $M \cap N := \left\lbrace x|x \in M \vee x \in N\right\rbrace$ 
+  \item Differenz: $M \backslash N := \left\lbrace x|x \in M \wedge x \notin N \right\rbrace$ 
+  \item Produktmenge: $M \times N:= \left\lbrace (x,y)|x \in M, y \in N \right\rbrace$  \\
+  $M_1 \times M_2 \times \ldots \times M_n := \left\lbrace \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \right\rbrace$
 \end{itemize}
 
 \subsubsection{Satz 1: \qq{Naiver} Mengenbegriff nach Cantor}
@@ -109,9 +110,9 @@ $2^M = \mathcal{P}(M) := \left\lbrace A | A \subset M \right\rbrace$
 
 \subsubsection{Satz 2: Funktionen}
 
-Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich $X$ und eine Abbildungsvorschrift, die jedem $x \in X$ genau ein Element $y \in Y$ zuordnet.
+Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich $X$ und einer Abbildungsvorschrift, die jedem $x \in X$ genau ein Element $y \in Y$ zuordnet.
 
-\textbf{Schreiben} $y=f(x)$, erfordert auf $x \mapsto f(x)$
+\textbf{Notation} $y=f(x)$, erfordert auf $x \mapsto f(x)$
 \begin{align*}
   f : X &\to Y\\
   x &\mapsto f(x)
@@ -126,7 +127,7 @@ Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich 
 
 \subsubsection{Satz 3: Graph}
 
-Sei $f:x \to y$ eine Funktion
+Sei $f:X \to Y$ eine Funktion
 
 $Graph(f) = G(f) = \left\lbrace (x,f(x)) : x \in X \right\rbrace$
 
@@ -143,9 +144,7 @@ $Y^X = Abb(X,Y) = $ Menge aller Funktionen $f : X \to Y$
 Wenn $A \subset X$:
 
 $f(A):=\left\lbrace y \in Y : \text{ Es gibt ein } x \in A : y=f(x) 
-\right\rbrace$
-
-$f(A):=\left\lbrace f(x) : x \in A \right\rbrace$
+\right\rbrace =\left\lbrace f(x) : x \in A \right\rbrace$
 
 Bild von $A$ (unter $f$)
 
@@ -164,7 +163,7 @@ $f(X)$ ist das Bild von $f$
 $f : X \to Y$ ist:
 
 \begin{description}
-\item[injektiv:] falls aus $x_1,x_2 \in X$ und $f(x_1)=f(x_2)$, dann gilt bereits $x_1=x_2$. 
+\item[injektiv:] falls aus $x_1,x_2 \in X$ und $f(x_1)=f(x_2) \implies x_1=x_2$. 
 
 \item[surjektiv:] falls $f(X) = Y$.
 
@@ -213,7 +212,7 @@ $h(x):= (g \circ f)(x):=g(f(x))$
               x & \mapsto x
 \end{align*}
 
-Es gilt: $f : M \to N$ ist bijektiv, dann gilt:
+Sei: $f : M \to N$ bijektiv, dann gilt:
 
 \begin{enumerate}
  \item $f^{-1} : N \to M \text{ existiert} $
@@ -296,7 +295,7 @@ Ferner sei:
 
 \begin{proof}
 
-Setze man $M:=\{n \to \mathbb{N}:A(n) \text{ wahr }\}$
+Setze man $M:=\{n \in \mathbb{N}:A(n) \text{ wahr }\}$
 
 $M \subset \mathbb{N}$
 
@@ -323,8 +322,8 @@ $\rightarrow$ Beispiel für eine rekursive Definition
 \textbf{Definition:} Produkte
 \[ p_1:=a_1\]
 \[ p_{k+1}:=p_k*a_{k+1} \]
-\[ a_1*...*a_n=\prod_{j=1}^n a_j:=p_n\]
-\[ a^n = \underbrace{a*...*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
+\[ a_1*\ldots*a_n=\prod_{j=1}^n a_j:=p_n\]
+\[ a^n = \underbrace{a*\ldots*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
 
 \textbf{Setzen:}
 \[ \sum_{j=1}^0 a_j := 0 \quad \quad \quad \prod_{j=1}^0 a_j := 1 \quad \quad \quad a^0 = 1\]
@@ -703,11 +702,11 @@ $A$ heißt minimales Element (oder Minimum) von A, falls $\beta$ untere Schranke
 \begin{proof}
 Falls Maximum existiert, dann ist es eindeutig. Genauso für das Minimum. 
 
-B. \quad H.A %Year .... WTF% 
+B. \quad H.A %Year \ldots. WTF% 
 
 $A=\{x \in \mathbb{R}, x>0\}, \inf(A)=0$
 
-nach unten beschränkt, hat sein Minimum.
+A hat kein Minimum, da $0 \notin A$
 
 $B=\{x:x<0\}, \sup(B)=0$
 
@@ -756,7 +755,7 @@ Oder: $\mathbb{R}$ ist der ordnungsvollständige Körper.
 
 \begin{example}
 \[\sup(\{x \in \mathbb{R}, x < 0\}) = 0\]
-\[\sup(\{x \in \mathbb{R}, x^2 < 0\}) \text{ hat ein Suprenum (später: das Suprenum ist } \sqrt{2} \text{)}\]
+\[\sup(\{x \in \mathbb{R}, x^2 < 2\}) \text{ hat ein Suprenum (später: das Suprenum ist } \sqrt{2} \text{)}\]
 \end{example}
 
 \subsubsection{Die Menge $\bar{\mathbb{R}}$}
@@ -804,7 +803,7 @@ $\sup([a,b])=\sup([a,b)) = b,$ falls $a<b \quad $
 
 Wenn eine Menge $A$ ein Maximum hat 
 
-$\Longrightarrow$ Supermum ist gleich dem Maximum
+$\Longrightarrow$ Supremum ist gleich dem Maximum
 
 \end{proof}
 
@@ -817,7 +816,7 @@ $\Longrightarrow$ Supermum ist gleich dem Maximum
 
 \subsubsection{Definition 21}
 
-Eine Menge $A \subset A \mathbb{R}$ heißt \underline{induktiv} falls:
+Eine Menge $A \subset \mathbb{R}$ heißt \underline{induktiv} falls:
 
 \begin{enumerate}
   \item $1 \in A$
@@ -832,7 +831,7 @@ $A:= \{1\} \cup [1+1,\infty)$ ist induktiv
 \end{example}
 
 $\mathbb{N}:=$ kleinste induktive Teilmenge von $\mathbb{R}$
-\[:= \bigcap_{A \text{ist induktiv}} A \qquad\qquad \text{nachdem dass diese Menge induktiv ist}\]
+\[:= \bigcap_{A \text{ist induktiv}} A \qquad\qquad \text{A ist induktiv}\]
 
 \subsubsection{Satz 21: Induktionsprinzip}
 
@@ -867,7 +866,7 @@ $B := \{n \in \mathbb{N}:$ für $m \in \mathbb{N}$ mit $m \leq n \implies n-m \i
 \item[$a$  )] $1 \in B$, da $m \in \mathbb{N}$ und $m \leq 1 \underbrace{\implies}_{1)} m = 1 \implies n-m = 1-1 = 0$
 \item[$b$  )] Sei $k \in B$ und $m \in \mathbb{N}$ mit $m \leq k + 1$ \\Falls $m = 1 \implies (k + 1) - 1 = k \in \mathbb{N} \implies k + 1 \in B$\\ Falls $1 < m \in \mathbb{N} \implies m - 1 \in \mathbb{N}$ (da $A = \mathbb{N}$)\\ $\implies \mathbb{N}_0 \ni k - (m - 1) = (k + 1) - m \implies k + 1 \in B$\\$\implies B$ ist induktiv $\implies B = \mathbb{N} \implies \underline{3)}$
 \item[2)] Gegeben: $m \in \mathbb{N}: C:=\{n \in \mathbb{N} | n + m \in \mathbb{N}\}$\\Zeige C ist induktiv!\\Für $m * n $ analog
-\item[4)] Aus $n,m \in \mathbb{N} und n < m < n + 1$\\$\implies 0 < \underbrace{m-n}_{\in \mathbb{N}\texttt{ nach 3)}}<1$ (Widerspruch! zu 1))
+\item[4)] Aus $n,m \in \mathbb{N} \text{ und } n < m < n + 1$\\$\implies 0 < \underbrace{m-n}_{\in \mathbb{N}\texttt{ nach 3)}}<1$ (Widerspruch! zu 1))
 \item[5)] Sei $M \subset \mathbb{N}$, ohne ein kleinstes Element\\$\implies 1$ ist kleinste Element von $\mathbb{N} \implies 1 \notin M$
 \end{description}
 $D:=\{n \in \mathbb{N}: n < M\} = \{n \in \mathbb{N}: \forall m \in M: n < m\}$\\Wissen:
@@ -883,8 +882,8 @@ $D:=\{n \in \mathbb{N}: n < M\} = \{n \in \mathbb{N}: \forall m \in M: n < m\}$\
 \subparagraph{Wähle}
 $x = \frac{b}{a} \in \mathbb{R} \implies \exists n \in \mathbb{N}: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n* a > b$ (q.ed)
 \end{proof}
-\subsection{Grenze und rationale Zahlen}
-$\mathbb{Z} := \mathbb{N}_0 \land (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mathbb{N}\}$\\$\mathbb{Q}=\{\frac{m}{n}: m\in\mathbb{Z},n \in\mathbb{N}\}$
+\subsection{Ganze und rationale Zahlen}
+$\mathbb{Z} := \mathbb{N}_0 \cup (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mathbb{N}\}$\\$\mathbb{Q}:=\{\frac{m}{n}: m\in\mathbb{Z},n \in\mathbb{N}\}$
 \subsubsection{Satz 24}
 ($\mathbb{Z}, +, *$) ist ein kommutativer Ring mit Eins, d.h. alle Körperaxiome sind erfüllt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +, *$) ist ein angeordneter Körper.
 
@@ -912,19 +911,19 @@ $\mathbb{Z} := \mathbb{N}_0 \land (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mat
 \item (Cantor) Bernsten-Schröder-Theorie $|A| \leq |B|$ und $|B| \leq |A| \iff A \sim B$
 \end{enumerate}
 \subsubsection{Definition 28} Sei $n \in \mathbb{N}_0 [0] := \emptyset$ und rekrusiv $[n + 1] = [n] \cup [n+1]$\\($\implies([n]:=\{k \in \mathbb{N}: 1\leq k \leq n \}$)\\Eine Menge A heisst endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)\\$card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.\\\\A heisst abzählbar (abzählbar unendlich), falls $A \sim \mathbb{N}$\\A ist höchstens abzählbar, falls A endlich ist oder abzählbar ist, ansonsten heisst sie überabzählbar.
-\paragraph{Beweis}
+\paragraph{Bemerkung}
 \begin{enumerate}[1)]
 \item A höchstens abzählbar $\iff \exists$ Surjektion $f: \mathbb{N} \rightarrow A$
 \item Unendliche Mengen sind tricky\\$G = \{ n \in \mathbb{N}: $n ist gerade$\} = \{2*n: n \in \mathbb{N}\}$\\$f:\mathbb{N}\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\mathbb{N} \sim G$
-\item Hilkerts Hotel
+\item Hilberts Hotel
 \item $[0,1]\sim [0,1)$
 \subparagraph{Beweis} Konstruieren $f: [0,1] \rightarrow [0,1)$\\Für $x \in [0,1]\backslash (\bigcup_{n\in\mathbb{N}} \{\frac{1}{n}\}):f(x)=x$\\$n\in\mathbb{N}:f(\frac{1}{n}):=\frac{1}{n+1}$ Rechne nach f ist bijektiv!
 \end{enumerate}
 \subsubsection{Satz 29}
 \begin{enumerate}[1)]
 \item $A\sim [n], A\sim [m] \implies n = m$ (d.h. Kardinalität ist eindeutig)
-\item ist $A \in B, B endlich \implies A endlich$
-\item $A, B$ endlich und desjunkt $\implies card(A\cup B) = (cardA + cardB)$
+\item ist $A \in B, B$ endlich $\implies A$ endlich
+\item $A, B$ endlich und disjunkt $\implies card(A\cup B) = (cardA + cardB)$
 \end{enumerate}
 \paragraph{Beweis}
 \begin{enumerate}[1)]
@@ -932,7 +931,7 @@ $\mathbb{Z} := \mathbb{N}_0 \land (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mat
 \item Beweis der Induktion: einfach.
 \item Sei $A \sim [n], b \sim [m] \implies B \sim m + [n] := \{ k \in \mathbb{N}: n + 1 \leq k \ leq m + n \} \implies A \cup B \sim [n] \cup (m + [n]) = [n + m]$
 \end{enumerate}
-\paragraph{Lemma 30} Jede endliche teilmenge von $\mathbb{R}$ hat ein Minimum und ein Maximum
+\paragraph{Lemma 30} Jede endliche Teilmenge von $\mathbb{R}$ hat ein Minimum und ein Maximum
 
 \begin{proof}
 $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA = min(C, a_{n+1})$
@@ -977,8 +976,9 @@ $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA
 $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,n), m \in \mathbb{Z}, n \in \mathbb{N}\}$
 \end{proof}
 \paragraph{Bemerkung} Es gibt eine explizite Abbildung von $\mathbb{G}$ mittels eines Baumes. Literatur: Neil Calkin, Herbert Will: Recounting the Rationals
-\subsubsection{Satz 33} A enthalte mindestens 2 Elemente, $\implies A^\mathbb{N} = \{ f: \mathbb{N} \rightarrow A\}$ überabzählbar
-\subsubsection{Lemma 34 (Cantor)} Sei A meinge $\implies$ existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
+\subsubsection{Satz 33} A enthalte mindestens 2 Elemente $\implies A^\mathbb{N} = \{ f: \mathbb{N} \rightarrow A\}$ überabzählbar
+\subsubsection{Lemma 34 (Cantor)} Sei A eine Menge $\implies$ Es existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
+
 \begin{proof}
 	Sei $f: A \rightarrow P(A)$\\
 	d.h. $\forall x \in A: 2(x) \subset A$\\
@@ -992,25 +992,25 @@ $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,
 	\end{enumerate}
 \end{proof}
 \subsubsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \mathbb{R}$\\
-$a < b> \implies I$ ist überabzählbar
+$a < b \implies I$ ist überabzählbar
 
 \begin{proof}
-Skalieren $\implies$ o.B.d.A. $a = o, b = 1$ zu $f \in \{0,1\}^\mathbb{N}$
+Skalieren $\implies$ o.B.d.A. $a = 0, b = 1$ zu $f \in \{0,1\}^\mathbb{N}$
 \end{proof}
 \paragraph{Dezimalbruchentwicklung:} $$x_f := \sum_{n = 1}^\infty f(n) * 10^{-n} \in [0,1]$$
 beachte: $f_1 + f_2 \implies xf_1 + xf_2$
 \subsection{Einfache Folgerung aus Induktion}
-\subsubsection{Satz 37 (...}
-$\forall x \in \mathbb{N}, x > -1 (1+x)^n \geq 1 + nx$ und Ungleichung ist strikt (d.h. > gilt, falls $n \geq 2, x \neq 0$)
+\subsubsection{Satz 37 (Bernoulli)}
+$\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist strikt (d.h. > gilt, falls $n \geq 2, x \neq 0$)
 
 \begin{proof}
-	IA $n = 0 | (1 + x)^0 = 1 + 0x$\\
+	IA $n = 0$ | $(1 + x)^0 = 1 + 0x$\\
 	Im Ange. gilt: $(1 + x)^k \geq 1 + k x$\\
 	$implies (1 + x)^{k + 1} = (1 + x)^k * \underbrace{(1 + x)}_{> 0} \geq (1 + kx) (1 + x)$\\
 	$= 1 + (k + 1)x = 1 + (k + 1)x + k x^2 \geq 1 + (k + 1)x$
 \end{proof}
 \subsubsection{Definition 38} 0! = 1\\
-	$n \in \mathbb{N}_0 | (n + 1)! := ...$\\
+	$n \in \mathbb{N}_0 | (n + 1)! := n!(n+1)$\\
 	d.h. $n! = 1 * 2 * 3 ... n)$\\
 	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binomialköffizient
 \subsubsection{Lemma 39} $$1 \leq k \leq n$$ $$\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}$$
@@ -1023,22 +1023,22 @@ $\forall x \in \mathbb{N}, x > -1 (1+x)^n \geq 1 + nx$ und Ungleichung ist strik
 	$$=a^n + \binom{n}{1}a^{n-1}b^1+\binom{n}{2}a^{n-2}b^2+...+\binom{n}{n-1}ab^{n-1}+b^n$$
 	\begin{proof}
 	$a = 0$ klar, $a \neq 0$,$a+b)^n = a^n(1 + \frac{b}{a})^n$\\
-				$\implies$ zu Zeigen: $(1 + x)^n = \sum_{l =0}{n} \binom{n}{l} x^l$
+				$\implies$ zu Zeigen: $$(1 + x)^n = \sum_{l =0}^n \binom{n}{l} x^l$$
 		\begin{enumerate}[a)]
 			\item $n = 0$\\
 				$$(1 + x)^0 = 1 = \sum_{l=0}^0 \binom{0}{l}x^l$$
 			\item Induktionsannahme für n = k gilt:\\
-				$$(1+x)^2 = \sum_{l=0}^k \binom{k}{l}x^l+\underbrace{\sum_{l=0}^k\binom{k}{l}x^{l+1}}_{\sum_{l=1}^{k+1}\binom{k}{l-1}x^l}$$
+				$$(1+x)^{k+1} = \sum_{l=0}^k \binom{k}{l}x^l+\underbrace{\sum_{l=0}^k\binom{k}{l}x^{l+1}}_{\sum_{l=1}^{k+1}\binom{k}{l-1}x^l}$$
 				$$\binom{k}{0} + \sum_{l=1}^k \binom{k}{l}x^l + \sum_{l=1}^k \binom{k}{l-1}x^l + x^{k+1} $$
 				$$1+\sum_{l=1}^k\underbrace{\left(\binom{k}{l}+\binom{k}{l-1}\right)}_{=\binom{k+1}{l}}x^l + x^{l+1}$$
 		\end{enumerate}
 	\end{proof}
 \section{Folgen und Konvergenz} $(a_1, a_2 ... a_n)$ $a_n$ Zahlen
-\subsection{Definition 1} Eine Reele Folge ist eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}, n \mapsto f(n) =: a_n$
-\paragraph{Schreiben:} $a_n = f(n)$, $(a_n)_{n \in \mathbb{N}}$, $(a_n)_n$
+\subsection{Definition 1} Eine reelle Folge ist eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}, n \mapsto f(n) =: a_n$
+\paragraph{Notation:} $a_n = f(n)$, $(a_n)_{n \in \mathbb{N}}$, $(a_n)_n$
 \paragraph{Bemerkung:} $(a_n)_n$ ist nicht $\{a_1, a_2, ...\}$ z.B. $a_n = 1 \implies \{a_1, a_2, ...\} = \{1\}$
 \subsection{Definition 2: Konvergenz:} Sei $(a_n)_n$ eine Folge reellen Zahlen $(a_n)_n$ kovergiert gegen $L \in \mathbb{R}$\\
-	Falls: $\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon$\\
+	Genau dann, wenn: $\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon$\\
 	\paragraph{Bemerkung:} $(\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon)$\\
 	$\Longleftrightarrow (\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| \leq \epsilon)$\\
 	$\Longleftrightarrow (\forall l \in \mathbb{N} \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \frac{1}{l})$\\
