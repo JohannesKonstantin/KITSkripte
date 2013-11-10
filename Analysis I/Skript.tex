@@ -1,5 +1,8 @@
 \documentclass{scrartcl}
-
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
 %% Support for the target language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[ngerman]{babel}
 
@@ -20,7 +23,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-%\usepackage{stmaryrd}
 
 %% Table with extended features %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tabularx}
@@ -30,9 +32,6 @@
 
 %% Table coloring %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[table]{xcolor}
-
-%% Custom enumeration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{enumerate}
 
 \usepackage{setspace}
 
@@ -322,8 +321,8 @@ $\rightarrow$ Beispiel für eine rekursive Definition
 \textbf{Definition:} Produkte
 \[ p_1:=a_1\]
 \[ p_{k+1}:=p_k*a_{k+1} \]
-\[ a_1*\ldots*a_n=\prod_{j=1}^n a_j:=p_n\]
-\[ a^n = \underbrace{a*\ldots*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
+\[ a_1*...*a_n=\prod_{j=1}^n a_j:=p_n\]
+\[ a^n = \underbrace{a*...*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
 
 \textbf{Setzen:}
 \[ \sum_{j=1}^0 a_j := 0 \quad \quad \quad \prod_{j=1}^0 a_j := 1 \quad \quad \quad a^0 = 1\]
@@ -702,7 +701,7 @@ $A$ heißt minimales Element (oder Minimum) von A, falls $\beta$ untere Schranke
 \begin{proof}
 Falls Maximum existiert, dann ist es eindeutig. Genauso für das Minimum. 
 
-B. \quad H.A %Year \ldots. WTF% 
+B. \quad H.A %Year .... WTF% 
 
 $A=\{x \in \mathbb{R}, x>0\}, \inf(A)=0$
 
