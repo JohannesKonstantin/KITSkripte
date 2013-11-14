@@ -1,4 +1,4 @@
-\documentclass{scrartcl}
+\documentclass[fleqn]{scrartcl}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -21,8 +21,18 @@
 
 %% Advanced math %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath}
+
+%% Advanced math Symboles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amssymb}
+
+%% Introducing proof environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsthm}
+
+%% Just the \lightning symbol %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{stmaryrd}
+
+%% For commutative diagrams %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[all]{xy}
 
 %% Table with extended features %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tabularx}
@@ -64,17 +74,17 @@
 
 Angaben von Mengen durch Aufzählungen
 
-$M=\left\lbrace a,b,c \right\rbrace$ oder $M=\left\lbrace Kirche, Dorf\right\rbrace$
+$M=\left\{ a,b,c \right\}$ oder $M=\left\{ Kirche, Dorf\right\}$
 
 bekannte Mengen:
 \begin{itemize}
   \item $\emptyset$ leere Menge
-  \item $\mathbb{N} = \left\lbrace 1,2,3,\ldots \right\rbrace$ natürliche Zahlen
-  \item $\mathbb{Z} = \left\lbrace \ldots,-3,-2,-1,0,1,2,3,\ldots \right\rbrace$ ganze Zahlen
-  \item $\mathbb{Q} = \left\lbrace \frac{m}{n}|m \in \mathbb{Z},n \in \mathbb{N} \right\rbrace$ Rationale Zahlen
+  \item $\mathbb{N} = \left\{ 1,2,3,\ldots \right\}$ natürliche Zahlen
+  \item $\mathbb{Z} = \left\{ \ldots,-3,-2,-1,0,1,2,3,\ldots \right\}$ ganze Zahlen
+  \item $\mathbb{Q} = \left\{ \frac{m}{n}|m \in \mathbb{Z},n \in \mathbb{N} \right\}$ Rationale Zahlen
 \end{itemize}
 
-\textbf{Achtung:} $\left\lbrace \emptyset \right\rbrace$ hat ein Element (nämlich die leere Menge)!
+\textbf{Achtung:} $\left\{ \emptyset \right\}$ hat ein Element (nämlich die leere Menge)!
 
 \subsubsection{Syntax}
 
@@ -86,12 +96,12 @@ bekannte Mengen:
   \textbf{Achtung:} Bei $M \subset N $ ist auch $M = N$ möglich \\
   \textbf{Immer:} $\emptyset \subset M$,in jeder Menge
   \item $M=N: M \subset N \wedge N \subset N$
-  \item Vereinigungsmenge: $M \cup N := \left\lbrace x|x \in M \wedge x \in N\right\rbrace$ \\
+  \item Vereinigungsmenge: $M \cup N := \left\{ x|x \in M \wedge x \in N\right\}$
   \item Disjunktion: $M$ und $N$ sind disjunkt wenn $M  \cup N = \emptyset$ 
-  \item Schnittmenge: $M \cap N := \left\lbrace x|x \in M \vee x \in N\right\rbrace$ 
-  \item Differenz: $M \backslash N := \left\lbrace x|x \in M \wedge x \notin N \right\rbrace$ 
-  \item Produktmenge: $M \times N:= \left\lbrace (x,y)|x \in M, y \in N \right\rbrace$  \\
-  $M_1 \times M_2 \times \ldots \times M_n := \left\lbrace \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \right\rbrace$
+  \item Schnittmenge: $M \cap N := \left\{ x|x \in M \vee x \in N\right\}$ 
+  \item Differenz: $M \backslash N := \left\{ x|x \in M \wedge x \notin N \right\}$ 
+  \item Produktmenge: $M \times N:= \left\{ (x,y)|x \in M, y \in N \right\}$  \\
+  $M_1 \times M_2 \times \ldots \times M_n := \{ \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \}$
 \end{itemize}
 
 \subsubsection{Satz 1: \qq{Naiver} Mengenbegriff nach Cantor}
@@ -100,11 +110,11 @@ bekannte Mengen:
 
 \subsubsection{Potenzmenge von M}
 
-$2^M = \mathcal{P}(M) := \left\lbrace A | A \subset M \right\rbrace$
+$2^M = \mathcal{P}(M) := \left\{ A | A \subset M \right\}$
 
 \textbf{immer:} $ M \in \mathcal{P}(M), \emptyset \in \mathcal{P}(M)$ 
 
-\begin{example}{$\mathcal{P}(\emptyset) = \left\lbrace \emptyset \right\rbrace$}
+\begin{example}{$\mathcal{P}(\emptyset) = \left\{ \emptyset \right\}$}
 \end{example}
 
 \subsubsection{Satz 2: Funktionen}
@@ -128,7 +138,7 @@ Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich 
 
 Sei $f:X \to Y$ eine Funktion
 
-$Graph(f) = G(f) = \left\lbrace (x,f(x)) : x \in X \right\rbrace$
+$Graph(f) = G(f) = \left\{ (x,f(x)) : x \in X \right\}$
 
 $G(f) \subset X \times Y$
 
@@ -142,8 +152,8 @@ $Y^X = Abb(X,Y) = $ Menge aller Funktionen $f : X \to Y$
 
 Wenn $A \subset X$:
 
-$f(A):=\left\lbrace y \in Y : \text{ Es gibt ein } x \in A : y=f(x) 
-\right\rbrace =\left\lbrace f(x) : x \in A \right\rbrace$
+$f(A):=\left\{ y \in Y : \text{ Es gibt ein } x \in A : y=f(x) 
+\right\} =\left\{ f(x) : x \in A \right\}$
 
 Bild von $A$ (unter $f$)
 
@@ -151,7 +161,7 @@ Bild von $A$ (unter $f$)
 
 Wenn $B \subset Y$ 
 
-$f^{-1}(B):=\left\lbrace x \in X : f(x) \in B \right\rbrace$
+$f^{-1}(B):=\left\{ x \in X : f(x) \in B \right\}$
 
 Urbild von $B$ (unter $f$)
 
@@ -321,8 +331,8 @@ $\rightarrow$ Beispiel für eine rekursive Definition
 \textbf{Definition:} Produkte
 \[ p_1:=a_1\]
 \[ p_{k+1}:=p_k*a_{k+1} \]
-\[ a_1*...*a_n=\prod_{j=1}^n a_j:=p_n\]
-\[ a^n = \underbrace{a*...*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
+\[ a_1*\ldots*a_n=\prod_{j=1}^n a_j:=p_n\]
+\[ a^n = \underbrace{a*\ldots*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
 
 \textbf{Setzen:}
 \[ \sum_{j=1}^0 a_j := 0 \quad \quad \quad \prod_{j=1}^0 a_j := 1 \quad \quad \quad a^0 = 1\]
@@ -421,7 +431,7 @@ $\sqrt{2}$ ist nicht rational.
 
 \textbf{Angenommen:} $\sqrt{2}$ ist rational $\Longrightarrow \exists m \in \mathbb{Z}, n \in \mathbb{N}, \sqrt{2}=\frac{m}{n}$
 
-$G:=\left\lbrace n \in \mathbb{N}: \exists m \in \mathbb{Z}: \sqrt{2} = \frac{m}{n} \right\rbrace \subset \mathbb{N}$
+$G:=\left\{ n \in \mathbb{N}: \exists m \in \mathbb{Z}: \sqrt{2} = \frac{m}{n} \right\} \subset \mathbb{N}$
 
 \textbf{Wollen:} $G=\subset$
 
@@ -443,7 +453,7 @@ $K \in \mathbb{N}$, damit $\sqrt{k} \subset \mathbb{N}$ oder irrational
 
 \textbf{Annahme:} $\sqrt{k} \in G \backslash \mathbb{N}$
 
-$G:=\left\lbrace n \in \mathbb{N}: \exists m \in \mathbb{Z}: \sqrt{k} = \frac{m}{n} \right\rbrace \subset \mathbb{N}$
+$G:=\left\{ n \in \mathbb{N}: \exists m \in \mathbb{Z}: \sqrt{k} = \frac{m}{n} \right\} \subset \mathbb{N}$
 
 \textbf{Wollen:} $G = \emptyset$!
 
@@ -522,7 +532,6 @@ In jedem Körper gilt:
 \[\frac{a}{c}*\frac{b}{d}=\frac{ab}{cd}\]
 \[\frac{\frac{a}{c}}{\frac{b}{d}}=\frac{ad}{bc}\]
 
-
 TODO: Handout über Körperaxiome muss hier rein!
 
 \subsubsection{Satz 13}
@@ -546,15 +555,22 @@ Sei $\mathbb{K}$ ein angeordneter Körper, $a,b,c,d,x,y \in \mathbb{K}$ Dann gil
 \begin{proof}
 
 \begin{enumerate}
-  \item Sei $a>b \Longrightarrow a-b=a+(-b)>b+(-b)=0$  \\
+  \item Sei $a>b \Longrightarrow a-b=a+(-b)>b+(-b)=0$
+  
     Sei $a-b>0 \stackrel{(O4)}{\Longrightarrow} a= b+(a-b)>b$
-  \item Sei $a>b,c>d \stackrel{(O4)}{\Longrightarrow} a+c>b+d$ und \\
+    
+  \item Sei $a>b,c>d \stackrel{(O4)}{\Longrightarrow} a+c>b+d$ und
+  
     $b+c>b+d \stackrel{(O1)}{\Longrightarrow} a+c>b+d$
-  \item Sei $a>0,x>y \stackrel{(1.)}{\Longrightarrow} x-y>0 \stackrel{(O5)}{\Longrightarrow} a(x-y)>0$ \\
+    
+  \item Sei $a>0,x>y \stackrel{(1.)}{\Longrightarrow} x-y>0 \stackrel{(O5)}{\Longrightarrow} a(x-y)>0$
+  
     $\Longrightarrow ax-ay >0$
     $\Longrightarrow ax >ay$
-  \item Aus $a>0 \stackrel{(O4)}{\Longrightarrow} (-a)=(-a)+0<(-a)+a=0$  \\
+  \item Aus $a>0 \stackrel{(O4)}{\Longrightarrow} (-a)=(-a)+0<(-a)+a=0$
+  
     Aus $a<0 \stackrel{(O4)}{\Longrightarrow} (-a)+a<0+a=a$
+    
   \item Folgt aus (4) und (O5)
 \end{enumerate}
 
@@ -568,19 +584,27 @@ Sei $(\mathbb{K},+,*)$ ein angeordneter Körper $\Longrightarrow$
 
 \begin{enumerate}
   \item $a \neq 0 \Longrightarrow a^2>0$ insbesondere $1>0$
+  
   \item $a > 0 \Longrightarrow \frac{1}{a}>0$
+  
   \item $a > b > 0 \Longrightarrow \frac{1}{a}<\frac{1}{b}$ und $\frac{a}{b}>1$
 \end{enumerate}
 
 \begin{proof}
 
 \begin{enumerate}
-  \item $a^2=a*a$ \\
-    aus $a>0 \stackrel{(O5)}{\Longrightarrow} a^2=a*a>0$ \\
+  \item $a^2=a*a$
+  
+    aus $a>0 \stackrel{(O5)}{\Longrightarrow} a^2=a*a>0$ 
+    
     aus $a<0 \stackrel{(S15(5))}{\Longrightarrow} a*a>0$
-  \item Sei $a \neq 0 \Longrightarrow a*\frac{1}{a} = 1 > 0 \stackrel{(S1(5))}{\Longrightarrow} a>0 \wedge \frac{1}{a}>0$ \\
+    
+  \item Sei $a \neq 0 \Longrightarrow a*\frac{1}{a} = 1 > 0 \stackrel{(S1(5))}{\Longrightarrow} a>0 \wedge \frac{1}{a}>0$
+  
     oder $a<0 \wedge \frac{1}{a}>0$
-  \item Sei $a>b>0 \stackrel{(2)}{\Longrightarrow} \frac{1}{a}>0;\frac{1}{b}>0;a*b>0;a-b>0 (S13(1))$ \\
+    
+  \item Sei $a>b>0 \stackrel{(2)}{\Longrightarrow} \frac{1}{a}>0;\frac{1}{b}>0;a*b>0;a-b>0 (S13(1))$
+  
   $\Longrightarrow \frac{1}{b} - \frac{1}{a} = \frac{1}{b}(a-b)\frac{1}{a}=(a-b)\frac{1}{b}*\frac{1}{a}>0$
 \end{enumerate}
 
@@ -631,15 +655,20 @@ fertig
 \subsubsection{Folgerungen}
 
 \begin{enumerate}
-  \item $\forall x \in \mathbb{R};x=|x|sgn(x)$ \\
+  \item $\forall x \in \mathbb{R};x=|x|sgn(x)$
+  
     $|-x|=|x|;x \leq |x|$
   \item $\forall x \neq 0: |x|>0$
-  \item $\forall x,y \in \mathbb{R}: |x*y|=|x|*|y|$ \\
+  \item $\forall x,y \in \mathbb{R}: |x*y|=|x|*|y|$
+  
     $sgn(x*y)=sgn(x)*sgn(y)$
-  \item $\forall x \in \mathbb{R}, \forall e >0$ \\
-    hat $|x-a|<e \Longleftrightarrow a-e<x<a+e$ \\
+  \item $\forall x \in \mathbb{R}, \forall e >0$
+  
+    hat $|x-a|<e \Longleftrightarrow a-e<x<a+e$
+    
     insbesondere $|x|<e \Longleftrightarrow -e<x<e$
-  \item TODO: Stimmt das so? $|x|=max(x,-x)$ \\
+  \item TODO: Stimmt das so? $|x|=max(x,-x)$
+  
         Beweis: einfach
 \end{enumerate}
 
@@ -701,7 +730,7 @@ $A$ heißt minimales Element (oder Minimum) von A, falls $\beta$ untere Schranke
 \begin{proof}
 Falls Maximum existiert, dann ist es eindeutig. Genauso für das Minimum. 
 
-B. \quad H.A %Year .... WTF% 
+B. \quad H.A %Year ?!?!?!? WTF% 
 
 $A=\{x \in \mathbb{R}, x>0\}, \inf(A)=0$
 
@@ -857,27 +886,61 @@ $\Longleftrightarrow M = N$
 \begin{description}
 \item[$a_1$)] $1 \in A:$ klar
 \item[$a_2$)] $1 + 1 \in A:$ klar
-\item[$b$  )] Sei $k \in A, k \neq 1 \implies 1 \leq k - 1 \in \mathbb{N}$\\
-folgt $1 + 1 \leq (k - 1) + 1 = k \in \mathbb{N}$\\und $(k + 1) - 1 = k \geq 1 + 1 \geq 1 \implies k + 1 \in A$\\ $\implies A \subset \mathbb{N}$ ist induktiv $\implies A = \mathbb{N} \implies \underline{1)}$ \\
+\item[$b$  )] Sei $k \in A, k \neq 1 \implies 1 \leq k - 1 \in \mathbb{N}$
+
+folgt $1 + 1 \leq (k - 1) + 1 = k \in \mathbb{N}$
+
+und $(k + 1) - 1 = k \geq 1 + 1 \geq 1 \implies k + 1 \in A$
+
+$\implies A \subset \mathbb{N}$ ist induktiv $\implies A = \mathbb{N} 
+\implies \underline{1)}$
 \end{description}
 $B := \{n \in \mathbb{N}:$ für $m \in \mathbb{N}$ mit $m \leq n \implies n-m \in \mathbb{N}_0$
 \begin{description}
 \item[$a$  )] $1 \in B$, da $m \in \mathbb{N}$ und $m \leq 1 \underbrace{\implies}_{1)} m = 1 \implies n-m = 1-1 = 0$
-\item[$b$  )] Sei $k \in B$ und $m \in \mathbb{N}$ mit $m \leq k + 1$ \\Falls $m = 1 \implies (k + 1) - 1 = k \in \mathbb{N} \implies k + 1 \in B$\\ Falls $1 < m \in \mathbb{N} \implies m - 1 \in \mathbb{N}$ (da $A = \mathbb{N}$)\\ $\implies \mathbb{N}_0 \ni k - (m - 1) = (k + 1) - m \implies k + 1 \in B$\\$\implies B$ ist induktiv $\implies B = \mathbb{N} \implies \underline{3)}$
-\item[2)] Gegeben: $m \in \mathbb{N}: C:=\{n \in \mathbb{N} | n + m \in \mathbb{N}\}$\\Zeige C ist induktiv!\\Für $m * n $ analog
-\item[4)] Aus $n,m \in \mathbb{N} \text{ und } n < m < n + 1$\\$\implies 0 < \underbrace{m-n}_{\in \mathbb{N}\texttt{ nach 3)}}<1$ (Widerspruch! zu 1))
-\item[5)] Sei $M \subset \mathbb{N}$, ohne ein kleinstes Element\\$\implies 1$ ist kleinste Element von $\mathbb{N} \implies 1 \notin M$
+\item[$b$  )] Sei $k \in B$ und $m \in \mathbb{N}$ mit $m \leq k + 1$ 
+
+Falls $m = 1 \implies (k + 1) - 1 = k \in \mathbb{N} \implies k + 1 \in B$
+
+Falls $1 < m \in \mathbb{N} \implies m - 1 \in \mathbb{N}$ (da $A = \mathbb{N}$)
+
+$\implies \mathbb{N}_0 \ni k - (m - 1) = (k + 1) - m \implies k + 1 \in B$
+
+$\implies B$ ist induktiv $\implies B = \mathbb{N} \implies \underline{3)}$
+\item[2)] Gegeben: $m \in \mathbb{N}: C:=\{n \in \mathbb{N} | n + m \in \mathbb{N}\}$
+
+Zeige C ist induktiv!
+
+Für $m * n $ analog
+
+\item[4)] Aus $n,m \in \mathbb{N} \text{ und } n < m < n + 1$
+
+$\implies 0 < \underbrace{m-n}_{\in \mathbb{N}\texttt{ nach 3)}}<1$ ($\lightning$ zu 1))
+
+\item[5)] Sei $M \subset \mathbb{N}$, ohne ein kleinstes Element
+
+$\implies 1$ ist kleinste Element von $\mathbb{N} \implies 1 \notin M$
+
 \end{description}
 $D:=\{n \in \mathbb{N}: n < M\} = \{n \in \mathbb{N}: \forall m \in M: n < m\}$\\Wissen:
 \begin{description}
+
 \item[a)] $1 \in D$
-\item[b)] Sei $k \in D$ d.h. $k < m \forall m \in M$\\$\implies D$ ist induktiv$\implies D = \mathbb{N} \implies M \subset \mathbb{N} \backslash D = \mathbb{N} \backslash M = \emptyset$ (q.ed)
+\item[b)] Sei $k \in D$ d.h. $k < m \forall m \in M$
+
+$\implies D$ ist induktiv$\implies D = \mathbb{N} \implies M \subset \mathbb{N} \backslash D = \mathbb{N} \backslash M = \emptyset$ (q.ed)
 \end{description}
 \end{proof}
-\subsubsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschränkt\\ insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n * a > b$
+\subsubsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschränkt
+
+insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n * a > b$
 
 \begin{proof}
-\paragraph*{Angenommen} $\mathbb{N}$ ist nach oben beschränkt $\underbrace{\implies}_{vollst. Axiom} a = Sup\mathbb{N}\in\mathbb{R}$\\$\implies \alpha - 1$ ist keine obere Schranke für $\mathbb{N}$\\$\implies \exists n \in \mathbb{N}, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \mathbb{N}} > \alpha$ (Widerspruch!)
+\paragraph*{Angenommen} $\mathbb{N}$ ist nach oben beschränkt $\underbrace{\implies}_{vollst. Axiom} a = Sup\mathbb{N}\in\mathbb{R}$
+
+$\implies \alpha - 1$ ist keine obere Schranke für $\mathbb{N}$
+
+$\implies \exists n \in \mathbb{N}, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \mathbb{N}} > \alpha$ $\lightning$
 \subparagraph{Wähle}
 $x = \frac{b}{a} \in \mathbb{R} \implies \exists n \in \mathbb{N}: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n* a > b$ (q.ed)
 \end{proof}
@@ -889,8 +952,14 @@ $\mathbb{Z} := \mathbb{N}_0 \cup (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \math
 \begin{proof}
 	Nachrechnen
 \end{proof}
-\paragraph{Notation}$\mathbb{Z}_p := \{ m\in\mathbb{Z}: m\geq p\}$\\$p \in \mathbb{Z} := p + \mathbb{N}_0$
-\paragraph{Alle} $k \mapsto k + p - 1$ bildet $\mathbb{N}$ bijektiv auf $\mathbb{Z}_p$ ab. \\$\Rightarrow$ Alle Eigenschaften von $\mathbb{N}$ gelten auch für $\mathbb{Z}_p \forall p \in \mathbb{Z}$\\$\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschränkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
+\paragraph{Notation}$\mathbb{Z}_p := \{ m\in\mathbb{Z}: m\geq p\}$
+
+$p \in \mathbb{Z} := p + \mathbb{N}_0$
+\paragraph{Alle} $k \mapsto k + p - 1$ bildet $\mathbb{N}$ bijektiv auf $\mathbb{Z}_p$ ab.
+
+$\Rightarrow$ Alle Eigenschaften von $\mathbb{N}$ gelten auch für $\mathbb{Z}_p \forall p \in \mathbb{Z}$
+
+$\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschränkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
 \subsubsection{Korollar 26}
 \begin{enumerate}[1)]
 \item Seien $x,y \in \mathbb{R}, y*x > 1$\\$\implies m\in\mathbb{Z}, x < m < y$
@@ -898,22 +967,54 @@ $\mathbb{Z} := \mathbb{N}_0 \cup (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \math
 \end{enumerate}
 \paragraph{Beweis} 
 \begin{enumerate}[1)]
-\item Sei $y - x > 1, A := \{ m \in \mathbb{Z}: m > y\} \neq \emptyset$\\$\implies$ Sei $n_0 = min(A)$ existiert $\in \mathbb{Z}$\\$\implies n_0 \in A: n_0 \geq y$ und $n_0 -1 < y$\\$m:=n_0 -1 \in \mathbb{Z}$ und $m + 1 \geq y, n <y$\\$\implies m \geq y -1 > x \implies x < m < y$
-\item Sei $x,y \in \mathbb{R}: x < y \iff a: -y -x > 0$\\S.23 $\implies \exists n \in \mathbb{N}: n * a > 1 \iff n * x - n * y > 1$\\$\implies \exists m \in \mathbb{Z}: n*x<m<n*y \iff x <\frac{m}{n} < y$
+\item Sei $y - x > 1, A := \{ m \in \mathbb{Z}: m > y\} \neq \emptyset$
+
+$\implies$ Sei $n_0 = min(A)$ existiert $\in \mathbb{Z}$
+
+$\implies n_0 \in A: n_0 \geq y$ und $n_0 -1 < y$
+
+$m:=n_0 -1 \in \mathbb{Z}$ und $m + 1 \geq y, n <y$
+
+$\implies m \geq y -1 > x \implies x < m < y$
+
+\item Sei $x,y \in \mathbb{R}: x < y \iff a: -y -x > 0$
+
+S.23 $\implies \exists n \in \mathbb{N}: n * a > 1 \iff n * x - n * y > 1$
+
+$\implies \exists m \in \mathbb{Z}: n*x<m<n*y \iff x <\frac{m}{n} < y$
 \end{enumerate}
+
 \subsection{Endliche und abzählbare Mengen}
-\subsubsection{Definition 27 (Cantor)} A, B Mengen heissen gleichmächtig (oder äquivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.\\B heisst mächtiger als A, $|A| \leq |B|$, falls es eine Injektion $f: A \rightarrow B$ gibt.
+
+\subsubsection{Definition 27 (Cantor)} A, B Mengen heißen gleichmächtig (oder äquivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.
+
+B heißt mächtiger als A, $|A| \leq |B|$, falls es eine Injektion $f: A \rightarrow B$ gibt.
+
 \paragraph{Bemerkung}
 \begin{enumerate}[1)]
-\item $A \sim B$ ist eine äquivalenzrelation, d.h. reflexiv ($A \sim A$), symmetrisch ($A \sim B \implies B \sim A$) und transitiv ($A \sim B, B \sim C \implies A \sim C$)
+\item $A \sim B$ ist eine Äquivalenzrelation, d.h. reflexiv ($A \sim A$), symmetrisch ($A \sim B \implies B \sim A$) und transitiv ($A \sim B, B \sim C \implies A \sim C$)
 \item $A \leq \mathbb{R} \iff \exists$ Surjektion $h: B \rightarrow B$
 \item (Cantor) Bernsten-Schröder-Theorie $|A| \leq |B|$ und $|B| \leq |A| \iff A \sim B$
 \end{enumerate}
-\subsubsection{Definition 28} Sei $n \in \mathbb{N}_0 [0] := \emptyset$ und rekrusiv $[n + 1] = [n] \cup [n+1]$\\($\implies([n]:=\{k \in \mathbb{N}: 1\leq k \leq n \}$)\\Eine Menge A heisst endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)\\$card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.\\\\A heisst abzählbar (abzählbar unendlich), falls $A \sim \mathbb{N}$\\A ist höchstens abzählbar, falls A endlich ist oder abzählbar ist, ansonsten heisst sie überabzählbar.
+\subsubsection{Definition 28}
+
+Sei $n \in \mathbb{N}_0 [0] := \emptyset$ und rekursiv $[n + 1] = [n] \cup [n+1]$
+
+($\implies([n]:=\{k \in \mathbb{N}: 1\leq k \leq n \}$)
+
+\paragraph{Endlich} Eine Menge A heißt endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)
+
+$card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.
+
+ A heißt abzählbar (abzählbar unendlich), falls $A \sim \mathbb{N}$\\A ist höchstens abzählbar, falls A endlich ist oder abzählbar ist, ansonsten heißt sie überabzählbar.
 \paragraph{Bemerkung}
 \begin{enumerate}[1)]
 \item A höchstens abzählbar $\iff \exists$ Surjektion $f: \mathbb{N} \rightarrow A$
-\item Unendliche Mengen sind tricky\\$G = \{ n \in \mathbb{N}: $n ist gerade$\} = \{2*n: n \in \mathbb{N}\}$\\$f:\mathbb{N}\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\mathbb{N} \sim G$
+\item Unendliche Mengen sind schwierig
+
+$G = \{ n \in \mathbb{N}: $n ist gerade$\} = \{2*n: n \in \mathbb{N}\}$
+
+$f:\mathbb{N}\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\mathbb{N} \sim G$
 \item Hilberts Hotel
 \item $[0,1]\sim [0,1)$
 \subparagraph{Beweis} Konstruieren $f: [0,1] \rightarrow [0,1)$\\Für $x \in [0,1]\backslash (\bigcup_{n\in\mathbb{N}} \{\frac{1}{n}\}):f(x)=x$\\$n\in\mathbb{N}:f(\frac{1}{n}):=\frac{1}{n+1}$ Rechne nach f ist bijektiv!
@@ -940,37 +1041,56 @@ $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA
 \item Ist $A<B,B$ höchstens abzählbar $\implies A$ höchstens abzählbar
 \item Jede unendliche Menge besitzt eine abzählbare Teilmenge
 \item A, B abzählbar $\implies A \times B$ abzählbar\\ insbesondere $\mathbb{N} \times \mathbb{N}$ abzählbar
-\item Sei $\{A_k\}$ eine höchstens abzählbare Menge von Menge $A_3, A_2$ höchstens abzählber $\implies$ $\bigcap_k$ $A_k$ ist höchstens abzählbar
+\item Sei $\{A_k\}$ eine höchstens abzählbare Menge von Menge $A_3, A_2$ höchstens abzählbar $\implies$ $\bigcap_k$ $A_k$ ist höchstens abzählbar
 \end{enumerate}
 
 \begin{proof}
 \begin{enumerate}[1)]
-\item O.B.d.A $B = \mathbb{N}$, also $A \subset \mathbb{N}$\\$\implies A$ hat ein kleinstes Element $a_1$\\$\implies A \{a_1\}$ hat ein kleinnstes Element $a_2$\\usw...\\ist $A_n = \emptyset \implies A$ ist endlich, ansonsten $A = \{a_1, a_2, a_3, ...\}$\\Bijektion $f:\mathbb{N}\rightarrow A, n\mapsto a_n \implies A$ ist abzählbar
+\item O.B.d.A $B = \mathbb{N}$, also $A \subset \mathbb{N}$\\$\implies A$ hat ein kleinstes Element $a_1$\\$\implies A \{a_1\}$ hat ein kleinstes Element $a_2$\\usw\ldots\\ist $A_n = \emptyset \implies A$ ist endlich, ansonsten $A = \{a_1, a_2, a_3, \ldots\}$\\Bijektion $f:\mathbb{N}\rightarrow A, n\mapsto a_n \implies A$ ist abzählbar
 \item ist $A$ unendlich $\implies$ wähle $a_1 \in A$\\
 	$a_2 \in A \backslash \{a_1\} =: A_1$
 	induktiv $a_{n+1} \in A_n := A_{n+1} \backslash \{a_n\}$\\
-	$\implies \{a_1, a_2, ...\}$ abzählbar
+	$\implies \{a_1, a_2, \ldots\}$ abzählbar
+	
 \item Da $A \sim \mathbb{N}, B \sim \mathbb{N} \implies$ reicht zu zeigen $\mathbb{N} \times \mathbb{N}$ ist abzählbar, da $\mathbb{N} \times \mathbb{N}$ unendlich ist $\implies$ zu zeigen $\mathbb{N} \times \mathbb{N}$
-\item ist höchstens abzählbar\\
-	$\phi (m,n) = 2^m * 3^n$\\
-	$\phi : \mathbb{N} \times \mathbb{N} \implies \mathbb{N}$ ist injektiv\\
-	In der Tat: Sei $\phi (m,n) = \phi (p,q)$\\
-	d.h. $2^m * 3^n = 2^p * 3^q$\\
-	o.B.d.A $p \geq m$\\
-	$\implies 3^n = 2^{p-m} * 3^q$\\
-	$\implies p = m$\\
-	$\implies n = q$\\
-\item Schreiben $A_k = \{a_{kn} :\underbrace{1\leq n \leq P_k}_{endlich}, P_k \in \mathbb{N}$ oder $\underbrace{1 \leq n \in \mathbb{N}}_{unendlich}\}$\\
+\item ist höchstens abzählbar
+
+	$\phi (m,n) = 2^m * 3^n$
+	
+	$\phi : \mathbb{N} \times \mathbb{N} \implies \mathbb{N}$ ist injektiv
+	
+	In der Tat: Sei $\phi (m,n) = \phi (p,q)$
+	
+	d.h. $2^m * 3^n = 2^p * 3^q$
+	
+	o.B.d.A $p \geq m$
+	
+	$\implies 3^n = 2^{p-m} * 3^q$
+	
+	$\implies p = m$
+	
+	$\implies n = q$
+	
+\item Schreiben $A_k = \{a_{kn} :\underbrace{1\leq n \leq P_k}_{endlich}, P_k \in \mathbb{N}$ oder $\underbrace{1 \leq n \in \mathbb{N}}_{unendlich}\}$
+
 	Falls $A_k$ paarweise disjunkt sind. Dann erzeugt diese Nummerierung von $A_k$ eine Injektion.
-	$$a_{kn} \mapsto (kn) \textbf{ von } A = \bigcup_{k \in I} A_k \rightarrow \mathbb{N} \times \mathbb{N} \leftarrow \textbf{abzählbar}$$\\
-	sind $A_k, k \in I$ nicht paarweise disjunkt:\\
-	$B_1 = A_1, B_2 = A_2 \backslash A_1,$\\
-	$B_{n+1} = A_{n+1} \backslash \{A_1 \cup A_2 \cup ... \cup A_n\}$\\
-	$\implies B_k$ sind paarweise disjunkt und höchstens abzählbar\\
+	\[a_{kn} \mapsto (kn) \textbf{ von } A = \bigcup_{k \in I} A_k \rightarrow \mathbb{N} \times \mathbb{N} \leftarrow \textbf{abzählbar}\]
+	
+	sind $A_k, k \in I$ nicht paarweise disjunkt:
+	
+	$B_1 = A_1, B_2 = A_2 \backslash A_1,$
+	
+	$B_{n+1} = A_{n+1} \backslash \{A_1 \cup A_2 \cup \ldots \cup A_n\}$
+	
+	$\implies B_k$ sind paarweise disjunkt und höchstens abzählbar
+	
 	$\implies \bigcup_{k} A_k$ ist höchstens abzählbar
 \end{enumerate}
 \end{proof}
-\subsubsection{Korollar 32} $\mathbb{G}$ ist abzählbar\\
+\subsubsection{Korollar 32}
+
+$\mathbb{G}$ ist abzählbar
+
 \begin{proof}
 $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,n), m \in \mathbb{Z}, n \in \mathbb{N}\}$
 \end{proof}
@@ -979,67 +1099,480 @@ $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,
 \subsubsection{Lemma 34 (Cantor)} Sei A eine Menge $\implies$ Es existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
 
 \begin{proof}
-	Sei $f: A \rightarrow P(A)$\\
-	d.h. $\forall x \in A: 2(x) \subset A$\\
-	$B:=\{ x \in A: x \notin f(x)\} \subset A$\\
-	wäre f surjektiv\\
-	$\implies \exists x \in A, f(x) = B$\\
+	Sei $f: A \rightarrow P(A)$
+	
+	d.h. $\forall x \in A: 2(x) \subset A$
+	
+	$B:=\{ x \in A: x \notin f(x)\} \subset A$
+	
+	wäre f surjektiv
+	
+	$\implies \exists x \in A, f(x) = B$
+	
 	\begin{enumerate}[1. {Fall}:]
-		\item $x \in B = f(x) \implies x \notin f(x)$ (WIDERSPRUCH!)
-		\item $x \notin B = f(x) \implies x \in B = f(x)$ (WIDERSPRUCH!)\\
+		\item $x \in B = f(x) \implies x \notin f(x)$ $\lightning$
+		
+		\item $x \notin B = f(x) \implies x \in B = f(x)$ $\lightning$
+		
 			$\implies$ f ist nicht surjektiv!
 	\end{enumerate}
 \end{proof}
-\subsubsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \mathbb{R}$\\
+\subsubsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \mathbb{R}$
+
 $a < b \implies I$ ist überabzählbar
 
 \begin{proof}
 Skalieren $\implies$ o.B.d.A. $a = 0, b = 1$ zu $f \in \{0,1\}^\mathbb{N}$
 \end{proof}
-\paragraph{Dezimalbruchentwicklung:} $$x_f := \sum_{n = 1}^\infty f(n) * 10^{-n} \in [0,1]$$
+\paragraph{Dezimalbruchentwicklung:} \[x_f := \sum_{n = 1}^\infty f(n) * 10^{-n} \in [0,1]\]
 beachte: $f_1 + f_2 \implies xf_1 + xf_2$
 \subsection{Einfache Folgerung aus Induktion}
 \subsubsection{Satz 37 (Bernoulli)}
 $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist strikt (d.h. > gilt, falls $n \geq 2, x \neq 0$)
 
 \begin{proof}
-	IA $n = 0$ | $(1 + x)^0 = 1 + 0x$\\
-	Im Ange. gilt: $(1 + x)^k \geq 1 + k x$\\
-	$implies (1 + x)^{k + 1} = (1 + x)^k * \underbrace{(1 + x)}_{> 0} \geq (1 + kx) (1 + x)$\\
+	IA $n = 0$ | $(1 + x)^0 = 1 + 0x$
+	
+	Im Ange. gilt: $(1 + x)^k \geq 1 + k x$
+	
+	$implies (1 + x)^{k + 1} = (1 + x)^k * \underbrace{(1 + x)}_{> 0} \geq (1 + kx) (1 + x)$
+	
 	$= 1 + (k + 1)x = 1 + (k + 1)x + k x^2 \geq 1 + (k + 1)x$
 \end{proof}
-\subsubsection{Definition 38} 0! = 1\\
-	$n \in \mathbb{N}_0 | (n + 1)! := n!(n+1)$\\
-	d.h. $n! = 1 * 2 * 3 ... n)$\\
-	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binomialköffizient
-\subsubsection{Lemma 39} $$1 \leq k \leq n$$ $$\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}$$
+\subsubsection{Definition 38} 0! = 1
+
+	$n \in \mathbb{N}_0 | (n + 1)! := n!(n+1)$
+	
+	d.h. $n! = 1 * 2 * 3 \ldots n)$
+	
+	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binominialkoeffizient
+\subsubsection{Lemma 39} \[1 \leq k \leq n\] \[\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}\]
 \begin{proof}
-	$$ \binom {n}{k-1} + \binom{n}{k} = \frac{(k-1)!}{(k-1)!(n-k-1)!} + \frac{k!}{k!(n-k)!}$$
-	$$ = \frac{kn! + (n -1 -k)n!}{k!(n+1-k)!} = \binom{n+1}{k}$$
+	\[ \binom {n}{k-1} + \binom{n}{k} = \frac{(k-1)!}{(k-1)!(n-k-1)!} + \frac{k!}{k!(n-k)!}\]
+	\[ = \frac{kn! + (n -1 -k)n!}{k!(n+1-k)!} = \binom{n+1}{k}\]
 \end{proof}
-\subsubsection{Binomischer Lehrsatz} $\forall a,b \in \mathbb{R}$ oder $a,b, \in \mathbb{K}$ (Körper) $\forall n \in \mathbb{N}_0$\\
-	$$(a+b)^n = \sum_{l=0}^n \binom{n}{l} a^{n-l}b^l$$
-	$$=a^n + \binom{n}{1}a^{n-1}b^1+\binom{n}{2}a^{n-2}b^2+...+\binom{n}{n-1}ab^{n-1}+b^n$$
+\subsubsection{Binomischer Lehrsatz} $\forall a,b \in \mathbb{R}$ oder $a,b, \in \mathbb{K}$ (Körper) $\forall n \in \mathbb{N}_0$
+	\[(a+b)^n = \sum_{l=0}^n \binom{n}{l} a^{n-l}b^l\]
+	\[=a^n + \binom{n}{1}a^{n-1}b^1+\binom{n}{2}a^{n-2}b^2+\ldots+\binom{n}{n-1}ab^{n-1}+b^n\]
 	\begin{proof}
 	$a = 0$ klar, $a \neq 0$,$a+b)^n = a^n(1 + \frac{b}{a})^n$\\
-				$\implies$ zu Zeigen: $$(1 + x)^n = \sum_{l =0}^n \binom{n}{l} x^l$$
+				$\implies$ zu Zeigen: \[(1 + x)^n = \sum_{l =0}^n \binom{n}{l} x^l\]
 		\begin{enumerate}[a)]
-			\item $n = 0$\\
-				$$(1 + x)^0 = 1 = \sum_{l=0}^0 \binom{0}{l}x^l$$
-			\item Induktionsannahme für n = k gilt:\\
-				$$(1+x)^{k+1} = \sum_{l=0}^k \binom{k}{l}x^l+\underbrace{\sum_{l=0}^k\binom{k}{l}x^{l+1}}_{\sum_{l=1}^{k+1}\binom{k}{l-1}x^l}$$
-				$$\binom{k}{0} + \sum_{l=1}^k \binom{k}{l}x^l + \sum_{l=1}^k \binom{k}{l-1}x^l + x^{k+1} $$
-				$$1+\sum_{l=1}^k\underbrace{\left(\binom{k}{l}+\binom{k}{l-1}\right)}_{=\binom{k+1}{l}}x^l + x^{l+1}$$
+			\item $n = 0$
+				\[(1 + x)^0 = 1 = \sum_{l=0}^0 \binom{0}{l}x^l\]
+			\item Induktionsannahme für n = k gilt:
+				\[(1+x)^{k+1} = \sum_{l=0}^k \binom{k}{l}x^l+\underbrace{\sum_{l=0}^k\binom{k}{l}x^{l+1}}_{\sum_{l=1}^{k+1}\binom{k}{l-1}x^l}\]
+				\[\binom{k}{0} + \sum_{l=1}^k \binom{k}{l}x^l + \sum_{l=1}^k \binom{k}{l-1}x^l + x^{k+1} \]
+				\[1+\sum_{l=1}^k\underbrace{\left(\binom{k}{l}+\binom{k}{l-1}\right)}_{=\binom{k+1}{l}}x^l + x^{l+1}\]
 		\end{enumerate}
 	\end{proof}
-\section{Folgen und Konvergenz} $(a_1, a_2 ... a_n)$ $a_n$ Zahlen
-\subsection{Definition 1} Eine reelle Folge ist eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}, n \mapsto f(n) =: a_n$
+\section{Folgen und Konvergenz} $(a_1, a_2 \ldots a_n)$ $a_n$ Zahlen
+
+\subsection{Definition 1} 
+
+
+Eine (reelle) Folge ist eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}, n \mapsto f(n) =: a_n$
+
 \paragraph{Notation:} $a_n = f(n)$, $(a_n)_{n \in \mathbb{N}}$, $(a_n)_n$
-\paragraph{Bemerkung:} $(a_n)_n$ ist nicht $\{a_1, a_2, ...\}$ z.B. $a_n = 1 \implies \{a_1, a_2, ...\} = \{1\}$
-\subsection{Definition 2: Konvergenz:} Sei $(a_n)_n$ eine Folge reellen Zahlen $(a_n)_n$ kovergiert gegen $L \in \mathbb{R}$\\
-	Genau dann, wenn: $\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon$\\
-	\paragraph{Bemerkung:} $(\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon)$\\
-	$\Longleftrightarrow (\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| \leq \epsilon)$\\
-	$\Longleftrightarrow (\forall l \in \mathbb{N} \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \frac{1}{l})$\\
-	$\Longleftrightarrow (\forall l \in \mathbb{N} \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| \leq \frac{1}{l})$
+\paragraph{Bemerkung:} $(a_n)_n$ ist nicht $\{a_1, a_2, \ldots\}$ z.B. $a_n = 1 \implies \{a_1, a_2, \ldots\} = \{1\}$
+
+\subsection{Definition 2: Konvergenz:}
+
+Sei $(a_n)_n$ eine Folge reellen Zahlen $(a_n)_n$ konvergiert gegen $L \in \mathbb{R}$
+
+Genau dann, wenn: $\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon$
+
+\textbf{Schreiben} 
+\[a_n \to L, n\to \infty, \text{ oder } a_n \to L\]
+\[\lim_{n \to \infty} a_n = L, \lim a_n = L\]
+
+$(a_n)_n$ ist divergent, wenn sie nicht konvergiert.
+
+\paragraph{Alternative Definitionen} 
+
+\begin{align*}
+                      & \left(\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon \right) \\
+  \Longleftrightarrow & \left(\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| \leq \epsilon \right) \\
+  \Longleftrightarrow & \left(\forall l \in \mathbb{N} \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \frac{1}{l} \right) \\
+  \Longleftrightarrow & \left(\forall l \in \mathbb{N} \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| \leq \frac{1}{l} \right) 
+\end{align*}
+
+\begin{example}
+  \begin{enumerate}
+    \item Konstante Folge $a_n=a$
+      
+      $\forall n \quad a_n \to a$
+      
+      Sei $\epsilon \geq 0$
+      
+      setze $k_\epsilon=1 \implies |a_n-a|=|a-a|=0<\epsilon$
+      
+      $\forall n \geq 1$
+    \item $\lim_{n \to \infty} \frac{1}{x}=0$ Da $\mathbb{N} \subset \mathbb{R}$ unbeschränkt sind (Satz 1,23)
+    
+    $\implies$ Für $\epsilon > 0 \exists k_\epsilon \in \mathbb{N},$
+    $k_\epsilon > \frac{1}{\epsilon}$
+    
+    $\implies$ Für $n \geq k_\epsilon: |\frac{1}{n}-0|=\frac{1}{n}\leq \frac{1}{k_\epsilon}<\epsilon$
+    
+    \item $(a_n)_n, \quad (a_n)=(-1)^n$ divergent.
+    
+    \textbf{Angenommen:} Es konvergiert, $\implies \exists L \in \mathbb{R}$
+    
+    $\forall \epsilon > 0: \exists k_\epsilon : |a_n - L| < \epsilon  \quad \forall n \geq k_\epsilon$ 
+
+    2 Fälle: $L \geq 0$ und $L<0$.
+    
+    \textbf{Fall $L \geq 0$:} nehme $\epsilon = \frac{1}{2}$ und $k_\frac{1}{2} \in \mathbb{N}: \forall n \geq k_\frac{1}{2}:|a_n-L|<\frac{1}{2}$
+    
+    Ist $n$ ungerade und $\geq k_\frac{1}{2}$
+    
+    $\implies \frac{1}{2} > |a_n-L|=|-1-L|=1+L \geq 1 > \frac{1}{2} \lightning$
+    
+    \textbf{Fall $L < 0$:} nehmen $\epsilon = \frac{1}{2}, k_\frac{1}{2}:|a_n-L|<\frac{1}{2} \quad \forall n \geq k_\frac{1}{2}$
+    
+    Ist $n$ gerade
+    
+    $\implies \frac{1}{2} > |a_n-L|=|1-L|=1-L>1 \lightning$
+    
+    \begin{figure}[!ht]
+      \centering
+        \includegraphics[scale=0.4]{img/2/1}
+      \caption{Zeichnung zu 2.}
+    \end{figure}    
+    
+    \item $a>0 \implies \lim_{n\to \infty} a^\frac{1}{n}=1$ Siehe Übung
+    
+    \item $\lim_{n \to \infty} n^\frac{1}{n}=1$ Siehe Übung 
+    
+    \item Sei $q\in \mathbb{R}, |q|<1$
+    
+    $\implies \lim_{n \to \infty} q^n=0$
+    
+    $\implies \frac{1}{|q|}>1 \implies h:=\frac{1}{|q|}-1>0$
+    
+    Sei $\epsilon > 0$: Aus Bernoulli: 
+    
+    $|q|^{-n}=(1+h)^n \geq 1+n*h> n*h>\frac{1}{\epsilon}$
+    
+    für $n> \frac{1}{\epsilon*h}=:k_\epsilon$
+    
+    $\implies |q^n-0|=|q^n|=|q|^n < \frac{1}{n*h} < \epsilon$
+    
+    für alle $n > \frac{1}{\epsilon*h}$
+    
+    \item $\forall q \in \mathbb{R}, |q|<1,p \in \mathbb{N}$
+    
+    $\lim_{n \to \infty} n^p*q^n=0$
+    
+    \textbf{Beweis} O.B.d.A $a \neq 0$
+    
+    $h := \frac{1}{|q|}-1$
+    
+    $\implies |q|^{-n} = (1-h)^n = \sum_{k=0}^n \binom{n}{k} h^k$
+    
+    Sei $\boxed{n>2p} > \binom{n}{p+1} h^k$
+    
+    $=\frac{n!}{(p+1)!(n-p-1)!} h^{p+1}$
+    
+    $\underbrace{n*(n-1)*\ldots*(n-p)}_{p+1 \text{ Faktoren}}*\frac{h^{p+1}}{(p+1)!}$
+    
+    $>\left(\frac{n}{2}\right)^{p+1} \frac{h^{p+1}}{(p+1)!}$
+    
+    $\implies |p|^n < \left(\frac{2}{h}\right)^{p+1} \frac{(p+1)!}{h^{p+1}}$
+    
+    $\implies n^p|q|^h < \frac{2^{p+1}(p+1)!}{h^{p+1}}*\frac{1}{n}$
+    
+    Sei $\epsilon >0$ wähle $k_\epsilon \in \mathbb{N}$,
+    
+    $k_\epsilon > max\left(2p,\frac{h^{p+1}}{2^{p+1}(p+1)!}*\frac{1}{\epsilon}\right)$
+    
+    $\implies |n^p*q^n-0|=n^p|q|^n < \epsilon \quad \forall n \geq k_\epsilon$
+  \end{enumerate}
+\end{example}
+
+\textbf{Notation} Sei $n \in \mathbb{N}$, $A(n)$ Aussagen.
+
+Wir sagen $A(n)$ ist wahr für fast alle $n$, falls $\exists k \in \mathbb{N}: A(n)$ ist wahr $\forall n \geq k$
+
+(Oder: $A(n)$ ist wahr bis auf endlich viele $n$)
+
+\begin{example}
+  $\lim a_n = L \Longleftrightarrow \forall \epsilon > 0: |a_n-L|<\epsilon$ für fast alle $n$
+  
+  $\Longleftrightarrow \forall \epsilon > 0$ sind fast alle $a_n$ in einer $\epsilon$-Umgebung von $L$.
+\end{example}
+
+\subsubsection{Satz 3}
+
+\begin{enumerate}
+
+  \item Sei $(a_n)_n$ eine konvergente Folge, dann ist der Grenzwert eindeutig!
+  
+    \begin{proof}
+    
+      \textbf{Angenommen} $a_n \to L$ und $a_n \to R,L\neq R$
+      
+      \begin{figure}[!ht]
+        \centering
+          \includegraphics[scale=0.4]{img/2/2}
+        \caption{Zeichnung zum Beweis}
+      \end{figure}          
+      
+      $L<R \quad \epsilon := \frac{R-L}{2} >0$
+      
+      Dann gilt: $\exists k_1 \in \mathbb{N}:|a_n - L|< \epsilon \quad \forall n \geq k_1$
+      
+      $\exists k_2 : |a_n -R| < \epsilon \quad \forall n \geq k_2$
+      
+      $\implies n \geq max(k_1,k_2): a_n-L > \epsilon$ und $a_n-R < \epsilon$
+      
+      $\implies a_n < L+\epsilon = L+\frac{R-L}{2}=\frac{R+L}{2}$
+      
+      $=R-\epsilon < a_n \lightning$
+    \end{proof}  
+  
+  \item Sei $(a_n)_n$ eine konvergente Folge, dann ist sie beschränkt, d.h. $\exists M \in [0,\infty):|a_n|\leq M \forall n \in \mathbb{N}$
+  
+  \begin{proof}
+
+    Sei $\epsilon = 1 \implies \exists k_1 \in \mathbb{N}: |a_n -L| < 1$ und $n \geq k_1$
+    
+    $\implies |a_n| = |a_n-L+L| \leq |a_n -L|+ |L|<|L|+1$
+    
+    $\implies M:= max(|a_1|,|a_2|,\ldots,|a_{k_1}|,|L|+1)$
+    
+    $\implies |a_n| \leq M \quad \forall n \in \mathbb{N}!$
+    
+  \end{proof}
+\end{enumerate}
+
+\subsubsection{Lemma 4}
+
+Sein $(a_n)_n,(b_n)_n$ Folgen
+
+$a_n \to L, a_n-b_n \to 0$ (WORT?!? $a_n-b_n$ ist eine Nullfolge)
+
+\begin{proof}
+
+  Typisches $\frac{\epsilon}{2}$ Argument
+  
+  \begin{tabular}{rl}
+    Sei $\epsilon > 0 \implies$ existiert & $k_1(\epsilon): |a_n-L|<\frac{\epsilon}{2} \quad \forall n \geq k_1(\epsilon)$ \\
+    
+                                      und & $k_2(\epsilon): |a_n-b_n|<\frac{\epsilon}{2} \quad \forall n \geq k_2(\epsilon)$
+  \end{tabular}
+  
+  Setze: $k(\epsilon):=max(k_1(\epsilon),k_2(\epsilon))$
+  
+  $|b_n-L| = |b_n-a_n+a_n-L|$
+  
+  $\leq |b_n -a_n|+|a_n-L|$
+  
+  $<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$
+  
+  \begin{figure}[!ht]
+    \centering
+      \includegraphics[scale=0.4]{img/2/3}
+    \caption{Zeichnung zum Beweis}
+  \end{figure}
+ 
+\end{proof}
+
+\subsubsection{Satz 5: Rechenregeln für Limes}
+
+Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
+
+\begin{enumerate}
+  \item $\lim(a_n+b_n)=a+b$
+  
+    $\lim(\lambda*a_n)=\lambda*a$
+    
+    $\lim(a_n*b_n)=a*b$
+    
+    und falls $b \neq 0 \implies b_1 \neq 0$ für fast alle $n$: $\lim \frac{a_n}{b_n} = \frac{a}{b}$ 
+ 
+  \begin{proof}
+    
+    $\frac{\epsilon}{2}$ Angenommen.
+    
+    \begin{tabular}{rl}
+      Sei $\epsilon > 0$ & $\exists k_1:|a_n-a|<\frac{\epsilon}{2} \quad \forall n \geq k_1$ \\
+    
+                         & $\exists k_2:|b_n-b|<\frac{\epsilon}{2} \quad \forall n \geq k_2$
+    \end{tabular}
+
+    $\implies$ für $n\geq k := \max(k_1,k_2)$ gilt
+
+    $|(a_n+b_n)-(a+b)|=|a_n-a+b_n-b|$
+  
+    $\leq |a_n-a| + |b_n-b| < \frac{\epsilon}{2}+\frac{\epsilon}{2}= \epsilon$
+  
+    \textbf{Produkt:} $a_n*b_n-a*b=(a_n-a)b_n+a(b_n-b)$
+  
+    $=|a_n*b_n -a*b| \leq |a_n-a||b_1|+|a||b_n-b|$
+    
+    $b_n \to b \implies |b_n|$ ist beschränkt 
+    
+    d.h. $\exists 0 < M < \infty: |b_1| \leq M \quad \forall n$
+    
+    \begin{tabular}{rl}
+      \textbf{Gegeben} $\epsilon > 0$ Wähle & $k_1: |a_n-a|<\frac{\epsilon}{2M} \quad \forall n \geq k_1$ \\
+                                            & $k_2: |b_n-b|<\frac{\epsilon}{2(|a|+1)} \quad \forall n \geq k_2$
+    \end{tabular}
+
+	$\implies \forall n > \max(k_1,k_2):$
+
+
+    \begin{tabular}{rl}
+      $|a_nb_n-a*b|$ & $\leq |a_n-a||b_n|+|a||b_n-b|$ \\
+                     & $< \frac{\epsilon}{2M}M+|a|\frac{\epsilon}{2(|a|+1)} \leq \epsilon$
+    \end{tabular}
+    
+    \textbf{Quotient} $\frac{a_n}{b_n}=a_n*\frac{1}{b_n}$
+    
+    d.h. reicht zu zeigen, dass $\frac{1}{b_n} \to \frac{1}{b}$
+    
+    $b_n \neq 0$ für fast alle $n \quad b \neq 0$
+    
+    
+    $\epsilon = \frac{|b|}{2} \implies |b_n-b|<\frac{|b|}{2}$ für fast alle $n$.
+    
+    \begin{tabular}{rl}
+      $\implies |b_n| =$  & $ |b+b_n-b| \geq |b|-|b_n-b|$  \\
+                      $>$ & $ |b| - \frac{|b|}{2}=\frac{|b|}{2}>0$ für fast alle $n$
+    \end{tabular}    
+    
+    $\implies b_n \neq 0$ für fast alle $n$.
+    
+    $|\frac{1}{b_n}-\frac{1}{b}|=|\frac{b-b_n}{b*b_n}|=\frac{1}{|b||b_n|}|b-b_n| \stackrel{\text{ für fast alle } n}{\leq}\frac{2}{|b|^2}|b_n-b|$
+
+    Da $b_n \to b \implies |b_n-b| < \frac{|b|^2}{2} \epsilon$ für fast alle $n$
+    
+    $\implies |\frac{1}{b_n}-\frac{1}{b}|\leq \frac{2}{|n|^2}|b_n-b|<\epsilon$ für fast alle $n$
+
+  \end{proof} 
+  
+  \item $\lim |a_n| = |a|$
+  
+  \begin{proof}
+    Da $||a_n|-|a|| \leq |a_n-a|$ ist er einfach 
+  \end{proof}
+  
+  \item Aus $a_n \leq b_n$ für fast alle $n$ folgt $a \leq b$
+  
+  Insbesondere: $a_n \geq 0$ für fast alle $n$
+
+  $\implies a \geq 0$
+  
+  \begin{proof}
+  
+    Kontraposition $a_n\to a,b_n \to b$
+    
+    Sei $a>b$
+    
+    \begin{figure}[!ht]
+      \centering
+        \includegraphics[scale=0.4]{img/2/4}
+      \caption{Zeichnung zum Beweis}
+    \end{figure}
+    
+    Sei $\epsilon = \frac{a-b}{2}>0$
+    
+    \begin{tabular}{rl}
+      $\implies [a_n > a-\epsilon =$ & $ a- \frac{a-b}{2} = \frac{a+b}{2}$ \\
+                                $=$ & $b+\frac{a+b}{2}=b+\epsilon>b_n]$
+    \end{tabular} 
+    
+    für fast alle f*cking $n$.    
+    
+  \end{proof}
+    
+\end{enumerate}
+
+\subsubsection{Satz 6} 
+
+\begin{enumerate}
+  \item Ist $(a_n)_n$ eine Nullfolge, d.h. $a_n \to 0$ und $(c_n)_n$ beschränkt $\implies (a_n*c_n)_n$ eine Nullfolge.
+  
+  \begin{proof}
+    Es gelte $|c_n| \leq C < \infty$
+    
+    $b_n := a_nc_n \implies |b_n| \leq C|a_n|$
+    
+    d.h. 2) $\implies$ 1)    
+    
+  \end{proof}  
+  
+  \item Aus $a_n \to 0, |b_n| \leq C|a_n|$ für fast alle $n$ 
+  
+  ($C$ ist eine Konstante) $\implies b_n \to 0$
+  
+  \begin{proof}
+    Sei $\epsilon > 0$ zu $\epsilon_1 := \frac{\epsilon}{C} \exists k_{\epsilon_1} : |a_n| < \epsilon_1 \forall n \geq k_{\epsilon_1}$
+    
+    $\implies b_n \to 0$
+  \end{proof}
+  
+\end{enumerate}
+
+\subsubsection{Satz 7: Sandwich Theorem}
+
+Sei $(a_n)_n$, $(b_n)_n$ konvergente Funktionen 
+
+mit $\lim a_n  = \lim b_n = a$ 
+
+und $(c_n)_n*a_n \leq c_n \leq b_n$ für fast alle $n$
+
+$\implies (c_n)_n$ konvergiert und bei $c_n=a$
+
+\begin{proof}
+  Sei $\epsilon > 0$
+  
+  $\exists k_1: a_n \leq c_n \leq b_n \quad \forall n \geq k_1$
+ 
+  $\exists k_2: |a_n-a|<\epsilon \quad \forall n \geq k_2$
+  
+  $\exists k_3: |b_n-a|<\epsilon \quad \forall n \geq k_3$
+  
+  $\implies \forall n \geq \max(k_1,k_2,k_3)$
+
+  $a-\epsilon < a_n \leq c_n \leq b_n < a+\epsilon$
+
+  d.h. $|c_n -a| \leq \epsilon$  
+  
+\end{proof}
+
+\begin{example}
+
+  \begin{itemize}
+    \item $\forall p \mathbb{N}: \lim_{n\to \infty} (n^p)^{\frac{1}{n}}=1$
+    
+    \begin{proof}
+      \begin{itemize}
+        \item $p=1:$ Übung!
+        
+        \item $p=2: \lim(n^2)^{\frac{1}{n}} = \lim(n^{\frac{1}{n}}*n^{\frac{1}{n}})$
+        
+          $= \lim_{n \to \infty} n^{\frac{1}{n}}* \lim_{n \to \infty} n^{\frac{1}{n}}$ 
+
+	      $1*1=1$
+	    \item $p \geq 2$ Induktionsbeweis
+      \end{itemize}
+    \end{proof}
+    \item $\lim \frac{a*n+b}{c*n+a} = \frac{a}{c}$ falls $c\neq 0$
+    
+    \begin{proof}
+      $\frac{a*n+b}{c*n+a} = \frac{a+\frac{b}{n}}{c+\frac{d}{n}} \stackrel{\text{ Quotientenregel }}{\to} \frac{a}{c}$
+    \end{proof}
+        
+    $\lim_{n\to \infty} \frac{a*n+d}{c*n^2+d*n+f}\neq \stackrel{c \neq 0 }{0}$
+    
+    \begin{proof}
+      $\frac{a*n+d}{c*n^2+d*n+f}= \frac{1}{n}*\frac{a+\frac{d}{n}}{c+\frac{d}{n}+\frac{f}{n^2}} \to \stackrel{c\neq 0}{0}$
+    \end{proof}
+  \end{itemize}
+
+\end{example}
+
 \end{document}
