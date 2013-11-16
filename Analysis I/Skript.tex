@@ -746,7 +746,7 @@ $A \subset \mathbb{R}, A \neq \emptyset$
 
 $\sup(A)=\sup A := $ kleinste obere Schranke von $A$
 
-$\inf(A)=\inf A := $ kleinste obere Schranke von $A$
+$\inf(A)=\inf A := $ größte untere Schranke von $A$
 
 \subsubsection{Lemma 19}
 
@@ -1575,4 +1575,143 @@ $\implies (c_n)_n$ konvergiert und bei $c_n=a$
 
 \end{example}
 
+\subsection{Divergente Folge}
+\subsubsection{Definition 8} Eine Folge $(a_n)_{n \in \mathbb{N}}$ heißt bestimmt divergent gegen $\infty$ (bzw. $-\infty$), in Zeichen, $\lim_{n\rightarrow \infty} = \infty, a_n \rightarrow \infty$ (bzw. $\lim_{n\rightarrow\infty} a_n = - \infty , a_n \rightarrow - \infty$) falls $\forall k > 0 \exists N = N(k): a_n > k \forall n \geq N$ (bzw. $a_n < -k \forall n \geq N$)\\
+z.B. $a_n = n, a_n = n^2$
+\subsubsection{Rechenregeln} Die regeln von S4 gelten sofern die rechten Seiten Definiert sind.\\
+z.B. $a_n = n, b_n = n^2 \implies a_n + b_n \rightarrow \infty + \infty = \infty$, also $a_n - b_n \rightarrow \infty - \infty$ nicht definiert\\
+$n - n^2 = (\frac{1}{n} - 1) n^2 \leq -\frac{1}{2}n^2, n\geq 2 \rightarrow \infty$\\
+insb gilt:
+\begin{enumerate}[1)]
+\item $a_n \rightarrow \infty \implies \lambda a_n \rightarrow \infty$ für $\lambda > 0, \lambda a_n \rightarrow - \infty, \lambda < 0$
+\item $a_n \rightarrow \infty \rightarrow \frac{1}{a_n} \rightarrow 0$ und falls $a_n > 0$ für fast alle n, dann gilt auch Umkehrung
+\item $a_n \rightarrow \infty, b_n \rightarrow b \in \mathbb{R} \implies a_n + b_n \rightarrow \infty$
+\item $a_n \rightarrow \infty, b_n \rightarrow b > 0$ (oder $b_n \rightarrow \infty$) $\implies a_n * b_n \rightarrow \infty$
+\end{enumerate}
+\begin{proof}
+\begin{itemize}
+\item 1) - 3): Scharf hinschauen
+\item 4) $b_n \rightarrow b > 0 \implies b_n \geq \frac{1}{2} b$ für fast alle n, $\implies a_n * b_n > \frac{1}{2}b*a_n$ für fast alle n.\\zu $k > 0$, wähle $N(k): a_n > \frac{2}{b}k \forall n\geq N(k)$\\$\implies a_n * b_n > \frac{b}{2} * \frac{2}{b} k = k$ für fast alle n
+\end{itemize}
+\end{proof}
+\subsection{Monotone Folgen}
+\subsubsection{Definition 9} Eine Folge $(a_n)_n$ reeller Zahlen heißt
+\begin{enumerate}[1)]
+\item wachsend, falls $a_n \leq a_{n+1} \forall n \in \mathbb{N}$
+\item fallend, falls $a_n \geq a_{n+1} \forall n \in \mathbb{N}$
+\item monoton, falls sie wachsend oder fallend ist.
+\end{enumerate}
+\subsubsection{Satz 10 (Monotone Konvergenz)} Jede beschränkte monotone Folge ist konvergen! Insb:
+\begin{enumerate}[1)]
+\item $(a_n)_n$ wachsend (beschränkt) $\implies \lim_{n\rightarrow\infty} a_n = \sup_{n\in\mathbb{N}}a_n$
+\item $(a_n)_n$ fallend (beschränkt) $\implies \lim_{n\rightarrow \infty} a_n = \inf_{n\in\mathbb{N}}a_n$
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}[1)]
+\item Sei $a:=\sup a_n = \sup \{a_n: n\in\mathbb{N}\}\in\mathbb{R}$ wegen Vollständigkeitsaxiom\\
+Sei $a>0$. Nach Definition von Supremum $\exists k_\epsilon \in \mathbb{N}$\\
+$\alpha - \epsilon < a_{k_\epsilon} \leq a_{\k-{\epsilon + 1}} \leq ... \leq a_n \leq \alpha \forall n \leq k_\epsilon$
+\item Wende 1) auf $b_n = -a_n a_n$
+\end{enumerate}
+\end{proof}
+\subsubsection{Korollar 11} Sei $(b_n)_n$ Folge mit $\frac{|b{n+1}|}{|b_n|} \rightarrow x$ für $o \leq x < 1 \implies \lim b_n = 0$\\insb. $\lim q^n = 0, |q|<1$
+
+\begin{proof}
+Z.z. $|b_n| \rightarrow 0$ d.h. O.B.d.A. $b_n > 0$. Da $\frac{b_{n+1}}{b_n} \rightarrow x$ für $0 \leq x < 1$\\
+Wähle $s = 1 -x > 0 \implies \exists N$\\
+$\frac{b_{n+1}}{b_n} < x + \epsilon = 1 \forall n \geq N$\\
+$\implies b_{n+1} < b_n \forall n \geq N$\\
+$\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen $L = 0$\\
+\paragraph{Angenommen:} $L>0$\\$\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
+\end{proof}
+\subsubsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
+
+\begin{proof}
+Per Induktion zeigt man $x_n > 0 \forall n$
+\end{proof}
+\begin{enumerate}[\text{Fakt }1:]
+\item $x_n \geq \sqrt{a} \forall n > 1,$ da $x_{n+1}^2 -a = \frac{1}{4}(x_n - \frac{a}{x_n})^2 - a$\\
+$= \frac{1}{4}(x_n^2 - 2a + \frac{a^2}{x_n^2}  4a)$\\
+$= \frac{1}{4}(x_n-\frac{a}{x_n})^2 \geq 0$
+\item Für $n \geq 1$ ist $(x_n)_n$ fallend, \\da $x_n - x_{n+1} = x_n - \frac{1}{2} (x_n + \frac{a}{x_n}) = \frac{1}{2}(x_n - \frac{a}{x_n})$\\
+$=\underbrace{\frac{1}{2x_n}}_{\geq 0} \underbrace{(x_n^2 -a}_{\geq 0} \geq 0$ wegen Fakt 1) \\
+$\implies \lim_{n \rightarrow \infty} x_n = x$ existiert $\geq \sqrt{a}$\\
+$\implies x = \lim x_{n+1} = \frac{1}{2} \lim (x_n + \frac{a}{x_n} = \frac{1}{2} (x + \frac{a}{x})$\\
+$\implies x^2 = a$, da $x > 0 \implies x = \sqrt{a}$
+
+\begin{proof}
+
+$f_n := x_n - \sqrt{a} \implies f_{n+1} = x_{n+1} - \sqrt{a} = \frac{1}{2}(x_n + \frac{a}{x_n}) - \sqrt{a}$\\
+$= \frac{1}{2x_n}(x_n^2 -a) - \sqrt{a} = \frac{1}{2x_n}(x_n - \sqrt{a})^2 = \frac{f_n^2}{2x_n} \leq \frac{1}{2\sqrt{a}} f_n^2$, $n\geq 1$\\
+quadratische Konvergenz
+\end{proof}
+\end{enumerate}
+
+\subsubsection{Korollar 13}
+$e := \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n$ existiert und $2 + \frac{1}{3} < e \leq \frac{6^7}{2n} < 2,78167$
+
+\begin{proof}
+$$a_n = (1 + \frac{1}{n})^n \implies a_n\text{ ist wachsend da } n\geq 2$$
+$$\frac{a_n}{a_{n-1}} = \frac{(1+\frac{1}{2})^n}{(1+\frac{1}{n-1})^{n-1}} = \frac{(\frac{n+1}{n})^n}{(\frac{n}{n-1})^{n-1}}$$
+$$= \frac{n}{n-1} * (\frac{(n+1)(n-1)}{n^2})^n = \frac{n}{n-1} (\frac{n^2 - 1}{n^2})^n$$
+$$= \frac{n}{n-1} (1-\frac{1}{n^2})^n \underbrace{>}_{\text{Bernoulli}} \frac{n}{n-1} (1 - n * \frac{1}{n^2}) = 1$$
+Monotone Konvergenz $\implies a_n$ konvergiert, wenn es nach oben beschränkt ist.
+$$a_n = (1 - \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}$$
+$$= \sum_{k =0}^n \frac{1}{k!} \prod_{l=0}^k \frac{n-l}{n} \leq \sum_{k=0}^n \frac{1}{k!}$$
+Induktion $=: k! \geq 2^k$ für $k\geq 4$\\
+$$\implies n \geq k: a_n \leq |1| + \frac{1}{2} +  \frac{1}{2k} + \sum_{k = 4}^n (\frac{1}{2})^k$$
+$$= \frac{16}{6} + \frac{1}{24} \sum_{l = 0}^{n-4} (\frac{1}{2})^l = \frac{16}{6} + \frac{1}{2^4} \underbrace{(\frac{1-(\frac{1}{2})^{n-k}}{1-\frac{1}{2}})}_{\leq 2}$$
+$$\leq \frac{16}{6} + \frac{1}{8} = \frac{67}{24} \implies e \leq \frac{67}{24}$$
+$$e \geq a_n \forall n, n = 3$$
+$$=(1 + \frac{1}{2})^k, e \geq a_3 = 2 + \frac{10}{27} > 2 + \frac{1}{3}$$
+\end{proof}
+\subsection{Teilfolgen und Häufungswerte}
+\subsubsection{Definition 14: (Teilfolgen, Umordnung)} $(a_n)_n$ Folge $a = (a_n)_{n+1}: \mathbb{N} \rightarrow \mathbb{R}$\\
+$\phi : \mathbb{N} \rightarrow \mathbb{N}$ bijektiv\\
+$\implies b:= a = \phi$, d.h. $b = (b_l)_{l\in\mathbb{N}}$, $b_l := a_{\phi (l)}$\\
+Umordnung von $(a_n)_n$\\
+Wir nenn $\sigma : \mathbb{N} \rightarrow \mathbb{N}$ eine Verdünnung falls $\sigma$ strikt monoton steigend ist, d.h. $\sigma (n) < \sigma (n+1) \forall n$. Dann ist $(b_l)_l$ definiert durch $b_l := a_{\sigma (l)}$ eine Teilmenge von $(an)_n$
+\paragraph{Bemerkung:}
+\begin{enumerate}[1)]
+\item Für jede Verdünnung $\sigma$ gilt $\sigma (n) \geq n \forall n \in \mathbb{N}$ (Warum?)
+\item $(a_n)_n := (\frac{1}{n})_n$, $(\frac{1}{2l})_l$, $(\frac{1}{l^2})_l$ sind Teilfolgen von $(a_n)_n$\\
+$\sigma(n) = 2n$, $b_{\sigma(l)} = a_{2l} = \frac{1}{2l}$\\
+$\sigma(n) = n^2$, $b_n = a_{\sigma(n)} = a_n^2 = \frac{1}{n^2}$\\
+$(\frac{1}{2}, 1, \frac{1}{4}, \frac{1}{3}, \ldots$ ist eine Umordnung von $(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots)$
+\end{enumerate}
+\subsubsection{Lemma 15} Jede Umordnung und jede Teilmenge einer konvergierten Folge konvergiert auf dem selben Grenzwert. Und dasselbe gilt, wenn mman aus endlichviele Werte vpn $a_n$ abändert.
+
+\begin{proof}
+Für Umordnung nachrechnen.\\
+Sei $b_n = a_{\sigma(n)}$ Teilfolgen von $(a_n)_n$\\
+$a_n \rightarrow L: \forall \epsilon > 0 \exists k_\epsilon: |a_n - L| < \epsilon \forall n \geq k_\epsilon$\\
+Da $\sigma(n) \geq n \forall n \in \mathbb{N}$ gilt auch $\forall n \geq k_\epsilon$\\
+$|b_n - L| = |a_{\sigma(n)} - L| < \epsilon$
+\end{proof}
+\subsubsection{Definition 16 Häufungswert}
+Sei $(a_n)_n$ eine Folge, $a\in\mathbb{R}$ ist ein Häufungswert von $(a_n)_n$, falls $\forall \epsilon > 0$ gibt unendlich viele $n\in\mathbb{N}$ mit $|a_n - a| < \epsilon$
+\paragraph{Beispiel} $a_n = \frac{1}{2}$ hat HW 0\\
+$a_n = (-1)^n$ hat HW 1 und -1\\
+$a_n = (-1)^n + \frac{1}{n}$ hat HW 1 und -1\\
+$H((a_n)_n) = $ Menge der HW von $(a_n)_n = \{ a\in\mathbb{R}$, $a$ ist HW von $(a_n)_n\}$
+\paragraph{Bemerkung}
+\begin{enumerate}[1)]
+\item Für eine beschränkte Folge $(a_n)_n$ gilt: $$a_n \rightarrow a \Leftrightarrow H((a_n)_n) = \{a\}$$
+\item $(n)_{n\in\mathbb{N}}$ hat keine HW!
+\end{enumerate}
+\subsubsection{Satz 17 (Bolzano - Weierstraß für Folgen)} Jede beschränkte Folge hat mindestens einen HW
+\begin{proof}
+Sei $(a_n)_n$ beschränkt, z.B. $c \leq a_n \leq d \forall n$\\
+$G := \{ x\in\mathbb{R}: a > x$ für höchstens endlich vielen$\}$\\
+$=\{x\in\mathbb{R}: a_n \leq x$ für fast alle n$\}$
+\begin{enumerate}[\text{Fakt }1)]
+\item $G \neq \emptyset$, da $d \in G$
+\item $G$ ist nach unten beschränkt, denn $x \notin G$, falls $x < c \implies \alpha := \inf G \in \mathbb{R}$\\
+\paragraph{Behauptung} $a < H((a_n)_n)$\\
+Dann sei $\epsilon > 0 \implies$ nach Definition von Infimum $\alpha + \epsilon \in G$ und $\alpha - \epsilon \notin G \implies$ all $a_n < \alpha + \epsilon$ udn unendlich viele $a-n > \alpha - \epsilon$\\
+$\implies$ es gibt unendlich viele $n: |a_n - \alpha| < \epsilon \implies e \text{ ist HW}$
+\end{enumerate}
+\end{proof}
+\subsubsection{Lemma 18} $(a_n)_n Folge$\\
+$a \in H((a_n)_n) \Leftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen a konvergiert.
 \end{document}
