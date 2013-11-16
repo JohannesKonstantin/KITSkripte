@@ -1659,7 +1659,7 @@ Monotone Konvergenz $\implies a_n$ konvergiert, wenn es nach oben beschränkt is
 $$a_n = (1 + \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}$$
 $$= \sum_{k =0}^n \frac{1}{k!} \prod_{l=0}^k \frac{n-l}{n} \leq \sum_{k=0}^n \frac{1}{k!}$$
 Induktion $=: k! \geq 2^k$ für $k\geq 4$\\
-$$\implies n \geq k: a_n \leq |1| + \frac{1}{2} +  \frac{1}{2k} + \sum_{k = 4}^n (\frac{1}{2})^k$$
+$$\implies n \geq k: a_n \leq 1 + 1 + \frac{1}{2} +  \frac{1}{2 * 3} + \sum_{k = 4}^n (\frac{1}{2})^k$$
 $$= \frac{16}{6} + \frac{1}{24} \sum_{l = 0}^{n-4} (\frac{1}{2})^l = \frac{16}{6} + \frac{1}{2^4} \underbrace{(\frac{1-(\frac{1}{2})^{n-k}}{1-\frac{1}{2}})}_{\leq 2}$$
 $$\leq \frac{16}{6} + \frac{1}{8} = \frac{67}{24} \implies e \leq \frac{67}{24}$$
 $$e \geq a_n \forall n, n = 3$$
