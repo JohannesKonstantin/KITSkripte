@@ -1656,7 +1656,7 @@ $$\frac{a_n}{a_{n-1}} = \frac{(1+\frac{1}{n})^n}{(1+\frac{1}{n-1})^{n-1}} = \fra
 $$= \frac{n}{n-1} * (\frac{(n+1)(n-1)}{n^2})^n = \frac{n}{n-1} (\frac{n^2 - 1}{n^2})^n$$
 $$= \frac{n}{n-1} (1-\frac{1}{n^2})^n \underbrace{>}_{\text{Bernoulli}} \frac{n}{n-1} (1 - n * \frac{1}{n^2}) = 1$$
 Monotone Konvergenz $\implies a_n$ konvergiert, wenn es nach oben beschränkt ist.
-$$a_n = (1 - \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}$$
+$$a_n = (1 + \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}$$
 $$= \sum_{k =0}^n \frac{1}{k!} \prod_{l=0}^k \frac{n-l}{n} \leq \sum_{k=0}^n \frac{1}{k!}$$
 Induktion $=: k! \geq 2^k$ für $k\geq 4$\\
 $$\implies n \geq k: a_n \leq |1| + \frac{1}{2} +  \frac{1}{2k} + \sum_{k = 4}^n (\frac{1}{2})^k$$
