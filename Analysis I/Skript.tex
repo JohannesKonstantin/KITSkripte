@@ -1666,38 +1666,42 @@ $$e \geq a_n \forall n, n = 3$$
 $$=(1 + \frac{1}{2})^k, e \geq a_3 = 2 + \frac{10}{27} > 2 + \frac{1}{3}$$
 \end{proof}
 \subsection{Teilfolgen und Häufungswerte}
-\subsubsection{Definition 14: (Teilfolgen, Umordnung)} $(a_n)_n$ Folge $a = (a_n)_{n+1}: \mathbb{N} \rightarrow \mathbb{R}$\\
+\subsubsection{Definition 14: (Teilfolgen, Umordnung)} $(a_n)_n$ Folge $a = (a_n)_{n}: \mathbb{N} \rightarrow \mathbb{R}$\\
 $\phi : \mathbb{N} \rightarrow \mathbb{N}$ bijektiv\\
-$\implies b:= a = \phi$, d.h. $b = (b_l)_{l\in\mathbb{N}}$, $b_l := a_{\phi (l)}$\\
-Umordnung von $(a_n)_n$\\
-Wir nenn $\sigma : \mathbb{N} \rightarrow \mathbb{N}$ eine Verdünnung falls $\sigma$ strikt monoton steigend ist, d.h. $\sigma (n) < \sigma (n+1) \forall n$. Dann ist $(b_l)_l$ definiert durch $b_l := a_{\sigma (l)}$ eine Teilmenge von $(an)_n$
+$\implies b:= a \circ \phi$, d.h. $b = (b_l)_{l\in\mathbb{N}}$, $b_l := a_{\phi (l)}$\\
+b : Umordnung von $(a_n)_n$\\
+Wir nennen $\sigma : \mathbb{N} \rightarrow \mathbb{N}$ eine Verdünnung falls $\sigma$ strikt monoton steigend ist, d.h. $\sigma (n) < \sigma (n+1) \forall n$. Dann ist $(b_l)_l$ definiert durch $b_l := a_{\sigma (l)}$ eine Teilfolge von $(an)_n$
 \paragraph{Bemerkung:}
 \begin{enumerate}[1)]
 \item Für jede Verdünnung $\sigma$ gilt $\sigma (n) \geq n \forall n \in \mathbb{N}$ (Warum?)
-\item $(a_n)_n := (\frac{1}{n})_n$, $(\frac{1}{2l})_l$, $(\frac{1}{l^2})_l$ sind Teilfolgen von $(a_n)_n$\\
+\item $(a_n)_n := (\frac{1}{n})_n$, $(\frac{1}{2n})_n$, $(\frac{1}{n^2})_n$ sind Teilfolgen von $(a_n)_n$\\
 $\sigma(n) = 2n$, $b_{\sigma(l)} = a_{2l} = \frac{1}{2l}$\\
 $\sigma(n) = n^2$, $b_n = a_{\sigma(n)} = a_n^2 = \frac{1}{n^2}$\\
 $(\frac{1}{2}, 1, \frac{1}{4}, \frac{1}{3}, \ldots$ ist eine Umordnung von $(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots)$
 \end{enumerate}
-\subsubsection{Lemma 15} Jede Umordnung und jede Teilmenge einer konvergierten Folge konvergiert auf dem selben Grenzwert. Und dasselbe gilt, wenn mman aus endlichviele Werte vpn $a_n$ abändert.
+\subsubsection{Lemma 15} Jede Umordnung und jede Teilmenge einer konvergenten Folge konvergiert mit demselben Grenzwert! Und dasselbe gilt, wenn man endlich viele Werte von $a_n$ abändert.
 
 \begin{proof}
 Für Umordnung nachrechnen.\\
-Sei $b_n = a_{\sigma(n)}$ Teilfolgen von $(a_n)_n$\\
-$a_n \rightarrow L: \forall \epsilon > 0 \exists k_\epsilon: |a_n - L| < \epsilon \forall n \geq k_\epsilon$\\
-Da $\sigma(n) \geq n \forall n \in \mathbb{N}$ gilt auch $\forall n \geq k_\epsilon$\\
+Sei $b_n = a_{\sigma(n)}$ Teilfolge von $(a_n)_n$\\
+$a_n \rightarrow L : \forall \epsilon > 0 : \exists k_\epsilon: |a_n - L| < \epsilon : \forall n \geq k_\epsilon$\\
+Da $\sigma(n) \geq n \forall n \in \mathbb{N}$ gilt auch $\forall n \geq k_\epsilon \implies \sigma(n) \geq k_\epsilon $  \\
 $|b_n - L| = |a_{\sigma(n)} - L| < \epsilon$
 \end{proof}
 \subsubsection{Definition 16 Häufungswert}
 Sei $(a_n)_n$ eine Folge, $a\in\mathbb{R}$ ist ein Häufungswert von $(a_n)_n$, falls $\forall \epsilon > 0$ gibt unendlich viele $n\in\mathbb{N}$ mit $|a_n - a| < \epsilon$
-\paragraph{Beispiel} $a_n = \frac{1}{2}$ hat HW 0\\
-$a_n = (-1)^n$ hat HW 1 und -1\\
-$a_n = (-1)^n + \frac{1}{n}$ hat HW 1 und -1\\
+\paragraph{Beispiel} 
+\begin{enumerate}
+\item $a_n = \frac{1}{n}$ hat Häufungswert 0\\
+\item $a_n = (-1)^n$ hat Häufungswert 1 und -1\\
+\item $a_n = (-1)^n + \frac{1}{n}$ hat HW 1 und -1\\
+\end{enumerate}
+
 $H((a_n)_n) = $ Menge der HW von $(a_n)_n = \{ a\in\mathbb{R}$, $a$ ist HW von $(a_n)_n\}$
 \paragraph{Bemerkung}
 \begin{enumerate}[1)]
 \item Für eine beschränkte Folge $(a_n)_n$ gilt: $$a_n \rightarrow a \Leftrightarrow H((a_n)_n) = \{a\}$$
-\item $(n)_{n\in\mathbb{N}}$ hat keine HW!
+\item $(n)_{n\in\mathbb{N}}$ hat keinen Häufungswert!
 \end{enumerate}
 \subsubsection{Satz 17 (Bolzano - Weierstraß für Folgen)} Jede beschränkte Folge hat mindestens einen HW
 \begin{proof}
@@ -1707,9 +1711,11 @@ $=\{x\in\mathbb{R}: a_n \leq x$ für fast alle n$\}$
 \begin{enumerate}[\text{Fakt }1)]
 \item $G \neq \emptyset$, da $d \in G$
 \item $G$ ist nach unten beschränkt, denn $x \notin G$, falls $x < c \implies \alpha := \inf G \in \mathbb{R}$\\
-\paragraph{Behauptung} $a < H((a_n)_n)$\\
-Dann sei $\epsilon > 0 \implies$ nach Definition von Infimum $\alpha + \epsilon \in G$ und $\alpha - \epsilon \notin G \implies$ all $a_n < \alpha + \epsilon$ udn unendlich viele $a-n > \alpha - \epsilon$\\
-$\implies$ es gibt unendlich viele $n: |a_n - \alpha| < \epsilon \implies e \text{ ist HW}$
+\paragraph{Behauptung} $\alpha \in H((a_n)_n)$\\
+Dann sei $\epsilon > 0 \implies$ nach Definition von Infimum \\
+$\alpha + \epsilon \in G$ und $\alpha - \epsilon \notin G$ \\
+$\implies$ fast alle $a_n < \alpha + \epsilon$ und unendlich viele $a_n > \alpha - \epsilon$\\
+$\implies$ Es gibt unendlich viele $n: |a_n - \alpha| < \epsilon \implies \alpha \text{ ist Häufungswert}$
 \end{enumerate}
 \end{proof}
 \subsubsection{Lemma 18} $(a_n)_n Folge$\\
