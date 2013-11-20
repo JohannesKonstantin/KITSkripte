@@ -53,6 +53,8 @@
 
 \newcommand{\qq}[1]{\glqq #1\grqq}
 
+\newcommand{\mqq}[1]{\text{\glqq} #1\text{\grqq}}
+
 \newcommand{\q}[1]{\glq #1\grq}
 
 \newcommand{\definition}[1]{\glq #1\grq}
@@ -1608,21 +1610,30 @@ insb gilt:
 \end{enumerate}
 \begin{proof}
 \begin{enumerate}[1)]
-\item Sei $a:=\sup a_n = \sup \{a_n: n\in\mathbb{N}\}\in\mathbb{R}$ wegen Vollständigkeitsaxiom\\
-Sei $a>0$. Nach Definition von Supremum $\exists k_\epsilon \in \mathbb{N}$\\
-$\alpha - \epsilon < a_{k_\epsilon} \leq a_{\k-{\epsilon + 1}} \leq ... \leq a_n \leq \alpha \forall n \leq k_\epsilon$
+\item Sei $a:=\sup a_n = \sup \{a_n: n\in\mathbb{N}\}\in\mathbb{R}$ wegen Vollständigkeitsaxiom
+
+Sei $a>0$. Nach Definition von Supremum $\exists k_\epsilon \in \mathbb{N}$
+
+$\alpha - \epsilon < a_{k_\epsilon} \leq a_{k-{\epsilon + 1}} \leq ... \leq a_n \leq \alpha \forall n \leq k_\epsilon$
 \item Wende 1) auf $b_n = -a_n a_n$
 \end{enumerate}
 \end{proof}
 \subsubsection{Korollar 11} Sei $(b_n)_n$ Folge mit $\frac{|b{n+1}|}{|b_n|} \rightarrow x$ für $o \leq x < 1 \implies \lim b_n = 0$\\insb. $\lim q^n = 0, |q|<1$
 
 \begin{proof}
-Z.z. $|b_n| \rightarrow 0$ d.h. O.B.d.A. $b_n > 0$. Da $\frac{b_{n+1}}{b_n} \rightarrow x$ für $0 \leq x < 1$\\
-Wähle $s = 1 -x > 0 \implies \exists N$\\
-$\frac{b_{n+1}}{b_n} < x + \epsilon = 1 \forall n \geq N$\\
-$\implies b_{n+1} < b_n \forall n \geq N$\\
-$\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen $L = 0$\\
-\paragraph{Angenommen:} $L>0$\\$\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
+Z.z. $|b_n| \rightarrow 0$ d.h. O.B.d.A. $b_n > 0$. Da $\frac{b_{n+1}}{b_n} \rightarrow x$ für $0 \leq x < 1$
+
+Wähle $s = 1 -x > 0 \implies \exists N$
+
+$\frac{b_{n+1}}{b_n} < x + \epsilon = 1 \forall n \geq N$
+
+$\implies b_{n+1} < b_n \forall n \geq N$
+
+$\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen $L = 0$
+
+\paragraph{Angenommen:} $L>0$
+
+$\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
 \end{proof}
 \subsubsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
 
@@ -1651,19 +1662,19 @@ quadratische Konvergenz
 $e := \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n$ existiert und $2 + \frac{1}{3} < e \leq \frac{6^7}{2n} < 2,78167$
 
 \begin{proof}
-$$a_n = (1 + \frac{1}{n})^n \implies a_n\text{ ist wachsend da } n\geq 2$$
-$$\frac{a_n}{a_{n-1}} = \frac{(1+\frac{1}{n})^n}{(1+\frac{1}{n-1})^{n-1}} = \frac{(\frac{n+1}{n})^n}{(\frac{n}{n-1})^{n-1}}$$
-$$= \frac{n}{n-1} * (\frac{(n+1)(n-1)}{n^2})^n = \frac{n}{n-1} (\frac{n^2 - 1}{n^2})^n$$
-$$= \frac{n}{n-1} (1-\frac{1}{n^2})^n \underbrace{>}_{\text{Bernoulli}} \frac{n}{n-1} (1 - n * \frac{1}{n^2}) = 1$$
+\[a_n = (1 + \frac{1}{n})^n \implies a_n\text{ ist wachsend da } n\geq 2\]
+\[\frac{a_n}{a_{n-1}} = \frac{(1+\frac{1}{n})^n}{(1+\frac{1}{n-1})^{n-1}} = \frac{(\frac{n+1}{n})^n}{(\frac{n}{n-1})^{n-1}}\]
+\[= \frac{n}{n-1} * (\frac{(n+1)(n-1)}{n^2})^n = \frac{n}{n-1} (\frac{n^2 - 1}{n^2})^n\]
+\[= \frac{n}{n-1} (1-\frac{1}{n^2})^n \underbrace{>}_{\text{Bernoulli}} \frac{n}{n-1} (1 - n * \frac{1}{n^2}) = 1\]
 Monotone Konvergenz $\implies a_n$ konvergiert, wenn es nach oben beschränkt ist.
-$$a_n = (1 + \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}$$
-$$= \sum_{k =0}^n \frac{1}{k!} \prod_{l=0}^k \frac{n-l}{n} \leq \sum_{k=0}^n \frac{1}{k!}$$
-Induktion $=: k! \geq 2^k$ für $k\geq 4$\\
-$$\implies n \geq k: a_n \leq 1 + 1 + \frac{1}{2} +  \frac{1}{2 * 3} + \sum_{k = 4}^n (\frac{1}{2})^k$$
-$$= \frac{16}{6} + \frac{1}{2^4} \sum_{l = 0}^{n-4} (\frac{1}{2})^l = \frac{16}{6} + \frac{1}{2^4} \underbrace{(\frac{1-(\frac{1}{2})^{n-3}}{1-\frac{1}{2}})}_{\leq 2} \text{(geometrische Summe)}$$
-$$\leq \frac{16}{6} + \frac{1}{8} = \frac{67}{24} \implies e \leq \frac{67}{24}$$
-$$e \geq a_n \forall n, n = 3$$
-$$=(1 + \frac{1}{2})^k, e \geq a_3 = 2 + \frac{10}{27} > 2 + \frac{1}{3}$$
+\[a_n = (1 + \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}\]
+\[= \sum_{k =0}^n \frac{1}{k!} \prod_{l=0}^k \frac{n-l}{n} \leq \sum_{k=0}^n \frac{1}{k!}\]
+Induktion $=: k! \geq 2^k$ für $k\geq 4$
+\[\implies n \geq k: a_n \leq 1 + 1 + \frac{1}{2} +  \frac{1}{2 * 3} + \sum_{k = 4}^n (\frac{1}{2})^k\]
+\[= \frac{16}{6} + \frac{1}{2^4} \sum_{l = 0}^{n-4} (\frac{1}{2})^l = \frac{16}{6} + \frac{1}{2^4} \underbrace{(\frac{1-(\frac{1}{2})^{n-3}}{1-\frac{1}{2}})}_{\leq 2} \text{(geometrische Summe)}\]
+\[\leq \frac{16}{6} + \frac{1}{8} = \frac{67}{24} \implies e \leq \frac{67}{24}\]
+\[e \geq a_n \forall n, n = 3\]
+\[=(1 + \frac{1}{2})^k, e \geq a_3 = 2 + \frac{10}{27} > 2 + \frac{1}{3}\]
 \end{proof}
 \subsection{Teilfolgen und Häufungswerte}
 \subsubsection{Definition 14: (Teilfolgen, Umordnung)} $(a_n)_n$ Folge $a = (a_n)_{n}: \mathbb{N} \rightarrow \mathbb{R}$\\
@@ -1692,9 +1703,12 @@ $|b_n - L| = |a_{\sigma(n)} - L| < \epsilon$
 Sei $(a_n)_n$ eine Folge, $a\in\mathbb{R}$ ist ein Häufungswert von $(a_n)_n$, falls $\forall \epsilon > 0$ gibt unendlich viele $n\in\mathbb{N}$ mit $|a_n - a| < \epsilon$
 \paragraph{Beispiel} 
 \begin{enumerate}
-\item $a_n = \frac{1}{n}$ hat Häufungswert 0\\
-\item $a_n = (-1)^n$ hat Häufungswert 1 und -1\\
-\item $a_n = (-1)^n + \frac{1}{n}$ hat HW 1 und -1\\
+\item $a_n = \frac{1}{n}$ hat Häufungswert 0
+
+\item $a_n = (-1)^n$ hat Häufungswert 1 und -1
+
+\item $a_n = (-1)^n + \frac{1}{n}$ hat HW 1 und -1
+
 \end{enumerate}
 
 $H((a_n)_n) = $ Menge der HW von $(a_n)_n = \{ a\in\mathbb{R}$, $a$ ist HW von $(a_n)_n\}$
@@ -1704,13 +1718,15 @@ $H((a_n)_n) = $ Menge der HW von $(a_n)_n = \{ a\in\mathbb{R}$, $a$ ist HW von $
 \item $(n)_{n\in\mathbb{N}}$ hat keinen Häufungswert!
 \end{enumerate}
 \subsubsection{Satz 17 (Bolzano - Weierstraß für Folgen)} Jede beschränkte Folge hat mindestens einen HW
+
 \begin{proof}
 Sei $(a_n)_n$ beschränkt, z.B. $c \leq a_n \leq d \forall n$\\
 $G := \{ x\in\mathbb{R}: a > x$ für höchstens endlich vielen$\}$\\
 $=\{x\in\mathbb{R}: a_n \leq x$ für fast alle n$\}$
 \begin{enumerate}[\text{Fakt }1)]
 \item $G \neq \emptyset$, da $d \in G$
-\item $G$ ist nach unten beschränkt, denn $x \notin G$, falls $x < c \implies \alpha := \inf G \in \mathbb{R}$\\
+\item $G$ ist nach unten beschränkt, denn $x \notin G$, falls $x < c \implies \alpha := \inf G \in \mathbb{R}$
+
 \paragraph{Behauptung} $\alpha \in H((a_n)_n)$\\
 Dann sei $\epsilon > 0 \implies$ nach Definition von Infimum \\
 $\alpha + \epsilon \in G$ und $\alpha - \epsilon \notin G$ \\
@@ -1718,6 +1734,261 @@ $\implies$ fast alle $a_n < \alpha + \epsilon$ und unendlich viele $a_n > \alpha
 $\implies$ Es gibt unendlich viele $n: |a_n - \alpha| < \epsilon \implies \alpha \text{ ist Häufungswert}$
 \end{enumerate}
 \end{proof}
-\subsubsection{Lemma 18} $(a_n)_n Folge$\\
-$a \in H((a_n)_n) \Leftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen a konvergiert.
+
+\subsubsection{Lemma 18} 
+(\textbf{Erinnerung:} $h$ Häufungswert von $(a_n)_n$ falls $\forall \epsilon > 0 $. $a_n \in B_\epsilon (h):= (h-\epsilon, h+\epsilon)$ für unendlich viele $n \in \mathbb{N}$)
+
+Sei $(a_n)_n $ Folge
+
+$h \in H((a_n)_n) \Longleftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen $h$ konvergiert.
+
+\begin{proof}
+  \[\mqq{\Longleftarrow}: \text{ ist } (a_{n_j})_j, n_j < n_{j+1} \quad \forall j\]
+  \[\text{Teilfolgen } (a_n)_n \text{ mit } \]
+  \[ \lim_{j \to \infty} a_{h_j} = h\]
+  \[\text{dann sind für } \epsilon > 0 \text{ fast alle } a_{n_j} \in B_\epsilon(h)\]
+  \[\implies \exists \text{ unendlich viele } n: a_n \in B_\epsilon(h)\]
+  \[\implies h \text{ ist Häufungswert } \surd \]
+  \[\mqq{\Longrightarrow}: h \in H((a_n)_n) \text{ d.h. }\]
+  \[\underline{\forall \epsilon> 0} \exists \text{ unendlich viele } n: a_n \in B_\epsilon(h)\]
+  \[\text{ \underline{Trick:} Wähle } \epsilon= \frac{1}{l}, l \in \mathbb{N}\]
+  \[\forall l \in \mathbb{N}: \exists \text{ unendlich viele } n: a_n \in B_\frac{1}{l}(h)\]
+  \[\text{rekursive Definition der Teilfolge}\]
+  \[
+    \begin{array}{ll}
+      n_1 & := \text{ ersten } n \in \mathbb{N}: a_n \in B_1(h) \\
+          & := \min\left\{n \in \mathbb{N}: a_n \in B_1(h) \right\}
+    \end{array}
+  \]
+  \[
+    \begin{array}{ll}
+      n_2 & := \text{ ersten } n \in \mathbb{N}, n > n_1, a_n \in B_\frac{1}{2}(h) \\
+          & := \min\left\{n \in \mathbb{N}, n > n_1, a_n \in B_\frac{1}{2}(h) \right\}
+    \end{array}
+  \]
+  \[\ldots\]
+  \[n_{j+1}:= \min\left\{n \in \mathbb{N}, n > n_j, a_n \in B_\frac{1}{j+1}(h)\right\}\]
+  \[\text{ nachrechnen: } \boxed{n_l < n_{l+1}} \quad \forall l\]
+  \[a_{n_l} \in B_\frac{1}{l}(h) \implies \lim_{l \to \infty} a_{n_l} = h\]
+  \[(b_l)_l, b_l = a_{n_l} \text{ ist Teilfolge von } (a_n)_n\]
+\end{proof}
+
+\subsubsection{Korollar 9: Balzano-Weierstraß für Folgen II}
+
+Jede beschränkte Folge hat eine konvergente Teilfolge! (Beweis S.17 + L.18).
+
+\subsection{Asymptotisch Verhalten von reellen Folgen ($\limsup$ und $\liminf$)}
+
+\textbf{Frage:} Gibt es unter allen Häufungswerten einen größten bzw. kleinsten?
+\[(a_n)_n \text{ beschränkt: } \sup_{n \in \mathbb{N}} a_n \in \mathbb{R}, \inf_{n \in \mathbb{N}} a_n \in \mathbb{R} \]
+\[\Longrightarrow H((a_n)_n) \subset \left[\inf_{n \in \mathbb{N}} a_n,\sup_{n \in \mathbb{N}} a_n \right] \]
+
+\begin{example}
+\[a_1:= 10^{10^{10}}\]
+\[a_2:= -10^{10^{10}}\]
+\[a_n:= 0 \quad n\geq 3\]
+
+\[\left[ -10^{10^{10}}, 10^{10^{10}} \right] \subset H((a_n)_n)=\{0\}\]
+Eigentlich interessiert uns $n$ groß!
+\end{example}
+\[ b_l := \sup_{n \geq \mathbb{N}} a_n \]
+\[ c_l := \inf_{n \geq \mathbb{N}} a_n \]
+
+\begin{enumerate}
+ \item $\boxed{c_l \leq b_l \quad \forall l} $
+   \[
+     \begin{array}{ll}
+       \text{und } & b_{l+1} \leq b_l \forall \text{ fallend} \\
+                    & c_{l+1} \geq c_l \forall \text{ wachsend} 
+     \end{array}
+   \]
+   \[\text{ist } (a_n)_n \text{ beschränkt } \implies (b_l)_l, (c_l)_l \text{ beschränkt }\]
+   \[\stackrel{\text{monotone Konvergenz}}{\implies} \lim_{l\to \infty} b_l \geq \lim_{l \to \infty} c_l\]
+   \[\text{existieren!}\]
+ \item $ \forall \epsilon > 0 \forall l \in \mathbb{N} $ sind fast alle $\begin{array}{c}a_n<b_l+\epsilon \\ a_n > c_l -\epsilon \end{array}$
+\end{enumerate}
+
+\subsubsection{Definition 20}
+
+Sei $(a_n)_n$ reelle Folge 
+\[\limsup_{n \to \infty} a_n:= \overline{\lim_{n \to \infty}} a_n:= \overbrace{\lim_{l \to \infty} \left(\sup_{n \geq l} a_n\right)}^{=\lim_{l \to \infty} b_l}\]
+\[\liminf_{n \to \infty} a_n:= \underline{\lim_{n \to \infty}} a_n:= \underbrace{\lim_{l \to \infty} \left(\inf_{n \geq l} a_n\right)}_{=\lim_{l \to \infty} c_l}\]
+
+Falls $(a_n)_n$ nach oben unbeschränkt ist:
+\[\limsup_{n \to \infty} a_n:= +\infty\]
+Falls $(a_n)_n$ nach unten unbeschränkt ist:
+\[\liminf_{n \to \infty} a_n:= -\infty\]
+
+\underline{Bemerkung} Es gilt
+\[\limsup_{n \to \infty} (-a_n) = - \liminf_{n \to \infty}(a_n) \]
+\[\liminf_{n \to \infty} (-a_n) = - \limsup_{n \to \infty}(a_n) \]
+
+\[\liminf_{n \to \infty} (a_n) \leq \limsup_{n \to \infty} (a_n)\]
+
+\subsubsection{Satz 21}
+
+Sei $(a_n)_n$ beschränkte Folge
+\[\Longrightarrow \limsup_{n \to \infty} (a_n) \text{ ist der größte Häufungswert von } (a_n)_n\]
+und
+\[\Longrightarrow \liminf_{n \to \infty} (a_n) \text{ ist der kleinste Häufungswert von } (a_n)_n\]
+
+\begin{proof}
+
+Wegen den Bemerkung reicht es das Erste zu zeigen!
+\[\alpha := \limsup_{n \to \infty} (a_n)=\sup(H((a_n)_n))\]
+
+\paragraph{Schritt 1}
+$\forall \epsilon > 0$, gibt es nur endlich viele $n$ mit $a_n> \alpha + \epsilon$
+\[\sup_{n \subset \mathbb{N}} a_n = \sup\{a_n:n \in \mathbb{N}\}\]
+\begin{proof}
+  \[ \text{Sei } \epsilon>0,\quad b_l := \sup_{n \geq l} a_n \text{ ist fallend},\quad b_l \to \alpha\]
+  \[\implies \exists l \in \mathbb{N}: b_l < \alpha + \epsilon\]
+  \[\Longleftrightarrow \sup_{n \geq l} a_n < \alpha + \epsilon\]
+  \[\Longleftrightarrow \text{Höchstens die ersten } l-1 \text{ Glieder von } (a_n)_n \text{ sind } \geq \alpha + \epsilon \]
+\end{proof}
+
+\paragraph{Schritt 2}
+$\forall \epsilon > 0$, gibt es unendlich viele $n$ mit $a_n> \alpha - \epsilon$
+
+\begin{proof}
+\[\text{Da } b_l:= \sup_{n \geq l} a_n \text{ fallend}\]
+\[\implies b_1 \geq b_{l+1} \geq b_{l+2} \geq \ldots \geq b_{l+k} \stackrel{k\to \infty}{\to} \alpha\]
+\[\implies b_l \geq \alpha \quad \forall l\]
+Sei $\epsilon >0$, $l\in \mathbb{N}$. Aus Definition von Supremum folgt
+\[\exists n = n_l \geq l: a_{n_l}>b_l-\epsilon \geq b_{l+1}-\epsilon \geq \ldots \geq b_{l+k}-\epsilon \stackrel{k\to \infty}{\to} \alpha -\epsilon\]
+\[\implies \exists n = n_l \geq l: a_{n_l}>\alpha-\epsilon \]
+\[\implies \exists \text{ unendlich viele } n: a_n > \alpha - \epsilon!\]
+\end{proof}
+
+\end{proof}
+
+\textbf{Bemerkung}
+
+\begin{enumerate}
+  \item Also gilt
+    \[H((a_n)_n) \subset [\liminf_{n \to \infty} (a_n),\limsup_{n \to \infty} (a_n)] \text{ und } (a_n)_n \text{ konvergent } \]
+    \[\Longleftrightarrow \liminf_{n \to \infty} (a_n)>\limsup_{n \to \infty} (a_n)\]
+    und in \underline{diesem} Fall gilt
+    \[\lim_{n \to \infty} (a_n) = \liminf_{n \to \infty} (a_n) = \limsup_{n \to \infty} (a_n)\]
+    insbesondere $(c_n)_n$ Nullfolge
+    \[\Longleftrightarrow \limsup_{n \to \infty} |c_n| = 0\]
+  \item Für 2 Folgen $(c_n)_n$, $(d_n)_n$ gilt
+    \[\limsup_{n \to \infty}(c_n+d_n) \leq \limsup_{n \to \infty}(c_n)+\limsup_{n \to \infty}(d_n)\]
+    \[\liminf_{n \to \infty}(c_n+d_n) \geq \liminf_{n \to \infty}(c_n)+\liminf_{n \to \infty}(d_n)\]
+    \underline{Beispiel} $c_n=(-1)^n,d_n=-(-1)^n$
+\end{enumerate}
+
+\subsection{Das Cauchy-Kriterium für Konvergenz}
+
+\textbf{Bemerkung} Falls $(a_n)_n$ konvergiert:
+\[\implies \forall \epsilon > 0 \exists N_\epsilon: |a_n-a_m|<\epsilon \quad \forall n,m \geq N_\epsilon\]
+\[(\Longleftrightarrow \forall \epsilon > 0 \exists N_\epsilon: |a_n-a_m|\leq \epsilon \quad \forall n,m \geq N_\epsilon)\]
+
+Deswegen aus $a_n \to L \quad \forall \epsilon > 0 \exists N_\epsilon : |a_n-L|<\frac{\epsilon}{2} \forall n \geq N_\epsilon$
+\[\implies |a_n-a_m| \leq |a_n-L|+|l-a_m| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \quad \forall n,m \geq N_\epsilon\]
+
+\textbf{Definition} Eine Folge $(a_n)_n$ heißt Cauchy (oder Cauchyfolge) falls gilt:
+\[\forall \epsilon > 0 \exists N_\epsilon: |a_n-a_m|<\epsilon \quad \forall n,m \geq N_\epsilon\]
+
+\textbf{Bemerkung} Eine Folge $(a_n)_n$ ist Cauchy
+\[\Longleftrightarrow \limsup_{n,m\to \infty}|a_n-a_m|=0\]
+\[\text{wobei } \limsup_{n,m\to \infty}(b_{n,m}):=\lim_{l \to \infty}(\sup_{n,m\geq l}(b_{n,m}))\]
+
+\textbf{Scharfes Hinsehen}
+
+\subsubsection{Satz 23: Cauchy Kriterium}
+
+Eine Folge $(a_n)_n$ konvergiert $\Longleftrightarrow$ $(a_n)_n$ ist eine Cauchyfolge
+
+\textbf{Vorbereitung:} %Wow, eimal mehr geile Struktur ...%
+
+\subsubsection{Lemma 24}
+
+Eine Cauchyfolge $(a_n)_n$ konvergiert
+
+\[\Longleftrightarrow (a_n)_n hat eine konvergente Teilfolge\]
+\[(\Longleftrightarrow H((a_n)_n) \neq \emptyset )\]
+
+\begin{proof}
+  \[\mqq{\Longrightarrow}: \text{ klar}\]
+  \[\mqq{\Longleftarrow}: \text{ Sei } (a_{n_l})_l \text{ konvergente Teilfolge von } (a_n)_n\]
+  \[\text{d.h.: } n_l < n_{l+1} \quad \forall l \in \mathbb{N},n\in \mathbb{N}\]
+  \[L:= \lim_{n \to \infty} a_{n_l}\]
+  Sei $\epsilon > 0$ Da $(a_n)_n$ Cauchyfolge ist
+  \[\implies \exists N_\epsilon: |a_n-a_m| < \epsilon \quad \forall n,m \leq N_\epsilon\]
+  \fbox{%
+    \parbox{0.8\linewidth}{%
+  \[\implies \forall n \geq N_\epsilon: \text{ Wähle } m=n_l\geq l, l \geq N_\epsilon\]
+  \[\implies \boxed{|a_n-a_{n_l}|} < \epsilon \quad \forall l \geq N_\epsilon\]
+        }%
+  }
+  \begin{align*}
+    |a_n-L| & = \lim_{l \to \infty}|a_n-a_{n_l}| \\
+            & \leq \limsup_{l \to \infty}\underbrace{|a_n-a_{n_l}|}_{<\epsilon \quad \substack{\forall l\geq N_\epsilon\\n\geq N_\epsilon}} \\
+            & \leq \epsilon \quad \forall n \geq N_\epsilon
+  \end{align*}
+
+  \[\text{d.h. } a_n \to L!\]
+
+\textbf{oder etwas anders}
+
+  \[|a_n-L| \leq |a_n-a_{n_l}|+|a_{n_l}-L|\]
+  \begin{align*}
+    \implies |a_n-L| & = \limsup_{l\to\infty}|a_n-L| \\
+                     & \leq \limsup_{l\to\infty}\left(|a_n-a_{n_l}|+|a_{n_l}-L|\right) \\
+                     & \leq \limsup_{l\to\infty}\underbrace{|a_n-a_{n_l}|}_{<\epsilon}+\underbrace{\limsup_{l \to \infty} |a_{n_l}-L|}_{=0} \\
+                     & \leq \epsilon \quad \forall n \geq N_\epsilon
+  \end{align*}
+\end{proof}
+
+\subsubsection{Lemma 25: Jede Chauchyfolge ist beschränkt}
+
+\begin{proof}
+
+Sei $\epsilon = 1, \exists N: |a_n-a_m|<1 \quad \forall n,m \geq N$
+\[\implies \forall n \geq N : |a_n-a_N|<1\]
+\begin{align*}
+  \implies \forall n \geq N : |a_n| & \leq |a_n-a_N|+|a_N| \\
+                                    & \leq 1+|a_N|
+\end{align*}
+\[M:= \max(|a_1|,|a_2|,\ldots,|a_N|,1+|a_N|)\]
+\[\implies \forall n \in \mathbb{N}: |a_n|\leq M\]
+\end{proof}
+
+\begin{proof} von S.23
+
+\[\mqq{\Longrightarrow}:\]
+\begin{align*}
+  \mqq{\Longleftarrow}: & \text{Sei } (a_n)_n \text{Cauchy} \\ 
+                        & \mqq{\stackrel{L.25}{\Longleftarrow}}: (a_n)_n \text{ist beschränkt} \\ 
+                        & \mqq{\stackrel{Kor.19}{\Longleftarrow}}: (a_n)_n \text{hat eine konvergente Teilfolge} \\
+                        & \implies (a_n)_n \text{ ist Konvergent}
+\end{align*}
+
+
+
+\end{proof}
+
+\subsection{Einschub Komplexe Zahlen}
+
+\textbf{Wiederholen} $x^2+1=0$ hat keine Lösung in $\mathbb{R}$ da $\forall x \in \mathbb{R}: x^2 \geq 0$
+
+\textbf{Möchten} $\boxed{\text{Zahl } i, \quad i^2=-1}!$ (imaginäre Zahl)
+
+\textbf{Informel} Schreiben $\begin{array}{lll}z&=a+ib&\quad \boxed{a,b \in \mathbb{R}}\\&=x+iy&\quad \boxed{x,y \in \mathbb{R}}\end{array}$
+
+Man nennt $x$ den Realteil von $z=x+iy$
+
+Man nennt $y$ den Imaginärteil von $z=x+iy$
+
+reelle Zahl $z=x=x+i*0$
+
+Wollen rechnen: D.h. alle Körperaxiome sollen gelten.
+
+\begin{itemize}
+ %\item What does the + say???
+ \item Was ist \qq{$+$} (Plus, addieren) ?
+ \item Was ist \qq{$*$} (Mal, multiplizieren) ?
+\end{itemize}
+
 \end{document}
