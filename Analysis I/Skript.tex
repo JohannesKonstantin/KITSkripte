@@ -1782,7 +1782,7 @@ $h \in H((a_n)_n) \Longleftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen
 
 Jede beschränkte Folge hat eine konvergente Teilfolge! (Beweis S.17 + L.18).
 
-\subsection{Asymptotisch Verhalten von reellen Folgen ($\limsup$ und $\liminf$)}
+\subsection{Asymptotisches Verhalten von reellen Folgen ($\limsup$ und $\liminf$)}
 
 \textbf{Frage:} Gibt es unter allen Häufungswerten einen größten bzw. kleinsten?
 \[(a_n)_n \text{ beschränkt: } \sup_{n \in \mathbb{N}} a_n \in \mathbb{R}, \inf_{n \in \mathbb{N}} a_n \in \mathbb{R} \]
@@ -1796,8 +1796,8 @@ Jede beschränkte Folge hat eine konvergente Teilfolge! (Beweis S.17 + L.18).
 \[\left[ -10^{10^{10}}, 10^{10^{10}} \right] \subset H((a_n)_n)=\{0\}\]
 Eigentlich interessiert uns $n$ groß!
 \end{example}
-\[ b_l := \sup_{n \geq \mathbb{N}} a_n \]
-\[ c_l := \inf_{n \geq \mathbb{N}} a_n \]
+\[ b_l := \sup_{n \geq l} a_n \]
+\[ c_l := \inf_{n \geq l} a_n \]
 
 \begin{enumerate}
  \item $\boxed{c_l \leq b_l \quad \forall l} $
@@ -1872,7 +1872,7 @@ Sei $\epsilon >0$, $l\in \mathbb{N}$. Aus Definition von Supremum folgt
 \begin{enumerate}
   \item Also gilt
     \[H((a_n)_n) \subset [\liminf_{n \to \infty} (a_n),\limsup_{n \to \infty} (a_n)] \text{ und } (a_n)_n \text{ konvergent } \]
-    \[\Longleftrightarrow \liminf_{n \to \infty} (a_n)>\limsup_{n \to \infty} (a_n)\]
+    \[\Longleftrightarrow \liminf_{n \to \infty} (a_n)\geq\limsup_{n \to \infty} (a_n)\]
     und in \underline{diesem} Fall gilt
     \[\lim_{n \to \infty} (a_n) = \liminf_{n \to \infty} (a_n) = \limsup_{n \to \infty} (a_n)\]
     insbesondere $(c_n)_n$ Nullfolge
@@ -1890,7 +1890,7 @@ Sei $\epsilon >0$, $l\in \mathbb{N}$. Aus Definition von Supremum folgt
 \[(\Longleftrightarrow \forall \epsilon > 0 \exists N_\epsilon: |a_n-a_m|\leq \epsilon \quad \forall n,m \geq N_\epsilon)\]
 
 Deswegen aus $a_n \to L \quad \forall \epsilon > 0 \exists N_\epsilon : |a_n-L|<\frac{\epsilon}{2} \forall n \geq N_\epsilon$
-\[\implies |a_n-a_m| \leq |a_n-L|+|l-a_m| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \quad \forall n,m \geq N_\epsilon\]
+\[\implies |a_n-a_m| \leq |a_n-L|+|L-a_m| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \quad \forall n,m \geq N_\epsilon\]
 
 \textbf{Definition} Eine Folge $(a_n)_n$ heißt Cauchy (oder Cauchyfolge) falls gilt:
 \[\forall \epsilon > 0 \exists N_\epsilon: |a_n-a_m|<\epsilon \quad \forall n,m \geq N_\epsilon\]
