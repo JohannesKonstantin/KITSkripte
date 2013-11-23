@@ -2025,4 +2025,104 @@ Wollen rechnen: D.h. alle Körperaxiome sollen gelten.
  \item Was ist \qq{$*$} (Mal, multiplizieren) ?
 \end{itemize}
 
+\subsubsection{Summe:} $$z_1 = a_1 + ib_1 \text{, } z_2 = a_2 + ib_2$$ $$\implies z_1 + z_2 := (a_1 + ib_1) + (a_2+ib_2)$$ $$(a_1 + ib_1) + (a_2+ib_2) = (a_1 + a_2) + i(b_1+b_2)$$
+
+\subsubsection{Produkt:} $$z_1 * z_2 = (a_1 + ib_1) * (a_2 * ib_2)$$ 
+%unsure code
+$$=a_1(a_2 + ib_2) + ib_2(a_1)$$
+$$a_1a_2 + ia_1b_2 + ia_2b_1 + \underbrace{(ib_1)(ib_2)}_{-b_1*b_2}$$
+$$=a_1a_2 -b_1b_2 + i(a_1b_2 + a_2b_1)$$
+
+\subsubsection{Definition von Komplexe Zahlen}
+$\mathbb{C} := \mathbb{R} \times \mathbb{R} = \mathbb{R}^2=\{\binom{x}{y}:x,y \in \mathbb{R}\}$\\
+Mit den binären Operationen:
+\begin{itemize}
+\item \qq{$+$} $\mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$\\ $z_1 = \binom{a_1}{b_1}$ $z_2 = \binom{a_2}{b_2}$\\ $(z_1, z_2) \mapsto z_1 + z_2 \binom{a_1 + a_2}{b_1 + b_2}$
+\item \qq{$*$} $\mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$\\$(z_1, z_2) \mapsto z_1 * z_2 = \binom{a_1a_2 - b_1b_2}{a_1b_2+a_2b_1}$
+\end{itemize}
+$\implies (\mathbb{C},+,*)$ ist ein Körper!
+\subsubsection{Spezielle Komplexe Zahlen}
+$z=\binom{a}{b} a,b \in \mathbb{R}$
+\paragraph{Beispiel}
+$b=0,z=\binom{a}{0}$\\$z_1=\binom{a_1}{0},z_2 = \binom{a_2}{0}$\\
+$\implies z_1 + z_2 = \binom{a_1+a_2}{0}$\\
+$z_1 * z_2 = \binom{a_1 * a_2}{0}$ Verhalten sich wie $\mathbb{R}$\\
+$\implies$ Können $\mathbb{R}$ als Teilmenge von $\mathbb{C}$ auffassen\\
+$\mathbb{R}$ wird identifiziert mit $\{\binom{a}{0}, a \in \mathbb{R}\}$
+\paragraph{Notation}
+$z=\binom{a}{b}=a*\binom{1}{0}+b*\binom{0}{1}$\\
+$\binom{0}{1} * \binom{0}{1} = \binom{-1}{0} \simeq -1$ als reelle Zahl
+\paragraph{Definition} $i = \binom{0}{1}, i^2 = -1$
+\paragraph{Bild}
+\paragraph{Definition: Betrag(Länge)} 
+$z \in \mathbb{C}:|z|:=\sqrt{a^2 + b^2}$, $z=a+ib$
+\subsubsection{Komplex Konjugieren} $z = a+ib$, $\overline{z} = a - ib$\\
+Es gilt: $|z|^Z = z * \overline{z} = \overline{z} * z$ nachrechnen\\
+$0 \neq z = a + ib$\\
+$\implies$ was ist $\frac{1}{z} = \frac{1}{a+ib}$\\
+$\frac{1}{z} * \frac{\overline{z}}{z} = \frac{\overline{z}}{z * \overline{z}} = \frac{\overline{z}}{|z|^z} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i*\frac{b}{a^2 + b^2}$
+\paragraph{Definition: Abstand} $z_1, z_2 \in \mathbb{C}$\\
+$d(z_1,z_2) := |z_1 - z_2| = \sqrt{(a_1 - a_2)^2 + (b_1 - b_2)^2}$\\
+$z_1 = a_1 + ib_1$, $z_2 = a_2 + ib_2$
+\paragraph{Beispiel} $z = 2 +3i$\\
+$\frac{1}{z} = \frac{1}{2+3i} = \frac{2-3i}{(2+3i)(2-3i)} = \frac{2-3i}{2^2 + 3^2} = \frac{2}{13} - i\frac{3}{13}$
+\paragraph{Polarkoordinaten} $z = a + ib$\\
+$=|z|(\frac{a}{|z|}+i\frac{b}{|z|}$\\
+$=|z|(\cos \psi + \sin \psi)$
+\subsubsection{Komplexwertige Folge} Eine Folge ist eine Funktion f\\
+$f:\mathbb{N}\rightarrow \mathbb{C},n\mapsto f(n)$
+\paragraph{Notation} $z_n = f(n),z(n)_n, z(n)_{n\in\mathbb{N}}$
+\paragraph{Konvergenz} $(z_n)_n$ konvergiert in $\mathbb{C}$ gegen Grenzwert L:\\
+$\forall\epsilon > 0 \exists k_\epsilon : |z_k - L| < \epsilon \forall n \geq k_\epsilon$\\Alle anderen Definitionen, Häufungswert, Cauchyfolge etc analog!\\
+Folge $(z_n)_n$ ist beschränkt, falls $\exists 0 \leq M < \infty:|z_n|\leq M \forall n$
+\subsubsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{z_i}(z - \overline{z})$\\
+$z = a + ib, \overline{z} = a - ib, z + \overline{z} = a + ib + a - ib = 2a = 2Re(z)$\\
+$z-\overline{z} = 2ib = 2Im(z)$\\
+\begin{proof}
+\begin{itemize}
+\item \qq{$\implies$} $z_n = x_n + iy_n, L = a + ib$\\
+haben $L:= \lim z_n$ existiert\\
+$\forall \epsilon > 0:\exists k_\epsilon: |z_n - L| < \epsilon \forall n \geq k_\epsilon$\\
+$|x_n - Re(L)| = |x_n -a| = \sqrt{(x_n - a)^2} \leq \sqrt{(x_n - a)^2 + (y_n -b)^2} = |z_n - L| < \epsilon \forall n\geq k_\epsilon$\\
+$\implies x_n \rightarrow Re(L)$\\
+genauso: $|y_n - Im(L)| = |y_n - b| \leq \sqrt{(x_n - a)^2 + (y_n - b)^2} = |z_n - L|$ (Check!)
+\item \qq{$\Leftarrow$} Wissen: $x_n \rightarrow a, y_n \rightarrow b$\\
+$\forall \epsilon > 0: \exists k^1_\epsilon :|x_n -a | < \frac{\epsilon}{\sqrt{2}} \forall n \geq k^1_\epsilon$\\
+$\forall \epsilon > 0: \exists k^2_\epsilon :|y_n - b| < \frac{\epsilon}{\sqrt{2}} \forall n \geq k^2_\epsilon$\\
+$\implies k_\epsilon := max(k^1_2, k^2_2) \implies \forall n \geq k_\epsilon, i = a + ib$\\
+$|z_n - L| = \sqrt{(x_n-a)^2 + (y_n - b)^2} < \sqrt{\frac{\epsilon^2}{2}} + \frac{\epsilon^2}{2} = \epsilon$\\
+$\lim z_n = L$
+\end{itemize}
+\end{proof}
+\paragraph{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \in A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
+A ist abgeschlossen, falls $A^\mathbb{C} = \mathbb{C} \ A$ offen ist.
+\subsubsection{Korollar}
+Eine Folge $(z_n)_n$ in $\mathbb{C}$ konvergiert $\Leftrightarrow (z_n)_n$ ist Cauchy!\\
+\begin{proof}
+$(z_n)_n$ ist Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ sind Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ konvergieren $\Leftrightarrow (z_n)_n$ konvergiert
+\end{proof}
+\subsubsection{Korollar} Jede beschränkte Folge $(z_n)_n$ in $\mathbb{C}$ hat mindestens eine konvergente Teilfolge!\\
+\begin{proof}
+$(z_n)_n$ beschränkt $\Leftrightarrow \underbrace{(Re(z_n))_n}_{x_n}, \underbrace{(Im(z_n))_n}_{y_n}$ sind beschränkte reelle Teilfolgen\\
+$\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $x_{n_j} \rightarrow a$\\
+$\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!\\
+$\implies$ Teilfolge $z_{n_{j_l}} = x_{n_{j_l}} + iy_{n_{j_l}}$ konvergiert
+\end{proof}
+\section{Reihen}
+\subsection{Definition und elementare Eigenschaften}
+\subsubsection{Definition 1} Gegeben eine Folge $(a_n)_{n\in\mathbb{N}}$ oder $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ ist die zugehörige Reihe\\
+$$\underbrace{\sum^\infty_{n=p} a_n}_{\text{informal}}$$ 
+gegeben durch die Folge $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ der Partialsummen: $$ S_n := \sum^n_{l=P} a_l, n\geq p$$\\
+$\sum^\infty_{n=p}$ steht für  $(S_n)^\infty_{n=p}$ meistens $p=1$ oder 0\\
+Also Reihe = Folge der Partialsummen!\\
+Falls $(S_n)_n$ konvergiert, dann schreiben wir auch $$\sum^\infty_{n=p} a_n = \lim_{n\rightarrow\infty} S_k$$
+Reihe konvergiert = die Folge der Partialsummen konvergiert
+$$\sum^\infty_{n=1} \frac{1}{n}$$ $$S_k = \sum^k_{n=1} \frac{1}{n} \text{ Folge der Partialsummen}$$
+\subsubsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
+\subsubsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy\\
+\begin{proof}
+Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.\\
+$$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ $$\text{o.B.d.A } m\geq n$$ $$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
+\end{proof}\\
+$$S_{2n} - S_n = \frac{1}{n+1} \frac{1}{n+2} + \ldots + \frac{1}{2n} \geq n * \frac{1}{2n} = \frac{1}{2}$$
 \end{document}
