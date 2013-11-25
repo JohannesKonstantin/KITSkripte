@@ -320,7 +320,9 @@ Wissen: $1 \in M$, da $A(1)$ wahr ist
 Annahme: 
 \[k \in M \Longrightarrow A(k) \text{ ist wahr }\]
 \[A(k+1):1+2+\ldots+k+(k+1)= \frac{(k+1)(k+2)}{2}\]
-\[\underbrace{1+2+\ldots+k}_{\frac{k(k+1)}{2}}+(k+1)= \frac{k(k+1)}{2}+(k+1)=\frac{(k+1)(k+2)}{2}\]
+\[\underbrace{1+2+\ldots+k}_{\frac{k(k+1)}{2}}+(k+1)= \frac{k(k+1)}{2}+(k+1)=\frac{k^2+k}{2}+k+1\]
+\[=\frac{k^2 + 2k + k + 2}{2} = \frac{k^2 + 3k + 2}{2}\]
+\[=\frac{(k+1)(k+2)}{2}\]
 
 $\Longrightarrow k+1 \in M$ falls $k \in M$ ist! also wegen Satz 4: $M=\mathbb{N}$!
 \end{example}
@@ -1520,7 +1522,7 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
                                 $=$ & $b+\frac{a+b}{2}=b+\epsilon>b_n]$
     \end{tabular} 
     
-    für fast alle f*cking $n$.    
+    für fast alle $n$.    
     
   \end{proof}
     
@@ -1554,13 +1556,13 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
 
 \subsubsection{Satz 7: Sandwich Theorem}
 
-Sei $(a_n)_n$, $(b_n)_n$ konvergente Funktionen 
+Sei $(a_n)_n$, $(b_n)_n$ konvergente Folgen
 
 mit $\lim a_n  = \lim b_n = a$ 
 
 und $(c_n)_n*a_n \leq c_n \leq b_n$ für fast alle $n$
 
-$\implies (c_n)_n$ konvergiert und bei $c_n=a$
+$\implies (c_n)_n$ konvergiert und $\lim c_n=a$
 
 \begin{proof}
   Sei $\epsilon > 0$
