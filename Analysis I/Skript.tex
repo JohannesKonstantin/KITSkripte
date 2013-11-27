@@ -52,7 +52,7 @@
 %% Formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\titleText}{Analysis I Skript}
-\newcommand{\mainAuthor}{Rene Brandel und Rudolf Biczok}
+\newcommand{\mainAuthor}{Rene Brandel, Rudolf Biczok, \texorpdfstring{\\}{} Cedric Jeah, Corvin Paul und Arbnore Salihi}
 \newcommand{\authorText}{\mainAuthor}
 
 \hypersetup{
@@ -445,7 +445,7 @@ Dann gehört eine Grundmenge $U$, sodass $A(x)$ eine mathematische Aussage ist v
   \item $\forall x \in U:A(x): A(x)$ ist wahr für alle $x$.
 \end{itemize}
 
-\subsection{Wohlordnungsprinzip für $\mathbb{N}$}
+\subsection{Wohlordnungsprinzip für \texorpdfstring{$\mathbb{N}$}{N}}
 
 Wir wollen beweisen $\forall n \in \mathbb{N}: A(x)$ wahr ist
 
@@ -822,7 +822,7 @@ Oder: $\mathbb{R}$ ist der ordnungsvollständige Körper.
 \[\sup(\{x \in \mathbb{R}, x^2 < 2\}) \text{ hat ein Suprenum (später: das Suprenum ist } \sqrt{2} \text{)}\]
 \end{example}
 
-\subsubsection{Die Menge $\bar{\mathbb{R}}$}
+\subsubsection{Die Menge \texorpdfstring{$\bar{\mathbb{R}}$}{R}}
 
 Die Menge $\bar{\mathbb{R}}:= \mathbb{R} \cup \{\infty\} \cup \{-\infty\}$ erweitert die Zahlengerade
 
@@ -876,7 +876,7 @@ $\Longrightarrow$ Supremum ist gleich dem Maximum
 \[\sup(\emptyset):=-\infty\]
 \[\inf(\emptyset):=+\infty\]
 
-\subsection{Definition von $\mathbb{N}$ als Teilmenge von $\mathbb{R}$}
+\subsection{Definition von \texorpdfstring{$\mathbb{N}$}{N} als Teilmenge von \texorpdfstring{$\mathbb{R}$}{R}}
 
 \subsubsection{Definition 21}
 
@@ -1181,7 +1181,7 @@ $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist s
 	
 	d.h. $n! = 1 * 2 * 3 \ldots n)$
 	
-	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binominialkoeffizient
+	$0 \leq k \leq n | \binom{n}{k} := \frac{n!}{k!(n-k)!}$ Binominialkoeffizient
 \subsubsection{Lemma 39} \[1 \leq k \leq n\] \[\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}\]
 \begin{proof}
 	\[ \binom {n}{k-1} + \binom{n}{k} = \frac{(k-1)!}{(k-1)!(n-k-1)!} + \frac{k!}{k!(n-k)!}\]
@@ -1669,7 +1669,7 @@ $\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen 
 
 $\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
 \end{proof}
-\subsubsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
+\subsubsection{Korollar 12 (Rekursive Berechnung von \texorpdfstring{$\sqrt{a}$}{Wurzel a}} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
 
 \begin{proof}
 Per Induktion zeigt man $x_n > 0 \forall n$
@@ -1811,7 +1811,7 @@ $h \in H((a_n)_n) \Longleftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen
 
 Jede beschränkte Folge hat eine konvergente Teilfolge! (Beweis S.17 + L.18).
 
-\subsection{Asymptotisches Verhalten von reellen Folgen ($\limsup$ und $\liminf$)}
+\subsection{Asymptotisches Verhalten von reellen Folgen (\texorpdfstring{$\limsup$}{Limes superior} und \texorpdfstring{$\liminf$}{Limes inferior})}
 
 \textbf{Frage:} Gibt es unter allen Häufungswerten einen größten bzw. kleinsten?
 \[(a_n)_n \text{ beschränkt: } \sup_{n \in \mathbb{N}} a_n \in \mathbb{R}, \inf_{n \in \mathbb{N}} a_n \in \mathbb{R} \]
@@ -2101,28 +2101,232 @@ Eine Folge $(z_n)_n$ in $\mathbb{C}$ konvergiert $\Leftrightarrow (z_n)_n$ ist C
 \begin{proof}
 $(z_n)_n$ ist Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ sind Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ konvergieren $\Leftrightarrow (z_n)_n$ konvergiert
 \end{proof}
-\subsubsection{Korollar} Jede beschränkte Folge $(z_n)_n$ in $\mathbb{C}$ hat mindestens eine konvergente Teilfolge!\\
+\subsubsection{Korollar} Jede beschränkte Folge $(z_n)_n$ in $\mathbb{C}$ hat mindestens eine konvergente Teilfolge!
+
 \begin{proof}
-$(z_n)_n$ beschränkt $\Leftrightarrow \underbrace{(Re(z_n))_n}_{x_n}, \underbrace{(Im(z_n))_n}_{y_n}$ sind beschränkte reelle Teilfolgen\\
-$\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $x_{n_j} \rightarrow a$\\
-$\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!\\
+$(z_n)_n$ beschränkt $\Leftrightarrow \underbrace{(Re(z_n))_n}_{x_n}, \underbrace{(Im(z_n))_n}_{y_n}$ sind beschränkte reelle Teilfolgen
+
+$\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $x_{n_j} \rightarrow a$
+
+$\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!
+
 $\implies$ Teilfolge $z_{n_{j_l}} = x_{n_{j_l}} + iy_{n_{j_l}}$ konvergiert
 \end{proof}
+
 \section{Reihen}
+
 \subsection{Definition und elementare Eigenschaften}
-\subsubsection{Definition 1} Gegeben eine Folge $(a_n)_{n\in\mathbb{N}}$ oder $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ ist die zugehörige Reihe\\
-$$\underbrace{\sum^\infty_{n=p} a_n}_{\text{informal}}$$ 
-gegeben durch die Folge $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ der Partialsummen: $$ S_n := \sum^n_{l=P} a_l, n\geq p$$\\
-$\sum^\infty_{n=p}$ steht für  $(S_n)^\infty_{n=p}$ meistens $p=1$ oder 0\\
-Also Reihe = Folge der Partialsummen!\\
-Falls $(S_n)_n$ konvergiert, dann schreiben wir auch $$\sum^\infty_{n=p} a_n = \lim_{n\rightarrow\infty} S_k$$
-Reihe konvergiert = die Folge der Partialsummen konvergiert
-$$\sum^\infty_{n=1} \frac{1}{n}$$ $$S_k = \sum^k_{n=1} \frac{1}{n} \text{ Folge der Partialsummen}$$
-\subsubsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
-\subsubsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy\\
+
+\subsubsection{Definition 1}
+
+Sei $(a_n)_{n\geq p}$ eine komplexe Folge.
+
+Das Symbol 
+\[\sum_{n=p}^\infty a_n\]
+ist definiert durch die Folge zugehöriger \underline{Partialsummen}
+\[(S_n)_{n \geq p} \quad S_n := \sum_{j=p}^n a_j = a_p +a_{p+1} + \ldots + a_n \]
+Wir nennen diese Reihe $\sum_{n=p}^\infty a_n$ konvergent, wenn die Folge der Partialsummen konvergiert und in \underline{diesem Fall} schreiben wir auch:
+\[\sum_{n=p}^\infty a_n := \lim_{n\to \infty} S_n = \lim_{n\to \infty} \sum_{j=p}^n a_j\]
+und nenne dieses die Summe (oder den Wert) der Reihe
+
+\textbf{Achtung}
+
+Damit hat das Symbol $\sum_{n=p}^\infty a_n$ zwei Bedeutungen:
+
+\begin{enumerate}
+  \item Symbol für die Folge der Partialsummen
+  \item Symbol für den Grenzwert $\lim S_n$ falls diese existiert
+\end{enumerate}
+
+\begin{example}
+
+  \begin{itemize}
+    \item Beispiel einer simplen Teleskopreihe
+      \[\text{Die Reihe } \sum_{n=1}^\infty \frac{1}{n(n+1)} \text{ konvergiert}\]
+      \[S_n = \sum_{j=1}^n \frac{1}{j(j+1)}, \quad \frac{1}{j(j+1)} = \frac{1}{j}-\frac{1}{j+1}\]
+      \[= \sum_{j=1}^n \left( \frac{1}{j}-\frac{1}{j+1} \right) = \left( \frac{1}{1}-\frac{1}{2} \right) + \left( \frac{1}{2}-\frac{1}{3} \right) + \ldots \left( \frac{1}{n}-\frac{1}{n+1} \right) \]   
+      \[= 1 - \frac{1}{n+1} \text{ Teleskopreihe! }\]
+      \[\implies \lim_{n \to \infty} S_n = \lim_{n\to \infty} \left(1- \frac{1}{n+1} \right) =1\]
+      \[\sum_{j=1}^n \left( \frac{1}{j} - \frac{1}{n+1} \right)  = \sum_{j=1}^n \frac{1}{j} - \sum_{j=1}^n \frac{1}{j+1}\]
+      \[= \frac{1}{1} - \frac{1}{n+1} = 1-\frac{1}{n+1}\]
+    \item Geometrische Reihe 
+     \[ \sum_{n=0}^\infty x^n
+       \begin{array}{l}
+         \text{ konvergiert für } |x| < 1 \\
+         \text{ divergiert für } |x| \geq 1   
+       \end{array}       
+     \]
+     
+     \begin{proof}
+       \[S_n = \sum_{j=0}^n x^j = \frac{1-x^{n+1}}{1-x} \text{ geometrische Summe } x \neq 1\]
+       \[\text{Falls } |x|<1 \implies \lim_{n\to \infty} x^{n+1} = 0 \]
+       \[\implies \lim_{n \to \infty} S_n = \lim_{n \to \infty} \frac{1-x^{n+1}}{1-x}=\frac{1}{1-x}\]
+       Zur Erinnerung:
+       \[x S_n = x \sum_{j=0}^n x^j = \sum_{j=0}^n x^{j+1} = \sum_{j=1}^{n+1} x^{j}\]
+       \[\implies S_n-x S_n = \sum_{j=0}^n x^j - \sum_{j=1}^{n+1} x^{j} = 1 - x^{n+1}\]
+     \end{proof}
+  \end{itemize}
+
+\end{example}
+
+\subsubsection{Cauchy-Kriterium}
+
+\[\text{Eine Folge } (S_n)_n \text{ konvergiert} \]
+\[\Longleftrightarrow \forall \epsilon > 0 \exists k_\epsilon : |S_m -S_n|<\epsilon \quad \forall n,m \geq k_\epsilon\] 
+\[m=n+l\]
+\[\implies S_m - S_n = S_{n+l} - S_n = \sum_{j=p}^{n+l} a_j -\sum_{j=p}^n a_j = \sum_{j=n+1}^{n+l} a_j\]
+
+\subsubsection{Satz 2: Cauchy-Kriterium für Konvergenz von Reihen}
+
+\[\text{Eine Reihe } \sum_{n=p}^\infty a_n \text{ konvergiert} \]
+\[\Longleftrightarrow \forall \epsilon > 0 \exists k_\epsilon : \forall l \in \mathbb{N}, n \geq k_\epsilon : \left|\sum_{j=p}^{n+1} a_j\right|<\epsilon\]
+
 \begin{proof}
-Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.\\
-$$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ $$\text{o.B.d.A } m\geq n$$ $$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
-\end{proof}\\
-$$S_{2n} - S_n = \frac{1}{n+1} \frac{1}{n+2} + \ldots + \frac{1}{2n} \geq n * \frac{1}{2n} = \frac{1}{2}$$
+  \[\sum_{n=p}^\infty a_n \text{ konvergiert } \Longleftrightarrow \text{ die Folge } (a_n)_{n\geq p} \text{ der Partialsummen konvergiert}\]
+  \[\stackrel{\text{Cauchy-Krit}}{\Longleftrightarrow} \forall \epsilon > 0 \exists k_\epsilon : | S_m -S_n | < \epsilon \quad \forall n,m \geq k_\epsilon\]
+  \[\text{O.B.d.A } m>n \text{ d.h. } m=n+l,l\in \mathbb{N}\]
+  \[\text{da } S_m-S_n = S_{n+l}- S_n = \sum_{j=n+1}^{n+l} a_j \text{ sind wir Fertig}\]
+\end{proof}
+
+\subsubsection{Korollar 3}
+
+\[\text{Wenn } \sum_{n=p}^\infty a_n \text{ konvergiert, dann ist } (a_n)_{n \geq p} \text{ eine Nullfolge} \]
+\[\text{d.h. } \lim_{n\to \infty} a_n = 0\]
+\textbf{Bemerkung}
+Umkehrung gilt NICHT!
+
+\[\text{z.B. die harmonische Reihe } \sum_{n=1}^\infty \frac{1}{n} \text{ divergiert}\]
+
+\begin{proof}
+  \[\text{Wende } \mqq{\implies} \text{ Richtung auf } l=1 \text{ an}\]
+  \[\sum_{n=p}^\infty a_n \text{ konvergiert } \implies \forall \epsilon > 0 \exists k_\epsilon : \underbrace{\left| \sum_{j=n+1}^{n+1} \right|}_{|a_{n+1}}<\epsilon\]
+  \[\text{d.h. } a_{n+1} \to 0\]
+  \[\text{d.h. } a_{n} \to 0\]
+\end{proof}
+
+\begin{proof} (Anderer Beweis)
+  \[S_n = \sum_{j=0}^n a_j, \quad n \geq p\]
+  \[\lim_{n\to \infty} S_n = L\]
+  \[a_n = S_n - S_{n-1}\]
+  \begin{align*}
+    \implies \lim_{n\to \infty} a_n & = \lim_{n_\to \infty} (S_n - S_{n-1}) \\
+                                    & = \lim_{n_\to \infty} S_n - \lim_{n_\to \infty} S_{n-1} \\
+                                    & = L-L = 0
+  \end{align*}
+ 
+\end{proof}
+
+\subsubsection{Korollar 4: Die harmonische Reihe ist divergiert}
+
+\[\sum_{n=1}^\infty \frac{1}{n} \text{ divergiert}\]
+
+\begin{proof}
+  
+  \[\text{Wen sie konvergent wäre, dann gilt Satz 2 } a_n = \frac{1}{n}\]
+  \[S_n = \sum_{j=1}^n a_j = \sum_{j=1}^n \frac{1}{j}\]
+  \[l=n\]
+  \[S_{n+l}-S_n = \sum_{j=n+1}^{n+n} \frac{1}{j} = \sum_{j=n+1}^{2n} \frac{1}{j} = \frac{1}{n+1} + \frac{1}{n+2} + \frac{1}{n+3} + \ldots + \frac{1}{2n} \geq n*\frac{1}{2n}=\frac{1}{2}\]
+  d.h. Satz 2 ist verletzt $\implies$ keine Konvergenz
+\end{proof}
+
+\subsubsection{Satz 5}
+
+\begin{enumerate}
+  \item (Verschiebung des Summantenanfangs)
+  
+  Sei $(a_n)_{n \geq p}$ eine Folge, $b_j = a_{p+k}, j \in \mathbb{N}_0$
+  
+  Die Reihe $\sum_{n=p}^\infty a_n$, $\sum_{j=0}^\infty b_j$ und $\sum_{n=q}^\infty a_n$. Für $p < q$, haben dasselbe Konvergenzverhalten (d.h. sind gleichzeitig konvergent oder bestimmt divergent oder divergent) und im Falle der Konvergenz gilt:
+  \[\sum_{j=0}^\infty a_{p+j} = \sum_{n=p}^\infty a_n = a_p + a_{p+1} + \ldots + a_{q-1} + \sum_{n=q}^\infty a_n \]
+  
+  \begin{proof}
+    \[\text{Sei } S_n = a_p + a_{p+1} + \ldots + a_n\]
+    \[t_n = a_q + a_{q+1} + \ldots + a_n,n > p\]
+    \[U_n = b_0 + b_1 + \ldots + b_n\]
+    \[A = a_p+ \ldots + a_{q-1}\]
+    \[\implies S_n = A+ t_n, n\geq q\]
+    \[\implies (S_n)_{n\geq p} \text{ konvergiert } (t_n)_{n\geq q} \text{ konvergiert und } \lim_{n\to \infty} S_n = A + \lim_{n\to \infty} t_n\]
+    \begin{proof}
+      \[\text{Wegen 1) reicht es Reihen der Form } \sum_{n=1}^\infty a_n \text{ zu betrachten} \]
+    \end{proof}
+  \end{proof}  
+  
+  \item Das Konvergenzverhalten einer Reihe ändert sich nicht, wenn wir endliche Terme weglassen oder Hinzufügen.
+  
+  \begin{proof}
+    \[\text{Folgt aus 1)}\]
+  \end{proof}    
+  
+  \item Sei $(g(k))_{k=1}^q$ die endliche $(q<\infty)$ oder unendliche $(q=\infty)$ Indexfolge mit $1\leq g(1) < g(2) < \ldots < g(k) < g(k+1)$
+  
+  $g(k)\in \mathbb{N}$ und $a_j=0$, wegen $j \neq g(k) \quad \forall k \in \mathbb{N}$
+  
+  (d.h. $a_j \neq 0 \Longleftrightarrow \exists k \in \mathbb{N}: j=g(k)$)
+  
+  Dann haben die beiden Reihen $\sum_{n=1}^\infty a_n$ und $\sum_{k=1}^\infty a_{g(k)}$ dasselbe Konvergenzverhalten.
+  
+  (D.h. in einer Reihe kann man Nullen beliebig weglassen oder hinzufügen)
+  
+  \begin{proof}
+    \[\text{Sei } S_n=\sum_{l=1}^n q_l, t_n = \sum_{j=1}^n a_{g(j)}\]
+    \[\text{ist } q<\infty \implies S_n = t_n \forall n \geq g(q)\]
+    \[\text{ist } q=\infty \text{ dann ist } \boxed{S_n =t_n \text{ für } g(k)\leq n< g(k+1)}\]
+    \[\text{Also konvergiert } S_n \Longleftrightarrow t_n \text{ konvergiert und } \lim_{n\to \infty} S_n = \lim_{k \to \infty} t_n\]
+  \end{proof}
+\end{enumerate}
+
+\subsubsection{Satz 6}
+
+\[\text{Sind } \sum_{n=1}^\infty a_n, \sum_{n=1}^\infty b_n \text{  konvergiert, so ist } \forall \lambda, \mu \in \mathbb{C}\]
+\[\sum_{n=1}^\infty (\lambda a_n + \mu b_n) \text{ konvergiert  und } \sum_{n=1}^\infty (\lambda a_n + \mu b_n) = \lambda \sum_{n=1}^\infty a_n + \mu \sum_{n=1}^\infty b_n \]
+
+\begin{proof}
+  \[S_n = \sum_{l=1}^n a_l \to s\]
+  \[t_n = \sum_{l=1}^n b_l \to t\]
+  \[\implies \sum_{l=1}^n (\lambda a_l + \mu b_l) = \lambda S_n + \mu t_n \to \lambda s + \mu t\]
+\end{proof}
+
+\subsubsection{Korollar 7}
+
+\[\text{Aus der Konvergenz von } \sum_{n=1}^\infty a_n, \sum_{n=1}^\infty a_{n+1}\]
+\[\text{folgt die Konvergenz } \sum_{n=1}^\infty a_n
+\text{ und } \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty a_{2n} + \sum_{n=0}^\infty a_{2n+1}\]
+
+\begin{proof}
+  \[\text{Man fülle die Teilreihen } \sum_{n=1}^\infty a_{2n} \text{ und } \sum_{n=0}^\infty a_{n+1}\]
+  \[\text{mit Nullen auf (vergleich Satz 5 3)) und wende die Additionsregel Satz 6 an}\] 
+\end{proof}
+
+\underline{Warnung:} Umkehrung gilt NICHT! (Bsp später)
+
+\subsection{Alternierende Reihen}
+
+Sei $(b_n)_n$ eine Nullfolge, $b_n > 0$. Dann wird
+\[\sum_{n=1}^\infty (-1)^{n-1} b_n\]
+Eine alternierende Reihe genannt!
+\[S_n = \sum_{j=1}^\infty (-1)^{j-1} b_j = b_1-b_2+b_3-b_4+\ldots+(-1)^{n-1} b_n\]
+
+\[\text{z.B.: } \sum_{n=1}^\infty (-1)^{n-1} \frac{1}{n}\]
+
+\subsubsection{Satz 8: Leibniz-Konvergenzkriterium}
+
+Sei $(b_n)_n$ eine fallende Nullfolge d.h. $b_n \to 0$ und $b_n \geq b_{n_1} \quad \forall n \in \mathbb{N}$ 
+
+dann konvergiert die alternierende Reihe
+\[\sum_{n=1}^\infty (-1)^{n-1} b_n = b_1-b_2+b_3-b_4+\ldots \]
+
+\begin{proof}
+ \[\text{Aus } b_n \geq b_{n+1} \to 0\]
+ \[\implies b_n \geq 0 \quad \forall n\]
+ \[S_{2k}:=\sum_{n=1}^{2k} (-1)^{n-1} b_n = \underbrace{(b_1-b_2)}_{\geq 0}+\underbrace{(b_3-b_4)}_{\geq 0}+\ldots+\underbrace{(b_{2k-1}-b_{2k})}_{\geq 0}\]
+ \[S_{2k+1}:=\sum_{n=1}^{2k+1} (-1)^{n-1} b_n = b_1 - \underbrace{(b_2-b_3)}_{\geq 0}-\underbrace{(b_4-b_5)}_{\geq 0}-\ldots-\underbrace{(b_{2k}-b_{2k+1})}_{\geq 0}\]
+ \[\implies S_{2k} \text{ ist wachsend, } S_{2k+1} \text{ ist fallend}\]
+ \[\text{d.h. } S_{2k} \leq S_{2(k+1)} = S_{2k+2}, S_{2k+1} \geq S_{2(k+1)+1} = S_{2k+3}\]
+ \[\text{und } 0\leq S_{2k} \leq S_{2k+1} \leq b_1\]
+ \[\stackrel{\begin{array}{l}\text{Monotone}\\\text{Konvergenz}\end{array}}{\implies} \lim_{k \to \infty} S_{2k}, \lim_{k \to \infty} S_{2k+1} \text{ existieren} \]
+ \[\text{Außerdem gilt: } |S_{2k+1}-S_{2k}|=b_{2k+1} \to 0\]
+ \[\text{Somit ist } \lim_{n\to \infty} S_{2k+1} = \lim_{n\to \infty} S_{2k} = s\]
+ \[\implies \lim_{n \to \infty} (-1)^{n-1} b_n=s\] 
+\end{proof}
+
 \end{document}
