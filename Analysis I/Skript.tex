@@ -1,4 +1,4 @@
-\documentclass[fleqn]{scrartcl}
+\documentclass[fleqn]{scrbook}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -22,12 +22,6 @@
 
 %% Code listings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
-
-%% Advanced math %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{amsmath}
-
-%% Advanced math Symboles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{amssymb}
 
 %% Introducing proof environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsthm}
@@ -96,7 +90,7 @@
 \begin{document}
 
 \title{\titleText}
-\date{9.11.2013}
+\date{\today}
 \author{\mainAuthor}
 \maketitle
 
@@ -104,9 +98,9 @@
 \tableofcontents
 \pagebreak
 
-\section{Grundlagen}
+\chapter{Grundlagen}
 
-\subsection{Mengen}
+\section{Mengen}
 
 Angaben von Mengen durch Aufzählungen
 
@@ -122,7 +116,7 @@ bekannte Mengen:
 
 \textbf{Achtung:} $\left\{ \emptyset \right\}$ hat ein Element (nämlich die leere Menge)!
 
-\subsubsection{Syntax}
+\subsection{Syntax}
 
 \begin{itemize}
   \item $x \in M$ $x$ ist Element von $M$
@@ -140,11 +134,11 @@ bekannte Mengen:
   $M_1 \times M_2 \times \ldots \times M_n := \{ \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \}$
 \end{itemize}
 
-\subsubsection{Satz 1: \qq{Naiver} Mengenbegriff nach Cantor}
+\subsection{Satz 1: \qq{Naiver} Mengenbegriff nach Cantor}
 
 \qq{Unter einer \q{Menge} verstehen wir jede Zusammenfassung M von bestimmten wohlunterschiedenen Objekten m unserer Anschauung oder unseres Denkens (welche die \q{Elemente} von M genannt werden) zu einem Ganzen.}
 
-\subsubsection{Potenzmenge von M}
+\subsection{Potenzmenge von M}
 
 $2^M = \mathcal{P}(M) := \left\{ A | A \subset M \right\}$
 
@@ -153,7 +147,7 @@ $2^M = \mathcal{P}(M) := \left\{ A | A \subset M \right\}$
 \begin{example}{$\mathcal{P}(\emptyset) = \left\{ \emptyset \right\}$}
 \end{example}
 
-\subsubsection{Satz 2: Funktionen}
+\subsection{Satz 2: Funktionen}
 
 Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich $X$ und einer Abbildungsvorschrift, die jedem $x \in X$ genau ein Element $y \in Y$ zuordnet.
 
@@ -170,7 +164,7 @@ Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich 
 \end{align*}
 \end{example}
 
-\subsubsection{Satz 3: Graph}
+\subsection{Satz 3: Graph}
 
 Sei $f:X \to Y$ eine Funktion
 
@@ -180,11 +174,11 @@ $G(f) \subset X \times Y$
 
 Zwei Funktionen $f_1 : X \to Y, f_2 : X \to Y$ sind gleich, wenn $G(f_1) = G(f_2)$. D.h. falls $f_1(x)=f_2(x)$ für alle $x \in X$.
 
-\subsubsection{Funktionsraum}
+\subsection{Funktionsraum}
 
 $Y^X = Abb(X,Y) = $ Menge aller Funktionen $f : X \to Y$
 
-\subsubsection{Bild}
+\subsection{Bild}
 
 Wenn $A \subset X$:
 
@@ -193,7 +187,7 @@ $f(A):=\left\{ y \in Y : \text{ Es gibt ein } x \in A : y=f(x)
 
 Bild von $A$ (unter $f$)
 
-\subsubsection{Urbild}
+\subsection{Urbild}
 
 Wenn $B \subset Y$ 
 
@@ -201,7 +195,7 @@ $f^{-1}(B):=\left\{ x \in X : f(x) \in B \right\}$
 
 Urbild von $B$ (unter $f$)
 
-\subsubsection{Eigenschaften von Funktionen}
+\subsection{Eigenschaften von Funktionen}
 
 $f(X)$ ist das Bild von $f$
 
@@ -215,7 +209,7 @@ $f : X \to Y$ ist:
 \item[bijektiv:] falls surjektiv und injektiv zugleich.
 \end{description}
 
-\subsubsection{Umkehrabbildung / Umkehrfunktion}
+\subsection{Umkehrabbildung / Umkehrfunktion}
 
 Ist $f : X \to Y$ bijektiv, so existiert zu jedem $y \in Y$ genau ein $x \in X$ mit $y =f(x)$. Die Inverse zu $f$ ist die Funktion: 
 \begin{align*}
@@ -243,14 +237,14 @@ $\rightarrow$ ist bijektiv
 
 $f^{-1}(y)=\frac{y}{2} \in \mathbb{N},y=$ gerade natürliche Zahl.
 
-\subsubsection{Komposition}
+\subsection{Komposition}
 
 Sei $f : X \to Y, g : W \to Z$ mit $f(X) \subset W$
 
 $h:= g \circ f$ ($g$ ist verknüpft mit $f$)
 $h(x):= (g \circ f)(x):=g(f(x))$
 
-\subsubsection{Identität}
+\subsection{Identität}
 
 \begin{align*}
   id_M : M & \to     M\\
@@ -265,7 +259,7 @@ Sei: $f : M \to N$ bijektiv, dann gilt:
  \item $f \circ f^{-1} = id_N$
 \end{enumerate}
 
-\subsubsection{Restriktion und Fortsetzung}
+\subsection{Restriktion und Fortsetzung}
 
 Seien $f : X \to Y$ und $g : X \to A$ Funktionen und $A \subset X$
 
@@ -294,12 +288,12 @@ Seien $f : X \to Y$ und $g : X \to A$ Funktionen und $A \subset X$
 \end{align*}
 \end{example}
 
-\subsection{Induktion}
+\section{Induktion}
 
 Sei $\mathbb{N} = \{1,2,3,\ldots\}$
 $\mathbb{N}_0=\mathbb{N} \cup \{0\}$
 
-\subsubsection{Satz 4: Prinzip der vollständigen Induktion}
+\subsection{Satz 4: Prinzip der vollständigen Induktion}
 
 Eine Teilmenge $M \subset \mathbb{N}$ erfülle:
 
@@ -327,7 +321,7 @@ Annahme:
 $\Longrightarrow k+1 \in M$ falls $k \in M$ ist! also wegen Satz 4: $M=\mathbb{N}$!
 \end{example}
 
-\subsubsection{Satz 5: Beweis durch vollständige Induktion}
+\subsection{Satz 5: Beweis durch vollständige Induktion}
 
 Für alle $n \in \mathbb{N}$ seien Aussagen $A(n)$ gegeben.
 
@@ -404,7 +398,7 @@ $\rightarrow$ Beispiel für eine rekursive Definition
 
 \end{example}
 
-\subsubsection{Notation: Aussagen}
+\subsection{Notation: Aussagen}
 
 Seien $A,B,C,D$ mathematische Aussagen 
 
@@ -425,7 +419,7 @@ Seien $A,B,C,D$ mathematische Aussagen
 \end{itemize}
 \end{example}
 
-\subsubsection{Quantoren}
+\subsection{Quantoren}
 
 Oft enthalten Aussagen eine freie Variable
 
@@ -447,7 +441,7 @@ Dann gehört eine Grundmenge $U$, sodass $A(x)$ eine mathematische Aussage ist v
   \item $\forall x \in U:A(x): A(x)$ ist wahr für alle $x$.
 \end{itemize}
 
-\subsection{Wohlordnungsprinzip für $\mathbb{N}$}
+\section{Wohlordnungsprinzip für $\mathbb{N}$}
 
 Wir wollen beweisen $\forall n \in \mathbb{N}: A(x)$ wahr ist
 
@@ -457,13 +451,13 @@ Wir wollen beweisen $\forall n \in \mathbb{N}: A(x)$ wahr ist
 
 \textbf{Also:} $G=\{n\in \mathbb{N}: \lnot A(n)\}$ müssen zeigen, dass $G=\emptyset$
 
-\subsubsection{Satz 6}
+\subsection{Satz 6}
 
 Sei $A \subset \mathbb{N}, A \neq \emptyset$, dann hat $A$ ein kleinstes Element!
 
 D.h. $\exists n_0 \in A$ mit $\forall k \in A: k \geq n_0$
 
-\subsubsection{Satz 7}
+\subsection{Satz 7}
 
 $\sqrt{2}$ ist nicht rational.
 
@@ -481,7 +475,7 @@ $\Longrightarrow \sqrt{2} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{
 
 Also hat $G$ kein kleinstes Element $\Longrightarrow G = \emptyset$ 
 
-\subsubsection{Satz 8}
+\subsection{Satz 8}
 
 $K \in \mathbb{N}$, damit $\sqrt{k} \subset \mathbb{N}$ oder irrational
 
@@ -525,7 +519,7 @@ sollte möglich sein, falls $\sqrt{k} \notin \mathbb{N}$
 
 \end{proof}
 
-\subsection{Körper- und Anordnungsaxiomen}
+\section{Körper- und Anordnungsaxiomen}
 
 \begin{example}
 
@@ -572,7 +566,7 @@ In jedem Körper gilt:
 
 TODO: Handout über Körperaxiome muss hier rein!
 
-\subsubsection{Satz 13}
+\subsection{Satz 13}
 
 Sei $\mathbb{K}$ ein angeordneter Körper, $a,b,c,d,x,y \in \mathbb{K}$ Dann gilt:
 
@@ -616,7 +610,7 @@ $\Longrightarrow$ fertig.
 
 \end{proof}
 
-\subsubsection{Satz 14}
+\subsection{Satz 14}
 
 Sei $(\mathbb{K},+,*)$ ein angeordneter Körper $\Longrightarrow$
 
@@ -652,7 +646,7 @@ fertig
 
 \textbf{Vorliegende Definition:} Die $\mathbb{R}$ sind ein geordneter Körper (da fehlt noch was)
 
-\subsubsection{Absolutbetrag}
+\subsection{Absolutbetrag}
 
 \[
   |x| = \left\{ 
@@ -663,7 +657,7 @@ fertig
     \end{array}\right.
 \]
 
-\subsubsection{Signumfunktion / Vorzeichenfunktion}
+\subsection{Signumfunktion / Vorzeichenfunktion}
 
 \[
   sign(x) = \left\{ 
@@ -673,7 +667,7 @@ fertig
       -1, & \text{ falls } x<0
     \end{array}\right.
 \]
-\subsubsection{Min- und Max-Funktion}
+\subsection{Min- und Max-Funktion}
 
 \[
   max(x,y) = \left\{ 
@@ -690,7 +684,7 @@ fertig
     \end{array}\right.
 \]
 
-\subsubsection{Folgerungen}
+\subsection{Folgerungen}
 
 \begin{enumerate}
   \item $\forall x \in \mathbb{R};x=|x|sgn(x)$
@@ -710,7 +704,7 @@ fertig
         Beweis: einfach
 \end{enumerate}
 
-\subsubsection{Satz 15: Dreiecksungleichung}
+\subsection{Satz 15: Dreiecksungleichung}
 
 \begin{align*}
   \forall a,b \in \mathbb{R}: & |a+b| \leq |a|+|b|\\
@@ -732,7 +726,7 @@ fertig
 
 \end{proof}
 
-\subsubsection{Satz 16: Abstandsungleichung}
+\subsection{Satz 16: Abstandsungleichung}
 
 $\forall a,b,c \in \mathbb{R}: d(a,c) \leq d(a,b)+d(b,c)$
 
@@ -744,9 +738,9 @@ fertig
 
 \end{proof}
 
-\subsection{Obere und untere Schranken, Supremum und Infimum}
+\section{Obere und untere Schranken, Supremum und Infimum}
 
-\subsubsection{Obere und Untere Schranken}
+\subsection{Obere und Untere Schranken}
 
 Sei $A \subset \mathbb{K}$, $\mathbb{K}$ ein geordneter Körper.
 
@@ -758,7 +752,7 @@ $A$ heißt nach unten beschränkt falls $\exists \beta \in \mathbb{K},\forall a 
 
 \textbf{Schreiben} $\beta \leq A$. $\beta$ heißt untere Schranke von $A$
 
-\subsubsection{Maximum und Minimum}
+\subsection{Maximum und Minimum}
 
 $A$ heißt maximales Element (oder Maximum) von A, falls $\alpha$ obere 
 Schranke für $A$ ist und $\alpha \in A$
@@ -778,7 +772,7 @@ $B=\{x:x<0\}, \sup(B)=0$
 
 \end{proof}
 
-\subsubsection{Definition 18: Supremum, Infimum}
+\subsection{Definition 18: Supremum, Infimum}
 
 $A \subset \mathbb{R}, A \neq \emptyset$
 
@@ -786,7 +780,7 @@ $\sup(A)=\sup A := $ kleinste obere Schranke von $A$
 
 $\inf(A)=\inf A := $ größte untere Schranke von $A$
 
-\subsubsection{Lemma 19}
+\subsection{Lemma 19}
 
 Sei \textbf{$\alpha$ eine obere Schranke} für $A \neq \emptyset$. Dann gilt
 
@@ -813,7 +807,7 @@ N.B.: $(E \Longrightarrow F) \Longleftrightarrow (\lnot F \Longrightarrow \lnot 
 
 \end{proof}
 
-\subsubsection{Definition 20: Vollständigkeitsaxiom}
+\subsection{Definition 20: Vollständigkeitsaxiom}
 
 Die reellen Zahlen $\mathbb{R}$ sind der angeordnete Körper in dem jede nicht leere Menge die nach oben beschränkt ist ein Supremum hat.
 
@@ -824,7 +818,7 @@ Oder: $\mathbb{R}$ ist der ordnungsvollständige Körper.
 \[\sup(\{x \in \mathbb{R}, x^2 < 2\}) \text{ hat ein Suprenum (später: das Suprenum ist } \sqrt{2} \text{)}\]
 \end{example}
 
-\subsubsection{Die Menge $\bar{\mathbb{R}}$}
+\subsection{Die Menge $\bar{\mathbb{R}}$}
 
 Die Menge $\bar{\mathbb{R}}:= \mathbb{R} \cup \{\infty\} \cup \{-\infty\}$ erweitert die Zahlengerade
 
@@ -851,7 +845,7 @@ Die Menge $\bar{\mathbb{R}}:= \mathbb{R} \cup \{\infty\} \cup \{-\infty\}$ erwei
   \item $0*\infty$
 \end{itemize}
 
-\subsubsection{Intervalle}
+\subsection{Intervalle}
 
 \begin{itemize}
   \item $a \leq b \quad [a,b] := \{x \in \mathbb{R}:a \leq x \leq b\}$ abgeschlossenes Intervall
@@ -873,14 +867,14 @@ $\Longrightarrow$ Supremum ist gleich dem Maximum
 
 \end{proof}
 
-\subsubsection{Supremum und Infimum der leeren Menge}
+\subsection{Supremum und Infimum der leeren Menge}
 \textbf{Setzen:}
 \[\sup(\emptyset):=-\infty\]
 \[\inf(\emptyset):=+\infty\]
 
-\subsection{Definition von $\mathbb{N}$ als Teilmenge von $\mathbb{R}$}
+\section{Definition von $\mathbb{N}$ als Teilmenge von $\mathbb{R}$}
 
-\subsubsection{Definition 21}
+\subsection{Definition 21}
 
 Eine Menge $A \subset \mathbb{R}$ heißt \underline{induktiv} falls:
 
@@ -899,7 +893,7 @@ $A:= \{1\} \cup [1+1,\infty)$ ist induktiv
 $\mathbb{N}:=$ kleinste induktive Teilmenge von $\mathbb{R}$
 \[:= \bigcap_{A \text{ist induktiv}} A \qquad\qquad \text{A ist induktiv}\]
 
-\subsubsection{Satz 21: Induktionsprinzip}
+\subsection{Satz 21: Induktionsprinzip}
 
 Ist $M \subset \mathbb{N}$, mit 
 
@@ -910,7 +904,7 @@ Ist $M \subset \mathbb{N}$, mit
 
 $\Longleftrightarrow M = N$
 
-\subsubsection{Satz 22}
+\subsection{Satz 22}
 \begin{enumerate}[1)]
 \item $\forall n \in \mathbb{N}: n \geq 1$ oder $n \leq 1 + 1$ und $n = 1$ oder $n-1 \in \mathbb{N}$
 \item $\forall n,m \in \mathbb{N}: n+m \in \mathbb{N}$ und $n*m \in \mathbb{N}$
@@ -969,7 +963,7 @@ $D:=\{n \in \mathbb{N}: n < M\} = \{n \in \mathbb{N}: \forall m \in M: n < m\}$\
 $\implies D$ ist induktiv$\implies D = \mathbb{N} \implies M \subset \mathbb{N} \backslash D = \mathbb{N} \backslash M = \emptyset$ (q.ed)
 \end{description}
 \end{proof}
-\subsubsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschränkt
+\subsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschränkt
 
 insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n * a > b$
 
@@ -982,28 +976,28 @@ $\implies \exists n \in \mathbb{N}, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \
 \subparagraph{Wähle}
 $x = \frac{b}{a} \in \mathbb{R} \implies \exists n \in \mathbb{N}: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n* a > b$ (q.ed)
 \end{proof}
-\subsection{Ganze und rationale Zahlen}
+\section{Ganze und rationale Zahlen}
 $\mathbb{Z} := \mathbb{N}_0 \cup (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mathbb{N}\}$\\$\mathbb{Q}:=\{\frac{m}{n}: m\in\mathbb{Z},n \in\mathbb{N}\}$
-\subsubsection{Satz 24}
+\subsection{Satz 24}
 ($\mathbb{Z}, +, *$) ist ein kommutativer Ring mit Eins, d.h. alle Körperaxiome sind erfüllt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +, *$) ist ein angeordneter Körper.
 
 \begin{proof}
 	Nachrechnen
 \end{proof}
-\paragraph{Notation}$\mathbb{Z}_p := \{ m\in\mathbb{Z}: m\geq p\}$
+\subsubsection{Notation}$\mathbb{Z}_p := \{ m\in\mathbb{Z}: m\geq p\}$
 
 $p \in \mathbb{Z} := p + \mathbb{N}_0$
-\paragraph{Alle} $k \mapsto k + p - 1$ bildet $\mathbb{N}$ bijektiv auf $\mathbb{Z}_p$ ab.
+\subsubsection{Alle} $k \mapsto k + p - 1$ bildet $\mathbb{N}$ bijektiv auf $\mathbb{Z}_p$ ab.
 
 $\Rightarrow$ Alle Eigenschaften von $\mathbb{N}$ gelten auch für $\mathbb{Z}_p \forall p \in \mathbb{Z}$
 
 $\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschränkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
-\subsubsection{Korollar 26}
+\subsection{Korollar 26}
 \begin{enumerate}[1)]
 \item Seien $x,y \in \mathbb{R}, y*x > 1$\\$\implies m\in\mathbb{Z}, x < m < y$
 \item ($\mathbb{Q}$ ist dicht in $\mathbb{R}$) Seien $x,y \in \mathbb{R}, x < y \implies \exists r \in \mathbb{Q}: x < r <y$
 \end{enumerate}
-\paragraph{Beweis} 
+\subsubsection{Beweis} 
 \begin{enumerate}[1)]
 \item Sei $y - x > 1, A := \{ m \in \mathbb{Z}: m > y\} \neq \emptyset$
 
@@ -1022,30 +1016,30 @@ S.23 $\implies \exists n \in \mathbb{N}: n * a > 1 \iff n * x - n * y > 1$
 $\implies \exists m \in \mathbb{Z}: n*x<m<n*y \iff x <\frac{m}{n} < y$
 \end{enumerate}
 
-\subsection{Endliche und abzählbare Mengen}
+\section{Endliche und abzählbare Mengen}
 
-\subsubsection{Definition 27 (Cantor)} A, B Mengen heißen gleichmächtig (oder äquivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.
+\subsection{Definition 27 (Cantor)} A, B Mengen heißen gleichmächtig (oder äquivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.
 
 B heißt mächtiger als A, $|A| \leq |B|$, falls es eine Injektion $f: A \rightarrow B$ gibt.
 
-\paragraph{Bemerkung}
+\subsubsection{Bemerkung}
 \begin{enumerate}[1)]
 \item $A \sim B$ ist eine Äquivalenzrelation, d.h. reflexiv ($A \sim A$), symmetrisch ($A \sim B \implies B \sim A$) und transitiv ($A \sim B, B \sim C \implies A \sim C$)
 \item $A \leq \mathbb{R} \iff \exists$ Surjektion $h: B \rightarrow B$
 \item (Cantor) Bernsten-Schröder-Theorie $|A| \leq |B|$ und $|B| \leq |A| \iff A \sim B$
 \end{enumerate}
-\subsubsection{Definition 28}
+\subsection{Definition 28}
 
 Sei $n \in \mathbb{N}_0 [0] := \emptyset$ und rekursiv $[n + 1] = [n] \cup [n+1]$
 
 ($\implies([n]:=\{k \in \mathbb{N}: 1\leq k \leq n \}$)
 
-\paragraph{Endlich} Eine Menge A heißt endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)
+\subsubsection{Endlich} Eine Menge A heißt endlich, falls $\exists n \in \mathbb{N}_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)
 
 $card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.
 
  A heißt abzählbar (abzählbar unendlich), falls $A \sim \mathbb{N}$\\A ist höchstens abzählbar, falls A endlich ist oder abzählbar ist, ansonsten heißt sie überabzählbar.
-\paragraph{Bemerkung}
+\subsubsection{Bemerkung}
 \begin{enumerate}[1)]
 \item A höchstens abzählbar $\iff \exists$ Surjektion $f: \mathbb{N} \rightarrow A$
 \item Unendliche Mengen sind schwierig
@@ -1057,24 +1051,24 @@ $f:\mathbb{N}\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\mathbb{N} \sim G$
 \item $[0,1]\sim [0,1)$
 \subparagraph{Beweis} Konstruieren $f: [0,1] \rightarrow [0,1)$\\Für $x \in [0,1]\backslash (\bigcup_{n\in\mathbb{N}} \{\frac{1}{n}\}):f(x)=x$\\$n\in\mathbb{N}:f(\frac{1}{n}):=\frac{1}{n+1}$ Rechne nach f ist bijektiv!
 \end{enumerate}
-\subsubsection{Satz 29}
+\subsection{Satz 29}
 \begin{enumerate}[1)]
 \item $A\sim [n], A\sim [m] \implies n = m$ (d.h. Kardinalität ist eindeutig)
 \item ist $A \in B, B$ endlich $\implies A$ endlich
 \item $A, B$ endlich und disjunkt $\implies card(A\cup B) = (cardA + cardB)$
 \end{enumerate}
-\paragraph{Beweis}
+\subsubsection{Beweis}
 \begin{enumerate}[1)]
 \item $\implies [n] \sim [m]$ durch Induktion $\implies n = m$\\Fall $n = 1$ (CHECK!)\\$n\rightarrow n + 1$: IA $\tilde{\phi}:[n]\rightarrow [m]$\\bijektiv $\implies n = m$\item Sei $\phi:[n+1]\rightarrow[m+1]$ Bijektion:\\Durch Vertauschen von 2 Elementen kann man erreichen, dass $\phi (n + 1) = m+1 \implies \phi |_{[n]}:[n]\rightarrow [n]$ bijektiv $\implies n = m \implies  m + 1 = m$ (WTF?) (q.ed)
 \item Beweis der Induktion: einfach.
 \item Sei $A \sim [n], b \sim [m] \implies B \sim m + [n] := \{ k \in \mathbb{N}: n + 1 \leq k \ leq m + n \} \implies A \cup B \sim [n] \cup (m + [n]) = [n + m]$
 \end{enumerate}
-\paragraph{Lemma 30} Jede endliche Teilmenge von $\mathbb{R}$ hat ein Minimum und ein Maximum
+\subsubsection{Lemma 30} Jede endliche Teilmenge von $\mathbb{R}$ hat ein Minimum und ein Maximum
 
 \begin{proof}
 $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA = min(C, a_{n+1})$
 \end{proof}
-\subsubsection{Satz 31}
+\subsection{Satz 31}
 \begin{enumerate}[1)]
 \item Ist $A<B,B$ höchstens abzählbar $\implies A$ höchstens abzählbar
 \item Jede unendliche Menge besitzt eine abzählbare Teilmenge
@@ -1125,16 +1119,16 @@ $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA
 	$\implies \bigcup_{k} A_k$ ist höchstens abzählbar
 \end{enumerate}
 \end{proof}
-\subsubsection{Korollar 32}
+\subsection{Korollar 32}
 
 $\mathbb{Q}$ ist abzählbar
 
 \begin{proof}
 $\mathbb{Q} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,n), m \in \mathbb{Z}, n \in \mathbb{N}\}$
 \end{proof}
-\paragraph{Bemerkung} Es gibt eine explizite Abbildung von $\mathbb{Q}$ mittels eines Baumes. Literatur: Neil Calkin, Herbert Will: Recounting the Rationals
-\subsubsection{Satz 33} A enthalte mindestens 2 Elemente $\implies A^\mathbb{N} = \{ f: \mathbb{N} \rightarrow A\}$ überabzählbar
-\subsubsection{Lemma 34 (Cantor)} Sei A eine Menge $\implies$ Es existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
+\subsubsection{Bemerkung} Es gibt eine explizite Abbildung von $\mathbb{Q}$ mittels eines Baumes. Literatur: Neil Calkin, Herbert Will: Recounting the Rationals
+\subsection{Satz 33} A enthalte mindestens 2 Elemente $\implies A^\mathbb{N} = \{ f: \mathbb{N} \rightarrow A\}$ überabzählbar
+\subsection{Lemma 34 (Cantor)} Sei A eine Menge $\implies$ Es existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
 
 \begin{proof}
 	Sei $f: A \rightarrow P(A)$
@@ -1155,17 +1149,17 @@ $\mathbb{Q} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \mathbb{N}\}$ \qq C $\{(m,
 			$\implies$ f ist nicht surjektiv!
 	\end{enumerate}
 \end{proof}
-\subsubsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \mathbb{R}$
+\subsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \mathbb{R}$
 
 $a < b \implies I$ ist überabzählbar
 
 \begin{proof}
 Skalieren $\implies$ o.B.d.A. $a = 0, b = 1$ zu $f \in \{0,1\}^\mathbb{N}$
 \end{proof}
-\paragraph{Dezimalbruchentwicklung:} \[x_f := \sum_{n = 1}^\infty f(n) * 10^{-n} \in [0,1]\]
+\subsubsection{Dezimalbruchentwicklung:} \[x_f := \sum_{n = 1}^\infty f(n) * 10^{-n} \in [0,1]\]
 beachte: $f_1 + f_2 \implies xf_1 + xf_2$
-\subsection{Einfache Folgerung aus Induktion}
-\subsubsection{Satz 37 (Bernoulli)}
+\section{Einfache Folgerung aus Induktion}
+\subsection{Satz 37 (Bernoulli)}
 $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist strikt (d.h. > gilt, falls $n \geq 2, x \neq 0$)
 
 \begin{proof}
@@ -1177,19 +1171,19 @@ $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist s
 	
 	$= 1 + (k + 1)x = 1 + (k + 1)x + k x^2 \geq 1 + (k + 1)x$
 \end{proof}
-\subsubsection{Definition 38} 0! = 1
+\subsection{Definition 38} 0! = 1
 
 	$n \in \mathbb{N}_0 | (n + 1)! := n!(n+1)$
 	
 	d.h. $n! = 1 * 2 * 3 \ldots n)$
 	
 	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binominialkoeffizient
-\subsubsection{Lemma 39} \[1 \leq k \leq n\] \[\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}\]
+\subsection{Lemma 39} \[1 \leq k \leq n\] \[\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}\]
 \begin{proof}
 	\[ \binom {n}{k-1} + \binom{n}{k} = \frac{(k-1)!}{(k-1)!(n-k-1)!} + \frac{k!}{k!(n-k)!}\]
 	\[ = \frac{kn! + (n -1 -k)n!}{k!(n+1-k)!} = \binom{n+1}{k}\]
 \end{proof}
-\subsubsection{Binomischer Lehrsatz} $\forall a,b \in \mathbb{R}$ oder $a,b, \in \mathbb{K}$ (Körper) $\forall n \in \mathbb{N}_0$
+\subsection{Binomischer Lehrsatz} $\forall a,b \in \mathbb{R}$ oder $a,b, \in \mathbb{K}$ (Körper) $\forall n \in \mathbb{N}_0$
 	\[(a+b)^n = \sum_{l=0}^n \binom{n}{l} a^{n-l}b^l\]
 	\[=a^n + \binom{n}{1}a^{n-1}b^1+\binom{n}{2}a^{n-2}b^2+\ldots+\binom{n}{n-1}ab^{n-1}+b^n\]
 	\begin{proof}
@@ -1204,17 +1198,17 @@ $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist s
 				\[1+\sum_{l=1}^k\underbrace{\left(\binom{k}{l}+\binom{k}{l-1}\right)}_{=\binom{k+1}{l}}x^l + x^{l+1}\]
 		\end{enumerate}
 	\end{proof}
-\section{Folgen und Konvergenz} $(a_1, a_2 \ldots a_n)$ $a_n$ Zahlen
+\chapter{Folgen und Konvergenz} $(a_1, a_2 \ldots a_n)$ $a_n$ Zahlen
 
-\subsection{Definition 1} 
+\section{Definition 1} 
 
 
 Eine (reelle) Folge ist eine Funktion $f: \mathbb{N} \rightarrow \mathbb{R}, n \mapsto f(n) =: a_n$
 
-\paragraph{Notation:} $a_n = f(n)$, $(a_n)_{n \in \mathbb{N}}$, $(a_n)_n$
-\paragraph{Bemerkung:} $(a_n)_n$ ist nicht $\{a_1, a_2, \ldots\}$ z.B. $a_n = 1 \implies \{a_1, a_2, \ldots\} = \{1\}$
+\subsubsection{Notation:} $a_n = f(n)$, $(a_n)_{n \in \mathbb{N}}$, $(a_n)_n$
+\subsubsection{Bemerkung:} $(a_n)_n$ ist nicht $\{a_1, a_2, \ldots\}$ z.B. $a_n = 1 \implies \{a_1, a_2, \ldots\} = \{1\}$
 
-\subsection{Definition 2: Konvergenz:}
+\section{Definition 2: Konvergenz:}
 
 Sei $(a_n)_n$ eine Folge reellen Zahlen $(a_n)_n$ konvergiert gegen $L \in \mathbb{R}$
 
@@ -1226,7 +1220,7 @@ Genau dann, wenn: $\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \fora
 
 $(a_n)_n$ ist divergent, wenn sie nicht konvergiert.
 
-\paragraph{Alternative Definitionen} 
+\subsubsection{Alternative Definitionen} 
 
 \begin{align*}
                       & \left(\forall \epsilon > 0 \exists k_\epsilon \in \mathbb{N}: \forall n \geq k_\epsilon: |a_n - L| < \epsilon \right) \\
@@ -1341,7 +1335,7 @@ Wir sagen $A(n)$ ist wahr für fast alle $n$, falls $\exists k \in \mathbb{N}: A
   $\Longleftrightarrow \forall \epsilon > 0$ sind fast alle $a_n$ in einer $\epsilon$-Umgebung von $L$.
 \end{example}
 
-\subsubsection{Satz 3}
+\subsection{Satz 3}
 
 \begin{enumerate}
 
@@ -1385,7 +1379,7 @@ Wir sagen $A(n)$ ist wahr für fast alle $n$, falls $\exists k \in \mathbb{N}: A
   \end{proof}
 \end{enumerate}
 
-\subsubsection{Lemma 4}
+\subsection{Lemma 4}
 
 Sein $(a_n)_n,(b_n)_n$ Folgen
 
@@ -1417,7 +1411,7 @@ $a_n \to L, a_n-b_n \to 0$ (WORT?!? $a_n-b_n$ ist eine Nullfolge)
  
 \end{proof}
 
-\subsubsection{Satz 5: Rechenregeln für Limes}
+\subsection{Satz 5: Rechenregeln für Limes}
 
 Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
 
@@ -1528,7 +1522,7 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
     
 \end{enumerate}
 
-\subsubsection{Satz 6} 
+\subsection{Satz 6} 
 
 \begin{enumerate}
   \item Ist $(a_n)_n$ eine Nullfolge, d.h. $a_n \to 0$ und $(c_n)_n$ beschränkt $\implies (a_n*c_n)_n$ eine Nullfolge.
@@ -1554,7 +1548,7 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
   
 \end{enumerate}
 
-\subsubsection{Satz 7: Sandwich Theorem}
+\subsection{Satz 7: Sandwich Theorem}
 
 Sei $(a_n)_n$, $(b_n)_n$ konvergente Folgen
 
@@ -1613,10 +1607,10 @@ $\implies (c_n)_n$ konvergiert und $\lim c_n=a$
 
 \end{example}
 
-\subsection{Divergente Folge}
-\subsubsection{Definition 8} Eine Folge $(a_n)_{n \in \mathbb{N}}$ heißt bestimmt divergent gegen $\infty$ (bzw. $-\infty$), in Zeichen, $\lim_{n\rightarrow \infty} = \infty, a_n \rightarrow \infty$ (bzw. $\lim_{n\rightarrow\infty} a_n = - \infty , a_n \rightarrow - \infty$) falls $\forall k > 0 \exists N = N(k): a_n > k \forall n \geq N$ (bzw. $a_n < -k \forall n \geq N$)\\
+\section{Divergente Folge}
+\subsection{Definition 8} Eine Folge $(a_n)_{n \in \mathbb{N}}$ heißt bestimmt divergent gegen $\infty$ (bzw. $-\infty$), in Zeichen, $\lim_{n\rightarrow \infty} = \infty, a_n \rightarrow \infty$ (bzw. $\lim_{n\rightarrow\infty} a_n = - \infty , a_n \rightarrow - \infty$) falls $\forall k > 0 \exists N = N(k): a_n > k \forall n \geq N$ (bzw. $a_n < -k \forall n \geq N$)\\
 z.B. $a_n = n, a_n = n^2$
-\subsubsection{Rechenregeln} Die regeln von S4 gelten sofern die rechten Seiten Definiert sind.\\
+\subsection{Rechenregeln} Die regeln von S4 gelten sofern die rechten Seiten Definiert sind.\\
 z.B. $a_n = n, b_n = n^2 \implies a_n + b_n \rightarrow \infty + \infty = \infty$, also $a_n - b_n \rightarrow \infty - \infty$ nicht definiert\\
 $n - n^2 = (\frac{1}{n} - 1) n^2 \leq -\frac{1}{2}n^2, n\geq 2 \rightarrow \infty$\\
 insb gilt:
@@ -1632,14 +1626,14 @@ insb gilt:
 \item 4) $b_n \rightarrow b > 0 \implies b_n \geq \frac{1}{2} b$ für fast alle n, $\implies a_n * b_n > \frac{1}{2}b*a_n$ für fast alle n.\\zu $k > 0$, wähle $N(k): a_n > \frac{2}{b}k \forall n\geq N(k)$\\$\implies a_n * b_n > \frac{b}{2} * \frac{2}{b} k = k$ für fast alle n
 \end{itemize}
 \end{proof}
-\subsection{Monotone Folgen}
-\subsubsection{Definition 9} Eine Folge $(a_n)_n$ reeller Zahlen heißt
+\section{Monotone Folgen}
+\subsection{Definition 9} Eine Folge $(a_n)_n$ reeller Zahlen heißt
 \begin{enumerate}[1)]
 \item wachsend, falls $a_n \leq a_{n+1} \forall n \in \mathbb{N}$
 \item fallend, falls $a_n \geq a_{n+1} \forall n \in \mathbb{N}$
 \item monoton, falls sie wachsend oder fallend ist.
 \end{enumerate}
-\subsubsection{Satz 10 (Monotone Konvergenz)} Jede beschränkte monotone Folge ist konvergen! Insb:
+\subsection{Satz 10 (Monotone Konvergenz)} Jede beschränkte monotone Folge ist konvergen! Insb:
 \begin{enumerate}[1)]
 \item $(a_n)_n$ wachsend (beschränkt) $\implies \lim_{n\rightarrow\infty} a_n = \sup_{n\in\mathbb{N}}a_n$
 \item $(a_n)_n$ fallend (beschränkt) $\implies \lim_{n\rightarrow \infty} a_n = \inf_{n\in\mathbb{N}}a_n$
@@ -1654,7 +1648,7 @@ $\alpha - \epsilon < a_{k_\epsilon} \leq a_{k-{\epsilon + 1}} \leq ... \leq a_n 
 \item Wende 1) auf $b_n = -a_n a_n$
 \end{enumerate}
 \end{proof}
-\subsubsection{Korollar 11} Sei $(b_n)_n$ Folge mit $\frac{|b{n+1}|}{|b_n|} \rightarrow x$ für $o \leq x < 1 \implies \lim b_n = 0$\\insb. $\lim q^n = 0, |q|<1$
+\subsection{Korollar 11} Sei $(b_n)_n$ Folge mit $\frac{|b{n+1}|}{|b_n|} \rightarrow x$ für $o \leq x < 1 \implies \lim b_n = 0$\\insb. $\lim q^n = 0, |q|<1$
 
 \begin{proof}
 Z.z. $|b_n| \rightarrow 0$ d.h. O.B.d.A. $b_n > 0$. Da $\frac{b_{n+1}}{b_n} \rightarrow x$ für $0 \leq x < 1$
@@ -1667,11 +1661,11 @@ $\implies b_{n+1} < b_n \forall n \geq N$
 
 $\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen $L = 0$
 
-\paragraph{Angenommen:} $L>0$
+\subsubsection{Angenommen:} $L>0$
 
 $\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
 \end{proof}
-\subsubsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
+\subsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
 
 \begin{proof}
 Per Induktion zeigt man $x_n > 0 \forall n$
@@ -1694,7 +1688,7 @@ quadratische Konvergenz
 \end{proof}
 \end{enumerate}
 
-\subsubsection{Korollar 13}
+\subsection{Korollar 13}
 $e := \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n$ existiert und $2 + \frac{1}{3} < e \leq \frac{6^7}{2n} < 2,78167$
 
 \begin{proof}
@@ -1712,13 +1706,13 @@ Induktion $=: k! \geq 2^k$ für $k\geq 4$
 \[e \geq a_n \forall n, n = 3\]
 \[=(1 + \frac{1}{2})^k, e \geq a_3 = 2 + \frac{10}{27} > 2 + \frac{1}{3}\]
 \end{proof}
-\subsection{Teilfolgen und Häufungswerte}
-\subsubsection{Definition 14: (Teilfolgen, Umordnung)} $(a_n)_n$ Folge $a = (a_n)_{n}: \mathbb{N} \rightarrow \mathbb{R}$\\
+\section{Teilfolgen und Häufungswerte}
+\subsection{Definition 14: (Teilfolgen, Umordnung)} $(a_n)_n$ Folge $a = (a_n)_{n}: \mathbb{N} \rightarrow \mathbb{R}$\\
 $\phi : \mathbb{N} \rightarrow \mathbb{N}$ bijektiv\\
 $\implies b:= a \circ \phi$, d.h. $b = (b_l)_{l\in\mathbb{N}}$, $b_l := a_{\phi (l)}$\\
 b : Umordnung von $(a_n)_n$\\
 Wir nennen $\sigma : \mathbb{N} \rightarrow \mathbb{N}$ eine Verdünnung falls $\sigma$ strikt monoton steigend ist, d.h. $\sigma (n) < \sigma (n+1) \forall n$. Dann ist $(b_l)_l$ definiert durch $b_l := a_{\sigma (l)}$ eine Teilfolge von $(an)_n$
-\paragraph{Bemerkung:}
+\subsubsection{Bemerkung:}
 \begin{enumerate}[1)]
 \item Für jede Verdünnung $\sigma$ gilt $\sigma (n) \geq n \forall n \in \mathbb{N}$ (Warum?)
 \item $(a_n)_n := (\frac{1}{n})_n$, $(\frac{1}{2n})_n$, $(\frac{1}{n^2})_n$ sind Teilfolgen von $(a_n)_n$\\
@@ -1726,7 +1720,7 @@ $\sigma(n) = 2n$, $b_{\sigma(l)} = a_{2l} = \frac{1}{2l}$\\
 $\sigma(n) = n^2$, $b_n = a_{\sigma(n)} = a_n^2 = \frac{1}{n^2}$\\
 $(\frac{1}{2}, 1, \frac{1}{4}, \frac{1}{3}, \ldots$ ist eine Umordnung von $(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \ldots)$
 \end{enumerate}
-\subsubsection{Lemma 15} Jede Umordnung und jede Teilmenge einer konvergenten Folge konvergiert mit demselben Grenzwert! Und dasselbe gilt, wenn man endlich viele Werte von $a_n$ abändert.
+\subsection{Lemma 15} Jede Umordnung und jede Teilmenge einer konvergenten Folge konvergiert mit demselben Grenzwert! Und dasselbe gilt, wenn man endlich viele Werte von $a_n$ abändert.
 
 \begin{proof}
 Für Umordnung nachrechnen.\\
@@ -1735,9 +1729,9 @@ $a_n \rightarrow L : \forall \epsilon > 0 : \exists k_\epsilon: |a_n - L| < \eps
 Da $\sigma(n) \geq n \forall n \in \mathbb{N}$ gilt auch $\forall n \geq k_\epsilon \implies \sigma(n) \geq k_\epsilon $  \\
 $|b_n - L| = |a_{\sigma(n)} - L| < \epsilon$
 \end{proof}
-\subsubsection{Definition 16 Häufungswert}
+\subsection{Definition 16 Häufungswert}
 Sei $(a_n)_n$ eine Folge, $a\in\mathbb{R}$ ist ein Häufungswert von $(a_n)_n$, falls $\forall \epsilon > 0$ gibt unendlich viele $n\in\mathbb{N}$ mit $|a_n - a| < \epsilon$
-\paragraph{Beispiel} 
+\subsubsection{Beispiel} 
 \begin{enumerate}
 \item $a_n = \frac{1}{n}$ hat Häufungswert 0
 
@@ -1748,12 +1742,12 @@ Sei $(a_n)_n$ eine Folge, $a\in\mathbb{R}$ ist ein Häufungswert von $(a_n)_n$, 
 \end{enumerate}
 
 $H((a_n)_n) = $ Menge der HW von $(a_n)_n = \{ a\in\mathbb{R}$, $a$ ist HW von $(a_n)_n\}$
-\paragraph{Bemerkung}
+\subsubsection{Bemerkung}
 \begin{enumerate}[1)]
 \item Für eine beschränkte Folge $(a_n)_n$ gilt: $$a_n \rightarrow a \Leftrightarrow H((a_n)_n) = \{a\}$$
 \item $(n)_{n\in\mathbb{N}}$ hat keinen Häufungswert!
 \end{enumerate}
-\subsubsection{Satz 17 (Bolzano - Weierstraß für Folgen)} Jede beschränkte Folge hat mindestens einen HW
+\subsection{Satz 17 (Bolzano - Weierstraß für Folgen)} Jede beschränkte Folge hat mindestens einen HW
 
 \begin{proof}
 Sei $(a_n)_n$ beschränkt, z.B. $c \leq a_n \leq d \forall n$\\
@@ -1763,7 +1757,7 @@ $=\{x\in\mathbb{R}: a_n \leq x$ für fast alle n$\}$
 \item $G \neq \emptyset$, da $d \in G$
 \item $G$ ist nach unten beschränkt, denn $x \notin G$, falls $x < c \implies \alpha := \inf G \in \mathbb{R}$
 
-\paragraph{Behauptung} $\alpha \in H((a_n)_n)$\\
+\subsubsection{Behauptung} $\alpha \in H((a_n)_n)$\\
 Dann sei $\epsilon > 0 \implies$ nach Definition von Infimum \\
 $\alpha + \epsilon \in G$ und $\alpha - \epsilon \notin G$ \\
 $\implies$ fast alle $a_n < \alpha + \epsilon$ und unendlich viele $a_n > \alpha - \epsilon$\\
@@ -1771,7 +1765,7 @@ $\implies$ Es gibt unendlich viele $n: |a_n - \alpha| < \epsilon \implies \alpha
 \end{enumerate}
 \end{proof}
 
-\subsubsection{Lemma 18} 
+\subsection{Lemma 18} 
 (\textbf{Erinnerung:} $h$ Häufungswert von $(a_n)_n$ falls $\forall \epsilon > 0 $. $a_n \in B_\epsilon (h):= (h-\epsilon, h+\epsilon)$ für unendlich viele $n \in \mathbb{N}$)
 
 Sei $(a_n)_n $ Folge
@@ -1809,11 +1803,11 @@ $h \in H((a_n)_n) \Longleftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen
   \[(b_l)_l, b_l = a_{n_l} \text{ ist Teilfolge von } (a_n)_n\]
 \end{proof}
 
-\subsubsection{Korollar 9: Balzano-Weierstraß für Folgen II}
+\subsection{Korollar 9: Balzano-Weierstraß für Folgen II}
 
 Jede beschränkte Folge hat eine konvergente Teilfolge! (Beweis S.17 + L.18).
 
-\subsection{Asymptotisches Verhalten von reellen Folgen ($\limsup$ und $\liminf$)}
+\section{Asymptotisches Verhalten von reellen Folgen ($\limsup$ und $\liminf$)}
 
 \textbf{Frage:} Gibt es unter allen Häufungswerten einen größten bzw. kleinsten?
 \[(a_n)_n \text{ beschränkt: } \sup_{n \in \mathbb{N}} a_n \in \mathbb{R}, \inf_{n \in \mathbb{N}} a_n \in \mathbb{R} \]
@@ -1844,7 +1838,7 @@ Eigentlich interessiert uns $n$ groß!
  \item $ \forall \epsilon > 0 \forall l \in \mathbb{N} $ sind fast alle $\begin{array}{c}a_n<b_l+\epsilon \\ a_n > c_l -\epsilon \end{array}$
 \end{enumerate}
 
-\subsubsection{Definition 20}
+\subsection{Definition 20}
 
 Sei $(a_n)_n$ reelle Folge 
 \[\limsup_{n \to \infty} a_n:= \overline{\lim_{n \to \infty}} a_n:= \overbrace{\lim_{l \to \infty} \left(\sup_{n \geq l} a_n\right)}^{=\lim_{l \to \infty} b_l}\]
@@ -1861,7 +1855,7 @@ Falls $(a_n)_n$ nach unten unbeschränkt ist:
 
 \[\liminf_{n \to \infty} (a_n) \leq \limsup_{n \to \infty} (a_n)\]
 
-\subsubsection{Satz 21}
+\subsection{Satz 21}
 
 Sei $(a_n)_n$ beschränkte Folge
 \[\Longrightarrow \limsup_{n \to \infty} (a_n) \text{ ist der größte Häufungswert von } (a_n)_n\]
@@ -1873,7 +1867,7 @@ und
 Wegen den Bemerkung reicht es das Erste zu zeigen!
 \[\alpha := \limsup_{n \to \infty} (a_n)=\sup(H((a_n)_n))\]
 
-\paragraph{Schritt 1}
+\subsubsection{Schritt 1}
 $\forall \epsilon > 0$, gibt es nur endlich viele $n$ mit $a_n> \alpha + \epsilon$
 \[\sup_{n \subset \mathbb{N}} a_n = \sup\{a_n:n \in \mathbb{N}\}\]
 \begin{proof}
@@ -1883,7 +1877,7 @@ $\forall \epsilon > 0$, gibt es nur endlich viele $n$ mit $a_n> \alpha + \epsilo
   \[\Longleftrightarrow \text{Höchstens die ersten } l-1 \text{ Glieder von } (a_n)_n \text{ sind } \geq \alpha + \epsilon \]
 \end{proof}
 
-\paragraph{Schritt 2}
+\subsubsection{Schritt 2}
 $\forall \epsilon > 0$, gibt es unendlich viele $n$ mit $a_n> \alpha - \epsilon$
 
 \begin{proof}
@@ -1914,7 +1908,7 @@ Sei $\epsilon >0$, $l\in \mathbb{N}$. Aus Definition von Supremum folgt
     \underline{Beispiel} $c_n=(-1)^n,d_n=-(-1)^n$
 \end{enumerate}
 
-\subsection{Das Cauchy-Kriterium für Konvergenz}
+\section{Das Cauchy-Kriterium für Konvergenz}
 
 \textbf{Bemerkung} Falls $(a_n)_n$ konvergiert:
 \[\implies \forall \epsilon > 0 \exists N_\epsilon: |a_n-a_m|<\epsilon \quad \forall n,m \geq N_\epsilon\]
@@ -1932,13 +1926,13 @@ Deswegen aus $a_n \to L \quad \forall \epsilon > 0 \exists N_\epsilon : |a_n-L|<
 
 \textbf{Scharfes Hinsehen}
 
-\subsubsection{Satz 23: Cauchy Kriterium}
+\subsection{Satz 23: Cauchy Kriterium}
 
 Eine Folge $(a_n)_n$ konvergiert $\Longleftrightarrow$ $(a_n)_n$ ist eine Cauchyfolge
 
 \textbf{Vorbereitung:} %Wow, eimal mehr geile Struktur ...%
 
-\subsubsection{Lemma 24}
+\subsection{Lemma 24}
 
 Eine Cauchyfolge $(a_n)_n$ konvergiert
 
@@ -1977,7 +1971,7 @@ Eine Cauchyfolge $(a_n)_n$ konvergiert
   \end{align*}
 \end{proof}
 
-\subsubsection{Lemma 25: Jede Chauchyfolge ist beschränkt}
+\subsection{Lemma 25: Jede Chauchyfolge ist beschränkt}
 
 \begin{proof}
 
@@ -2005,7 +1999,7 @@ Sei $\epsilon = 1, \exists N: |a_n-a_m|<1 \quad \forall n,m \geq N$
 
 \end{proof}
 
-\subsection{Einschub Komplexe Zahlen}
+\section{Einschub Komplexe Zahlen}
 
 \textbf{Wiederholen} $x^2+1=0$ hat keine Lösung in $\mathbb{R}$ da $\forall x \in \mathbb{R}: x^2 \geq 0$
 
@@ -2027,15 +2021,15 @@ Wollen rechnen: D.h. alle Körperaxiome sollen gelten.
  \item Was ist \qq{$*$} (Mal, multiplizieren) ?
 \end{itemize}
 
-\subsubsection{Summe:} $$z_1 = a_1 + ib_1 \text{, } z_2 = a_2 + ib_2$$ $$\implies z_1 + z_2 := (a_1 + ib_1) + (a_2+ib_2)$$ $$(a_1 + ib_1) + (a_2+ib_2) = (a_1 + a_2) + i(b_1+b_2)$$
+\subsection{Summe:} $$z_1 = a_1 + ib_1 \text{, } z_2 = a_2 + ib_2$$ $$\implies z_1 + z_2 := (a_1 + ib_1) + (a_2+ib_2)$$ $$(a_1 + ib_1) + (a_2+ib_2) = (a_1 + a_2) + i(b_1+b_2)$$
 
-\subsubsection{Produkt:} $$z_1 * z_2 = (a_1 + ib_1) * (a_2 * ib_2)$$ 
+\subsection{Produkt:} $$z_1 * z_2 = (a_1 + ib_1) * (a_2 * ib_2)$$ 
 %unsure code
 $$=a_1(a_2 + ib_2) + ib_2(a_1)$$
 $$a_1a_2 + ia_1b_2 + ia_2b_1 + \underbrace{(ib_1)(ib_2)}_{-b_1*b_2}$$
 $$=a_1a_2 -b_1b_2 + i(a_1b_2 + a_2b_1)$$
 
-\subsubsection{Definition von Komplexe Zahlen}
+\subsection{Definition von Komplexe Zahlen}
 $\mathbb{C} := \mathbb{R} \times \mathbb{R} = \mathbb{R}^2=\{\binom{x}{y}:x,y \in \mathbb{R}\}$\\
 Mit den binären Operationen:
 \begin{itemize}
@@ -2043,41 +2037,41 @@ Mit den binären Operationen:
 \item \qq{$*$} $\mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$\\$(z_1, z_2) \mapsto z_1 * z_2 = \binom{a_1a_2 - b_1b_2}{a_1b_2+a_2b_1}$
 \end{itemize}
 $\implies (\mathbb{C},+,*)$ ist ein Körper!
-\subsubsection{Spezielle Komplexe Zahlen}
+\subsection{Spezielle Komplexe Zahlen}
 $z=\binom{a}{b} a,b \in \mathbb{R}$
-\paragraph{Beispiel}
+\subsubsection{Beispiel}
 $b=0,z=\binom{a}{0}$\\$z_1=\binom{a_1}{0},z_2 = \binom{a_2}{0}$\\
 $\implies z_1 + z_2 = \binom{a_1+a_2}{0}$\\
 $z_1 * z_2 = \binom{a_1 * a_2}{0}$ Verhalten sich wie $\mathbb{R}$\\
 $\implies$ Können $\mathbb{R}$ als Teilmenge von $\mathbb{C}$ auffassen\\
 $\mathbb{R}$ wird identifiziert mit $\{\binom{a}{0}, a \in \mathbb{R}\}$
-\paragraph{Notation}
+\subsubsection{Notation}
 $z=\binom{a}{b}=a*\binom{1}{0}+b*\binom{0}{1}$\\
 $\binom{0}{1} * \binom{0}{1} = \binom{-1}{0} \simeq -1$ als reelle Zahl
-\paragraph{Definition} $i = \binom{0}{1}, i^2 = -1$
-\paragraph{Bild}
-\paragraph{Definition: Betrag(Länge)} 
+\subsubsection{Definition} $i = \binom{0}{1}, i^2 = -1$
+\subsubsection{Bild}
+\subsubsection{Definition: Betrag(Länge)} 
 $z \in \mathbb{C}:|z|:=\sqrt{a^2 + b^2}$, $z=a+ib$
-\subsubsection{Komplex Konjugieren} $z = a+ib$, $\overline{z} = a - ib$\\
+\subsection{Komplex Konjugieren} $z = a+ib$, $\overline{z} = a - ib$\\
 Es gilt: $|z|^Z = z * \overline{z} = \overline{z} * z$ nachrechnen\\
 $0 \neq z = a + ib$\\
 $\implies$ was ist $\frac{1}{z} = \frac{1}{a+ib}$\\
 $\frac{1}{z} * \frac{\overline{z}}{z} = \frac{\overline{z}}{z * \overline{z}} = \frac{\overline{z}}{|z|^z} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i*\frac{b}{a^2 + b^2}$
-\paragraph{Definition: Abstand} $z_1, z_2 \in \mathbb{C}$\\
+\subsubsection{Definition: Abstand} $z_1, z_2 \in \mathbb{C}$\\
 $d(z_1,z_2) := |z_1 - z_2| = \sqrt{(a_1 - a_2)^2 + (b_1 - b_2)^2}$\\
 $z_1 = a_1 + ib_1$, $z_2 = a_2 + ib_2$
-\paragraph{Beispiel} $z = 2 +3i$\\
+\subsubsection{Beispiel} $z = 2 +3i$\\
 $\frac{1}{z} = \frac{1}{2+3i} = \frac{2-3i}{(2+3i)(2-3i)} = \frac{2-3i}{2^2 + 3^2} = \frac{2}{13} - i\frac{3}{13}$
-\paragraph{Polarkoordinaten} $z = a + ib$\\
+\subsubsection{Polarkoordinaten} $z = a + ib$\\
 $=|z|(\frac{a}{|z|}+i\frac{b}{|z|}$\\
 $=|z|(\cos \psi + \sin \psi)$
-\subsubsection{Komplexwertige Folge} Eine Folge ist eine Funktion f\\
+\subsection{Komplexwertige Folge} Eine Folge ist eine Funktion f\\
 $f:\mathbb{N}\rightarrow \mathbb{C},n\mapsto f(n)$
-\paragraph{Notation} $z_n = f(n),z(n)_n, z(n)_{n\in\mathbb{N}}$
-\paragraph{Konvergenz} $(z_n)_n$ konvergiert in $\mathbb{C}$ gegen Grenzwert L:\\
+\subsubsection{Notation} $z_n = f(n),z(n)_n, z(n)_{n\in\mathbb{N}}$
+\subsubsection{Konvergenz} $(z_n)_n$ konvergiert in $\mathbb{C}$ gegen Grenzwert L:\\
 $\forall\epsilon > 0 \exists k_\epsilon : |z_k - L| < \epsilon \forall n \geq k_\epsilon$\\Alle anderen Definitionen, Häufungswert, Cauchyfolge etc analog!\\
 Folge $(z_n)_n$ ist beschränkt, falls $\exists 0 \leq M < \infty:|z_n|\leq M \forall n$
-\subsubsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{z_i}(z - \overline{z})$\\
+\subsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{z_i}(z - \overline{z})$\\
 $z = a + ib, \overline{z} = a - ib, z + \overline{z} = a + ib + a - ib = 2a = 2Re(z)$\\
 $z-\overline{z} = 2ib = 2Im(z)$\\
 \begin{proof}
@@ -2096,23 +2090,23 @@ $|z_n - L| = \sqrt{(x_n-a)^2 + (y_n - b)^2} < \sqrt{\frac{\epsilon^2}{2}} + \fra
 $\lim z_n = L$
 \end{itemize}
 \end{proof}
-\paragraph{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \in A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
+\subsubsection{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \in A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
 A ist abgeschlossen, falls $A^\mathbb{C} = \mathbb{C} \ A$ offen ist.
-\subsubsection{Korollar}
+\subsection{Korollar}
 Eine Folge $(z_n)_n$ in $\mathbb{C}$ konvergiert $\Leftrightarrow (z_n)_n$ ist Cauchy!\\
 \begin{proof}
 $(z_n)_n$ ist Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ sind Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ konvergieren $\Leftrightarrow (z_n)_n$ konvergiert
 \end{proof}
-\subsubsection{Korollar} Jede beschränkte Folge $(z_n)_n$ in $\mathbb{C}$ hat mindestens eine konvergente Teilfolge!\\
+\subsection{Korollar} Jede beschränkte Folge $(z_n)_n$ in $\mathbb{C}$ hat mindestens eine konvergente Teilfolge!\\
 \begin{proof}
 $(z_n)_n$ beschränkt $\Leftrightarrow \underbrace{(Re(z_n))_n}_{x_n}, \underbrace{(Im(z_n))_n}_{y_n}$ sind beschränkte reelle Teilfolgen\\
 $\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $x_{n_j} \rightarrow a$\\
 $\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!\\
 $\implies$ Teilfolge $z_{n_{j_l}} = x_{n_{j_l}} + iy_{n_{j_l}}$ konvergiert
 \end{proof}
-\section{Reihen}
-\subsection{Definition und elementare Eigenschaften}
-\subsubsection{Definition 1} Gegeben eine Folge $(a_n)_{n\in\mathbb{N}}$ oder $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ ist die zugehörige Reihe\\
+\chapter{Reihen}
+\section{Definition und elementare Eigenschaften}
+\subsection{Definition 1} Gegeben eine Folge $(a_n)_{n\in\mathbb{N}}$ oder $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ ist die zugehörige Reihe\\
 $$\underbrace{\sum^\infty_{n=p} a_n}_{\text{informal}}$$ 
 gegeben durch die Folge $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ der Partialsummen: $$ S_n := \sum^n_{l=P} a_l, n\geq p$$\\
 $\sum^\infty_{n=p}$ steht für  $(S_n)^\infty_{n=p}$ meistens $p=1$ oder 0\\
@@ -2120,8 +2114,8 @@ Also Reihe = Folge der Partialsummen!\\
 Falls $(S_n)_n$ konvergiert, dann schreiben wir auch $$\sum^\infty_{n=p} a_n = \lim_{n\rightarrow\infty} S_k$$
 Reihe konvergiert = die Folge der Partialsummen konvergiert
 $$\sum^\infty_{n=1} \frac{1}{n}$$ $$S_k = \sum^k_{n=1} \frac{1}{n} \text{ Folge der Partialsummen}$$
-\subsubsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
-\subsubsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy\\
+\subsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
+\subsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy\\
 \begin{proof}
 Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.\\
 $$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ $$\text{o.B.d.A } m\geq n$$ $$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
