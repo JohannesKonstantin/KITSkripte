@@ -21,7 +21,7 @@
 \usepackage{hyperref}
 
 %% Code listings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{listings}
+\usepackage{scrhack}
 
 %% Introducing proof environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsthm}
@@ -202,15 +202,12 @@ $f(X)$ ist das Bild von $f$
 $f : X \to Y$ ist:
 
 \begin{description}
-\item[injektiv:] falls aus $x_1,x_2 \in X$ und $f(x_1)=f(x_2) \implies x_1=x_2$. 
-
-\item[surjektiv:] falls $f(X) = Y$.
-
-\item[bijektiv:] falls surjektiv und injektiv zugleich.
+  \item[injektiv:] falls aus $x_1,x_2 \in X$ und $f(x_1)=f(x_2) \implies x_1=x_2$. 
+  \item[surjektiv:] falls $f(X) = Y$.
+  \item[bijektiv:] falls surjektiv und injektiv zugleich.
 \end{description}
 
 \subsection{Umkehrabbildung / Umkehrfunktion}
-
 Ist $f : X \to Y$ bijektiv, so existiert zu jedem $y \in Y$ genau ein $x \in X$ mit $y =f(x)$. Die Inverse zu $f$ ist die Funktion: 
 \begin{align*}
   f^{-1} : Y &\to X\\
@@ -520,42 +517,31 @@ sollte möglich sein, falls $\sqrt{k} \notin \mathbb{N}$
 \end{proof}
 
 \section{Körper- und Anordnungsaxiomen}
-
-\begin{example}
-
-$0$ ist eindeutig!
-Sei $0'$ auch neutrales Element der Addition
-\begin{align*}
-  \Longrightarrow 0 = \text{ }& 0' = 0\\
+  \begin{example}
+    $0$ ist eindeutig!
+    Sei $0'$ auch neutrales Element der Addition
+    \begin{align*}
+      \Longrightarrow 0 = \text{ }& 0' = 0\\
                       & 0  = 0+0'=0'+0=0'\\
                       & 0' + 0=0'
-\end{align*}
+    \end{align*}
+  \end{example}
 
-
-\end{example}
-
-\pagebreak
 
 \begin{example}
-
-$a+x=b$ hat eine eindeutige Lösung
-
-$x=b+(-a)=b-a$
-
-\begin{align*}
-  \text{Sei } a+x=b & \Longrightarrow (-a)+(a+x)=(-a)+b\\
-                    & \Longrightarrow ((-a)+a)+x=b+(-a)\\
-                    & \Longrightarrow 0 + x = b+ (-a)
-\end{align*}
-
-Wenn $x=b+(-a)$
-
-\begin{align*}
-  \Longrightarrow \text{ } & a+x=a+(b+(-a))=b+((-a)+a)\\
-                           & = b+(a+(-a))\\
-                           & =b+0=b
-\end{align*}
-
+  $a+x=b$ hat eine eindeutige Lösung
+  $x=b+(-a)=b-a$
+  \begin{align*}
+    \text{Sei } a+x=b & \Longrightarrow (-a)+(a+x)=(-a)+b\\
+		      & \Longrightarrow ((-a)+a)+x=b+(-a)\\
+		      & \Longrightarrow 0 + x = b+ (-a)
+  \end{align*}
+  Wenn $x=b+(-a)$
+  \begin{align*}
+    \Longrightarrow \text{ } & a+x=a+(b+(-a))=b+((-a)+a)\\
+			    & = b+(a+(-a))\\
+			    & =b+0=b
+  \end{align*}
 \end{example}
 
 In jedem Körper gilt:
@@ -564,7 +550,7 @@ In jedem Körper gilt:
 \[\frac{a}{c} \cdot \frac{b}{d}=\frac{ab}{cd}\]
 \[\frac{\frac{a}{c}}{\frac{b}{d}}=\frac{ad}{bc}\]
 
-TODO: Handout über Körperaxiome muss hier rein!
+%%TODO: Handout über Körperaxiome muss hier rein!%%
 
 \subsection{Satz 13}
 
@@ -1665,25 +1651,27 @@ $\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen 
 
 $\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
 \end{proof}
-\subsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$} Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
+\subsection{Korollar 12 (Rekursive Berechnung von $\sqrt{a}$ )} 
+  Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\mathbb{N}}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\mathbb{N}$. 
+  Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
 
 \begin{proof}
 Per Induktion zeigt man $x_n > 0 \forall n$
 \end{proof}
 \begin{enumerate}[\text{Fakt }1:]
-\item $x_n \geq \sqrt{a} \forall n > 1,$ da $x_{n+1}^2 -a = \frac{1}{4}(x_n - \frac{a}{x_n})^2 - a$\\
-$= \frac{1}{4}(x_n^2 - 2a + \frac{a^2}{x_n^2}  4a)$\\
-$= \frac{1}{4}(x_n-\frac{a}{x_n})^2 \geq 0$
-\item Für $n \geq 1$ ist $(x_n)_n$ fallend, \\da $x_n - x_{n+1} = x_n - \frac{1}{2} (x_n + \frac{a}{x_n}) = \frac{1}{2}(x_n - \frac{a}{x_n})$\\
-$=\underbrace{\frac{1}{2x_n}}_{\geq 0} \underbrace{(x_n^2 -a}_{\geq 0} \geq 0$ wegen Fakt 1) \\
-$\implies \lim_{n \rightarrow \infty} x_n = x$ existiert $\geq \sqrt{a}$\\
-$\implies x = \lim x_{n+1} = \frac{1}{2} \lim (x_n + \frac{a}{x_n} = \frac{1}{2} (x + \frac{a}{x})$\\
-$\implies x^2 = a$, da $x > 0 \implies x = \sqrt{a}$
+  \item $x_n \geq \sqrt{a} \forall n > 1,$ da $x_{n+1}^2 -a = \frac{1}{4}(x_n - \frac{a}{x_n})^2 - a$\\
+    $= \frac{1}{4}(x_n^2 - 2a + \frac{a^2}{x_n^2}  4a)$\\
+    $= \frac{1}{4}(x_n-\frac{a}{x_n})^2 \geq 0$
+  \item Für $n \geq 1$ ist $(x_n)_n$ fallend, da 
+    $$x_n - x_{n+1} = x_n - \frac{1}{2} (x_n + \frac{a}{x_n}) = \frac{1}{2}(x_n - \frac{a}{x_n})$$
+    $=\underbrace{\frac{1}{2x_n}}_{\geq 0} \underbrace{(x_n^2 -a}_{\geq 0} \geq 0$ wegen Fakt 1) \\
+    $\implies \lim_{n \rightarrow \infty} x_n = x$ existiert $\geq \sqrt{a}$\\
+    $\implies x = \lim x_{n+1} = \frac{1}{2} \lim (x_n + \frac{a}{x_n} = \frac{1}{2} (x + \frac{a}{x})$\\
+    $\implies x^2 = a$, da $x > 0 \implies x = \sqrt{a}$
 
 \begin{proof}
-
-$f_n := x_n - \sqrt{a} \implies f_{n+1} = x_{n+1} - \sqrt{a} = \frac{1}{2}(x_n + \frac{a}{x_n}) - \sqrt{a}$\\
-$= \frac{1}{2x_n}(x_n^2 -a) - \sqrt{a} = \frac{1}{2x_n}(x_n - \sqrt{a})^2 = \frac{f_n^2}{2x_n} \leq \frac{1}{2\sqrt{a}} f_n^2$, $n\geq 1$\\
+$$f_n := x_n - \sqrt{a} \implies f_{n+1} = x_{n+1} - \sqrt{a} = \frac{1}{2}(x_n + \frac{a}{x_n}) - \sqrt{a}$$
+$$= \frac{1}{2x_n}(x_n^2 -a) - \sqrt{a} = \frac{1}{2x_n}(x_n - \sqrt{a})^2 = \frac{f_n^2}{2x_n} \leq \frac{1}{2\sqrt{a}} f_n^2$$, $n\geq 1$
 quadratische Konvergenz
 \end{proof}
 \end{enumerate}
@@ -2116,13 +2104,13 @@ Also Reihe = Folge der Partialsummen!\\
 Falls $(S_n)_n$ konvergiert, dann schreiben wir auch $$\sum^\infty_{n=p} a_n = \lim_{n\rightarrow\infty} S_k$$
 Reihe konvergiert = die Folge der Partialsummen konvergiert
 $$\sum^\infty_{n=1} \frac{1}{n}$$ $$S_k = \sum^k_{n=1} \frac{1}{n} \text{ Folge der Partialsummen}$$
-\subsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
-\subsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy
-\begin{proof}
-Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.
-$$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ 
-o.B.d.A  $m\geq n$
-$$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
-\end{proof}
-$$S_{2n} - S_n = \frac{1}{n+1} \frac{1}{n+2} + \ldots + \frac{1}{2n} \geq n \cdot \frac{1}{2n} = \frac{1}{2}$$
+    \subsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
+    \subsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy
+      \begin{proof}
+	Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.
+	  $$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ 
+	    o.B.d.A  $m\geq n$
+	  $$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
+      \end{proof}
+      $$S_{2n} - S_n = \frac{1}{n+1} \frac{1}{n+2} + \ldots + \frac{1}{2n} \geq n \cdot \frac{1}{2n} = \frac{1}{2}$$
 \end{document}
