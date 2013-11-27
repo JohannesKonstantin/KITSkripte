@@ -94,9 +94,9 @@
 \author{\mainAuthor}
 \maketitle
 
-\pagebreak
+\newpage
 \tableofcontents
-\pagebreak
+\newpage
 
 \chapter{Grundlagen}
 
@@ -362,9 +362,9 @@ $\rightarrow$ Beispiel für eine rekursive Definition
 
 \textbf{Definition:} Produkte
 \[ p_1:=a_1\]
-\[ p_{k+1}:=p_k*a_{k+1} \]
-\[ a_1*\ldots*a_n=\prod_{j=1}^n a_j:=p_n\]
-\[ a^n = \underbrace{a*\ldots*a}_{\text{n-mal}}:=\prod_{j=1}^n a\]
+\[ p_{k+1}:=p_k \cdot a_{k+1} \]
+\[ a_1 \cdot \ldots \cdot a_n=\prod_{j=1}^n a_j:=p_n\]
+\[ a^n = \underbrace{a\cdot \ldots \cdot  \cdot}_{\text{n-mal}}:=\prod_{j=1}^n a\]
 
 \textbf{Setzen:}
 \[ \sum_{j=1}^0 a_j := 0 \quad \quad \quad \prod_{j=1}^0 a_j := 1 \quad \quad \quad a^0 = 1\]
@@ -390,8 +390,8 @@ $\rightarrow$ Beispiel für eine rekursive Definition
 
 \begin{proof}{2: Ohne Induktion}
 \[S_n:=\sum_{j=0}^n a^j\]
-\[\Longrightarrow a*S_n=a*\sum_{j=0}^n a^j = \sum_{j=0}^n a*a^j = \sum_{j=0}^n a^{j+1} = \sum_{j=1}^{n+1} a^j\]
-\[\Longrightarrow a*S_n-S_n=\sum_{j=1}^{n+1} a^j -\sum_{j=0}^{n+1} a^j = a^{n+1}-a^0=a^{n+1}+1\]
+\[\Longrightarrow a \cdot S_n=a \cdot \sum_{j=0}^n a^j = \sum_{j=0}^n a \cdot a^j = \sum_{j=0}^n a^{j+1} = \sum_{j=1}^{n+1} a^j\]
+\[\Longrightarrow a\cdot S_n-S_n=\sum_{j=1}^{n+1} a^j -\sum_{j=0}^{n+1} a^j = a^{n+1}-a^0=a^{n+1}+1\]
 \[\Longrightarrow (a-1)S_n =a^{n+1}+1 \Longrightarrow S_n = \frac{a^{n+1}+1}{a-1}\]
 
 \end{proof}
@@ -471,7 +471,7 @@ $G:=\left\{ n \in \mathbb{N}: \exists m \in \mathbb{Z}: \sqrt{2} = \frac{m}{n} \
 
 $\sqrt{2}=\frac{m}{n_0}:$ dann sist $m-n_0 = (\sqrt{2}-1)n_0 \Longrightarrow 0<m-n_0<n_0$ also $m-n_0 \in \mathbb{N}$
 
-$\Longrightarrow \sqrt{2} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{m^2-m*n_0}{n_0(m-n_0)} = \frac{2n_0^2-m*n_0}{n_0(m-n_0} = \frac{2n_0-m}{m-n_0}$
+$\Longrightarrow \sqrt{2} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{m^2-m \cdot n_0}{n_0(m-n_0)} = \frac{2n_0^2-m \cdot n_0}{n_0(m-n_0} = \frac{2n_0-m}{m-n_0}$
 
 Also hat $G$ kein kleinstes Element $\Longrightarrow G = \emptyset$ 
 
@@ -491,7 +491,7 @@ $G:=\left\{ n \in \mathbb{N}: \exists m \in \mathbb{Z}: \sqrt{k} = \frac{m}{n} \
 
 \textbf{Angenommen} $G \neq \emptyset$. Sei $n_0$ kleinstes Element in $G$
 
-$\sqrt{k} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{m^2-m*n_0}{n_0(m-n_0)} = \frac{k*n_0^2-m*n_0}{n_0(m-n_0} = \frac{k*n_0-m}{m-n_0}$ 
+$\sqrt{k} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{m^2-m \cdot n_0}{n_0(m-n_0)} = \frac{k \cdot n_0^2-m \cdot n_0}{n_0(m-n_0} = \frac{k \cdot n_0-m}{m-n_0}$ 
 
 $\Longrightarrow k>1$
 
@@ -499,7 +499,7 @@ Für Widerspruch brauchen wir:
 
 $0<m-n_0<n_0$
 
-$m-n_0 = \sqrt{k}*n_0-n_0=(\sqrt{k}-1)n_0>0,\sqrt{k}>1$ 
+$m-n_0 = \sqrt{k} \cdot n_0-n_0=(\sqrt{k}-1)n_0>0,\sqrt{k}>1$ 
 
 $m-n_0 = (\sqrt{k}-1)n_0 < n_0$
 
@@ -507,11 +507,11 @@ D.h. $\sqrt{k} -1<1 \Longrightarrow \sqrt{k}<2 \Longrightarrow k<4$
 
 $k \leq 3 \Longrightarrow $ (Bullshit)
 
-Versuchen mal $m-l*n_0,l \in \mathbb{N}$ geeignet
+Versuchen mal $m-l \cdot n_0,l \in \mathbb{N}$ geeignet
 
-$\sqrt{k} = \frac{m}{n_0} = \frac{m(m-l*n_0)}{n(m-l*n_0)} = \frac{k*n_0-l*n_0}{n(m-l*n_0)}, k*n_0-l \in \mathbb{Z}$
+$\sqrt{k} = \frac{m}{n_0} = \frac{m(m-l \cdot n_0)}{n(m-l \cdot n_0)} = \frac{k \cdot n_0-l \cdot n_0}{n(m-l \cdot n_0)}, k \cdot n_0-l \in \mathbb{Z}$
 
-\textbf{Brauchen:}  $0<m-l*n_0<n_0 \Longleftrightarrow 0<(\sqrt{k}-l)n_0<n_0$ 
+\textbf{Brauchen:}  $0<m-l \cdot n_0<n_0 \Longleftrightarrow 0<(\sqrt{k}-l)n_0<n_0$ 
 
 \textbf{Brauchen:}  $0<\sqrt{k}-l<1$, wähle $l \in \mathbb{Z}$, sodass $l < \sqrt{k}<l+1$
 
@@ -561,7 +561,7 @@ Wenn $x=b+(-a)$
 In jedem Körper gilt:
 
 \[\frac{a}{c}+\frac{b}{d}=\frac{ad+bc}{cd}\]
-\[\frac{a}{c}*\frac{b}{d}=\frac{ab}{cd}\]
+\[\frac{a}{c} \cdot \frac{b}{d}=\frac{ab}{cd}\]
 \[\frac{\frac{a}{c}}{\frac{b}{d}}=\frac{ad}{bc}\]
 
 TODO: Handout über Körperaxiome muss hier rein!
@@ -612,7 +612,7 @@ $\Longrightarrow$ fertig.
 
 \subsection{Satz 14}
 
-Sei $(\mathbb{K},+,*)$ ein angeordneter Körper $\Longrightarrow$
+Sei $(\mathbb{K},+, \cdot )$ ein angeordneter Körper $\Longrightarrow$
 
 \begin{enumerate}
   \item $a \neq 0 \Longrightarrow a^2>0$ insbesondere $1>0$
@@ -625,19 +625,19 @@ Sei $(\mathbb{K},+,*)$ ein angeordneter Körper $\Longrightarrow$
 \begin{proof}
 
 \begin{enumerate}
-  \item $a^2=a*a$
+  \item $a^2=a \cdot a$
   
-    aus $a>0 \stackrel{(O5)}{\Longrightarrow} a^2=a*a>0$ 
+    aus $a>0 \stackrel{(O5)}{\Longrightarrow} a^2=a \cdot a>0$ 
     
-    aus $a<0 \stackrel{(S15(5))}{\Longrightarrow} a*a>0$
+    aus $a<0 \stackrel{(S15(5))}{\Longrightarrow} a \cdot a>0$
     
-  \item Sei $a \neq 0 \Longrightarrow a*\frac{1}{a} = 1 > 0 \stackrel{(S1(5))}{\Longrightarrow} a>0 \wedge \frac{1}{a}>0$
+  \item Sei $a \neq 0 \Longrightarrow a \cdot \frac{1}{a} = 1 > 0 \stackrel{(S1(5))}{\Longrightarrow} a>0 \wedge \frac{1}{a}>0$
   
     oder $a<0 \wedge \frac{1}{a}>0$
     
-  \item Sei $a>b>0 \stackrel{(2)}{\Longrightarrow} \frac{1}{a}>0;\frac{1}{b}>0;a*b>0;a-b>0 (S13(1))$
+  \item Sei $a>b>0 \stackrel{(2)}{\Longrightarrow} \frac{1}{a}>0;\frac{1}{b}>0;a \cdot b>0;a-b>0 (S13(1))$
   
-  $\Longrightarrow \frac{1}{b} - \frac{1}{a} = \frac{1}{b}(a-b)\frac{1}{a}=(a-b)\frac{1}{b}*\frac{1}{a}>0$
+  $\Longrightarrow \frac{1}{b} - \frac{1}{a} = \frac{1}{b}(a-b)\frac{1}{a}=(a-b)\frac{1}{b} \cdot \frac{1}{a}>0$
 \end{enumerate}
 
 fertig
@@ -691,9 +691,9 @@ fertig
   
     $|-x|=|x|;x \leq |x|$
   \item $\forall x \neq 0: |x|>0$
-  \item $\forall x,y \in \mathbb{R}: |x*y|=|x|*|y|$
+  \item $\forall x,y \in \mathbb{R}: |x \cdot y|=|x| \cdot |y|$
   
-    $sgn(x*y)=sgn(x)*sgn(y)$
+    $sgn(x \cdot y)=sgn(x) \cdot sgn(y)$
   \item $\forall x \in \mathbb{R}, \forall e >0$
   
     hat $|x-a|<e \Longleftrightarrow a-e<x<a+e$
@@ -829,20 +829,20 @@ Die Menge $\bar{\mathbb{R}}:= \mathbb{R} \cup \{\infty\} \cup \{-\infty\}$ erwei
 \begin{itemize}
   \item $\infty + x := \infty$
   \item $-\infty + x := -\infty$
-  \item $\infty * x := \infty, \quad x>0$
-  \item $\infty * x := -\infty, \quad x<0$
+  \item $\infty  \cdot  x := \infty, \quad x>0$
+  \item $\infty  \cdot  x := -\infty, \quad x<0$
   \item $\frac{x}{\infty}:=0=\frac{x}{-\infty}$
   \item $\infty + \infty := \infty$
   \item $-\infty - \infty := -\infty$
-  \item $\infty * \infty := \infty$
-  \item $\infty * (-\infty) := -\infty$
+  \item $\infty  \cdot  \infty := \infty$
+  \item $\infty  \cdot  (-\infty) := -\infty$
 \end{itemize}
 
 \textbf{Nicht definiert:}
 
 \begin{itemize}
   \item $\infty-\infty$
-  \item $0*\infty$
+  \item $0 \cdot \infty$
 \end{itemize}
 
 \subsection{Intervalle}
@@ -907,7 +907,7 @@ $\Longleftrightarrow M = N$
 \subsection{Satz 22}
 \begin{enumerate}[1)]
 \item $\forall n \in \mathbb{N}: n \geq 1$ oder $n \leq 1 + 1$ und $n = 1$ oder $n-1 \in \mathbb{N}$
-\item $\forall n,m \in \mathbb{N}: n+m \in \mathbb{N}$ und $n*m \in \mathbb{N}$
+\item $\forall n,m \in \mathbb{N}: n+m \in \mathbb{N}$ und $n \cdot m \in \mathbb{N}$
 \item $\forall n,m \in \mathbb{N} n \geq m \implies n-m \in \mathbb{N}_0 = \mathbb{N} \cup \{0\}$
 \item Sei $n \in \mathbb{N}$ Dann existiert kein $m \in \mathbb{N}$ mit $n < m < n+1$
 \item Sei $A \subset \mathbb{N}: A \neq \emptyset \implies A$ hat ein kleinstes Element
@@ -943,7 +943,7 @@ $\implies B$ ist induktiv $\implies B = \mathbb{N} \implies \underline{3)}$
 
 Zeige C ist induktiv!
 
-Für $m * n $ analog
+Für $m  \cdot  n $ analog
 
 \item[4)] Aus $n,m \in \mathbb{N} \text{ und } n < m < n + 1$
 
@@ -965,7 +965,7 @@ $\implies D$ ist induktiv$\implies D = \mathbb{N} \implies M \subset \mathbb{N} 
 \end{proof}
 \subsection{Satz 23} $\mathbb{R}$ ist Archimedisch angeordnet $\mathbb{N} \subset \mathbb{R}$ ist \underline{nicht} nach oben beschränkt
 
-insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n * a > b$
+insbesondere $\forall a > 0, b \in \mathbb{R} \exists n \in \mathbb{N}: n  \cdot  a > b$
 
 \begin{proof}
 \paragraph*{Angenommen} $\mathbb{N}$ ist nach oben beschränkt $\underbrace{\implies}_{vollst. Axiom} a = Sup\mathbb{N}\in\mathbb{R}$
@@ -974,12 +974,12 @@ $\implies \alpha - 1$ ist keine obere Schranke für $\mathbb{N}$
 
 $\implies \exists n \in \mathbb{N}, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \mathbb{N}} > \alpha$ $\lightning$
 \subparagraph{Wähle}
-$x = \frac{b}{a} \in \mathbb{R} \implies \exists n \in \mathbb{N}: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n* a > b$ (q.ed)
+$x = \frac{b}{a} \in \mathbb{R} \implies \exists n \in \mathbb{N}: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n \cdot  a > b$ (q.ed)
 \end{proof}
 \section{Ganze und rationale Zahlen}
 $\mathbb{Z} := \mathbb{N}_0 \cup (-\mathbb{N}), -\mathbb{N} := \{-n, n \in \mathbb{N}\}$\\$\mathbb{Q}:=\{\frac{m}{n}: m\in\mathbb{Z},n \in\mathbb{N}\}$
 \subsection{Satz 24}
-($\mathbb{Z}, +, *$) ist ein kommutativer Ring mit Eins, d.h. alle Körperaxiome sind erfüllt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +, *$) ist ein angeordneter Körper.
+($\mathbb{Z}, +,  \cdot $) ist ein kommutativer Ring mit Eins, d.h. alle Körperaxiome sind erfüllt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +,  \cdot $) ist ein angeordneter Körper.
 
 \begin{proof}
 	Nachrechnen
@@ -994,7 +994,7 @@ $\Rightarrow$ Alle Eigenschaften von $\mathbb{N}$ gelten auch für $\mathbb{Z}_p
 $\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschränkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
 \subsection{Korollar 26}
 \begin{enumerate}[1)]
-\item Seien $x,y \in \mathbb{R}, y*x > 1$\\$\implies m\in\mathbb{Z}, x < m < y$
+\item Seien $x,y \in \mathbb{R}, y \cdot x > 1$\\$\implies m\in\mathbb{Z}, x < m < y$
 \item ($\mathbb{Q}$ ist dicht in $\mathbb{R}$) Seien $x,y \in \mathbb{R}, x < y \implies \exists r \in \mathbb{Q}: x < r <y$
 \end{enumerate}
 \subsubsection{Beweis} 
@@ -1011,9 +1011,9 @@ $\implies m \geq y -1 > x \implies x < m < y$
 
 \item Sei $x,y \in \mathbb{R}: x < y \iff a: -y -x > 0$
 
-S.23 $\implies \exists n \in \mathbb{N}: n * a > 1 \iff n * x - n * y > 1$
+S.23 $\implies \exists n \in \mathbb{N}: n  \cdot  a > 1 \iff n  \cdot  x - n  \cdot  y > 1$
 
-$\implies \exists m \in \mathbb{Z}: n*x<m<n*y \iff x <\frac{m}{n} < y$
+$\implies \exists m \in \mathbb{Z}: n \cdot x<m<n \cdot y \iff x <\frac{m}{n} < y$
 \end{enumerate}
 
 \section{Endliche und abzählbare Mengen}
@@ -1044,7 +1044,7 @@ $card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.
 \item A höchstens abzählbar $\iff \exists$ Surjektion $f: \mathbb{N} \rightarrow A$
 \item Unendliche Mengen sind schwierig
 
-$G = \{ n \in \mathbb{N}: $n ist gerade$\} = \{2*n: n \in \mathbb{N}\}$
+$G = \{ n \in \mathbb{N}: $n ist gerade$\} = \{2 \cdot n: n \in \mathbb{N}\}$
 
 $f:\mathbb{N}\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\mathbb{N} \sim G$
 \item Hilberts Hotel
@@ -1087,17 +1087,17 @@ $A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA
 \item Da $A \sim \mathbb{N}, B \sim \mathbb{N} \implies$ reicht zu zeigen $\mathbb{N} \times \mathbb{N}$ ist abzählbar, da $\mathbb{N} \times \mathbb{N}$ unendlich ist $\implies$ zu zeigen $\mathbb{N} \times \mathbb{N}$
 \item ist höchstens abzählbar
 
-	$\phi (m,n) = 2^m * 3^n$
+	$\phi (m,n) = 2^m  \cdot  3^n$
 	
 	$\phi : \mathbb{N} \times \mathbb{N} \implies \mathbb{N}$ ist injektiv
 	
 	In der Tat: Sei $\phi (m,n) = \phi (p,q)$
 	
-	d.h. $2^m * 3^n = 2^p * 3^q$
+	d.h. $2^m  \cdot  3^n = 2^p  \cdot  3^q$
 	
 	o.B.d.A $p \geq m$
 	
-	$\implies 3^n = 2^{p-m} * 3^q$
+	$\implies 3^n = 2^{p-m}  \cdot  3^q$
 	
 	$\implies p = m$
 	
@@ -1156,7 +1156,7 @@ $a < b \implies I$ ist überabzählbar
 \begin{proof}
 Skalieren $\implies$ o.B.d.A. $a = 0, b = 1$ zu $f \in \{0,1\}^\mathbb{N}$
 \end{proof}
-\subsubsection{Dezimalbruchentwicklung:} \[x_f := \sum_{n = 1}^\infty f(n) * 10^{-n} \in [0,1]\]
+\subsubsection{Dezimalbruchentwicklung:} \[x_f := \sum_{n = 1}^\infty f(n)  \cdot  10^{-n} \in [0,1]\]
 beachte: $f_1 + f_2 \implies xf_1 + xf_2$
 \section{Einfache Folgerung aus Induktion}
 \subsection{Satz 37 (Bernoulli)}
@@ -1167,7 +1167,7 @@ $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist s
 	
 	Im Ange. gilt: $(1 + x)^k \geq 1 + k x$
 	
-	$implies (1 + x)^{k + 1} = (1 + x)^k * \underbrace{(1 + x)}_{> 0} \geq (1 + kx) (1 + x)$
+	$implies (1 + x)^{k + 1} = (1 + x)^k  \cdot  \underbrace{(1 + x)}_{> 0} \geq (1 + kx) (1 + x)$
 	
 	$= 1 + (k + 1)x = 1 + (k + 1)x + k x^2 \geq 1 + (k + 1)x$
 \end{proof}
@@ -1175,7 +1175,7 @@ $\forall x \in \mathbb{N}, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist s
 
 	$n \in \mathbb{N}_0 | (n + 1)! := n!(n+1)$
 	
-	d.h. $n! = 1 * 2 * 3 \ldots n)$
+	d.h. $n! = 1  \cdot  2  \cdot  3 \ldots n)$
 	
 	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binominialkoeffizient
 \subsection{Lemma 39} \[1 \leq k \leq n\] \[\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}\]
@@ -1285,17 +1285,17 @@ $(a_n)_n$ ist divergent, wenn sie nicht konvergiert.
     
     Sei $\epsilon > 0$: Aus Bernoulli: 
     
-    $|q|^{-n}=(1+h)^n \geq 1+n*h> n*h>\frac{1}{\epsilon}$
+    $|q|^{-n}=(1+h)^n \geq 1+n \cdot h> n \cdot h>\frac{1}{\epsilon}$
     
-    für $n> \frac{1}{\epsilon*h}=:k_\epsilon$
+    für $n> \frac{1}{\epsilon \cdot h}=:k_\epsilon$
     
-    $\implies |q^n-0|=|q^n|=|q|^n < \frac{1}{n*h} < \epsilon$
+    $\implies |q^n-0|=|q^n|=|q|^n < \frac{1}{n \cdot h} < \epsilon$
     
-    für alle $n > \frac{1}{\epsilon*h}$
+    für alle $n > \frac{1}{\epsilon \cdot h}$
     
     \item $\forall q \in \mathbb{R}, |q|<1,p \in \mathbb{N}$
     
-    $\lim_{n \to \infty} n^p*q^n=0$
+    $\lim_{n \to \infty} n^p \cdot q^n=0$
     
     \textbf{Beweis} O.B.d.A $a \neq 0$
     
@@ -1307,19 +1307,19 @@ $(a_n)_n$ ist divergent, wenn sie nicht konvergiert.
     
     $=\frac{n!}{(p+1)!(n-p-1)!} h^{p+1}$
     
-    $\underbrace{n*(n-1)*\ldots*(n-p)}_{p+1 \text{ Faktoren}}*\frac{h^{p+1}}{(p+1)!}$
+    $\underbrace{n \cdot (n-1) \cdot \ldots \cdot (n-p)}_{p+1 \text{ Faktoren}} \cdot \frac{h^{p+1}}{(p+1)!}$
     
     $>\left(\frac{n}{2}\right)^{p+1} \frac{h^{p+1}}{(p+1)!}$
     
     $\implies |p|^n < \left(\frac{2}{h}\right)^{p+1} \frac{(p+1)!}{h^{p+1}}$
     
-    $\implies n^p|q|^h < \frac{2^{p+1}(p+1)!}{h^{p+1}}*\frac{1}{n}$
+    $\implies n^p|q|^h < \frac{2^{p+1}(p+1)!}{h^{p+1}} \cdot \frac{1}{n}$
     
     Sei $\epsilon >0$ wähle $k_\epsilon \in \mathbb{N}$,
     
-    $k_\epsilon > max\left(2p,\frac{h^{p+1}}{2^{p+1}(p+1)!}*\frac{1}{\epsilon}\right)$
+    $k_\epsilon > max\left(2p,\frac{h^{p+1}}{2^{p+1}(p+1)!} \cdot \frac{1}{\epsilon}\right)$
     
-    $\implies |n^p*q^n-0|=n^p|q|^n < \epsilon \quad \forall n \geq k_\epsilon$
+    $\implies |n^p \cdot q^n-0|=n^p|q|^n < \epsilon \quad \forall n \geq k_\epsilon$
   \end{enumerate}
 \end{example}
 
@@ -1418,9 +1418,9 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
 \begin{enumerate}
   \item $\lim(a_n+b_n)=a+b$
   
-    $\lim(\lambda*a_n)=\lambda*a$
+    $\lim(\lambda \cdot a_n)=\lambda \cdot a$
     
-    $\lim(a_n*b_n)=a*b$
+    $\lim(a_n \cdot b_n)=a \cdot b$
     
     und falls $b \neq 0 \implies b_1 \neq 0$ für fast alle $n$: $\lim \frac{a_n}{b_n} = \frac{a}{b}$ 
  
@@ -1440,9 +1440,9 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
   
     $\leq |a_n-a| + |b_n-b| < \frac{\epsilon}{2}+\frac{\epsilon}{2}= \epsilon$
   
-    \textbf{Produkt:} $a_n*b_n-a*b=(a_n-a)b_n+a(b_n-b)$
+    \textbf{Produkt:} $a_n \cdot b_n-a \cdot b=(a_n-a)b_n+a(b_n-b)$
   
-    $=|a_n*b_n -a*b| \leq |a_n-a||b_1|+|a||b_n-b|$
+    $=|a_n \cdot b_n -a \cdot b| \leq |a_n-a||b_1|+|a||b_n-b|$
     
     $b_n \to b \implies |b_n|$ ist beschränkt 
     
@@ -1457,11 +1457,11 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
 
 
     \begin{tabular}{rl}
-      $|a_nb_n-a*b|$ & $\leq |a_n-a||b_n|+|a||b_n-b|$ \\
+      $|a_nb_n-a \cdot b|$ & $\leq |a_n-a||b_n|+|a||b_n-b|$ \\
                      & $< \frac{\epsilon}{2M}M+|a|\frac{\epsilon}{2(|a|+1)} \leq \epsilon$
     \end{tabular}
     
-    \textbf{Quotient} $\frac{a_n}{b_n}=a_n*\frac{1}{b_n}$
+    \textbf{Quotient} $\frac{a_n}{b_n}=a_n \cdot \frac{1}{b_n}$
     
     d.h. reicht zu zeigen, dass $\frac{1}{b_n} \to \frac{1}{b}$
     
@@ -1477,7 +1477,7 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
     
     $\implies b_n \neq 0$ für fast alle $n$.
     
-    $|\frac{1}{b_n}-\frac{1}{b}|=|\frac{b-b_n}{b*b_n}|=\frac{1}{|b||b_n|}|b-b_n| \stackrel{\text{ für fast alle } n}{\leq}\frac{2}{|b|^2}|b_n-b|$
+    $|\frac{1}{b_n}-\frac{1}{b}|=|\frac{b-b_n}{b \cdot b_n}|=\frac{1}{|b||b_n|}|b-b_n| \stackrel{\text{ für fast alle } n}{\leq}\frac{2}{|b|^2}|b_n-b|$
 
     Da $b_n \to b \implies |b_n-b| < \frac{|b|^2}{2} \epsilon$ für fast alle $n$
     
@@ -1525,7 +1525,7 @@ Sei $a_n\to a, b_n \to b, \lambda $ eine Zahl.
 \subsection{Satz 6} 
 
 \begin{enumerate}
-  \item Ist $(a_n)_n$ eine Nullfolge, d.h. $a_n \to 0$ und $(c_n)_n$ beschränkt $\implies (a_n*c_n)_n$ eine Nullfolge.
+  \item Ist $(a_n)_n$ eine Nullfolge, d.h. $a_n \to 0$ und $(c_n)_n$ beschränkt $\implies (a_n \cdot c_n)_n$ eine Nullfolge.
   
   \begin{proof}
     Es gelte $|c_n| \leq C < \infty$
@@ -1554,7 +1554,7 @@ Sei $(a_n)_n$, $(b_n)_n$ konvergente Folgen
 
 mit $\lim a_n  = \lim b_n = a$ 
 
-und $(c_n)_n*a_n \leq c_n \leq b_n$ für fast alle $n$
+und $(c_n)_n \cdot a_n \leq c_n \leq b_n$ für fast alle $n$
 
 $\implies (c_n)_n$ konvergiert und $\lim c_n=a$
 
@@ -1584,24 +1584,24 @@ $\implies (c_n)_n$ konvergiert und $\lim c_n=a$
       \begin{itemize}
         \item $p=1:$ Übung!
         
-        \item $p=2: \lim(n^2)^{\frac{1}{n}} = \lim(n^{\frac{1}{n}}*n^{\frac{1}{n}})$
+        \item $p=2: \lim(n^2)^{\frac{1}{n}} = \lim(n^{\frac{1}{n}} \cdot n^{\frac{1}{n}})$
         
-          $= \lim_{n \to \infty} n^{\frac{1}{n}}* \lim_{n \to \infty} n^{\frac{1}{n}}$ 
+          $= \lim_{n \to \infty} n^{\frac{1}{n}} \cdot  \lim_{n \to \infty} n^{\frac{1}{n}}$ 
 
-	      $1*1=1$
+	      $1 \cdot 1=1$
 	    \item $p \geq 2$ Induktionsbeweis
       \end{itemize}
     \end{proof}
-    \item $\lim \frac{a*n+b}{c*n+a} = \frac{a}{c}$ falls $c\neq 0$
+    \item $\lim \frac{a \cdot n+b}{c \cdot n+a} = \frac{a}{c}$ falls $c\neq 0$
     
     \begin{proof}
-      $\frac{a*n+b}{c*n+a} = \frac{a+\frac{b}{n}}{c+\frac{d}{n}} \stackrel{\text{ Quotientenregel }}{\to} \frac{a}{c}$
+      $\frac{a \cdot n+b}{c \cdot n+a} = \frac{a+\frac{b}{n}}{c+\frac{d}{n}} \stackrel{\text{ Quotientenregel }}{\to} \frac{a}{c}$
     \end{proof}
         
-    $\lim_{n\to \infty} \frac{a*n+d}{c*n^2+d*n+f}\neq \stackrel{c \neq 0 }{0}$
+    $\lim_{n\to \infty} \frac{a \cdot n+d}{c \cdot n^2+d \cdot n+f}\neq \stackrel{c \neq 0 }{0}$
     
     \begin{proof}
-      $\frac{a*n+d}{c*n^2+d*n+f}= \frac{1}{n}*\frac{a+\frac{d}{n}}{c+\frac{d}{n}+\frac{f}{n^2}} \to \stackrel{c\neq 0}{0}$
+      $\frac{a \cdot n+d}{c \cdot n^2+d \cdot n+f}= \frac{1}{n} \cdot \frac{a+\frac{d}{n}}{c+\frac{d}{n}+\frac{f}{n^2}} \to \stackrel{c\neq 0}{0}$
     \end{proof}
   \end{itemize}
 
@@ -1618,12 +1618,12 @@ insb gilt:
 \item $a_n \rightarrow \infty \implies \lambda a_n \rightarrow \infty$ für $\lambda > 0, \lambda a_n \rightarrow - \infty, \lambda < 0$
 \item $a_n \rightarrow \infty \rightarrow \frac{1}{a_n} \rightarrow 0$ und falls $a_n > 0$ für fast alle n, dann gilt auch Umkehrung
 \item $a_n \rightarrow \infty, b_n \rightarrow b \in \mathbb{R} \implies a_n + b_n \rightarrow \infty$
-\item $a_n \rightarrow \infty, b_n \rightarrow b > 0$ (oder $b_n \rightarrow \infty$) $\implies a_n * b_n \rightarrow \infty$
+\item $a_n \rightarrow \infty, b_n \rightarrow b > 0$ (oder $b_n \rightarrow \infty$) $\implies a_n  \cdot  b_n \rightarrow \infty$
 \end{enumerate}
 \begin{proof}
 \begin{itemize}
 \item 1) - 3): Scharf hinschauen
-\item 4) $b_n \rightarrow b > 0 \implies b_n \geq \frac{1}{2} b$ für fast alle n, $\implies a_n * b_n > \frac{1}{2}b*a_n$ für fast alle n.\\zu $k > 0$, wähle $N(k): a_n > \frac{2}{b}k \forall n\geq N(k)$\\$\implies a_n * b_n > \frac{b}{2} * \frac{2}{b} k = k$ für fast alle n
+\item 4) $b_n \rightarrow b > 0 \implies b_n \geq \frac{1}{2} b$ für fast alle n, $\implies a_n  \cdot  b_n > \frac{1}{2}b \cdot a_n$ für fast alle n.\\zu $k > 0$, wähle $N(k): a_n > \frac{2}{b}k \forall n\geq N(k)$\\$\implies a_n  \cdot  b_n > \frac{b}{2}  \cdot  \frac{2}{b} k = k$ für fast alle n
 \end{itemize}
 \end{proof}
 \section{Monotone Folgen}
@@ -1694,13 +1694,13 @@ $e := \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n$ existiert und $2 + \frac{
 \begin{proof}
 \[a_n = (1 + \frac{1}{n})^n \implies a_n\text{ ist wachsend da } n\geq 2\]
 \[\frac{a_n}{a_{n-1}} = \frac{(1+\frac{1}{n})^n}{(1+\frac{1}{n-1})^{n-1}} = \frac{(\frac{n+1}{n})^n}{(\frac{n}{n-1})^{n-1}}\]
-\[= \frac{n}{n-1} * (\frac{(n+1)(n-1)}{n^2})^n = \frac{n}{n-1} (\frac{n^2 - 1}{n^2})^n\]
-\[= \frac{n}{n-1} (1-\frac{1}{n^2})^n \underbrace{>}_{\text{Bernoulli}} \frac{n}{n-1} (1 - n * \frac{1}{n^2}) = 1\]
+\[= \frac{n}{n-1}  \cdot  (\frac{(n+1)(n-1)}{n^2})^n = \frac{n}{n-1} (\frac{n^2 - 1}{n^2})^n\]
+\[= \frac{n}{n-1} (1-\frac{1}{n^2})^n \underbrace{>}_{\text{Bernoulli}} \frac{n}{n-1} (1 - n  \cdot  \frac{1}{n^2}) = 1\]
 Monotone Konvergenz $\implies a_n$ konvergiert, wenn es nach oben beschränkt ist.
-\[a_n = (1 + \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!} * \frac{1}{n^k}\]
+\[a_n = (1 + \frac{1}{n})^n = \sum_{k = 0}^n \binom{n}{k} (\frac{1}{n})^k = \sum_{k=0}^n \frac{n!}{k!(n-k)!}  \cdot  \frac{1}{n^k}\]
 \[= \sum_{k =0}^n \frac{1}{k!} \prod_{l=0}^k \frac{n-l}{n} \leq \sum_{k=0}^n \frac{1}{k!}\]
 Induktion $=: k! \geq 2^k$ für $k\geq 4$
-\[\implies n \geq k: a_n \leq 1 + 1 + \frac{1}{2} +  \frac{1}{2 * 3} + \sum_{k = 4}^n (\frac{1}{2})^k\]
+\[\implies n \geq k: a_n \leq 1 + 1 + \frac{1}{2} +  \frac{1}{2  \cdot  3} + \sum_{k = 4}^n (\frac{1}{2})^k\]
 \[= \frac{16}{6} + \frac{1}{2^4} \sum_{l = 0}^{n-4} (\frac{1}{2})^l = \frac{16}{6} + \frac{1}{2^4} \underbrace{(\frac{1-(\frac{1}{2})^{n-3}}{1-\frac{1}{2}})}_{\leq 2} \text{(geometrische Summe)}\]
 \[\leq \frac{16}{6} + \frac{1}{8} = \frac{67}{24} \implies e \leq \frac{67}{24}\]
 \[e \geq a_n \forall n, n = 3\]
@@ -2011,22 +2011,22 @@ Man nennt $x$ den Realteil von $z=x+iy$
 
 Man nennt $y$ den Imaginärteil von $z=x+iy$
 
-reelle Zahl $z=x=x+i*0$
+reelle Zahl $z=x=x+i \cdot 0$
 
 Wollen rechnen: D.h. alle Körperaxiome sollen gelten.
 
 \begin{itemize}
  %\item What does the + say???
  \item Was ist \qq{$+$} (Plus, addieren) ?
- \item Was ist \qq{$*$} (Mal, multiplizieren) ?
+ \item Was ist \qq{$ \cdot $} (Mal, multiplizieren) ?
 \end{itemize}
 
 \subsection{Summe:} $$z_1 = a_1 + ib_1 \text{, } z_2 = a_2 + ib_2$$ $$\implies z_1 + z_2 := (a_1 + ib_1) + (a_2+ib_2)$$ $$(a_1 + ib_1) + (a_2+ib_2) = (a_1 + a_2) + i(b_1+b_2)$$
 
-\subsection{Produkt:} $$z_1 * z_2 = (a_1 + ib_1) * (a_2 * ib_2)$$ 
+\subsection{Produkt:} $$z_1  \cdot  z_2 = (a_1 + ib_1)  \cdot  (a_2  \cdot  ib_2)$$ 
 %unsure code
 $$=a_1(a_2 + ib_2) + ib_2(a_1)$$
-$$a_1a_2 + ia_1b_2 + ia_2b_1 + \underbrace{(ib_1)(ib_2)}_{-b_1*b_2}$$
+$$a_1a_2 + ia_1b_2 + ia_2b_1 + \underbrace{(ib_1)(ib_2)}_{-b_1 \cdot b_2}$$
 $$=a_1a_2 -b_1b_2 + i(a_1b_2 + a_2b_1)$$
 
 \subsection{Definition von Komplexe Zahlen}
@@ -2034,29 +2034,29 @@ $\mathbb{C} := \mathbb{R} \times \mathbb{R} = \mathbb{R}^2=\{\binom{x}{y}:x,y \i
 Mit den binären Operationen:
 \begin{itemize}
 \item \qq{$+$} $\mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$\\ $z_1 = \binom{a_1}{b_1}$ $z_2 = \binom{a_2}{b_2}$\\ $(z_1, z_2) \mapsto z_1 + z_2 \binom{a_1 + a_2}{b_1 + b_2}$
-\item \qq{$*$} $\mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$\\$(z_1, z_2) \mapsto z_1 * z_2 = \binom{a_1a_2 - b_1b_2}{a_1b_2+a_2b_1}$
+\item \qq{$ \cdot $} $\mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$\\$(z_1, z_2) \mapsto z_1  \cdot  z_2 = \binom{a_1a_2 - b_1b_2}{a_1b_2+a_2b_1}$
 \end{itemize}
-$\implies (\mathbb{C},+,*)$ ist ein Körper!
+$\implies (\mathbb{C},+, \cdot )$ ist ein Körper!
 \subsection{Spezielle Komplexe Zahlen}
 $z=\binom{a}{b} a,b \in \mathbb{R}$
 \subsubsection{Beispiel}
 $b=0,z=\binom{a}{0}$\\$z_1=\binom{a_1}{0},z_2 = \binom{a_2}{0}$\\
 $\implies z_1 + z_2 = \binom{a_1+a_2}{0}$\\
-$z_1 * z_2 = \binom{a_1 * a_2}{0}$ Verhalten sich wie $\mathbb{R}$\\
+$z_1  \cdot  z_2 = \binom{a_1  \cdot  a_2}{0}$ Verhalten sich wie $\mathbb{R}$\\
 $\implies$ Können $\mathbb{R}$ als Teilmenge von $\mathbb{C}$ auffassen\\
 $\mathbb{R}$ wird identifiziert mit $\{\binom{a}{0}, a \in \mathbb{R}\}$
 \subsubsection{Notation}
-$z=\binom{a}{b}=a*\binom{1}{0}+b*\binom{0}{1}$\\
-$\binom{0}{1} * \binom{0}{1} = \binom{-1}{0} \simeq -1$ als reelle Zahl
+$z=\binom{a}{b}=a \cdot \binom{1}{0}+b \cdot \binom{0}{1}$\\
+$\binom{0}{1}  \cdot  \binom{0}{1} = \binom{-1}{0} \simeq -1$ als reelle Zahl
 \subsubsection{Definition} $i = \binom{0}{1}, i^2 = -1$
 \subsubsection{Bild}
 \subsubsection{Definition: Betrag(Länge)} 
 $z \in \mathbb{C}:|z|:=\sqrt{a^2 + b^2}$, $z=a+ib$
 \subsection{Komplex Konjugieren} $z = a+ib$, $\overline{z} = a - ib$\\
-Es gilt: $|z|^Z = z * \overline{z} = \overline{z} * z$ nachrechnen\\
+Es gilt: $|z|^Z = z  \cdot  \overline{z} = \overline{z}  \cdot  z$ nachrechnen\\
 $0 \neq z = a + ib$\\
 $\implies$ was ist $\frac{1}{z} = \frac{1}{a+ib}$\\
-$\frac{1}{z} * \frac{\overline{z}}{z} = \frac{\overline{z}}{z * \overline{z}} = \frac{\overline{z}}{|z|^z} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i*\frac{b}{a^2 + b^2}$
+$\frac{1}{z}  \cdot  \frac{\overline{z}}{z} = \frac{\overline{z}}{z  \cdot  \overline{z}} = \frac{\overline{z}}{|z|^z} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i \cdot \frac{b}{a^2 + b^2}$
 \subsubsection{Definition: Abstand} $z_1, z_2 \in \mathbb{C}$\\
 $d(z_1,z_2) := |z_1 - z_2| = \sqrt{(a_1 - a_2)^2 + (b_1 - b_2)^2}$\\
 $z_1 = a_1 + ib_1$, $z_2 = a_2 + ib_2$
@@ -2104,21 +2104,25 @@ $\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $
 $\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!\\
 $\implies$ Teilfolge $z_{n_{j_l}} = x_{n_{j_l}} + iy_{n_{j_l}}$ konvergiert
 \end{proof}
+
+
 \chapter{Reihen}
-\section{Definition und elementare Eigenschaften}
-\subsection{Definition 1} Gegeben eine Folge $(a_n)_{n\in\mathbb{N}}$ oder $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ ist die zugehörige Reihe\\
-$$\underbrace{\sum^\infty_{n=p} a_n}_{\text{informal}}$$ 
-gegeben durch die Folge $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ der Partialsummen: $$ S_n := \sum^n_{l=P} a_l, n\geq p$$\\
+  \section{Definition und elementare Eigenschaften}
+    \subsection{Definition 1} Gegeben eine Folge $(a_n)_{n\in\mathbb{N}}$ oder $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ ist die zugehörige Reihe
+      $$\underbrace{\sum^\infty_{n=p} a_n}_{\text{informal}}$$ 
+gegeben durch die Folge $(a_n)^\infty_{n=p} p\in\mathbb{Z}$ der Partialsummen: $$ S_n := \sum^n_{l=P} a_l, n\geq p$$
 $\sum^\infty_{n=p}$ steht für  $(S_n)^\infty_{n=p}$ meistens $p=1$ oder 0\\
 Also Reihe = Folge der Partialsummen!\\
 Falls $(S_n)_n$ konvergiert, dann schreiben wir auch $$\sum^\infty_{n=p} a_n = \lim_{n\rightarrow\infty} S_k$$
 Reihe konvergiert = die Folge der Partialsummen konvergiert
 $$\sum^\infty_{n=1} \frac{1}{n}$$ $$S_k = \sum^k_{n=1} \frac{1}{n} \text{ Folge der Partialsummen}$$
 \subsection{Definition 2} Eine Reihe ist Cauchy, falls $$\forall\epsilon > 0 \exists k_\epsilon: |\sum^m_{l=n} a_l| <\epsilon \forall m\geq n \geq k_\epsilon$$
-\subsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy\\
+\subsection{Satz 3} Eine Reihe konvergiert $\Leftrightarrow$ sie ist Cauchy
 \begin{proof}
-Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.\\
-$$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ $$\text{o.B.d.A } m\geq n$$ $$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
-\end{proof}\\
-$$S_{2n} - S_n = \frac{1}{n+1} \frac{1}{n+2} + \ldots + \frac{1}{2n} \geq n * \frac{1}{2n} = \frac{1}{2}$$
+Partiaslsummen $S_n := \sum^n_{l=p}$ konvergiert $\Leftrightarrow (S_n)^\infty_{n=p}$ ist Cauchy.
+$$\forall \epsilon > 0 \exists k_\epsilon: \forall n,m \geq k_\epsilon: |S_n - S_m| < \epsilon$$ 
+o.B.d.A  $m\geq n$
+$$\epsilon > |S_m - S_n| = |\sum^n_{l=p} a_l - \sum^m_{l=p} a_l| = |\sum^m_{l=n+p} a_l|$$
+\end{proof}
+$$S_{2n} - S_n = \frac{1}{n+1} \frac{1}{n+2} + \ldots + \frac{1}{2n} \geq n \cdot \frac{1}{2n} = \frac{1}{2}$$
 \end{document}
