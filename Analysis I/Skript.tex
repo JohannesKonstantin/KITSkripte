@@ -2070,17 +2070,17 @@ $\binom{0}{1}  \cdot  \binom{0}{1} = \binom{-1}{0} \simeq -1$ als reelle Zahl
 \subsubsection{Definition: Betrag(Länge)} 
 $z \in \mathbb{C}:|z|:=\sqrt{a^2 + b^2}$, $z=a+ib$
 \subsection{Komplex Konjugieren} $z = a+ib$, $\overline{z} = a - ib$\\
-Es gilt: $|z|^Z = z  \cdot  \overline{z} = \overline{z}  \cdot  z$ nachrechnen\\
+Es gilt: $|z|^2 = z  \cdot  \overline{z} = \overline{z}  \cdot  z$ nachrechnen\\
 $0 \neq z = a + ib$\\
 $\implies$ was ist $\frac{1}{z} = \frac{1}{a+ib}$\\
-$\frac{1}{z}  \cdot  \frac{\overline{z}}{z} = \frac{\overline{z}}{z  \cdot  \overline{z}} = \frac{\overline{z}}{|z|^z} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i \cdot \frac{b}{a^2 + b^2}$
+$\frac{1}{z}  \cdot  \frac{\overline{z}}{\overline{z}} = \frac{\overline{z}}{z  \cdot  \overline{z}} = \frac{\overline{z}}{|z|^2} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i \cdot \frac{b}{a^2 + b^2}$
 \subsubsection{Definition: Abstand} $z_1, z_2 \in \mathbb{C}$\\
 $d(z_1,z_2) := |z_1 - z_2| = \sqrt{(a_1 - a_2)^2 + (b_1 - b_2)^2}$\\
 $z_1 = a_1 + ib_1$, $z_2 = a_2 + ib_2$
 \subsubsection{Beispiel} $z = 2 +3i$\\
 $\frac{1}{z} = \frac{1}{2+3i} = \frac{2-3i}{(2+3i)(2-3i)} = \frac{2-3i}{2^2 + 3^2} = \frac{2}{13} - i\frac{3}{13}$
 \subsubsection{Polarkoordinaten} $z = a + ib$\\
-$=|z|(\frac{a}{|z|}+i\frac{b}{|z|}$\\
+$=|z|(\frac{a}{|z|}+i\frac{b}{|z|})$\\
 $=|z|(\cos \psi + \sin \psi)$
 \subsection{Komplexwertige Folge} Eine Folge ist eine Funktion f\\
 $f:\mathbb{N}\rightarrow \mathbb{C},n\mapsto f(n)$
@@ -2088,7 +2088,7 @@ $f:\mathbb{N}\rightarrow \mathbb{C},n\mapsto f(n)$
 \subsubsection{Konvergenz} $(z_n)_n$ konvergiert in $\mathbb{C}$ gegen Grenzwert L:\\
 $\forall\epsilon > 0 \exists k_\epsilon : |z_k - L| < \epsilon \forall n \geq k_\epsilon$\\Alle anderen Definitionen, Häufungswert, Cauchyfolge etc analog!\\
 Folge $(z_n)_n$ ist beschränkt, falls $\exists 0 \leq M < \infty:|z_n|\leq M \forall n$
-\subsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{z_i}(z - \overline{z})$\\
+\subsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{2i}(z - \overline{z})$\\
 $z = a + ib, \overline{z} = a - ib, z + \overline{z} = a + ib + a - ib = 2a = 2Re(z)$\\
 $z-\overline{z} = 2ib = 2Im(z)$\\
 \begin{proof}
@@ -2107,8 +2107,8 @@ $|z_n - L| = \sqrt{(x_n-a)^2 + (y_n - b)^2} < \sqrt{\frac{\epsilon^2}{2}} + \fra
 $\lim z_n = L$
 \end{itemize}
 \end{proof}
-\subsubsection{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \in A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
-A ist abgeschlossen, falls $A^\mathbb{C} = \mathbb{C} \ A$ offen ist.
+\subsubsection{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \subset A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
+A ist abgeschlossen, falls $A^\mathbb{C} = \mathbb{C} \backslash A$ offen ist.
 \subsection{Korollar}
 Eine Folge $(z_n)_n$ in $\mathbb{C}$ konvergiert $\Leftrightarrow (z_n)_n$ ist Cauchy!\\
 \begin{proof}
@@ -2121,6 +2121,8 @@ $(z_n)_n$ ist Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ sind Cauchy
 $(z_n)_n$ beschränkt $\Leftrightarrow \underbrace{(Re(z_n))_n}_{x_n}, \underbrace{(Im(z_n))_n}_{y_n}$ sind beschränkte reelle Teilfolgen
 
 $\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $x_{n_j} \rightarrow a$
+
+$\implies \exists$ konvergente Teilfolge $(y_{n_{j_l}})_l$
 
 $\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!
 
@@ -2192,13 +2194,13 @@ Damit hat das Symbol $\sum_{n=p}^\infty a_n$ zwei Bedeutungen:
 \subsection{Satz 2: Cauchy-Kriterium für Konvergenz von Reihen}
 
 \[\text{Eine Reihe } \sum_{n=p}^\infty a_n \text{ konvergiert} \]
-\[\Longleftrightarrow \forall \epsilon > 0 \exists k_\epsilon : \forall l \in \mathbb{N}, n \geq k_\epsilon : \left|\sum_{j=p}^{n+1} a_j\right|<\epsilon\]
+\[\Longleftrightarrow \forall \epsilon > 0 \exists k_\epsilon : \forall l \in \mathbb{N}, n \geq k_\epsilon : \left|\sum_{j=n+1}^{n+l} a_j\right|<\epsilon\]
 
 \begin{proof}
   \[\sum_{n=p}^\infty a_n \text{ konvergiert } \Longleftrightarrow \text{ die Folge } (a_n)_{n\geq p} \text{ der Partialsummen konvergiert}\]
   \[\stackrel{\text{Cauchy-Krit}}{\Longleftrightarrow} \forall \epsilon > 0 \exists k_\epsilon : | S_m -S_n | < \epsilon \quad \forall n,m \geq k_\epsilon\]
   \[\text{O.B.d.A } m>n \text{ d.h. } m=n+l,l\in \mathbb{N}\]
-  \[\text{da } S_m-S_n = S_{n+l}- S_n = \sum_{j=n+1}^{n+l} a_j \text{ sind wir Fertig}\]
+  \[\text{da } S_m-S_n = S_{n+l}- S_n = \sum_{j=n+1}^{n+l} a_j \text{ sind wir fertig}\]
 \end{proof}
 
 \subsection{Korollar 3}
@@ -2235,8 +2237,8 @@ Umkehrung gilt NICHT!
 
 \begin{proof}
   
-  \[\text{Wen sie konvergent wäre, dann gilt Satz 2 } a_n = \frac{1}{n}\]
-  \[S_n = \sum_{j=1}^n a_j = \sum_{j=1}^n \frac{1}{j}\]
+  \[\text{Wen sie konvergent wäre, dann gilt Satz 2 }\] 
+  \[a_n = \frac{1}{n} , S_n = \sum_{j=1}^n a_j = \sum_{j=1}^n \frac{1}{j}\]
   \[l=n\]
   \[S_{n+l}-S_n = \sum_{j=n+1}^{n+n} \frac{1}{j} = \sum_{j=n+1}^{2n} \frac{1}{j} = \frac{1}{n+1} + \frac{1}{n+2} + \frac{1}{n+3} + \ldots + \frac{1}{2n} \geq n*\frac{1}{2n}=\frac{1}{2}\]
   d.h. Satz 2 ist verletzt $\implies$ keine Konvergenz
