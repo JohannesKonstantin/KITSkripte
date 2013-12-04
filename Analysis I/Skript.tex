@@ -2517,4 +2517,60 @@ $\implies \sum_{n=l+1}^\infty 9 * 10^{-n} = 9 * \sum_{n=l+1}^\infty 10^{-n} = 9 
 $\implies x = r - \lfloor r \rfloor = \sum_{n=1}^\infty x_n * 10^{-n} = \sum_{n=1}^l x_n * 10^{-n} + \underbrace{\sum_{n=l+1}^\infty 9 * 10^{-n}}_{=10^{-l}}$\\
 $=\sum_{n=1}^{l-1} x_n * 10^{-n} + \underbrace{x_l 10^{-l} + 10^{-l}}_{=(x_l + 1) * 10^{-l}}$\\
 $\implies r = \lfloor r \rfloor + \sum_{n=1}^l \tilde{x}_1 * 10^{-n}$\\
+$\tilde{x} = \left\{\begin{array}{cl} x_n, & \mbox{falls } n\leq l -1\\ x_l + 1, & \mbox{falls } n = l\\ 0 & \mbox{falls } n\geq l + 1 \end{array}\right. $\\
+Vollkommen analog kann man g-adische Darstellung zeigen: $g \in\mathbb{N}$\\
+$\implies r = m + \sum_{n=1}^\infty	y_n g^{-n}$\\
+$m\in\mathbb{Z}, y_n \in\{ 0,1,\ldots ,g-1\}$\\
+\begin{proof}
+Analog
+\end{proof}
+
+\paragraph{Angenommen} $[0,1)$ ist abzählbar $\rightarrow$ Liste $r_n \in [0,1), n\in\mathbb{N}$\\
+$r_1 = 0, x_1^1, x_2^1, x_3^1, \ldots$\\
+$r_2 = 0, x_1^2, x_2^2, \ldots$\\
+$r_3 = 0, x_1^3, \ldots$\\
+$\vdots$\\
+Idee als n-te Ziffer $\tilde{x}_n := \left\{\begin{array}{cl} \tilde{x}_n + 1, & \mbox{falls } x_n^n \leq 8\\ 1, & \mbox{falls } x_n^n = 9 \end{array}\right. $\\
+$\implies$ neue reelle Zahl $\tilde{r} = 0, \tilde{x}_1, \tilde{x}_2, \tilde{x}_3, \ldots \in [0,1)$ die nicht in obiger Liste ist.
+$\implies [0,1)$ nicht abzählbar!\\
+
+\section{Umordnung von Reihen}
+\paragraph{Beobachtung} Bei \underline{endlichen} Summen hängt der Wer der Summe \underline{nicht} davon ab, in welcher Reihenfolge die Summanden aufsummiert werden.\\
+$a_1 + a_2 + \ldots + a_6 = ((((a_1+a_2)+a_5)+a_4)+a_6)+a_3 = ((((a_1+a_6)+a_4)+a_3)+a_5)+a_2$\\
+\paragraph{Warnung} Bei unendlichen Reihen ist dies manchmal falsch!
+
+\subsection{Definition 20}
+\begin{enumerate}[1)]
+\item Seien $\sum_{n=1}^\infty a_n, \sum_{n=1}^\infty b_n$
+$a_n, b_n \in\mathbb{C}$ Wir nennen $\sum_{n=1}^\infty b_n$ eine Umordnung von $\sum_P{n=1}^\infty a_n$, wenn es eine bijektive Abbildung $\sigma : \mathbb{N} \rightarrow \mathbb{N}$ gibt $b_n = a_{\sigma (n)}$, d.h. $(b_n)_n$ ist eine Umordnung von $(a_n)_n$\\
+\item EIen konvergente Reihe $\sum_{n=1}^\infty a_n, a_n \in\mathbb{C}$ heißt unbedingt konvergent, wenn jede Umordnung $\sum_n b_n$ ebenfalls konvergent und dieselbe Summe wie $\sum_{n=1}^\infty a_n$ benutzt. Anderfalls heißt $\sum_n a_n$ bedingt konvergent.
+\end{enumerate}
+\subsection{Satz 21 (Dirchlet 1837)}
+$a_n \in\mathbb{C}, \sum_{n=1}^\infty a_n$ ist unbedingt konvergent $\Leftrightarrow \sum_{n=1}^\infty a_n$ ist absolut konvergent!\\
+\begin{proof}
+\begin{enumerate}[1)]
+\item "$\Leftarrow$": Sei $\sum_{n=1}^\infty$ absolut konvergent und $\sum_{n=1}^\infty b_n$ eine Umordnung.\\
+$s_n := \sum_{j=1}^n a_j, t_n := \sum_{k=1}^n b_k = \sum_{k=1}^n a_{\sigma (k)}$\\
+$\sigma : \mathbb{N} \rightarrow \mathbb{N}$ Bijektion\\
+Wissen $s_n \rightarrow s,$ müssen zeigen $t_n \rightarrow s$\\
+Seien $\epsilon > 0, \implies \exists m \in\mathbb{N}$\\
+$$\sum_{n=m+1}^{m+l} |a_n| < \epsilon, \forall l \in\mathbb{N}\text{(\textasteriskcentered )}$$
+$$\text{da} \sum a_n \text{absolut konvergiert}$$
+
+Bestimme $N \in \mathbb{N}$ so, dass\\
+$\{ 1,2,3,\ldots,m\} \subset \{ \sigma (1), \sigma (2), \ldots, \sigma (N)\}$\\
+$\implies \{a_1, a_2, \ldots a_m\} \subset \{a_{\sigma (1)}, a_{\sigma(2)}, \ldots , a_{\sigma (N)}\}$\\
+Sei $n\geq N (\geq m)$\\
+$s_n - t_n = \sum_{j=1}^n a_j - \sum_{k=0}^n a_{\sigma (k)} = \sum_{j \geq m + 1}^n a_j - \sum_{k=1}^n a_{\sigma (k)}, \sigma (k) \notin \{1,2,\ldots ,m\}$\\
+$\implies |a_n - t_n| = |\sum_{j\geq m + 1}^n a_j - \sum_{k=1, \sigma(k) > m}^n a_{\sigma (k)}| \leq \sum_{j=m+1}^n |a_j| + \sum_{k=1}^n |a_{\sigma (k)}| \leq 2 \sum_{j=m+1}^L a_j, L = max(n, \sigma (k)), k=1,\ldots ,n$\\
+$\implies \lim_{n\rightarrow\infty} (s_n - t_n) = 0$ und wir wissen $s_n \rightarrow s, n \rightarrow\infty$\\
+$\implies t_n - s = (s_n - s) + (t_n - s_n) \rightarrow 0$\\
+$\implies \lim t_n = s$ \checkmark
+
+\item "$\Rightarrow$" Bew durch Kontraposition\\
+Annahme: $\sum_n a_n$ ist nicht absolut konvergent\\
+Folgen: $\sum_n a_n$ ist nicht unbedingt konvergent.\\
+Sei $a_n = \alpha_n + i \beta_n$
+\end{enumerate}
+\end{proof}
 \end{document}
