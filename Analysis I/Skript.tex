@@ -2366,7 +2366,155 @@ $\sum z^{n-1} b_n$ konvergiert
 \section{Monotone Reihen}
 Sei $(a_n)_n \in \mathbb{R}, a_n > 0$
 
+$S_n = \sum_{j=1}^n a_j$ ist wachsend! Also nach Satz von der Monotonen Konvergenz konvergiert $(S_n)_n \Leftrightarrow (S_n)_n$ ist beschränkt.
 
+\subsection{Satz 10}
+EIne Reine $\sum_{n=1}^\infty a_n, a_n \geq 0$ konvergiert $\Leftrightarrow \exists k < \infty : \sum_{j=1}^n a_j \leq k: \forall n \in \mathbb{N}$!
 
+\begin{proof}
+$S_n \leq S_{n+1}, \forall n$\\
+$\implies \sum_{n=1}^\infty a_n = \sup_{n\in\mathbb{N}} S_n = \sup_{n} \sum_{j=1}^n a_j$\\
+Wir setzen $\sup_n S_n = + \infty$, falls die Folge $(S_n)_n$ nicht nach oben beschränkt ist.\\
+$\implies \sum_{n=1}^\infty a_n = \sup_n S_n, a_n \geq 0$
+\end{proof}
 
+\subsection{Korollar 11}
+Für so eine Reihe $\sum_{n=1}^\infty a_n, a_n \geq 0$ gilt entweder $\sum_{n=1}^\infty a_n < \infty$ oder $\sum_{n=1}^\infty a_n = + \infty$.\\
+Erstens bedeutet: sie konvergiert. Letztens bedeutet: sie divergiert bestimmt gegen $\infty$.
+
+\subsection{Satz 12}
+Ist $0\leq a_n \leq b_n, \forall n$ und $\sum_{n=1}^\infty b_n$ konvergiert\\
+$\implies \sum_{n=1}^\infty a_n$ konvergiert und 
+$\sum_{n=1}^\infty a_n \leq \sum_{n=1}^\infty b_n$\\
+
+\begin{proof}
+$S_n := \sum_{j=1}^n a_j, t_n := \sum_{j=1}^n b_j$\\
+$\implies S_n \leq S_{n+1}, t_n \leq t_{n+1}$\\
+$S_n \leq t_n, \forall n$\\
+Falls $t_n \rightarrow t \in \mathbb{R}, n \rightarrow \infty
+$ ($t_n$ konvergiert)\\
+$=\sup_n t_n$ (Monotone Konvergenz)\\
+$\implies S_n \leq \sup_{k\in\mathbb{N}} t_k \in \mathbb{R}$\\
+$\implies (S_n)_n$ ist beschränkt wachsend\\
+$\implies S_n$ konvergiert und $\lim S_n \leq \lim t_n$\\
+$\implies \sum_{n=1}^\infty a_n \leq \sum_{n=1}^\infty b_n$
+\end{proof}
+
+\subsection{Satz 13 (Cauchy Verdichtungssatz)}
+Sei $(a_n)_n$ fallende Nullfolge. Damit $\sum_{n=0}^\infty a_n$ konvergiert $\Leftrightarrow \sum_{n=0}^\infty s^n a_{n^n}$ konvergiert.\\
+\begin{proof}
+$S_n = \sum_{j=0}^n a_j, t_n = \sum_{j=0}^n 2^j a_{2^j}$ für $n \leq 2^k, a^j \geq a_{j+1}, \forall j$ gilt\\
+$S_n = a_0 + a_1 + \underbrace{a_2 + a_3}_{\leq 2 * a_2} + a_4 + \ldots + (a_{2^k} + a_{2^k+1} + \ldots a_{2^{k+1}-1})$\\
+$\leq a_0 + a_1 + 2a_2 + 4a_4 + 8a_8 + \ldots + 2^k a_{2^k} = t_k \leq t_{k+1} \leq \ldots \leq t_{k+l}, \forall l \in \mathbb{N}$\\
+$\implies S_n \leq a_0  + \sup_k t_k < \infty$, wenn die kondensierte Reihe konvergiert.\\
+Umgekehrt ähnlich.
+\end{proof} 
+\paragraph{Anwendung}
+\begin{enumerate}[1)]
+\item $\sum_{n=1}^\infty \frac{1}{n}$ divergiert\\
+	$\sum_{n=1}^\infty 2^n \frac{1}{n} = \sum_{n=1}^\infty 1$ divergiert.
+\item $\sum_{n=1}^\infty 2^n \frac{1}{(2^n)^n} = \sum_{n=1}^\infty	 \underbrace{(2^{1-\gamma})^n}_{<1 \Leftrightarrow \gamma > 1}$ (geometrische Reihe)
+\item Ähnlich $\sum_{n=1}^\infty \frac{1}{n(ln n)}$ konvergiert, wenn $\gamma > 1$. divergiert, wenn $\gamma \leq 1$.
+\end{enumerate}
+
+\section{Absolut KOnvergente Reihe}
+hier wieder $(a_n)_n \subset \mathbb{C}$
+
+\subsection{Definition 14}
+Eine Reihe $\sum_{n=1}^\infty a_n$ konvergiert absolut, wenn die Reihe $\sum_{n=1}^\infty |a_n|$ konvergiert.
+
+\subsection{Satz 15}
+Eine absolut konvergente Reihe $\sum_{n=1}^\infty a_n$ ist konvergent und es gilt $|\sum_{n=1}^\infty a_n | \leq \sum_{n=1}^\infty |a_n|$\\
+\begin{proof}
+$|\sum_{j\geq n+1}^{n+l} |a_j| < \epsilon$\\
+$\forall \epsilon > 0 \exists k_\epsilon : \sum_{j=n+1}^{n+l} |a_j| < \epsilon , \forall l \in \mathbb{N}, n \geq k_\epsilon$\\
+$\implies \sum_{n=1}^\infty a_n$ ist konvergent und $|\underbrace{\sum_{j=1}^n a_j}_{\leftarrow |\sum_{j=1}^\infty a_j|, n\leftarrow \infty}| \leq \sum_{j=1}^n |a_j| \leq \sum_{j=1}^\infty |a_j|$
+\end{proof}
+
+\paragraph{Bemerkung} Umkehrung gilt nicht!\\
+$\sum_{n=1}^\infty (-1)^{n-1} \frac{1}{n}$ konvergiert, aber $\sum_{n=1}^\infty \frac{1}{n} = \infty$
+
+\subsection{Definition 16}
+Eine Reihe $\sum_{n=1}^\infty c_n, c_n > 0$ heißt Majorante, $\sum_{n=1}^\infty a_n$, falls ein $n_0 \in \mathbb{N}$ existiert.\\
+$|a_n|\leq n, n \geq n_0$ (d.h. falls $|a_n| \leq c_n$ für fast alle n)
+
+\subsection{Satz 17 (Majorantenkriterium)}
+\begin{enumerate}[1)]
+\item Hat die Reihe $\sum_{n}^\infty a_n$ eien konv. Majorante, so ist sie absolut konvergent und damit konvergent.
+\item Ist $a \geq 0$ und divergent $\sum_n^\infty a_n$, sp divergiert auch jede Majorante.
+\end{enumerate}
+
+\begin{proof}
+Teil 2: Selber überlegen\\
+Zu 1) o.B.d.A. $|a_n| \leq a_n, \forall n \in\mathbb{N}, \sum_{n=1}^\infty c_n < \infty$\\
+$\implies sum_{n=1}^\infty |a_n| \leq \sum_{n=1}^\infty c_n < \infty$\\
+$\implies \sum_{n=1}^\infty a_n$ absolut konvergent und somit konvergent nach Satz 15.
+\end{proof}
+
+\subsection{Satz 18 (Wurzelkriterium)}
+Sei $\sum_{n=1}^\infty a_n$ eine Reihe und $0 < q < 1$ mit $\sqrt[n]{|a_n|} = |a_n|^\frac{1}{n} \leq q$ für fast alle n\\
+ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
+$\implies \sum a_n$ divergiert.\\
+\begin{proof}
+$\sqrt[n]{|a_n|} \leq q \implies |a_n| \leq q^n$ für $n \geq n_0$\\
+$\implies \sum_{n=1}^\infty a_n$ hat die konvergierende Majorante $\sum_{n=1}^\infty a^n$ da $q < 1$!\\
+Ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
+$\implies |a_n| \geq 1 = 1$ für unendlich viele n\\
+$\implies (a_n)_n$ ist keine Nullfolge $\implies \sum a_n$ ist nicht konvergent.
+\end{proof}
+
+\subsection{Satz 19 (Quotientenkriterium)}
+Ist $a_n \neq 0, \forall n$ und existiert $q, 0 < q < 1$ mit $|\frac{a_{n+1}}{a_n}| \leq q$ für fast alle n
+$\implies \sum_{n+1}^\infty a_n$ ist absolut konvergent.
+Ist $|\frac{a_{n+1}}{a_n}| \geq 1$ für fast alle n\\
+$\implies \sum a_n$ divergiert.\\
+\begin{proof}
+Sei $|\frac{a_{n+1}}{a_n}| \leq q, n \geq n_0$\\
+$l \in \mathbb{N}: |\frac{a_{n+1}}{a_n}| = \prod_{j=0}^{l-1} \underbrace{|\frac{a_{n+1}}{a_n}|}_{\leq q} \leq q^l$\\
+$\implies |a_{n_0 + l}| \leq |a_{n_0}|a^l = |a_{n_0}|q^{-n_0} * q^{n_0 + l}$\\
+$\implies \forall n \geq n_0: |a_n| \leq k q^n k = |a_{n_0}| q^{-n_0}$\\
+$\implies \sum_{n=1}^\infty a_n$ hat die konvergente Majorante $\sum_{n=1}^\infty k q^n$!\\
+Ist $|\frac{a_{n+1}}{a_n}| \geq 1$ für fast alle n\\
+$\implies \underbrace{|a_{n+!}|}_{\leq |a_{n+2}| \implies |a_n| \geq |a_{n_0}|, \forall n\geq n_0} \geq |a_n|, n \geq n_0$\\
+$\implies (a_n)_n$ ist keine Nullfolge!
+\end{proof}
+\paragraph{Bemerkung}
+\begin{enumerate}[1)]
+\item Für Konvergenz reicht nicht $\sqrt[n]{|a_n|} < 1$ oder $|\frac{a_{n+1}}{a_n}| < 1$ für fast alle n. Siehe harmonische Reihe
+\item Andere Formulierung\\
+\begin{enumerate}[a)]
+\item Die Reihe $\sum a_n$ ist absolut konvergent, wenn $\limsup_{n\rightarrow\infty} \sqrt[n]{|a_n|} < 1$, bzw. divergent, wenn $\limsup_{n\rightarrow\infty} \sqrt[n]{|a_n|} > 1$
+\item Die Reihe $\sum_{n=1}^\infty a_n$ ist absolut konvergent, wenn $\limsup_{n\rightarrow\infty} |\frac{a_{n+1}}{a_n}| < 1$, bzw. divergent falls $\lim_{n\rightarrow\infty} |\frac{a_{n+1}}{a_n}| > 1$
+\end{enumerate}
+\end{enumerate}
+\paragraph{Beispiel}$ $\\
+$a_n = \frac{1}{n^2}$:$\lim_{n\rightarrow\infty} \frac{a_{n+1}}{a_n} = 1, \lim_{n\rightarrow\infty} \sqrt[n]{n^2} = 1$\\
+$\sum_{n=1}^\infty n^px^n$ konvergiert absolut $|x|<1$ nach Wurzelkriterium.\\
+$\sum_{n=1}^\infty \frac{1}{n^\gamma}$ machen weder Quotienten noch das Wurzelkriterium eine Aussage.
+
+\section{Dezimaldarstellung reeller Zahlen}
+$r\in\mathbb{R}:\lfloor r \rfloor :=$ ganzzahliger Anzahl\\
+$r\in\mathbb{R}:\lfloor r \rfloor :=$ max$\{h\in\mathbb{Z}, n \leq r\}$ (Gaußklammer)\\
+$x := r - \lfloor r \rfloor \in [0,1)$\\
+$r = \lfloor r \rfloor + x$\\
+$x_1 := \lfloor x * 10 \rfloor \in \{0,1,2,3,4,5,6,7,8,9\}$\\
+$R_1 := x - x_1 * 10^{-1} \in [0,10^{-1})$\\
+$x=x_1*10^{-1} + R_1$\\
+$x_2 := \lfloor R_1 * 10^2 \rfloor \in \{0,1,\ldots ,9\}$\\
+$x = x_1 * 10^{-1} + x_2 * 10^{-2} + R_2$\\
+induktiv, wenn $x = x_1 * 10^{-1} + x_2 * 10^{-2} + \ldots + x_n * 10^{-n} + R_n$\\
+$x_j \in \{0,1,\ldots,9\}, R_n \in [0,10^{-(n)})$\\
+$x_{n+1} = \lfloor R_n * 10^{n+1} \rfloor$\\
+$\implies x=\sum_{j=1}^{n+1} x_j * 10^{-j} + R_{n+1}, R_{n+1} \in [0,10^{-(n+1)})$\\
+$\sum_{n=1}^\infty x_n 10^{-n}$ ist absolut konvergent und $x=\sum_{n=1}^\infty x_n * 1-^{-n}$\\
+$\implies r = \lfloor r \rfloor + x = m,x_1,x_2,x_3,\ldots$\\
+$m = \lfloor r \rfloor$\\
+$r = m + \sum_{n=1}^\infty x_n * 10^{-n}$\\
+$0,\overline{9} = \sum_{n=1}^\infty	9 * 10^{-n} = 9 * 10^{-1} * \sum_{k=0}^\infty 10^{-k}$ (geometrische Reihe)\\
+$0,\overline{9} = 9 * 10^{-1} * \frac{1}{1-\frac{1}{10}} = 9 * 1-^{-1} * \frac{10}{10-1} = 1$!\\
+Falls es ein $l \geq 1$ gibt mit $x_n = 9, \forall n \geq l + 1$. Damit ohne Darstellung nicht eindeutig! Sei l die kleinste solche Zahle $n\in\mathbb{N}_0$\\
+$\implies \sum_{n=l+1}^\infty 9 * 10^{-n} = 9 * \sum_{n=l+1}^\infty 10^{-n} = 9 * 10 ^{-(l+1)} \sum_{n=0}^\infty 10^{-n} = 9 * 10^{-(l+1)} \frac{1}{1-\frac{1}{10}} = 10^{-l}$\\
+$\implies x = r - \lfloor r \rfloor = \sum_{n=1}^\infty x_n * 10^{-n} = \sum_{n=1}^l x_n * 10^{-n} + \underbrace{\sum_{n=l+1}^\infty 9 * 10^{-n}}_{=10^{-l}}$\\
+$=\sum_{n=1}^{l-1} x_n * 10^{-n} + \underbrace{x_l 10^{-l} + 10^{-l}}_{=(x_l + 1) * 10^{-l}}$\\
+$\implies r = \lfloor r \rfloor + \sum_{n=1}^l \tilde{x}_1 * 10^{-n}$\\
 \end{document}
