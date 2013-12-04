@@ -5,44 +5,29 @@
 \usepackage{enumerate}
 %% Support for the target language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[ngerman]{babel}
-
 %% Font & encoding %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
 %% Custom headings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[explicit]{titlesec}
-
 %% Shows the use of deprecated stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{nag}
-
 %% Links and other interactivity %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{hyperref}
-
 %% Code listings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{scrhack}
-
 %% Introducing proof environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsthm}
-
 %% Just the \lightning symbol %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{stmaryrd}
-
 %% For commutative diagrams %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[all]{xy}
-
 %% Table with extended features %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tabularx}
-
 %% Graphic handling %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
-
 %% Table coloring %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[table]{xcolor}
-
-
-%I do not know what happens exactly, but if you enable setspace you will get many badboxes -> bad%
-%\usepackage{setspace}
 
 
 %% Formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,6 +65,7 @@
 \newcommand{\q}[1]{\glq #1\grq}
 \newcommand{\definition}[1]{\glq #1\grq}
 
+%PLEASE USE THIS! LOOKS MUCH BETTER!!!
 %Making it readable
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -108,7 +94,6 @@
 \newpage
 
 \chapter{Grundlagen}
-
 \section{Mengen}
 
 Angaben von Mengen durch Aufzählungen
@@ -126,7 +111,6 @@ bekannte Mengen:
 \textbf{Achtung:} $\left\{ \emptyset \right\}$ hat ein Element (nämlich die leere Menge)!
 
 \subsection{Syntax}
-
 \begin{itemize}
   \item $x \in M$ $x$ ist Element von $M$
   \item $x \notin M$ $x$ ist nicht Element von $M$
@@ -143,7 +127,7 @@ bekannte Mengen:
   $M_1 \times M_2 \times \ldots \times M_n := \{ \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \}$
 \end{itemize}
 
-\subsection{Satz 1: \qq{Naiver} Mengenbegriff nach Cantor}
+\subsection{Satz 1: \qq{Naiver}\ Mengenbegriff nach Cantor}
 
 \qq{Unter einer \q{Menge} verstehen wir jede Zusammenfassung M von bestimmten wohlunterschiedenen Objekten m unserer Anschauung oder unseres Denkens (welche die \q{Elemente} von M genannt werden) zu einem Ganzen.}
 
@@ -445,7 +429,9 @@ Dann gehört eine Grundmenge $U$, sodass $A(x)$ eine mathematische Aussage ist v
   \item $\forall x \in U:A(x): A(x)$ ist wahr für alle $x$.
 \end{itemize}
 
+
 \section{Wohlordnungsprinzip für \texorpdfstring{$\N$}{N}}
+
 
 Wir wollen beweisen $\forall n \in \N: A(x)$ wahr ist
 
@@ -810,6 +796,7 @@ Oder: $\R$ ist der ordnungsvollständige Körper.
 
 \subsection{Die Menge \texorpdfstring{$\bar{\R}$}{R}}
 
+
 Die Menge $\bar{\R}:= \R \cup \{\infty\} \cup \{-\infty\}$ erweitert die Zahlengerade
 
 \textbf{Es gilt:} $-\infty < x < \infty \forall x \in \R$
@@ -862,8 +849,8 @@ $\Longrightarrow$ Supremum ist gleich dem Maximum
 \[\sup(\emptyset):=-\infty\]
 \[\inf(\emptyset):=+\infty\]
 
-
 \section{Definition von \texorpdfstring{$\N$}{N} als Teilmenge von \texorpdfstring{$\R$}{R}}
+
 
 \subsection{Definition 21}
 
@@ -1117,10 +1104,10 @@ $\mathbb{G}$ ist abzählbar
 \begin{proof}
 $\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \N\}$ \qq C $\{(m,n), m \in \mathbb{Z}, n \in \N\}$
 \end{proof}
+
 \subsubsection{Bemerkung} Es gibt eine explizite Abbildung von $\mathbb{Q}$ mittels eines Baumes. Literatur: Neil Calkin, Herbert Will: Recounting the Rationals
 \subsection{Satz 33} A enthalte mindestens 2 Elemente $\implies A^\N = \{ f: \N \rightarrow A\}$ überabzählbar
 \subsection{Lemma 34 (Cantor)} Sei A eine Menge $\implies$ Es existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
-
 
 \begin{proof}
 	Sei $f: A \rightarrow P(A)$
@@ -1658,10 +1645,10 @@ $\implies L = \lim_{n \rightarrow \infty} b_n$ existiert und $L \geq 0$. Wollen 
 
 $\implies [x = \lim \frac{b_{n+1}}{b_n} \underbrace{=}_{\text{Quotientenmenge}} \frac{\lim b_{n+1}}{\lim b_n} = \frac{L}{L} = 1] \lightning$ d.h. $L = 0$!
 \end{proof}
+
 \subsection{Korollar 12 (Rekursive Berechnung von \texorpdfstring{$\sqrt{a}$}{Wurzel a}} 
 Sei $a > 0, x_0 > 0$. Definiere $(x_n)_{n\in\N}, x_{n+1} := \frac{1}{2} (x_n+ \frac{a}{x_n}) | n\in\N$. 
 Dann konvergiert $x_n, \lim x_n = \sqrt{a}, x_n > 0 \forall n$
-
 
 \begin{proof}
 Per Induktion zeigt man $x_n > 0 \forall n$
@@ -1802,7 +1789,6 @@ $h \in H((a_n)_n) \Longleftrightarrow \exists$ Teilfolge von $(a_n)_n$ die gegen
 \subsection{Korollar 9: Balzano-Weierstraß für Folgen II}
 
 Jede beschränkte Folge hat eine konvergente Teilfolge! (Beweis S.17 + L.18).
-
 
 \section{Asymptotisches Verhalten von reellen Folgen (\texorpdfstring{$\limsup$}{Limes superior} und \texorpdfstring{$\liminf$}{Limes inferior})}
 
@@ -2051,17 +2037,17 @@ $\binom{0}{1}  \cdot  \binom{0}{1} = \binom{-1}{0} \simeq -1$ als reelle Zahl
 \subsubsection{Definition: Betrag(Länge)} 
 $z \in \mathbb{C}:|z|:=\sqrt{a^2 + b^2}$, $z=a+ib$
 \subsection{Komplex Konjugieren} $z = a+ib$, $\overline{z} = a - ib$\\
-Es gilt: $|z|^Z = z  \cdot  \overline{z} = \overline{z}  \cdot  z$ nachrechnen\\
+Es gilt: $|z|^2 = z  \cdot  \overline{z} = \overline{z}  \cdot  z$ nachrechnen\\
 $0 \neq z = a + ib$\\
 $\implies$ was ist $\frac{1}{z} = \frac{1}{a+ib}$\\
-$\frac{1}{z}  \cdot  \frac{\overline{z}}{z} = \frac{\overline{z}}{z  \cdot  \overline{z}} = \frac{\overline{z}}{|z|^z} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i \cdot \frac{b}{a^2 + b^2}$
+$\frac{1}{z}  \cdot  \frac{\overline{z}}{\overline{z}} = \frac{\overline{z}}{z  \cdot  \overline{z}} = \frac{\overline{z}}{|z|^2} = \frac{a-ib}{a^2 + b^2} = \frac{a}{a^2 + b^2} - i \cdot \frac{b}{a^2 + b^2}$
 \subsubsection{Definition: Abstand} $z_1, z_2 \in \mathbb{C}$\\
 $d(z_1,z_2) := |z_1 - z_2| = \sqrt{(a_1 - a_2)^2 + (b_1 - b_2)^2}$\\
 $z_1 = a_1 + ib_1$, $z_2 = a_2 + ib_2$
 \subsubsection{Beispiel} $z = 2 +3i$\\
 $\frac{1}{z} = \frac{1}{2+3i} = \frac{2-3i}{(2+3i)(2-3i)} = \frac{2-3i}{2^2 + 3^2} = \frac{2}{13} - i\frac{3}{13}$
 \subsubsection{Polarkoordinaten} $z = a + ib$\\
-$=|z|(\frac{a}{|z|}+i\frac{b}{|z|}$\\
+$=|z|(\frac{a}{|z|}+i\frac{b}{|z|})$\\
 $=|z|(\cos \psi + \sin \psi)$
 \subsection{Komplexwertige Folge} Eine Folge ist eine Funktion f\\
 $f:\N\rightarrow \mathbb{C},n\mapsto f(n)$
@@ -2069,7 +2055,7 @@ $f:\N\rightarrow \mathbb{C},n\mapsto f(n)$
 \subsubsection{Konvergenz} $(z_n)_n$ konvergiert in $\mathbb{C}$ gegen Grenzwert L:\\
 $\forall\epsilon > 0 \exists k_\epsilon : |z_k - L| < \epsilon \forall n \geq k_\epsilon$\\Alle anderen Definitionen, Häufungswert, Cauchyfolge etc analog!\\
 Folge $(z_n)_n$ ist beschränkt, falls $\exists 0 \leq M < \infty:|z_n|\leq M \forall n$
-\subsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{z_i}(z - \overline{z})$\\
+\subsection{Satz} Eine Folge $(a_n)_n$ konvergiert genau dann, wenn $(Re(z_n))_n, (Im(z_n))_n$ konvergieren wobei: $Re(z):=\frac{1}{2}(z + \overline{z})$, $Im(z) = \frac{1}{2i}(z - \overline{z})$\\
 $z = a + ib, \overline{z} = a - ib, z + \overline{z} = a + ib + a - ib = 2a = 2Re(z)$\\
 $z-\overline{z} = 2ib = 2Im(z)$\\
 \begin{proof}
@@ -2088,8 +2074,8 @@ $|z_n - L| = \sqrt{(x_n-a)^2 + (y_n - b)^2} < \sqrt{\frac{\epsilon^2}{2}} + \fra
 $\lim z_n = L$
 \end{itemize}
 \end{proof}
-\subsubsection{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \in A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
-A ist abgeschlossen, falls $A^\mathbb{C} = \mathbb{C} \ A$ offen ist.
+\subsubsection{Definition} Wir nennen Teilmenge $A \subset \mathbb{C}$ offen, falls $\forall z \in A: \exists \epsilon > 0 :B_\epsilon(z) \subset A$, $B_\epsilon(L):=\{z \in \mathbb{C}: |z-L|<\epsilon \}$\\
+A ist abgeschlossen, falls $A^\mathbb{C} = \mathbb{C} \backslash A$ offen ist.
 \subsection{Korollar}
 Eine Folge $(z_n)_n$ in $\mathbb{C}$ konvergiert $\Leftrightarrow (z_n)_n$ ist Cauchy!\\
 \begin{proof}
@@ -2102,6 +2088,8 @@ $(z_n)_n$ ist Cauchy $\Leftrightarrow (Re(z_n))_n$ und $(Im(z_n))_n$ sind Cauchy
 $(z_n)_n$ beschränkt $\Leftrightarrow \underbrace{(Re(z_n))_n}_{x_n}, \underbrace{(Im(z_n))_n}_{y_n}$ sind beschränkte reelle Teilfolgen
 
 $\implies \exists$ Teilfolge $(x_{n_j})_j$ von $(x_n)_n$ die konvergiert. d.h. $x_{n_j} \rightarrow a$
+
+$\implies \exists$ konvergente Teilfolge $(y_{n_{j_l}})_l$
 
 $\implies (x_{n_{j_l}})_l, (y_{n_{j_l}})_l$ beide konvergernt!
 
@@ -2175,11 +2163,13 @@ Damit hat das Symbol $\sum_{n=p}^\infty a_n$ zwei Bedeutungen:
 \[\text{Eine Reihe } \sum_{n=p}^\infty a_n \text{ konvergiert} \]
 \[\Longleftrightarrow \forall \epsilon > 0 \exists k_\epsilon : \forall l \in \N, n \geq k_\epsilon : \left|\sum_{j=p}^{n+1} a_j\right|<\epsilon\]
 
+
 \begin{proof}
   \[\sum_{n=p}^\infty a_n \text{ konvergiert } \Longleftrightarrow \text{ die Folge } (a_n)_{n\geq p} \text{ der Partialsummen konvergiert}\]
   \[\stackrel{\text{Cauchy-Krit}}{\Longleftrightarrow} \forall \epsilon > 0 \exists k_\epsilon : | S_m -S_n | < \epsilon \quad \forall n,m \geq k_\epsilon\]
   \[\text{O.B.d.A } m>n \text{ d.h. } m=n+l,l\in \N\]
-  \[\text{da } S_m-S_n = S_{n+l}- S_n = \sum_{j=n+1}^{n+l} a_j \text{ sind wir Fertig}\]
+  \[\text{da } S_m-S_n = S_{n+l}- S_n = \sum_{j=n+1}^{n+l} a_j \text{ sind wir fertig}\]
+
 \end{proof}
 
 \subsection{Korollar 3}
@@ -2216,8 +2206,8 @@ Umkehrung gilt NICHT!
 
 \begin{proof}
   
-  \[\text{Wen sie konvergent wäre, dann gilt Satz 2 } a_n = \frac{1}{n}\]
-  \[S_n = \sum_{j=1}^n a_j = \sum_{j=1}^n \frac{1}{j}\]
+  \[\text{Wen sie konvergent wäre, dann gilt Satz 2 }\] 
+  \[a_n = \frac{1}{n} , S_n = \sum_{j=1}^n a_j = \sum_{j=1}^n \frac{1}{j}\]
   \[l=n\]
   \[S_{n+l}-S_n = \sum_{j=n+1}^{n+n} \frac{1}{j} = \sum_{j=n+1}^{2n} \frac{1}{j} = \frac{1}{n+1} + \frac{1}{n+2} + \frac{1}{n+3} + \ldots + \frac{1}{2n} \geq n*\frac{1}{2n}=\frac{1}{2}\]
   d.h. Satz 2 ist verletzt $\implies$ keine Konvergenz
@@ -2504,7 +2494,221 @@ $$\sumOI a_n \text{ist divergent}$$
 Hier fehlen noch ein paar Bemerkungen
 %%ENDE Vorlesung 28.11
 
+$S_n = \sum_{j=1}^n a_j$ ist wachsend! Also nach Satz von der Monotonen Konvergenz konvergiert $(S_n)_n \Leftrightarrow (S_n)_n$ ist beschränkt.
+
+\subsection{Satz 10}
+EIne Reine $\sumOI a_n, a_n \geq 0$ konvergiert $\Leftrightarrow \exists k < \infty : \sum_{j=1}^n a_j \leq k: \forall n \in \mathbb{N}$!
+
+\begin{proof}
+$S_n \leq S_{n+1}, \forall n$\\
+$\implies \sumOI a_n = \sup_{n\in\mathbb{N}} S_n = \sup_{n} \sum_{j=1}^n a_j$\\
+Wir setzen $\sup_n S_n = + \infty$, falls die Folge $(S_n)_n$ nicht nach oben beschränkt ist.\\
+$\implies \sumOI a_n = \sup_n S_n, a_n \geq 0$
+\end{proof}
+
+\subsection{Korollar 11}
+Für so eine Reihe $\sumOI a_n, a_n \geq 0$ gilt entweder $\sumOI a_n < \infty$ oder $\sumOI a_n = + \infty$.\\
+Erstens bedeutet: sie konvergiert. Letztens bedeutet: sie divergiert bestimmt gegen $\infty$.
+
+\subsection{Satz 12}
+Ist $0\leq a_n \leq b_n, \forall n$ und $\sumOI b_n$ konvergiert\\
+$\implies \sumOI a_n$ konvergiert und 
+$\sumOI a_n \leq \sumOI b_n$
+
+\begin{proof}
+$S_n := \sum_{j=1}^n a_j, t_n := \sum_{j=1}^n b_j$\\
+$\implies S_n \leq S_{n+1}, t_n \leq t_{n+1}$\\
+$S_n \leq t_n, \forall n$\\
+Falls $t_n \rightarrow t \in \mathbb{R}, n \rightarrow \infty
+$ ($t_n$ konvergiert)\\
+$=\sup_n t_n$ (Monotone Konvergenz)\\
+$\implies S_n \leq \sup_{k\in\mathbb{N}} t_k \in \mathbb{R}$\\
+$\implies (S_n)_n$ ist beschränkt wachsend\\
+$\implies S_n$ konvergiert und $\lim S_n \leq \lim t_n$\\
+$\implies \sumOI a_n \leq \sumOI b_n$
+\end{proof}
+
+\subsection{Satz 13 (Cauchy Verdichtungssatz)}
+Sei $(a_n)_n$ fallende Nullfolge. Damit $\sumNI a_n$ konvergiert $\Leftrightarrow \sumNI s^n a_{n^n}$ konvergiert.\\
+\begin{proof}
+$S_n = \sum_{j=0}^n a_j, t_n = \sum_{j=0}^n 2^j a_{2^j}$ für $n \leq 2^k, a^j \geq a_{j+1}, \forall j$ gilt\\
+$S_n = a_0 + a_1 + \underbrace{a_2 + a_3}_{\leq 2 * a_2} + a_4 + \ldots + (a_{2^k} + a_{2^k+1} + \ldots a_{2^{k+1}-1})$\\
+$\leq a_0 + a_1 + 2a_2 + 4a_4 + 8a_8 + \ldots + 2^k a_{2^k} = t_k \leq t_{k+1} \leq \ldots \leq t_{k+l}, \forall l \in \mathbb{N}$\\
+$\implies S_n \leq a_0  + \sup_k t_k < \infty$, wenn die kondensierte Reihe konvergiert.\\
+Umgekehrt ähnlich.
+\end{proof} 
+\paragraph{Anwendung}
+\begin{enumerate}[1)]
+\item $\sumOI \frac{1}{n}$ divergiert\\
+	$\sumOI 2^n \frac{1}{n} = \sumOI 1$ divergiert.
+\item $\sumOI 2^n \frac{1}{(2^n)^n} = \sumOI	 \underbrace{(2^{1-\gamma})^n}_{<1 \Leftrightarrow \gamma > 1}$ (geometrische Reihe)
+\item Ähnlich $\sumOI \frac{1}{n(ln n)}$ konvergiert, wenn $\gamma > 1$. divergiert, wenn $\gamma \leq 1$.
+\end{enumerate}
+
+\section{Absolut Konvergente Reihe}
+hier wieder $(a_n)_n \subset \mathbb{C}$
+
+\subsection{Definition 14}
+Eine Reihe $\sumOI a_n$ konvergiert absolut, wenn die Reihe $\sumOI |a_n|$ konvergiert.
+
+\subsection{Satz 15}
+Eine absolut konvergente Reihe $\sumOI a_n$ ist konvergent und es gilt:
+$$|\sumOI a_n | \leq \sumOI |a_n|$$
+\begin{proof}
+$|\sum_{j\geq n+1}^{n+l} |a_j| < \epsilon$\\
+$\forall \epsilon > 0 \exists k_\epsilon : \sum_{j=n+1}^{n+l} |a_j| < \epsilon , \forall l \in \mathbb{N}, n \geq k_\epsilon$\\
+$\implies \sumOI a_n$ ist konvergent und $|\underbrace{\sum_{j=1}^n a_j}_{\leftarrow |\sum_{j=1}^\infty a_j|, n\leftarrow \infty}| \leq \sum_{j=1}^n |a_j| \leq \sum_{j=1}^\infty |a_j|$
+\end{proof}
+
+\paragraph{Bemerkung} Umkehrung gilt nicht!\\
+$\sumOI (-1)^{n-1} \frac{1}{n}$ konvergiert, aber $\sumOI \frac{1}{n} = \infty$
+
+\subsection{Definition 16}
+Eine Reihe $\sumOI c_n, c_n > 0$ heißt Majorante, $\sumOI a_n$, falls ein $n_0 \in \mathbb{N}$ existiert.\\
+$|a_n|\leq n, n \geq n_0$ (d.h. falls $|a_n| \leq c_n$ für fast alle n)
+
+\subsection{Satz 17 (Majorantenkriterium)}
+\begin{enumerate}[1)]
+  \item Hat die Reihe $\sum_{n}^\infty a_n$ eien konv. Majorante, so ist sie absolut konvergent und damit konvergent.
+  \item Ist $a \geq 0$ und divergent $\sum_n^\infty a_n$, sp divergiert auch jede Majorante.
+\end{enumerate}
+
+\begin{proof}
+Teil 2: Selber überlegen\\
+Zu 1) o.B.d.A. $|a_n| \leq a_n, \forall n \in\mathbb{N}, \sumOI c_n < \infty$\\
+$\implies sum_{n=1}^\infty |a_n| \leq \sumOI c_n < \infty$\\
+$\implies \sumOI a_n$ absolut konvergent und somit konvergent nach Satz 15.
+\end{proof}
+
+\subsection{Satz 18 (Wurzelkriterium)}
+Sei $\sumOI a_n$ eine Reihe und $0 < q < 1$ mit $\sqrt[n]{|a_n|} = |a_n|^\frac{1}{n} \leq q$ für fast alle n\\
+ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
+$\implies \sum a_n$ divergiert.\\
+\begin{proof}
+  $\sqrt[n]{|a_n|} \leq q \implies |a_n| \leq q^n$ für $n \geq n_0$\\
+  $\implies \sumOI a_n$ hat die konvergierende Majorante $\sumOI a^n$ da $q < 1$!\\
+  Ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
+  $\implies |a_n| \geq 1 = 1$ für unendlich viele n\\
+  $\implies (a_n)_n$ ist keine Nullfolge $\implies \sum a_n$ ist nicht konvergent.
+\end{proof}
+
+\subsection{Satz 19 (Quotientenkriterium)}
+Ist $a_n \neq 0, \forall n$ und existiert $q, 0 < q < 1$ mit $|\frac{a_{n+1}}{a_n}| \leq q$ für fast alle n
+$\implies \sum_{n+1}^\infty a_n$ ist absolut konvergent.
+Ist $|\frac{a_{n+1}}{a_n}| \geq 1$ für fast alle n\\
+$\implies \sum a_n$ divergiert.\\
+\begin{proof}
+Sei $|\frac{a_{n+1}}{a_n}| \leq q, n \geq n_0$\\
+$l \in \mathbb{N}: |\frac{a_{n+1}}{a_n}| = \prod_{j=0}^{l-1} \underbrace{|\frac{a_{n+1}}{a_n}|}_{\leq q} \leq q^l$\\
+$\implies |a_{n_0 + l}| \leq |a_{n_0}|a^l = |a_{n_0}|q^{-n_0} * q^{n_0 + l}$\\
+$\implies \forall n \geq n_0: |a_n| \leq k q^n k = |a_{n_0}| q^{-n_0}$\\
+$\implies \sumOI a_n$ hat die konvergente Majorante $\sumOI k q^n$!\\
+Ist $|\frac{a_{n+1}}{a_n}| \geq 1$ für fast alle n\\
+$\implies \underbrace{|a_{n+!}|}_{\leq |a_{n+2}| \implies |a_n| \geq |a_{n_0}|, \forall n\geq n_0} \geq |a_n|, n \geq n_0$\\
+$\implies (a_n)_n$ ist keine Nullfolge!
+\end{proof}
+\paragraph{Bemerkung}
+\begin{enumerate}[1)]
+  \item Für Konvergenz reicht nicht $\sqrt[n]{|a_n|} < 1$ oder $|\frac{a_{n+1}}{a_n}| < 1$ für fast alle n. Siehe harmonische Reihe
+  \item Andere Formulierung
+\begin{enumerate}[a)]
+  \item Die Reihe $\sum a_n$ ist absolut konvergent, wenn $\limsup_{n\rightarrow\infty} \sqrt[n]{|a_n|} < 1$, bzw. divergent, wenn $\limsup_{n\rightarrow\infty} \sqrt[n]{|a_n|} > 1$
+  \item Die Reihe $\sumOI a_n$ ist absolut konvergent, wenn $\limsup_{n\rightarrow\infty} |\frac{a_{n+1}}{a_n}| < 1$, bzw. divergent falls $\lim_{n\rightarrow\infty} |\frac{a_{n+1}}{a_n}| > 1$
+\end{enumerate}
+\end{enumerate}
+\paragraph{Beispiel}$ $\\
+$a_n = \frac{1}{n^2}$:$\lim_{n\rightarrow\infty} \frac{a_{n+1}}{a_n} = 1, \lim_{n\rightarrow\infty} \sqrt[n]{n^2} = 1$\\
+$\sumOI n^px^n$ konvergiert absolut $|x|<1$ nach Wurzelkriterium.\\
+$\sumOI \frac{1}{n^\gamma}$ machen weder Quotienten noch das Wurzelkriterium eine Aussage.
+
+\section{Dezimaldarstellung reeller Zahlen}
+$r\in\mathbb{R}:\lfloor r \rfloor :=$ ganzzahliger Anzahl\\
+$r\in\mathbb{R}:\lfloor r \rfloor :=$ max$\{h\in\mathbb{Z}, n \leq r\}$ (Gaußklammer)\\
+$x := r - \lfloor r \rfloor \in [0,1)$\\
+$r = \lfloor r \rfloor + x$\\
+$x_1 := \lfloor x * 10 \rfloor \in \{0,1,2,3,4,5,6,7,8,9\}$\\
+$R_1 := x - x_1 * 10^{-1} \in [0,10^{-1})$\\
+$x=x_1*10^{-1} + R_1$\\
+$x_2 := \lfloor R_1 * 10^2 \rfloor \in \{0,1,\ldots ,9\}$\\
+$x = x_1 * 10^{-1} + x_2 * 10^{-2} + R_2$\\
+induktiv, wenn $x = x_1 * 10^{-1} + x_2 * 10^{-2} + \ldots + x_n * 10^{-n} + R_n$\\
+$x_j \in \{0,1,\ldots,9\}, R_n \in [0,10^{-(n)})$\\
+$x_{n+1} = \lfloor R_n * 10^{n+1} \rfloor$\\
+$\implies x=\sum_{j=1}^{n+1} x_j * 10^{-j} + R_{n+1}, R_{n+1} \in [0,10^{-(n+1)})$\\
+$\sumOI x_n 10^{-n}$ ist absolut konvergent und $x=\sumOI x_n * 1-^{-n}$\\
+$\implies r = \lfloor r \rfloor + x = m,x_1,x_2,x_3,\ldots$\\
+$m = \lfloor r \rfloor$\\
+$r = m + \sumOI x_n * 10^{-n}$\\
+$0,\overline{9} = \sumOI	9 * 10^{-n} = 9 * 10^{-1} * \sum_{k=0}^\infty 10^{-k}$ (geometrische Reihe)\\
+$0,\overline{9} = 9 * 10^{-1} * \frac{1}{1-\frac{1}{10}} = 9 * 1-^{-1} * \frac{10}{10-1} = 1$!\\
+Falls es ein $l \geq 1$ gibt mit $x_n = 9, \forall n \geq l + 1$. Damit ohne Darstellung nicht eindeutig! Sei l die kleinste solche Zahle $n\in\mathbb{N}_0$\\
+$\implies \sum_{n=l+1}^\infty 9 * 10^{-n} = 9 * \sum_{n=l+1}^\infty 10^{-n} = 9 * 10 ^{-(l+1)} \sumNI 10^{-n} = 9 * 10^{-(l+1)} \frac{1}{1-\frac{1}{10}} = 10^{-l}$\\
+$\implies x = r - \lfloor r \rfloor = \sumOI x_n * 10^{-n} = \sum_{n=1}^l x_n * 10^{-n} + \underbrace{\sum_{n=l+1}^\infty 9 * 10^{-n}}_{=10^{-l}}$\\
+$=\sum_{n=1}^{l-1} x_n * 10^{-n} + \underbrace{x_l 10^{-l} + 10^{-l}}_{=(x_l + 1) * 10^{-l}}$\\
+$\implies r = \lfloor r \rfloor + \sum_{n=1}^l \tilde{x}_1 * 10^{-n}$\\
+$\tilde{x} = \left\{\begin{array}{cl} x_n, & \mbox{falls } n\leq l -1\\ x_l + 1, & \mbox{falls } n = l\\ 0 & \mbox{falls } n\geq l + 1 \end{array}\right. $\\
+Vollkommen analog kann man g-adische Darstellung zeigen: $g \in\mathbb{N}$\\
+$\implies r = m + \sumOI	y_n g^{-n}$\\
+$m\in\mathbb{Z}, y_n \in\{ 0,1,\ldots ,g-1\}$\\
+\begin{proof}
+Analog
+\end{proof}
+
+\paragraph{Angenommen} $[0,1)$ ist abzählbar
+\begin{equation}
+\begin{split}
+  \rightarrow \text{Liste} r_n \in [0,1), n\in \N \\
+  r_1 &= 0, x_1^1, x_2^1, x_3^1, \text{ }\ldots \\
+  r_2 &= 0, x_1^2, x_2^2, \text{ }\ldots \\
+  r_3 &= 0, x_1^3, \text{ }\ldots \\
+  \vdots
+\end{split}
+\end{equation}
 
 
+Idee als n-te Ziffer $\tilde{x}_n := \left\{\begin{array}{cl} \tilde{x}_n + 1, & \mbox{falls } x_n^n \leq 8\\ 1, & \mbox{falls } x_n^n = 9 \end{array}\right. $\\
+$\implies$ neue reelle Zahl $\tilde{r} = 0, \tilde{x}_1, \tilde{x}_2, \tilde{x}_3, \ldots \in [0,1)$ die nicht in obiger Liste ist.
+$\implies [0,1)$ nicht abzählbar!
 
+\section{Umordnung von Reihen}
+\paragraph{Beobachtung} Bei \underline{endlichen} Summen hängt der Wer der Summe \underline{nicht} davon ab, in welcher Reihenfolge die Summanden aufsummiert werden.\\
+$a_1 + a_2 + \ldots + a_6 = ((((a_1+a_2)+a_5)+a_4)+a_6)+a_3 = ((((a_1+a_6)+a_4)+a_3)+a_5)+a_2$
+
+\paragraph{Warnung} Bei unendlichen Reihen ist dies manchmal falsch!
+
+\subsection{Definition 20}
+\begin{enumerate}[1)]
+  \item Seien $a_n, b_n \in\mathbb{C}$
+    Wir nennen $\sumOI b_n$ eine Umordnung von $\sum_P{n=1}^\infty a_n$, wenn es eine bijektive Abbildung 
+    $\sigma : \N \rightarrow \N$ gibt $b_n = a_{\sigma (n)}$, d.h. $(b_n)_n$ ist eine Umordnung von $(a_n)_n$
+  \item EIen konvergente Reihe $\sumOI a_n, a_n \in\mathbb{C}$ heißt unbedingt konvergent, wenn jede Umordnung $\sum_n b_n$ ebenfalls konvergent und dieselbe Summe wie $\sumOI a_n$ benutzt. Anderfalls heißt $\sum_n a_n$ bedingt konvergent.
+\end{enumerate}
+\subsection{Satz 21 (Dirchlet 1837)}
+$a_n \in\mathbb{C}, \sumOI a_n$ ist unbedingt konvergent $\Leftrightarrow \sumOI a_n$ ist absolut konvergent!\\
+\begin{proof}
+\begin{enumerate}[1)]
+  \item "$\Leftarrow$": \\
+  Sei $\sumOI$ absolut konvergent und $\sumOI b_n$ eine Umordnung.
+  $s_n := \sum_{j=1}^n a_j, t_n := \sum_{k=1}^n b_k = \sum_{k=1}^n a_{\sigma (k)}$\\
+  $\sigma : \mathbb{N} \rightarrow \mathbb{N}$ Bijektion\\
+  Wissen $s_n \rightarrow s,$ müssen zeigen $t_n \rightarrow s$\\
+  Seien $\epsilon > 0, \implies \exists m \in \N$
+  $$\sum_{n=m+1}^{m+l} |a_n| < \epsilon, \forall l \in\mathbb{N}\text{(\textasteriskcentered )}$$
+  $$\text{da} \sum a_n \text{absolut konvergiert}$$
+
+  Bestimme $N \in \mathbb{N}$ so, dass\\
+  $\{ 1,2,3,\ldots,m\} \subset \{ \sigma (1), \sigma (2), \ldots, \sigma (N)\}$\\
+  $\implies \{a_1, a_2, \ldots a_m\} \subset \{a_{\sigma (1)}, a_{\sigma(2)}, \ldots , a_{\sigma (N)}\}$\\
+  Sei $n\geq N (\geq m)$\\
+  $s_n - t_n = \sum_{j=1}^n a_j - \sum_{k=0}^n a_{\sigma (k)} = \sum_{j \geq m + 1}^n a_j - \sum_{k=1}^n a_{\sigma (k)}, \sigma (k) \notin \{1,2,\ldots ,m\}$\\
+  $\implies |a_n - t_n| = |\sum_{j\geq m + 1}^n a_j - \sum_{k=1, \sigma(k) > m}^n a_{\sigma (k)}| \leq \sum_{j=m+1}^n |a_j| + \sum_{k=1}^n |a_{\sigma (k)}| \leq 2 \sum_{j=m+1}^L a_j, L = max(n, \sigma (k)), k=1,\ldots ,n$\\
+  $\implies \lim_{n\rightarrow\infty} (s_n - t_n) = 0$ und wir wissen $s_n \rightarrow s, n \rightarrow\infty$\\
+  $\implies t_n - s = (s_n - s) + (t_n - s_n) \rightarrow 0$\\
+  $\implies \lim t_n = s$ \checkmark
+  \item "$\Rightarrow$" Beweis durch Kontraposition\\
+  Annahme: $\sum_n a_n$ ist nicht absolut konvergent\\
+  Folgen: $\sum_n a_n$ ist nicht unbedingt konvergent.\\
+  Sei $a_n = \alpha_n + i \beta_n$
+\end{enumerate}
+\end{proof}
 \end{document}
