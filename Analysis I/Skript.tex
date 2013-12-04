@@ -2450,11 +2450,15 @@ Eine absolut konvergente Reihe $\sumOI a_n$ ist
  \item konvergent
  \item es gilt: $|\sumOI a_n| \le \sumOI |a_n| $
 \end{itemize}
- 
-%TODO: Beweis eintragen
 \begin{proof}
- 0=0
+  $|\sum_{j\geq n+1}^{n+l} |a_j| < \epsilon$\\
+  $\forall \epsilon > 0 \exists k_\epsilon : \sum_{j=n+1}^{n+l} |a_j| < \epsilon , \forall l \in \mathbb{N}, n \geq k_\epsilon$\\
+  $\implies \sumOI a_n$ ist konvergent und $|\underbrace{\sum_{j=1}^n a_j}_{\leftarrow |\sum_{j=1}^\infty a_j|, n\leftarrow \infty}| \leq \sum_{j=1}^n |a_j| \leq \sum_{j=1}^\infty |a_j|$
 \end{proof}
+
+\paragraph{Bemerkung} Umkehrung gilt nicht!\\
+$\sumOI (-1)^{n-1} \frac{1}{n}$ konvergiert, aber $\sumOI \frac{1}{n} = \infty$
+
 \subsection{Def 16}
 Eine Reihe $ \sumOI c_n c_N > 0$ heißt Majorante $\sumOI a_n$, falls ein $n_0 \in \N$ existiert:
 $$|a_n| \le n n>n_0 \text{d.h. falls} |a_n| \le c_n \forall n \in \N$$
@@ -2464,19 +2468,26 @@ $$|a_n| \le n n>n_0 \text{d.h. falls} |a_n| \le c_n \forall n \in \N$$
  \item Hat die Reihe $\sumOI a_n$ eine konvergente Majorante so ist sie absolut konvergent und damit konvergent.
  \item Ist $a_n \ge 0$ und dazu $\sumOI a_n$ so divergiert auch jede Majorante.
 \end{enumerate}
-%TODO: BEWEIS EINTRAGEN%
+
 \begin{proof}
- 0=0
+Teil 2: Selber überlegen\\
+Zu 1) o.B.d.A. $|a_n| \leq a_n, \forall n \in\mathbb{N}, \sumOI c_n < \infty$\\
+$\implies sum_{n=1}^\infty |a_n| \leq \sumOI c_n < \infty$\\
+$\implies \sumOI a_n$ absolut konvergent und somit konvergent nach Satz 15.
 \end{proof}
+
 
 \subsection{Satz 18 Wurzelkriterium}
 Sei $\sumOI a_n$ eine Reihe und $0 < q < 1$
 mit $\sqrt[n]{|a_n|} = | a_n| \le q \text{für fast alle n}$
 $$\implies \sumOI a_n \text{ist abs. konvergent}$$
 
-%TODO: BEWEIS EINTRAGEN%
 \begin{proof}
- 0=0
+  $\sqrt[n]{|a_n|} \leq q \implies |a_n| \leq q^n$ für $n \geq n_0$\\
+  $\implies \sumOI a_n$ hat die konvergierende Majorante $\sumOI a^n$ da $q < 1$!\\
+  Ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
+  $\implies |a_n| \geq 1 = 1$ für unendlich viele n\\
+  $\implies (a_n)_n$ ist keine Nullfolge $\implies \sum a_n$ ist nicht konvergent.
 \end{proof}
 
 \subsection{Satz 19 Quotientenkriterium}
@@ -2486,117 +2497,6 @@ $$\implies \sumOI a_n \text{ist abs. konvergent}$$
 mit $ | \frac{a_{n+1}}{a_n} | \ge 1 $ für fast alle n
 $$\sumOI a_n \text{ist divergent}$$
 
-%TODO: BEWEIS EINTRAGEN%
-\begin{proof}
- 0=0
-\end{proof}
-
-Hier fehlen noch ein paar Bemerkungen
-%%ENDE Vorlesung 28.11
-
-$S_n = \sum_{j=1}^n a_j$ ist wachsend! Also nach Satz von der Monotonen Konvergenz konvergiert $(S_n)_n \Leftrightarrow (S_n)_n$ ist beschränkt.
-
-\subsection{Satz 10}
-EIne Reine $\sumOI a_n, a_n \geq 0$ konvergiert $\Leftrightarrow \exists k < \infty : \sum_{j=1}^n a_j \leq k: \forall n \in \mathbb{N}$!
-
-\begin{proof}
-$S_n \leq S_{n+1}, \forall n$\\
-$\implies \sumOI a_n = \sup_{n\in\mathbb{N}} S_n = \sup_{n} \sum_{j=1}^n a_j$\\
-Wir setzen $\sup_n S_n = + \infty$, falls die Folge $(S_n)_n$ nicht nach oben beschränkt ist.\\
-$\implies \sumOI a_n = \sup_n S_n, a_n \geq 0$
-\end{proof}
-
-\subsection{Korollar 11}
-Für so eine Reihe $\sumOI a_n, a_n \geq 0$ gilt entweder $\sumOI a_n < \infty$ oder $\sumOI a_n = + \infty$.\\
-Erstens bedeutet: sie konvergiert. Letztens bedeutet: sie divergiert bestimmt gegen $\infty$.
-
-\subsection{Satz 12}
-Ist $0\leq a_n \leq b_n, \forall n$ und $\sumOI b_n$ konvergiert\\
-$\implies \sumOI a_n$ konvergiert und 
-$\sumOI a_n \leq \sumOI b_n$
-
-\begin{proof}
-$S_n := \sum_{j=1}^n a_j, t_n := \sum_{j=1}^n b_j$\\
-$\implies S_n \leq S_{n+1}, t_n \leq t_{n+1}$\\
-$S_n \leq t_n, \forall n$\\
-Falls $t_n \rightarrow t \in \mathbb{R}, n \rightarrow \infty
-$ ($t_n$ konvergiert)\\
-$=\sup_n t_n$ (Monotone Konvergenz)\\
-$\implies S_n \leq \sup_{k\in\mathbb{N}} t_k \in \mathbb{R}$\\
-$\implies (S_n)_n$ ist beschränkt wachsend\\
-$\implies S_n$ konvergiert und $\lim S_n \leq \lim t_n$\\
-$\implies \sumOI a_n \leq \sumOI b_n$
-\end{proof}
-
-\subsection{Satz 13 (Cauchy Verdichtungssatz)}
-Sei $(a_n)_n$ fallende Nullfolge. Damit $\sumNI a_n$ konvergiert $\Leftrightarrow \sumNI s^n a_{n^n}$ konvergiert.\\
-\begin{proof}
-$S_n = \sum_{j=0}^n a_j, t_n = \sum_{j=0}^n 2^j a_{2^j}$ für $n \leq 2^k, a^j \geq a_{j+1}, \forall j$ gilt\\
-$S_n = a_0 + a_1 + \underbrace{a_2 + a_3}_{\leq 2 * a_2} + a_4 + \ldots + (a_{2^k} + a_{2^k+1} + \ldots a_{2^{k+1}-1})$\\
-$\leq a_0 + a_1 + 2a_2 + 4a_4 + 8a_8 + \ldots + 2^k a_{2^k} = t_k \leq t_{k+1} \leq \ldots \leq t_{k+l}, \forall l \in \mathbb{N}$\\
-$\implies S_n \leq a_0  + \sup_k t_k < \infty$, wenn die kondensierte Reihe konvergiert.\\
-Umgekehrt ähnlich.
-\end{proof} 
-\paragraph{Anwendung}
-\begin{enumerate}[1)]
-\item $\sumOI \frac{1}{n}$ divergiert\\
-	$\sumOI 2^n \frac{1}{n} = \sumOI 1$ divergiert.
-\item $\sumOI 2^n \frac{1}{(2^n)^n} = \sumOI	 \underbrace{(2^{1-\gamma})^n}_{<1 \Leftrightarrow \gamma > 1}$ (geometrische Reihe)
-\item Ähnlich $\sumOI \frac{1}{n(ln n)}$ konvergiert, wenn $\gamma > 1$. divergiert, wenn $\gamma \leq 1$.
-\end{enumerate}
-
-\section{Absolut Konvergente Reihe}
-hier wieder $(a_n)_n \subset \mathbb{C}$
-
-\subsection{Definition 14}
-Eine Reihe $\sumOI a_n$ konvergiert absolut, wenn die Reihe $\sumOI |a_n|$ konvergiert.
-
-\subsection{Satz 15}
-Eine absolut konvergente Reihe $\sumOI a_n$ ist konvergent und es gilt:
-$$|\sumOI a_n | \leq \sumOI |a_n|$$
-\begin{proof}
-$|\sum_{j\geq n+1}^{n+l} |a_j| < \epsilon$\\
-$\forall \epsilon > 0 \exists k_\epsilon : \sum_{j=n+1}^{n+l} |a_j| < \epsilon , \forall l \in \mathbb{N}, n \geq k_\epsilon$\\
-$\implies \sumOI a_n$ ist konvergent und $|\underbrace{\sum_{j=1}^n a_j}_{\leftarrow |\sum_{j=1}^\infty a_j|, n\leftarrow \infty}| \leq \sum_{j=1}^n |a_j| \leq \sum_{j=1}^\infty |a_j|$
-\end{proof}
-
-\paragraph{Bemerkung} Umkehrung gilt nicht!\\
-$\sumOI (-1)^{n-1} \frac{1}{n}$ konvergiert, aber $\sumOI \frac{1}{n} = \infty$
-
-\subsection{Definition 16}
-Eine Reihe $\sumOI c_n, c_n > 0$ heißt Majorante, $\sumOI a_n$, falls ein $n_0 \in \mathbb{N}$ existiert.\\
-$|a_n|\leq n, n \geq n_0$ (d.h. falls $|a_n| \leq c_n$ für fast alle n)
-
-\subsection{Satz 17 (Majorantenkriterium)}
-\begin{enumerate}[1)]
-  \item Hat die Reihe $\sum_{n}^\infty a_n$ eien konv. Majorante, so ist sie absolut konvergent und damit konvergent.
-  \item Ist $a \geq 0$ und divergent $\sum_n^\infty a_n$, sp divergiert auch jede Majorante.
-\end{enumerate}
-
-\begin{proof}
-Teil 2: Selber überlegen\\
-Zu 1) o.B.d.A. $|a_n| \leq a_n, \forall n \in\mathbb{N}, \sumOI c_n < \infty$\\
-$\implies sum_{n=1}^\infty |a_n| \leq \sumOI c_n < \infty$\\
-$\implies \sumOI a_n$ absolut konvergent und somit konvergent nach Satz 15.
-\end{proof}
-
-\subsection{Satz 18 (Wurzelkriterium)}
-Sei $\sumOI a_n$ eine Reihe und $0 < q < 1$ mit $\sqrt[n]{|a_n|} = |a_n|^\frac{1}{n} \leq q$ für fast alle n\\
-ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
-$\implies \sum a_n$ divergiert.\\
-\begin{proof}
-  $\sqrt[n]{|a_n|} \leq q \implies |a_n| \leq q^n$ für $n \geq n_0$\\
-  $\implies \sumOI a_n$ hat die konvergierende Majorante $\sumOI a^n$ da $q < 1$!\\
-  Ist $\sqrt[n]{|a_n|} \geq 1$ für unendlich viele n\\
-  $\implies |a_n| \geq 1 = 1$ für unendlich viele n\\
-  $\implies (a_n)_n$ ist keine Nullfolge $\implies \sum a_n$ ist nicht konvergent.
-\end{proof}
-
-\subsection{Satz 19 (Quotientenkriterium)}
-Ist $a_n \neq 0, \forall n$ und existiert $q, 0 < q < 1$ mit $|\frac{a_{n+1}}{a_n}| \leq q$ für fast alle n
-$\implies \sum_{n+1}^\infty a_n$ ist absolut konvergent.
-Ist $|\frac{a_{n+1}}{a_n}| \geq 1$ für fast alle n\\
-$\implies \sum a_n$ divergiert.\\
 \begin{proof}
 Sei $|\frac{a_{n+1}}{a_n}| \leq q, n \geq n_0$\\
 $l \in \mathbb{N}: |\frac{a_{n+1}}{a_n}| = \prod_{j=0}^{l-1} \underbrace{|\frac{a_{n+1}}{a_n}|}_{\leq q} \leq q^l$\\
@@ -2620,6 +2520,7 @@ $\implies (a_n)_n$ ist keine Nullfolge!
 $a_n = \frac{1}{n^2}$:$\lim_{n\rightarrow\infty} \frac{a_{n+1}}{a_n} = 1, \lim_{n\rightarrow\infty} \sqrt[n]{n^2} = 1$\\
 $\sumOI n^px^n$ konvergiert absolut $|x|<1$ nach Wurzelkriterium.\\
 $\sumOI \frac{1}{n^\gamma}$ machen weder Quotienten noch das Wurzelkriterium eine Aussage.
+%%ENDE Vorlesung 28.11
 
 \section{Dezimaldarstellung reeller Zahlen}
 $r\in\mathbb{R}:\lfloor r \rfloor :=$ ganzzahliger Anzahl\\
