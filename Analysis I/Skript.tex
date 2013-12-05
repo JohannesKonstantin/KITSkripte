@@ -2200,7 +2200,7 @@ Umkehrung gilt NICHT!
  
 \end{proof}
 
-\subsection{Korollar 4: Die harmonische Reihe ist divergiert}
+\subsection{Korollar 4: Die harmonische Reihe ist divergent}
 
 \[\sumOI \frac{1}{n} \text{ divergiert}\]
 
@@ -2218,7 +2218,7 @@ Umkehrung gilt NICHT!
 \begin{enumerate}
   \item (Verschiebung des Summantenanfangs)
   
-  Sei $(a_n)_{n \geq p}$ eine Folge, $b_j = a_{p+k}, j \in \N_0$
+  Sei $(a_n)_{n \geq p}$ eine Folge, $b_j = a_{p+j}, j \in \N_0$
   
   Die Reihe $\sum_{n=p}^\infty a_n$, $\sum_{j=0}^\infty b_j$ und $\sum_{n=q}^\infty a_n$. Für $p < q$, haben dasselbe Konvergenzverhalten (d.h. sind gleichzeitig konvergent oder bestimmt divergent oder divergent) und im Falle der Konvergenz gilt:
   \[\sum_{j=0}^\infty a_{p+j} = \sum_{n=p}^\infty a_n = a_p + a_{p+1} + \ldots + a_{q-1} + \sum_{n=q}^\infty a_n \]
@@ -2235,7 +2235,7 @@ Umkehrung gilt NICHT!
     \end{proof}
   \end{proof}  
   
-  \item Das Konvergenzverhalten einer Reihe ändert sich nicht, wenn wir endliche Terme weglassen oder Hinzufügen.
+  \item Das Konvergenzverhalten einer Reihe ändert sich nicht, wenn wir endlich viele Terme weglassen oder hinzufügen.
   
   \begin{proof}
     \[\text{Folgt aus 1)}\]
@@ -2243,7 +2243,7 @@ Umkehrung gilt NICHT!
   
   \item Sei $(g(k))_{k=1}^q$ die endliche $(q<\infty)$ oder unendliche $(q=\infty)$ Indexfolge mit $1\leq g(1) < g(2) < \ldots < g(k) < g(k+1)$
   
-  $g(k)\in \N$ und $a_j=0$, wegen $j \neq g(k) \quad \forall k \in \N$
+  $g(k)\in \N$ und $a_j=0$, wenn $j \neq g(k) \quad \forall k \in \N$
   
   (d.h. $a_j \neq 0 \Longleftrightarrow \exists k \in \N: j=g(k)$)
   
@@ -2255,7 +2255,7 @@ Umkehrung gilt NICHT!
     \[\text{Sei } S_n=\sum_{l=1}^n q_l, t_n = \sum_{j=1}^n a_{g(j)}\]
     \[\text{ist } q<\infty \implies S_n = t_n \forall n \geq g(q)\]
     \[\text{ist } q=\infty \text{ dann ist } \boxed{S_n =t_n \text{ für } g(k)\leq n< g(k+1)}\]
-    \[\text{Also konvergiert } S_n \Longleftrightarrow t_n \text{ konvergiert und } \lim_{n\to \infty} S_n = \lim_{k \to \infty} t_n\]
+    \[\text{Also konvergiert } S_n \Longleftrightarrow t_n \text{ konvergiert und } \lim_{n\to \infty} S_n = \lim_{n \to \infty} t_n\]
   \end{proof}
 \end{enumerate}
 
@@ -2272,20 +2272,20 @@ Umkehrung gilt NICHT!
 
 \subsection{Korollar 7}
 
-\[\text{Aus der Konvergenz von } \sumOI a_n, \sumOI a_{n+1}\]
+\[\text{Aus der Konvergenz von } \sumOI a_2n, \sumOI a_{2n+1}\]
 \[\text{folgt die Konvergenz } \sumOI a_n
-\text{ und } \sumOI a_n = \sumOI a_{2n} + \sumNI a_{2n+1}\]
+\text{ und } \sumOI a_n = \sumOI a_{2n} + \sumOI a_{2n+1}\]
 
 \begin{proof}
   \[\text{Man fülle die Teilreihen } \sumOI a_{2n} \text{ und } \sumNI a_{n+1}\]
   \[\text{mit Nullen auf (vergleich Satz 5 3)) und wende die Additionsregel Satz 6 an}\] 
 \end{proof}
 
-\underline{Warnung:} Umkehrung gilt NICHT! (Bsp später)
+\underline{Warnung:} Umkehrung gilt NICHT! (Bsp. später)
 
 \section{Alternierende Reihen}
 
-Sei $(b_n)_n$ eine Nullfolge, $b_n > 0$. Dann wird
+Sei $(b_n)_n$ eine Nullfolge, $b_n \geq 0$. Dann wird
 \[\sumOI (-1)^{n-1} b_n\]
 Eine alternierende Reihe genannt!
 \[S_n = \sum_{j=1}^\infty (-1)^{j-1} b_j = b_1-b_2+b_3-b_4+\ldots+(-1)^{n-1} b_n\]
@@ -2310,50 +2310,56 @@ dann konvergiert die alternierende Reihe
  \[\stackrel{\begin{array}{l}\text{Monotone}\\\text{Konvergenz}\end{array}}{\implies} \lim_{k \to \infty} S_{2k}, \lim_{k \to \infty} S_{2k+1} \text{ existieren} \]
  \[\text{Außerdem gilt: } |S_{2k+1}-S_{2k}|=b_{2k+1} \to 0\]
  \[\text{Somit ist } \lim_{n\to \infty} S_{2k+1} = \lim_{n\to \infty} S_{2k} = s\]
- \[\implies \lim_{n \to \infty} (-1)^{n-1} b_n=s\] 
+ \[\implies \lim_{n \to \infty} \sumOI (-1)^{n-1} b_n=s\] 
 \end{proof}
 
 \subsection{Ultimative Version von Leibniz}
-Frage $\sum_n=0^{\infty} a_n \cdot b_n b_n > b_n+1 \to 0$ wann konvergiert das? \\
+Frage $\sum_{n=0}^{\infty} a_n \cdot b_n \hspace{10mm} b_n > b_{n+1} \to 0$ wann konvergiert das? \\
 Antwort: Oszillationen in den $a_n$ helfen!
 
-z.B. $a_n = (-1)^{n+1} \implies a_1 = 1 a_2 = -1 \ldots $
-%TODO: zwei Zeilen aufsplitten!
-$$A_n = \sum_j=n^{n} a_j = 1-1+1-1+1-1 \ldots = 1 wenn n gerade, 0 ansonten$$
+z.B. $a_n = (-1)^{n+1} \implies a_1 = 1 \hspace{5mm} a_2 = -1 \ldots $
+$$A_n = \sum_j=n^{n} a_j = 1-1+1-1+1-1 \ldots =  
+\begin{cases}
+\text{1 wenn n ungerade}	\\
+\text{0 ansonsten }		\\
+\end{cases}
+$$
 
 $A_n$ ist eine beschränkte Folge
 
-\subsection{Ultimatium Leibniz}
-Sei $(a_n)_n \in \mathbb{C} (b_n)_n \in \R$ mit $b_n > b_n+1 \lim_{n \to \infty} b_{n} = 0 $ und $sup | \sum_{j=1}^{n} a_j| < \infty$
+\subsection{Satz 9 (Ultimativer Leibniz)}
+Sei $(a_n)_n \in \mathbb{C} (b_n)_n \in \R$ mit $b_n \geq b_{n+1} \lim_{n \to \infty} b_{n} = 0 $ und $sup | \sum_{j=1}^{n} a_j| < \infty$
 $\implies  \sumOI a_n b_n konvergiert$
 
 \begin{proof}
- Zu zeigen $\forall \epsilon > 0 \exists k_\epsilon: \forall l \in \N, n \ge k_\epsilon:$
+ Zu zeigen(nach Cauchy) $\forall \epsilon > 0 \hspace{5mm} \exists k_\epsilon: \forall l \in \N, n \ge k_\epsilon:$
  $$| \sum_{j=n+1}^{n+l} a_j b_j | < \epsilon$$
  
  \begin{equation}
   \begin{split}
     \text{Setzen } & A_n := \sum_{j=1}^{n}a_j, A_0 = 0 \\
     & \implies a_j = A_j - A_{j-1} \\
-    & \implies \sum_{j=n+1}^{n+l}  a_j b_j = \sum_{j=n+1}^{n+l} (A_j - A_{j+1}) b_j \\
-    & = \sum_{j=n+1}^{n+l}  A_j b_j - \underbrace{\sum_{j=n+1}^{n+l}  A_{j-1} b_j}_{= \sum_j^{n+l-1} A_j b_{j+1}} \\
-    & = A_{n+1} b_{n+1} = A_n b_{n+1} + \sum_{j=n+1}^{n+l-1} A_j (b_j - b_{j-1}) \\
+    & \implies \sum_{j=n+1}^{n+l}  a_j b_j = \sum_{j=n+1}^{n+l} (A_j - A_{j-1}) b_j \\
+    & = \sum_{j=n+1}^{n+l}  A_j b_j - \underbrace{\sum_{j=n+1}^{n+l}  A_{j-1} b_j}_{= \sum_{j=n}^{n+l-1} A_j b_{j+1}} \\
+    & = A_{n+l} b_{n+l} = A_n b_{n+l} + \sum_{j=n+1}^{n+l-1} A_j (b_j - b_{j-1}) \\
     & \implies | \sum_{j=n+1}^{n+l}  a_j b_j | \le | A_{n+1} | b_{n+l} + |A_n| b_{n+1} + \sum_{j=n+1}^{n+l-1} |a_j| |b_j - b_{j+1}|  \\
     & M := sign(Ai) < \infty \le M (b_{n+l} + b_{n+1}) + M \sum_{j=n+1}^{n+l+11} (b_j - b_{j+1})  \text{  da  } b_j > b_{j+1} \\
     & \implies |\sum_{j=n+1}^{n+l} a_j b_j| \le M(b_{n+l} + b_{n+1}) + M (b_{n+l} - b_{n+l}) \\
-    & = 2 M(b+1) \to 0 \\
+    & = 2 M(b_{n+1}) \to 0 \\
     & \text{unabhängig von l!}
   \end{split}
  \end{equation}
 \end{proof}
-Bsp: $z \in \mathbb{C} |z| = 1 z \neq = 1$
+
+Bsp: $z \in \mathbb{C} \hspace{5mm}  |z| = 1 \hspace{5mm} z \neq 1$
 $b_n $ fallende Nullfolge
 $\sum z^{n-1} b_n$ konvergiert
 
 \begin{equation}
  \begin{split}
-  A_n & := \sum_{j=1}^{n} z^{j+1} = \sum_{j=0}^{n+1}z^j = \frac{1-z^n}{1-z}
-  |A_n| & = |\frac{1-z^n}{1-z}| = \frac{1}{1-z} | 1-z^n|
+  A_n & := \sum_{j=1}^{n} z^{j+1} = \sum_{j=0}^{n+1}z^j = \frac{1-z^n}{1-z} \\
+  |A_n| & = |\frac{1-z^n}{1-z}| = \frac{1}{|1-z|} | 1-z^n| \leq \frac{1}{|1-z|}
+  \cdot (1+|z|^n) = \frac{z}{|1-z|}
  \end{split}
 \end{equation}
 
