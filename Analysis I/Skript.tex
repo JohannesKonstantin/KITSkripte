@@ -29,6 +29,8 @@
 %% Table coloring %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[table]{xcolor}
 
+\usepackage{framed}
+\usepackage{empheq}
 
 %% Formatting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -65,12 +67,18 @@
 \newcommand{\q}[1]{\glq #1\grq}
 \newcommand{\definition}[1]{\glq #1\grq}
 
+
 %PLEASE USE THIS! LOOKS MUCH BETTER!!!
 %Making it readable
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\sumNI}{\sum_{n=0}^{\infty}}
 \newcommand{\sumOI}{\sum_{n=1}^{\infty}}
+
+\newcommand{\series}[1][a_n]{\sum_{n=1}^{\infty} #1}
+%Limit with one variable
+\newcommand{\limN}[1][n]{\lim_{#1 \to \infty}}
+
 %%END Making it readable
 
 \renewenvironment{proof}{{\bfseries Beweis }}{\qed}
@@ -78,9 +86,6 @@
 \newenvironment{example}{{\bfseries Beispiel }}{}
 
 \newtheorem{theorem}{Satz}
-
-
-
 
 \begin{document}
 
@@ -2616,6 +2621,181 @@ $a_n \in\mathbb{C}, \sumOI a_n$ ist unbedingt konvergent $\Leftrightarrow \sumOI
   Annahme: $\sum_n a_n$ ist nicht absolut konvergent\\
   Folgen: $\sum_n a_n$ ist nicht unbedingt konvergent.\\
   Sei $a_n = \alpha_n + i \beta_n$
+  
+  \subsubsection{Schritt 1} 
+Reduktion auf reelle Reihen:
+\[\sum_n a_n \text{ unbestimmt konvergent}\]
+\[a_n = \alpha_n + \beta_n \Longleftrightarrow \Re \left( \sum a_n \right), \Im \left( \sum a_n \right) \text{ unbestimmt konvergent}\]
+\[\Longleftrightarrow \sum \alpha_n, \sum \beta_n \text{ sind unbestimmt konvergent} \]
+\subsubsection{Schritt 2}
+Ziel Beweis durch Kontraposition:
+\[\text{Sei } \sum_n \alpha_n \text{ konvergent, aber nicht absolut konvergent} \]
+\[\implies \sum_a a_n \text{ ist nicht unbestimmt konvergent}\]
+\[\text{Setze } p_n:= \max(a_n,0),\quad q_n := -\min(\alpha_n,0)\]
+\[\alpha_n = p_n - q_n, |\alpha_n|> p_n+q_n\]
+\subsubsection{Schritt 3}
+\[\text{Sei } \sum \alpha_n \text{ konvergent aber nicht absolut konvergent}\]
+\begin{empheq}[box=\fbox,right=\text{\qquad \huge !}]{align*}
+  \sum_n p_n = + \infty \\
+  \sum_n q_n = + \infty
+\end{empheq}
+
+\[\text{Da } q_n \geq 0, \implies \sum q_n \text{ ist endlich oder } =+ \infty\]
+\[\text{Angenommen: } \series[q_n]< \infty\]
+\[\text{Da } \series \text{ ist konvergent}\]
+\[\implies \sum_n (\alpha_n + q_n) \text{ ist konvergent}\]
+\[\sum_n (\alpha_n + q_n) = \sum_n p_n \text{ ist konvergent}\]
+\[\implies \sum_n |\alpha_n| = \sum_n (p_m + q_n)=\sum_n p_n +\sum_n q_n < \infty\]
+\[\implies \sum \alpha_n \text{ ist absolut konvergent }\lightning\]
+\subsubsection{Schritt 4}
+\[\text{Sei } \sum a_n \text{ konvergent, nicht absolut konvergent}\]
+\[\implies \exists \text{ Umordnung} \sum b_n \text{ so, dass sie gegen} -\infty \text{ divergent!}\]
+
+\[\text{ Da} \sum p_n = + \infty, \sum q_n = + \infty\]
+\[\text{Wähle } r \text{, sodass} \sum_{k=1}^{r_1-1} p_k > 1+q_1\]
+\[\implies \text{ Wähle } r_2 > r_1+1: \sum_{k=1}^{r_2-2} p_k > 2 + q_1 + q_2 \]
+\[\text{induktiv schreiben: zu } r_n \in \N,\]
+\[\text{wähle } r_{n+1} \in \N, r_{n+1} > r_n +n\]
+\[\sum_{k=1}^{r_{n+1}-(n+1)} p_k > n + \sum_{k=1}^{n+1} q_k\]
+\[\text{Umordnung von } \boxed{\sum a_n:}\]
+\[p_1+p_2+p_3+\ldots+p_{r_1-1}-q_1+p_{r_1}+\ldots+p_{r_2-2}-q_2\]
+\[+p_{r_2+1}+\ldots+{p_{r_3-3}}-q_3+\ldots \quad \text{dies divergiert gegen } + \infty\]
+
+\subsubsection{Beobachtung}
+
+\[\text{Wenn } \sum_{k=1}^\infty b_k \text{ diese Umordnung ist}\]
+\[r_n \leq L < r_{n+1} \boxed{\sum_{k=1}^L b_k \geq n} \text{ divergent}\]
+
+  
+  
+  
+  
+  
 \end{enumerate}
 \end{proof}
+
+\pagebreak 
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[scale=0.4]{img/3/1}
+  \caption{Beispiel}
+\end{figure}  
+
+\subsection{Satz 22: Rieman}
+
+Ist $\sum a_n$ konvergent aber nicht absolut konvergent $\implies$ Für $c \in \R$ (oder $c=+\infty$ oder $c=+\infty$) existieren Umordnungen von $\sum \alpha_n$ die gegen $c$ konvergieren!
+
+\section{Produkt von Reihen}
+
+\[\sum a_n, \sum b_n, \left( \sum a_n \right) \left( \sum b_n \right)\]
+\[\left( \sum_{l=0}^n a_l \right) \left( \sum_{m=0}^k b_m \right) = \sum_{l=0}^n \sum_{m=0}^k a_l b_m \]
+
+
+\subsection{Satz 23}
+
+Sei $(b_{lm})_{l,m \in \N_0}$, $b_{lm} \geq 0$ und
+\[S:= \sum_{l=0}^\infty \left( \sum_{m=0}^\infty b_{lm} \right) \quad (S= + \infty \text{ erlaubt!})\]
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[scale=0.4]{img/3/2}
+  \caption{Veranschaulichung}
+\end{figure}  
+
+\[\text{Dann ist } S:= \sum_{m=0}^\infty \left( \sum_{l=0}^\infty b_{lm} \right)\]
+
+Ferner ist $lm$ jede Bijektion $\sigma: \N_0 \to \N_0 \times \N_0$ (d.h. für jede Abzählung von $\N_0 \times \N_0$) auch.
+\[S= \sum_{n=0}^\infty b_{\sigma(n)}\]
+Insbesondere kommt es auf die Reihenfolge der Summation \underline{nicht} an und z.B. gilt
+\[S=\sum_{n=0}^\infty * \sum_{l+m=n} b_{lm} = \sum_{n=0}^\infty \sum_{l=0}^n b_{l,n.l}\]
+\[= \lim_{L\to \infty} \sum_{l,n=0}^L b_{lm}\]
+
+\begin{proof}
+
+\[b_{l,m} \geq 0 \quad \forall l,m\]
+\[\stackrel{\begin{array}{c}\text{Monotone}\\\text{Konvergenz}\end{array}}{\Longrightarrow} \sum_{l=0}^\infty  \left( \sum_{m=0}^\infty b_{lm} \right) \]
+\[=\limN \left( \sum_{l=0}^n \left( \sum_{m=0}^\infty b_{lm} \right) \right)\]
+\[=\limN \left( \sum_{l=0}^n \left( \limN[k] \sum_{m=0}^k b_{lm} \right) \right)\]
+\[=\limN \left( \limN[k] \sum_{l=0}^n \sum_{m=0}^k b_{lm} \right)\]
+\[=\limN \left( \limN[k] \sum_{m=0}^k \sum_{l=0}^n b_{lm} \right)\]
+\[\stackrel{\begin{array}{c}\text{Monotone}\\\text{Konvergenz}\end{array}}{=}\sup_{n \in \N_0} \left( \sup_{k \in \N_0} \sum_{m=0}^k \sum_{l=0}^n b_{lm} \right)\]
+\[\stackrel{\text{Lemma 24}}{=}\sup_{k \in \N_0} \left( \sup_{n \in \N_0} \sum_{m=0}^k \sum_{l=0}^n b_{lm} \right)\]
+\[\stackrel{\begin{array}{c}\text{Monotone}\\\text{Konvergenz}\end{array}}{=}\limN[k] \left( \limN[n] \sum_{m=0}^k \sum_{l=0}^n b_{lm} \right)\]
+\[=\ldots=\sum_{m=0}^\infty \sum_{l=0}^\infty b_{lm} \text{ \huge !}\]
+Sei $\sigma: \N_0 \times \N_0$ eine Bijektion.
+\[S_L = \sum_{n=1}^\infty \underbrace{b_{\sigma(n)}}_{\geq 0} \qquad  \text{\qq{Partialsumme}}\]
+\[\implies S_L \leq S_{L+1} \quad \forall L \quad \& \quad \boxed{S_L \leq S}\]
+Fall $ S < \infty $
+\[\stackrel{\begin{array}{c}\text{Monotone}\\\text{Konvergenz}\end{array}}{\implies}\stackrel{1}{S} := \lim_{L \to \infty} S_L \text{ existiert}\]
+\[\implies \sum_{n=0}^\infty b_{\sigma(n)}\]
+\[\text{Damit ist } \sumNI b_{\sigma(n)} \text{ absolut konvergent}\]
+\[\stackrel{\text{Satz 21}}{\implies} \text{Jede Umordnung von } \sumNI b_{\sigma(n)} \text{ konvergiert gegen } \tilde{S}\]
+\[\implies \text{Für \underline{jede} Bijektion } \sigma: \N_0 \to \N_0 \times \N_0 \text{ ist } \sumNI b_{\sigma(n)} = \tilde{S}\]
+Behauptung: $\tilde{S} = S$!
+\[\text{Sicherlich ist } \tilde{S} \leq S, \text{ da } \tilde{S}= \lim S_L \leq S\]
+\[\sum_{l=1}^{N_1} \sum_{m=1}^{N_2} b_{lm} \geq S-\epsilon\]
+\[\tilde{S} \geq S-\epsilon \quad \forall \epsilon > 0\]
+\[\implies \tilde{S} \geq S !\]
+
+\end{proof}
+
+\subsection{Lemma 24}
+
+Seien $X,Y$ beliebige Mengen $\neq \emptyset$
+\[\rho:X \times Y \to \R, \implies \sup_{x \in X} \left( \sup_{y \in Y} f(x,y) \right) = \sup_{y \in Y} \left( \sup_{x \in X} f(x,y) \right) \]
+
+\begin{proof}
+
+Offensichtlich
+\[f(x,y) \leq \sup_{x \in X} \left( \sup_{y \in Y} f(x,y) \right)\]
+Dann scharf hinschauen! %Bitches!%
+
+\end{proof}
+
+\subsection{Satz 25}
+
+Sind $\sum a_n$,$\sum b_n$, \quad $a_n$, $\sum b_n \in \mathbb{C}$
+
+absolut konvergente Reihen und setzen nun
+\[\boxed{P:= \left( \sum_{n=0}^\infty a_n \right)\left( \sum_{n=0}^\infty b_n \right)} \quad (1)\]
+\[\implies \boxed{P := \sum_{j=0}^\infty \left( \sum_{k=0}^\infty  a_j b_k \right) = \sum_{k=0}^\infty \left( \sum_{j=0}^\infty  a_j b_k \right)} \quad (2)\]
+\[\text{ Ferner ist mit } d_{lm} = a_l b_m \text{ und jeder Bijektion:} \sigma:\N_0 \to \N_0 \times \N_0 \]
+\[c_v := d_{\sigma(v)} \quad (\text{d.h. jeder Anordnung der Punkte } a_l b_m) \text{ auch }\]
+\[\boxed{P= \sum_{v=0}^\infty c_v} \quad (3)\]
+\[\text{und die Reihe in (3) ist absolut konvergent.}\]
+\[\text{Insbesondere ist}\]
+\[\boxed{P=\sum_{n=0}^\infty * \sum_{l+m=n} a_l b_n } \quad (4)\]
+\[\text{als } P=\sum_{n=0}^\infty \sum_{l=0}^n a_l b_{n-l}\]
+\[\text{(Cauchy Produktfornel!)}\]
+
+\subsubsection{Bemerkung}
+
+Satz ist falsch, falls $\sum a_n \sum b_n$ nicht absolut konvergent sind.
+
+\begin{proof}
+\[K^{'}=\sum_n |a_n|, \quad K^{''} = \sum_n |b_n|\]
+\[\implies \sum_{l=0}^n \sum_{m=0}^k |a_l b_m| = \left( \sum_{l=0}^n |a_n| \right)\left( \sum_{m=0}^k |b_m| \right) \leq K^{'}K^{''} = K < \infty \]
+\[\implies \sum_{l=0}^\infty \left( \sum_{m=0}^\infty |a_lb_m| \right) \leq k < \infty\]
+d.h. Satz 23 kann auf $|d_{lm}=|a_lb_m|$ angewandt werden!
+\[\implies \text{Jede anordnung } c_v = a_lb_m \text{ mit } (l,m) = \sigma(v), \sigma : \N_0 \to \N_0 \times \N_0 \]
+\[\text{ergibt eine absolut konvergente Reihe!}\]
+\[\implies \tilde{P} := \sum_{v=0}^\infty c_v \text{ existiert und ist unabhängig von } \sigma !\]
+\[\implies \boxed{\tilde{P} = \sum_{n=0}^\infty * \sum_{l+m=n}} \quad !\]
+\[\text{und } = \limN \sum_{l=0}^n \sum_{m=0}^n a_l b_m\]
+\[= \limN \left( \sum_{l=0}^n a_l \right) \left( \sum_{m=0}^n b_m \right)\]
+\[= \limN \left( \sum_{l=0}^n a_l \right) \left( \limN \sum_{m=0}^n b_m \right) \]
+\[=n*v\]
+\[u = \lim u_n = \limN \sum_{l=0}^n a_l\]
+\[v = \lim v_n = \limN \sum_{m=0}^n b_m\]
+\[\text{Da ferner } n*v = \left( \limN u_n \right)v\]
+\[ = \limN (u_n*v)\]
+\[ = \limN \left( \sum_{l=0}^n a_l \sum_{m=0}^\infty b_m \right) \]
+\[ = \limN \sum_{l=0}^n \left( \sum_{m=0}^\infty a_lb_m \right) \]
+\[ = \sum_{l=0}^\infty \left( \sum_{m=0}^\infty a_l b_m \right) \]
+\[\text{und dasselbe für } u*v = \limN u*v_n\]
+\[\implies \text{ (2) gilt}\]
+
+\end{proof}
+
 \end{document}
