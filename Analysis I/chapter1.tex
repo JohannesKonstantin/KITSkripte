@@ -1,0 +1,1087 @@
+\chapter{Grundlagen}
+\section{Mengen}
+
+Angaben von Mengen durch Aufzählungen
+
+$M=\left\{ a,b,c \right\}$ oder $M=\left\{ Kirche, Dorf\right\}$
+
+bekannte Mengen:
+\begin{itemize}
+  \item $\emptyset$ leere Menge
+  \item $\N = \left\{ 1,2,3,\ldots \right\}$ natürliche Zahlen
+  \item $\mathbb{Z} = \left\{ \ldots,-3,-2,-1,0,1,2,3,\ldots \right\}$ ganze Zahlen
+  \item $\mathbb{Q} = \left\{ \frac{m}{n}|m \in \mathbb{Z},n \in \N \right\}$ Rationale Zahlen
+\end{itemize}
+
+\textbf{Achtung:} $\left\{ \emptyset \right\}$ hat ein Element (nämlich die leere Menge)!
+
+\subsection{Syntax}
+\begin{itemize}
+  \item $x \in M$ $x$ ist Element von $M$
+  \item $x \notin M$ $x$ ist nicht Element von $M$
+  \item $M \subset N$ $M$ ist Teilmenge von $N$
+  d.h. für alle $x \in M$ ist auch $x \in N$ \\
+  \textbf{Achtung:} Bei $M \subset N $ ist auch $M = N$ möglich \\
+  \textbf{Immer:} $\emptyset \subset M$,in jeder Menge
+  \item $M=N: M \subset N \wedge N \subset N$
+  \item Vereinigungsmenge: $M \cup N := \left\{ x|x \in M \wedge x \in N\right\}$
+  \item Disjunktion: $M$ und $N$ sind disjunkt wenn $M  \cap N = \emptyset$ 
+  \item Schnittmenge: $M \cap N := \left\{ x|x \in M \vee x \in N\right\}$ 
+  \item Differenz: $M \backslash N := \left\{ x|x \in M \wedge x \notin N \right\}$ 
+  \item Produktmenge: $M \times N:= \left\{ (x,y)|x \in M, y \in N \right\}$  \\
+  $M_1 \times M_2 \times \ldots \times M_n := \{ \underbrace{(x_1,x_2,\ldots,x_n)}_{\text{n-Tupel}} : x_j \in M_j, j= 1,\ldots,n \}$
+\end{itemize}
+
+\subsection{Satz 1: \qq{Naiver}\ Mengenbegriff nach Cantor}
+
+\qq{Unter einer \q{Menge} verstehen wir jede Zusammenfassung M von bestimmten wohlunterschiedenen Objekten m unserer Anschauung oder unseres Denkens (welche die \q{Elemente} von M genannt werden) zu einem Ganzen.}
+
+\subsection{Potenzmenge von M}
+
+$2^M = \mathcal{P}(M) := \left\{ A | A \subset M \right\}$
+
+\textbf{immer:} $ M \in \mathcal{P}(M), \emptyset \in \mathcal{P}(M)$ 
+
+\begin{example}{$\mathcal{P}(\emptyset) = \left\{ \emptyset \right\}$}
+\end{example}
+
+\subsection{Satz 2: Funktionen}
+
+Eine Funktion oder Abbildung $f : x \to y$ besteht aus einem Definitionsbereich $X$ und einer Abbildungsvorschrift, die jedem $x \in X$ genau ein Element $y \in Y$ zuordnet.
+
+\textbf{Notation} $y=f(x)$, erfordert auf $x \mapsto f(x)$
+\begin{align*}
+  f : X &\to Y\\
+  x &\mapsto f(x)
+\end{align*}
+
+\begin{example}
+\begin{align*}
+  f : \N &\to \N\\
+  x &\mapsto f(x) = 2x
+\end{align*}
+\end{example}
+
+\subsection{Satz 3: Graph}
+
+Sei $f:X \to Y$ eine Funktion
+
+$Graph(f) = G(f) = \left\{ (x,f(x)) : x \in X \right\}$
+
+$G(f) \subset X \times Y$
+
+Zwei Funktionen $f_1 : X \to Y, f_2 : X \to Y$ sind gleich, wenn $G(f_1) = G(f_2)$. D.h. falls $f_1(x)=f_2(x)$ für alle $x \in X$.
+
+\subsection{Funktionsraum}
+
+$Y^X = Abb(X,Y) = $ Menge aller Funktionen $f : X \to Y$
+
+\subsection{Bild}
+
+Wenn $A \subset X$:
+
+$f(A):=\left\{ y \in Y : \text{ Es gibt ein } x \in A : y=f(x) 
+\right\} =\left\{ f(x) : x \in A \right\}$
+
+Bild von $A$ (unter $f$)
+
+\subsection{Urbild}
+
+Wenn $B \subset Y$ 
+
+$f^{-1}(B):=\left\{ x \in X : f(x) \in B \right\}$
+
+Urbild von $B$ (unter $f$)
+
+\subsection{Eigenschaften von Funktionen}
+
+$f(X)$ ist das Bild von $f$
+
+$f : X \to Y$ ist:
+
+\begin{description}
+  \item[injektiv:] falls aus $x_1,x_2 \in X$ und $f(x_1)=f(x_2) \implies x_1=x_2$. 
+  \item[surjektiv:] falls $f(X) = Y$.
+  \item[bijektiv:] falls surjektiv und injektiv zugleich.
+\end{description}
+
+\subsection{Umkehrabbildung / Umkehrfunktion}
+Ist $f : X \to Y$ bijektiv, so existiert zu jedem $y \in Y$ genau ein $x \in X$ mit $y =f(x)$. Die Inverse zu $f$ ist die Funktion: 
+\begin{align*}
+  f^{-1} : Y &\to X\\
+  y &\mapsto \text{ Urbild von } Y \text{ unter } f
+\end{align*}
+
+\begin{example}
+\begin{align*}
+  f : \N & \to     \N\\
+                    x & \mapsto 2x
+\end{align*}
+$ f^{-1}(\{3\}) = \emptyset $
+
+$\rightarrow$ ist nicht bijektiv
+
+\[P : N \to \text{gerade natürliche Zahlen}\]
+\begin{align*}
+  f : P(\N) & \to     P(\N)\\
+                       x & \mapsto 2x
+\end{align*}
+\end{example}
+
+$\rightarrow$ ist bijektiv
+
+$f^{-1}(y)=\frac{y}{2} \in \N,y=$ gerade natürliche Zahl.
+
+\subsection{Komposition}
+
+Sei $f : X \to Y, g : W \to Z$ mit $f(X) \subset W$
+
+$h:= g \circ f$ ($g$ ist verknüpft mit $f$)
+$h(x):= (g \circ f)(x):=g(f(x))$
+
+\subsection{Identität}
+
+\begin{align*}
+  id_M : M & \to     M\\
+              x & \mapsto x
+\end{align*}
+
+Sei: $f : M \to N$ bijektiv, dann gilt:
+
+\begin{enumerate}
+ \item $f^{-1} : N \to M \text{ existiert} $
+ \item $f^{-1} \circ f = id_M$
+ \item $f \circ f^{-1} = id_N$
+\end{enumerate}
+
+\subsection{Restriktion und Fortsetzung}
+
+Seien $f : X \to Y$ und $g : X \to A$ Funktionen und $A \subset X$
+
+\textbf{$g=f|_A$ heißt Restriktion (oder Einschränkung) von $f$ auf $A$:}
+
+\begin{align*}
+  g := f|_A : A & \to     Y\\
+                   x & \mapsto f(x)
+\end{align*}
+
+\textbf{$f|_A := g$ heißt Fortsetzung von $g$ auf $X$:}
+
+\begin{align*}
+  f|_A := g : X & \to     Y\\
+                   x & \mapsto g(x)
+\end{align*}
+
+\begin{example}
+\begin{align*}
+  g : [0,\infty) & \to     [0,\infty)\\
+                    x & \mapsto x^2
+\end{align*}
+\begin{align*}
+  f : (-\infty,\infty) & \to     [0,\infty)\\
+                          x & \mapsto x^2
+\end{align*}
+\end{example}
+
+\section{Induktion}
+
+Sei $\N = \{1,2,3,\ldots\}$
+$\N_0=\N \cup \{0\}$
+
+\subsection{Satz 4: Prinzip der vollständigen Induktion}
+
+Eine Teilmenge $M \subset \N$ erfülle:
+
+\begin{description}
+ \item[a)] (IA: Induktionsanfang) $1 \in M$.
+ \item[b)] (IS: Induktionsschritt/Induktionsschritt) \\
+    Falls $k \in M$ ist, demnach ist auch $k+1 \in M$
+\end{description}
+
+dann ist $M = \N$.
+
+\begin{example}
+Aussage: Für alle $n \in \N$
+\[A(n) = 1+2+\ldots+n = \frac{n(n+1)}{2}\]
+\[M:=\{n \in \N : A(n) \text{ ist wahr }\} \subset \N\]
+Wissen: $1 \in M$, da $A(1)$ wahr ist
+
+Annahme: 
+\[k \in M \Longrightarrow A(k) \text{ ist wahr }\]
+\[A(k+1):1+2+\ldots+k+(k+1)= \frac{(k+1)(k+2)}{2}\]
+\[\underbrace{1+2+\ldots+k}_{\frac{k(k+1)}{2}}+(k+1)= \frac{k(k+1)}{2}+(k+1)=\frac{(k+1)(k+2)}{2}\]
+
+$\Longrightarrow k+1 \in M$ falls $k \in M$ ist! also wegen Satz 4: $M=\N$!
+\end{example}
+
+\subsection{Satz 5: Beweis durch vollständige Induktion}
+
+Für alle $n \in \N$ seien Aussagen $A(n)$ gegeben.
+
+Ferner sei:
+
+\begin{description}
+ \item[(IA)] $A(1)$ ist wahr.
+ \item[(IS)] Unter der Annahme, dass für ein $k \in \N$ die Aussage $A(k)$ wahr ist, ist dann auch $A(k+1)$ wahr
+ \item[(IS)] Aus $A(n)$ wahr für $n=k$ folgt $A(n)$ wahr für $n=k+1$ \\
+   Dann ist $A(n)$ wahr f+r alle $n \in \N$
+\end{description}
+
+\begin{proof}
+
+Setze man $M:=\{n \in \N:A(n) \text{ wahr }\}$
+
+$M \subset \N$
+
+\begin{enumerate}
+  \item Wegen (IA) $1 \in M$
+  \item Wegen (IS) sei $k \in M$, also $A(k)$ wahr, also $A(k+1)$ wahr, also $k+1 \in M$ 
+\end{enumerate}
+
+Wegen Satz 4 fertig!
+
+\end{proof}
+
+\begin{example}{Summen und Produkte}
+
+Seien $a_1, \ldots, a_n$ Zahlen
+
+\textbf{Definition:} Teilsumme
+\[S_k \text{ durch } S_1 := a_1\]
+\[\text{für } k \in \N: S_{k+1}:=S_k+a_{k+1}\]
+\[\text{Setze } a_1 + \ldots + a_n = \sum_{i=1}^n a_j:=S_n \]
+
+$\rightarrow$ Beispiel für eine rekursive Definition
+
+\textbf{Definition:} Produkte
+\[ p_1:=a_1\]
+\[ p_{k+1}:=p_k \cdot a_{k+1} \]
+\[ a_1 \cdot \ldots \cdot a_n=\prod_{j=1}^n a_j:=p_n\]
+\[ a^n = \underbrace{a\cdot \ldots \cdot  \cdot}_{\text{n-mal}}:=\prod_{j=1}^n a\]
+
+\textbf{Setzen:}
+\[ \sum_{j=1}^0 a_j := 0 \quad \quad \quad \prod_{j=1}^0 a_j := 1 \quad \quad \quad a^0 = 1\]
+
+\end{example}
+
+\begin{example}{Geometrische Summe}
+\[\text{Sei } a \neq 1, n \in \N_0\]
+\[\Longrightarrow \sum_{j=0}^{n} a^j = \frac{a^{n+1}-1}{a-1}\]
+
+\begin{proof}{1: Induktion}
+
+(IA) hier $n=0$
+\[\sum_{j=0}^0 a^0 = 1 = \frac{a^1-1}{a-1}\]
+(IS) Wir nehmen an, dass für $k \in \N$ die Formel für $n=k$ wahr ist.
+\[ \sum_{j=0}^k a^j = \frac{a^{k+1}-1}{a-1} \]
+\[ \text{IS auf n=k+1} \]
+\[ \sum_{j=0}^{k+1} a^j = \sum_{j=0}^{k} a^j +a^{k+1} \]
+\[ \text{Induktionsannahme} \]
+\[ = \frac{a^{k+1}-1}{a-1}+a^{k+1}=\frac{a^{k+1}-1+(a-1)a^{k+1}}{a-1} \]
+\[ = \frac{a^{k+2}-1}{a-1} \]
+\end{proof}
+
+\begin{proof}{2: Ohne Induktion}
+\[S_n:=\sum_{j=0}^n a^j\]
+\[\Longrightarrow a \cdot S_n=a \cdot \sum_{j=0}^n a^j = \sum_{j=0}^n a \cdot a^j = \sum_{j=0}^n a^{j+1} = \sum_{j=1}^{n+1} a^j\]
+\[\Longrightarrow a\cdot S_n-S_n=\sum_{j=1}^{n+1} a^j -\sum_{j=0}^{n+1} a^j = a^{n+1}-a^0=a^{n+1}+1\]
+\[\Longrightarrow (a-1)S_n =a^{n+1}+1 \Longrightarrow S_n = \frac{a^{n+1}+1}{a-1}\]
+
+\end{proof}
+
+\end{example}
+
+\subsection{Notation: Aussagen}
+
+Seien $A,B,C,D$ mathematische Aussagen 
+
+\textbf{Syntax}
+
+\begin{itemize}
+  \item $\lnot A$: nicht A
+  \item $A \wedge B$: A und B
+  \item $A \vee B$: A oder B
+  \item $A \Longrightarrow B$: A impliziert B, aus A folgt B
+  \item $A \Longleftrightarrow $: A äquivalent zu B, A genau dann, wenn B
+\end{itemize}
+
+\begin{example}
+\begin{itemize}
+  \item $(A \Longleftrightarrow B) \Longleftrightarrow ((A\Longrightarrow B)\wedge(B \Longrightarrow A)) $
+  \item $(A \Longrightarrow B) \Longleftrightarrow (\lnot B \Longrightarrow \lnot A)$
+\end{itemize}
+\end{example}
+
+\subsection{Quantoren}
+
+Oft enthalten Aussagen eine freie Variable
+
+\begin{example}
+\begin{itemize}
+  \item $A(x):x$ ist eine Primzahl
+  \item $A(n): \sum_{j=1}^n j=\frac{n(n+1)}{2}$
+\end{itemize}
+\end{example}
+
+Dann gehört eine Grundmenge $U$, sodass $A(x)$ eine mathematische Aussage ist von $x \in U$
+
+\textbf{Syntax:}
+
+\begin{itemize}
+  \item $\exists$ es gibt
+  \item $\forall$ für alle
+  \item $\exists x \in U:A(x):$ es gibt ein Element $x \in U$, sodass $A(x)$ wahr ist.
+  \item $\forall x \in U:A(x): A(x)$ ist wahr für alle $x$.
+\end{itemize}
+
+
+\section{Wohlordnungsprinzip für \texorpdfstring{$\N$}{N}}
+
+
+Wir wollen beweisen $\forall n \in \N: A(x)$ wahr ist
+
+\textbf{Negation:}
+\[\lnot(\forall n \in \N: A(x))=\exists n \in \N: \lnot A(x)\]
+\[\lnot(\exists n \in \N: \lnot A(x))=\forall n \in \N: \lnot(\lnot A(x)) = A(x)\]
+
+\textbf{Also:} $G=\{n\in \N: \lnot A(n)\}$ müssen zeigen, dass $G=\emptyset$
+
+\subsection{Satz 6}
+
+Sei $A \subset \N, A \neq \emptyset$, dann hat $A$ ein kleinstes Element!
+
+D.h. $\exists n_0 \in A$ mit $\forall k \in A: k \geq n_0$
+
+\subsection{Satz 7}
+
+$\sqrt{2}$ ist nicht rational.
+
+\textbf{Angenommen:} $\sqrt{2}$ ist rational $\Longrightarrow \exists m \in \mathbb{Z}, n \in \N, \sqrt{2}=\frac{m}{n}$
+
+$G:=\left\{ n \in \N: \exists m \in \mathbb{Z}: \sqrt{2} = \frac{m}{n} \right\} \subset \N$
+
+\textbf{Wollen:} $G=\subset$
+
+\textbf{Angenommen:} $G \neq \emptyset \Longrightarrow G$ hat ein kleinstes Element (Satz 6)
+
+$\sqrt{2}=\frac{m}{n_0}:$ dann sist $m-n_0 = (\sqrt{2}-1)n_0 \Longrightarrow 0<m-n_0<n_0$ also $m-n_0 \in \N$
+
+$\Longrightarrow \sqrt{2} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{m^2-m \cdot n_0}{n_0(m-n_0)} = \frac{2n_0^2-m \cdot n_0}{n_0(m-n_0} = \frac{2n_0-m}{m-n_0}$
+
+Also hat $G$ kein kleinstes Element $\Longrightarrow G = \emptyset$ 
+
+\subsection{Satz 8}
+
+$K \in \N$, damit $\sqrt{k} \subset \N$ oder irrational
+
+\begin{proof}
+
+\textbf{Negation:} $\sqrt{k} \notin \N$ und $\sqrt{k}$ ist rational
+
+\textbf{Annahme:} $\sqrt{k} \in G \backslash \N$
+
+$G:=\left\{ n \in \N: \exists m \in \mathbb{Z}: \sqrt{k} = \frac{m}{n} \right\} \subset \N$
+
+\textbf{Wollen:} $G = \emptyset$!
+
+\textbf{Angenommen} $G \neq \emptyset$. Sei $n_0$ kleinstes Element in $G$
+
+$\sqrt{k} = \frac{m}{n_0} = \frac{m(m-n_0)}{n_0(m-n_0)} = \frac{m^2-m \cdot n_0}{n_0(m-n_0)} = \frac{k \cdot n_0^2-m \cdot n_0}{n_0(m-n_0} = \frac{k \cdot n_0-m}{m-n_0}$ 
+
+$\Longrightarrow k>1$
+
+Für Widerspruch brauchen wir:
+
+$0<m-n_0<n_0$
+
+$m-n_0 = \sqrt{k} \cdot n_0-n_0=(\sqrt{k}-1)n_0>0,\sqrt{k}>1$ 
+
+$m-n_0 = (\sqrt{k}-1)n_0 < n_0$
+
+D.h. $\sqrt{k} -1<1 \Longrightarrow \sqrt{k}<2 \Longrightarrow k<4$
+
+$k \leq 3 \Longrightarrow $ (Bullshit)
+
+Versuchen mal $m-l \cdot n_0,l \in \N$ geeignet
+
+$\sqrt{k} = \frac{m}{n_0} = \frac{m(m-l \cdot n_0)}{n(m-l \cdot n_0)} = \frac{k \cdot n_0-l \cdot n_0}{n(m-l \cdot n_0)}, k \cdot n_0-l \in \mathbb{Z}$
+
+\textbf{Brauchen:}  $0<m-l \cdot n_0<n_0 \Longleftrightarrow 0<(\sqrt{k}-l)n_0<n_0$ 
+
+\textbf{Brauchen:}  $0<\sqrt{k}-l<1$, wähle $l \in \mathbb{Z}$, sodass $l < \sqrt{k}<l+1$
+
+sollte möglich sein, falls $\sqrt{k} \notin \N$ 
+
+\end{proof}
+
+\section{Körper- und Anordnungsaxiomen}
+  \begin{example}
+    $0$ ist eindeutig!
+    Sei $0'$ auch neutrales Element der Addition
+    \begin{align*}
+      \Longrightarrow 0 = \text{ }& 0' = 0\\
+                      & 0  = 0+0'=0'+0=0'\\
+                      & 0' + 0=0'
+    \end{align*}
+  \end{example}
+
+
+\begin{example}
+  $a+x=b$ hat eine eindeutige Lösung
+  $x=b+(-a)=b-a$
+  \begin{align*}
+    \text{Sei } a+x=b & \Longrightarrow (-a)+(a+x)=(-a)+b\\
+		      & \Longrightarrow ((-a)+a)+x=b+(-a)\\
+		      & \Longrightarrow 0 + x = b+ (-a)
+  \end{align*}
+  Wenn $x=b+(-a)$
+  \begin{align*}
+    \Longrightarrow \text{ } & a+x=a+(b+(-a))=b+((-a)+a)\\
+			    & = b+(a+(-a))\\
+			    & =b+0=b
+  \end{align*}
+\end{example}
+
+In jedem Körper gilt:
+
+\[\frac{a}{c}+\frac{b}{d}=\frac{ad+bc}{cd}\]
+\[\frac{a}{c} \cdot \frac{b}{d}=\frac{ab}{cd}\]
+\[\frac{\frac{a}{c}}{\frac{b}{d}}=\frac{ad}{bc}\]
+
+%%TODO: Handout über Körperaxiome muss hier rein!%%
+
+\subsection{Satz 13}
+
+Sei $\mathbb{K}$ ein angeordneter Körper, $a,b,c,d,x,y \in \mathbb{K}$ Dann gilt:
+
+\begin{enumerate}
+  \item $a>b \Longleftrightarrow a-b>0$
+  \item $a>b \wedge c>b \Longrightarrow a+c>b+a$
+  \item $a>0 \wedge x > y \Longrightarrow ax>ay$
+  \item $a>0 \Longleftrightarrow -a<0$
+  \item Vorzeichenregeln:
+  \begin{enumerate}
+    \item $x>0;y<0 \Longrightarrow xy <0$
+    \item $a<0; x>y \Longrightarrow ax < ay$
+  \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\begin{proof}
+
+\begin{enumerate}
+  \item Sei $a>b \Longrightarrow a-b=a+(-b)>b+(-b)=0$
+  
+    Sei $a-b>0 \stackrel{(O4)}{\Longrightarrow} a= b+(a-b)>b$
+    
+  \item Sei $a>b,c>d \stackrel{(O4)}{\Longrightarrow} a+c>b+d$ und
+  
+    $b+c>b+d \stackrel{(O1)}{\Longrightarrow} a+c>b+d$
+    
+  \item Sei $a>0,x>y \stackrel{(1.)}{\Longrightarrow} x-y>0 \stackrel{(O5)}{\Longrightarrow} a(x-y)>0$
+  
+    $\Longrightarrow ax-ay >0$
+    $\Longrightarrow ax >ay$
+  \item Aus $a>0 \stackrel{(O4)}{\Longrightarrow} (-a)=(-a)+0<(-a)+a=0$
+  
+    Aus $a<0 \stackrel{(O4)}{\Longrightarrow} (-a)+a<0+a=a$
+    
+  \item Folgt aus (4) und (O5)
+\end{enumerate}
+
+$\Longrightarrow$ fertig.
+
+\end{proof}
+
+\subsection{Satz 14}
+
+Sei $(\mathbb{K},+, \cdot )$ ein angeordneter Körper $\Longrightarrow$
+
+\begin{enumerate}
+  \item $a \neq 0 \Longrightarrow a^2>0$ insbesondere $1>0$
+  
+  \item $a > 0 \Longrightarrow \frac{1}{a}>0$
+  
+  \item $a > b > 0 \Longrightarrow \frac{1}{a}<\frac{1}{b}$ und $\frac{a}{b}>1$
+\end{enumerate}
+
+\begin{proof}
+
+\begin{enumerate}
+  \item $a^2=a \cdot a$
+  
+    aus $a>0 \stackrel{(O5)}{\Longrightarrow} a^2=a \cdot a>0$ 
+    
+    aus $a<0 \stackrel{(S15(5))}{\Longrightarrow} a \cdot a>0$
+    
+  \item Sei $a \neq 0 \Longrightarrow a \cdot \frac{1}{a} = 1 > 0 \stackrel{(S1(5))}{\Longrightarrow} a>0 \wedge \frac{1}{a}>0$
+  
+    oder $a<0 \wedge \frac{1}{a}>0$
+    
+  \item Sei $a>b>0 \stackrel{(2)}{\Longrightarrow} \frac{1}{a}>0;\frac{1}{b}>0;a \cdot b>0;a-b>0 (S13(1))$
+  
+  $\Longrightarrow \frac{1}{b} - \frac{1}{a} = \frac{1}{b}(a-b)\frac{1}{a}=(a-b)\frac{1}{b} \cdot \frac{1}{a}>0$
+\end{enumerate}
+\end{proof}
+
+\textbf{Vorliegende Definition:} Die $\R$ sind ein geordneter Körper (da fehlt noch was)
+
+\subsection{Absolutbetrag}
+
+\[
+  |x| = \left\{ 
+    \begin{array}{rl}
+       x, & \text{ falls } x>0 \\
+       0, & \text{ falls } x=0\\
+      -x, & \text{ falls } x<0
+    \end{array}\right.
+\]
+
+\subsection{Signumfunktion / Vorzeichenfunktion}
+
+\[
+  sign(x) = \left\{ 
+    \begin{array}{rl}
+       1, & \text{ falls } x>0 \\
+       0, & \text{ falls } x=0\\
+      -1, & \text{ falls } x<0
+    \end{array}\right.
+\]
+\subsection{Min- und Max-Funktion}
+
+\[
+  max(x,y) = \left\{ 
+    \begin{array}{rl}
+       x, & \text{ falls } x>y \\
+       y, & \text{ falls } y\geq x
+    \end{array}\right.
+\]
+\[
+  min(x,y) = \left\{ 
+    \begin{array}{rl}
+       x, & \text{ falls } x<y \\
+       y, & \text{ falls } y\leq x
+    \end{array}\right.
+\]
+
+\subsection{Folgerungen}
+
+\begin{enumerate}
+  \item $\forall x \in \R;x=|x|sgn(x)$
+  
+    $|-x|=|x|;x \leq |x|$
+  \item $\forall x \neq 0: |x|>0$
+  \item $\forall x,y \in \R: |x \cdot y|=|x| \cdot |y|$
+  
+    $sgn(x \cdot y)=sgn(x) \cdot sgn(y)$
+  \item $\forall x \in \R, \forall e >0$
+  
+    hat $|x-a|<e \Longleftrightarrow a-e<x<a+e$
+    
+    insbesondere $|x|<e \Longleftrightarrow -e<x<e$
+  \item TODO: Stimmt das so? $|x|=max(x,-x)$
+  
+        Beweis: einfach
+\end{enumerate}
+
+\subsection{Satz 15: Dreiecksungleichung}
+
+\begin{align*}
+  \forall a,b \in \R: & |a+b| \leq |a|+|b|\\
+                              & ||a|-|b||\leq|a-b|
+\end{align*}
+
+\begin{proof}
+
+\[\text{Falls } a+b \geq 0 \Longrightarrow |a+b|=a+b \leq |a|+b\leq|a|+|b|\]
+
+\[\text{Falls } a+b < 0 \Longrightarrow -(a+b)>0 \Longrightarrow |a+b|=-(a+b)\]
+\[=(-a)+(-b)\leq |-a|+(-b)\leq |-a|+ |-b|=|a|+|b|\]
+\[|a|=|(a-b)+b|\leq|a-b|+|b|\Longrightarrow |a|-|b|\leq|a-b|\]
+
+Vertausche a und b
+\[|b|-|a|\leq |b-a|=|-(a-b)|=|a-b|=-(|a|-|b|)\]
+\[\Longrightarrow||a|-|b||=max(|a|-|b|,-(|a|-|b|)\leq |a-b|\]
+fertig
+
+\end{proof}
+
+\subsection{Satz 16: Abstandsungleichung}
+
+$\forall a,b,c \in \R: d(a,c) \leq d(a,b)+d(b,c)$
+
+\begin{proof}
+
+\[d(a,c)=|a-c|=|(a-b)+(b-c)| \leq |a-b|+|b-c|\]
+\[=d(a,b)+d(b,c)\]
+fertig
+
+\end{proof}
+
+\section{Obere und untere Schranken, Supremum und Infimum}
+
+\subsection{Obere und Untere Schranken}
+
+Sei $A \subset \mathbb{K}$, $\mathbb{K}$ ein geordneter Körper.
+
+A heißt nach oben beschränkt falls $ \exists \alpha \in \mathbb{K}, \forall a \in A : a \leq \alpha$.
+
+\textbf{Schreiben} $A \leq \alpha$. $\alpha$ heißt obere Schranke von $A$.
+
+$A$ heißt nach unten beschränkt falls $\exists \beta \in \mathbb{K},\forall a \in A: \beta \leq a$
+
+\textbf{Schreiben} $\beta \leq A$. $\beta$ heißt untere Schranke von $A$
+
+\subsection{Maximum und Minimum}
+
+$A$ heißt maximales Element (oder Maximum) von A, falls $\alpha$ obere 
+Schranke für $A$ ist und $\alpha \in A$
+
+$A$ heißt minimales Element (oder Minimum) von A, falls $\beta$ untere Schranke für $A$ ist und $\beta \in A$
+
+\begin{proof}
+Falls Maximum existiert, dann ist es eindeutig. Genauso für das Minimum. 
+
+B. \quad H.A %Year ?!?!?!? WTF% 
+
+$A=\{x \in \R, x>0\}, \inf(A)=0$
+
+A hat kein Minimum, da $0 \notin A$
+
+$B=\{x:x<0\}, \sup(B)=0$
+
+\end{proof}
+
+\subsection{Definition 18: Supremum, Infimum}
+
+$A \subset \R, A \neq \emptyset$
+
+$\sup(A)=\sup A := $ kleinste obere Schranke von $A$
+
+$\inf(A)=\inf A := $ größte untere Schranke von $A$
+
+\subsection{Lemma 19}
+
+Sei \textbf{$\alpha$ eine obere Schranke} für $A \neq \emptyset$. Dann gilt
+
+\[\alpha = \sup(A) \Longleftrightarrow \forall \epsilon > 0 \exists a_{\epsilon} \in A : \alpha - \epsilon < a_{\epsilon} \text{\quad(oder) } \alpha - \epsilon \leq a_{\epsilon}\]
+
+\begin{proof}
+
+Sei $\alpha = \sup(A)$ und $\epsilon > 0 \Longrightarrow \alpha - \epsilon$ ist keine obere Schranke für $A$.
+
+Also $\exists a_{\epsilon} \in A: \alpha -\epsilon < a_e\surd$
+
+\qq{$\Longleftarrow$} Beweis durch Kontraposition.
+
+N.B.: $(E \Longrightarrow F) \Longleftrightarrow (\lnot F \Longrightarrow \lnot E)$
+\[\lnot (\alpha = \sup(A))= \alpha > \sup(A) \]
+\[\lnot (\forall \epsilon > 0 \exists a_{\epsilon} \in A:\alpha -\epsilon < a_{\epsilon}) \]
+\[\exists \epsilon > 0 \boxed{\forall a_{\epsilon} \in A:\alpha -\epsilon \geq a_{\epsilon}}\]
+
+\textbf{Annahme:} $\alpha > \sup(A)$
+
+\textbf{Wählen:} $\epsilon:=\alpha-\sup(A)$
+
+\textbf{Damit gilt:} $\forall a \in A : a \leq \sup(A) = \alpha - \epsilon$  
+
+\end{proof}
+
+\subsection{Definition 20: Vollständigkeitsaxiom}
+
+Die reellen Zahlen $\R$ sind der angeordnete Körper in dem jede nicht leere Menge die nach oben beschränkt ist ein Supremum hat.
+
+Oder: $\R$ ist der ordnungsvollständige Körper.
+
+\begin{example}
+\[\sup(\{x \in \R, x < 0\}) = 0\]
+\[\sup(\{x \in \R, x^2 < 2\}) \text{ hat ein Suprenum (später: das Suprenum ist } \sqrt{2} \text{)}\]
+\end{example}
+
+\subsection{Die Menge \texorpdfstring{$\bar{\R}$}{R}}
+
+
+Die Menge $\bar{\R}:= \R \cup \{\infty\} \cup \{-\infty\}$ erweitert die Zahlengerade
+
+\textbf{Es gilt:} $-\infty < x < \infty \forall x \in \R$
+
+\textbf{Regeln:}
+
+\begin{itemize}
+  \item $\infty + x := \infty$
+  \item $-\infty + x := -\infty$
+  \item $\infty  \cdot  x := \infty, \quad x>0$
+  \item $\infty  \cdot  x := -\infty, \quad x<0$
+  \item $\frac{x}{\infty}:=0=\frac{x}{-\infty}$
+  \item $\infty + \infty := \infty$
+  \item $-\infty - \infty := -\infty$
+  \item $\infty  \cdot  \infty := \infty$
+  \item $\infty  \cdot  (-\infty) := -\infty$
+\end{itemize}
+
+\textbf{Nicht definiert:}
+
+\begin{itemize}
+  \item $\infty-\infty$
+  \item $0 \cdot \infty$
+\end{itemize}
+
+\subsection{Intervalle}
+
+\begin{itemize}
+  \item $a \leq b \quad [a,b] := \{x \in \R:a \leq x \leq b\}$ abgeschlossenes Intervall
+  \item $a \leq b \quad (a,b) := \{x \in \R:a < x < b\}$ offenes Intervall
+  \item $[a,b) := \{x \in \R:a \leq x < b\}$ rechts halboffenes Intervall
+  \item $(a,b]:= \{x \in \R:a < x \leq b\}$ links halboffenes Intervall
+  \item $(-\infty,a]:= \{x \in \R:x \leq a\}$
+  \item $(-\infty,a):= \{x \in \R:x < a\}$
+  \item $[a,\infty):= \{x \in \R:x \geq a\}$
+  \item $(a,\infty):= \{x \in \R:x > a\}$
+\end{itemize}
+
+\begin{proof}
+$\sup([a,b])=\sup([a,b)) = b,$ falls $a<b \quad $
+
+Wenn eine Menge $A$ ein Maximum hat 
+
+$\Longrightarrow$ Supremum ist gleich dem Maximum
+
+\end{proof}
+
+\subsection{Supremum und Infimum der leeren Menge}
+\textbf{Setzen:}
+\[\sup(\emptyset):=-\infty\]
+\[\inf(\emptyset):=+\infty\]
+
+\section{Definition von \texorpdfstring{$\N$}{N} als Teilmenge von \texorpdfstring{$\R$}{R}}
+
+
+\subsection{Definition 21}
+
+Eine Menge $A \subset \R$ heißt \underline{induktiv} falls:
+
+\begin{enumerate}
+  \item $1 \in A$
+  \item Falls $k \in A$, dann ist $k+1 \in A$
+\end{enumerate}
+
+\begin{example}
+
+$A= [1,\infty)$ ist induktiv.
+
+$A:= \{1\} \cup [1+1,\infty)$ ist induktiv
+\end{example}
+
+$\N:=$ kleinste induktive Teilmenge von $\R$
+\[:= \bigcap_{A \text{ist induktiv}} A \qquad\qquad \text{A ist induktiv}\]
+
+\subsection{Satz 21: Induktionsprinzip}
+
+Ist $M \subset \N$, mit 
+
+\begin{enumerate}
+  \item $1 \in M$
+  \item Aus $k \in M$ folgt $k+1 \in M$
+\end{enumerate}
+
+$\Longleftrightarrow M = N$
+
+\subsection{Satz 22}
+\begin{enumerate}[1)]
+\item $\forall n \in \N: n \geq 1$ oder $n \leq 1 + 1$ und $n = 1$ oder $n-1 \in \N$
+\item $\forall n,m \in \N: n+m \in \N$ und $n \cdot m \in \N$
+\item $\forall n,m \in \N n \geq m \implies n-m \in \N_0 = \N \cup \{0\}$
+\item Sei $n \in \N$ Dann existiert kein $m \in \N$ mit $n < m < n+1$
+\item Sei $A \subset \N: A \neq \emptyset \implies A$ hat ein kleinstes Element
+\end{enumerate}
+
+\begin{proof}
+{Sei $\tilde{A} = \{1\} \cup [2, \infty)$ ist induktiv $\implies \N \subset B \implies n = 1$ oder $n \geq 2$}
+\begin{description}
+\item[$a_1$)] $1 \in A:$ klar
+\item[$a_2$)] $1 + 1 \in A:$ klar
+\item[$b$  )] Sei $k \in A, k \neq 1 \implies 1 \leq k - 1 \in \N$
+
+folgt $1 + 1 \leq (k - 1) + 1 = k \in \N$
+
+und $(k + 1) - 1 = k \geq 1 + 1 \geq 1 \implies k + 1 \in A$
+
+$\implies A \subset \N$ ist induktiv $\implies A = \N 
+\implies \underline{1)}$
+\end{description}
+$B := \{n \in \N:$ für $m \in \N$ mit $m \leq n \implies n-m \in \N_0$
+\begin{description}
+\item[$a$  )] $1 \in B$, da $m \in \N$ und $m \leq 1 \underbrace{\implies}_{1)} m = 1 \implies n-m = 1-1 = 0$
+\item[$b$  )] Sei $k \in B$ und $m \in \N$ mit $m \leq k + 1$ 
+
+Falls $m = 1 \implies (k + 1) - 1 = k \in \N \implies k + 1 \in B$
+
+Falls $1 < m \in \N \implies m - 1 \in \N$ (da $A = \N$)
+
+$\implies \N_0 \ni k - (m - 1) = (k + 1) - m \implies k + 1 \in B$
+
+$\implies B$ ist induktiv $\implies B = \N \implies \underline{3)}$
+\item[2)] Gegeben: $m \in \N: C:=\{n \in \N | n + m \in \N\}$
+
+Zeige C ist induktiv!
+
+Für $m  \cdot  n $ analog
+
+\item[4)] Aus $n,m \in \N \text{ und } n < m < n + 1$
+
+$\implies 0 < \underbrace{m-n}_{\in \N\texttt{ nach 3)}}<1$ ($\lightning$ zu 1))
+
+\item[5)] Sei $M \subset \N$, ohne ein kleinstes Element
+
+$\implies 1$ ist kleinste Element von $\N \implies 1 \notin M$
+
+\end{description}
+$D:=\{n \in \N: n < M\} = \{n \in \N: \forall m \in M: n < m\}$\\Wissen:
+\begin{description}
+
+\item[a)] $1 \in D$
+\item[b)] Sei $k \in D$ d.h. $k < m \forall m \in M$
+
+$\implies D$ ist induktiv$\implies D = \N \implies M \subset \N \backslash D = \N \backslash M = \emptyset$ (q.ed)
+\end{description}
+\end{proof}
+\subsection{Satz 23} $\R$ ist Archimedisch angeordnet $\N \subset \R$ ist \underline{nicht} nach oben beschränkt
+
+insbesondere $\forall a > 0, b \in \R \exists n \in \N: n  \cdot  a > b$
+
+\begin{proof}
+\paragraph*{Angenommen} $\N$ ist nach oben beschränkt $\underbrace{\implies}_{vollst. Axiom} a = Sup\N\in\R$
+
+$\implies \alpha - 1$ ist keine obere Schranke für $\N$
+
+$\implies \exists n \in \N, n > \alpha - 1 \iff  \underbrace{n+1}_{\in \N} > \alpha$ $\lightning$
+\subparagraph{Wähle}
+$x = \frac{b}{a} \in \R \implies \exists n \in \N: n > x = \frac{b}{a} \underbrace{\implies}_{a > 0} n \cdot  a > b$ (q.ed)
+\end{proof}
+\section{Ganze und rationale Zahlen}
+$\mathbb{Z} := \N_0 \cup (-\N), -\N := \{-n, n \in \N\}$\\$\mathbb{Q}:=\{\frac{m}{n}: m\in\mathbb{Z},n \in\N\}$
+\subsection{Satz 24}
+($\mathbb{Z}, +,  \cdot $) ist ein kommutativer Ring mit Eins, d.h. alle Körperaxiome sind erfüllt. Aber es gibt kein inverses Element der Multiplikation. ($\mathbb{Q}, +,  \cdot $) ist ein angeordneter Körper.
+
+\begin{proof}
+	Nachrechnen
+\end{proof}
+\subsubsection{Notation}$\mathbb{Z}_p := \{ m\in\mathbb{Z}: m\geq p\}$
+
+$p \in \mathbb{Z} := p + \N_0$
+\subsubsection{Alle} $k \mapsto k + p - 1$ bildet $\N$ bijektiv auf $\mathbb{Z}_p$ ab.
+
+$\Rightarrow$ Alle Eigenschaften von $\N$ gelten auch für $\mathbb{Z}_p \forall p \in \mathbb{Z}$
+
+$\Rightarrow$ Lemma 25: Jede nach unten bzw. oben beschränkte Teilmenge $\neq \emptyset$ von $\mathbb{Z}$ besitzt ein Minumum bzw. ein Maximum
+\subsection{Korollar 26}
+\begin{enumerate}[1)]
+\item Seien $x,y \in \R, y \cdot x > 1$\\$\implies m\in\mathbb{Z}, x < m < y$
+\item ($\mathbb{Q}$ ist dicht in $\R$) Seien $x,y \in \R, x < y \implies \exists r \in \mathbb{Q}: x < r <y$
+\end{enumerate}
+\subsubsection{Beweis} 
+\begin{enumerate}[1)]
+\item Sei $y - x > 1, A := \{ m \in \mathbb{Z}: m > y\} \neq \emptyset$
+
+$\implies$ Sei $n_0 = min(A)$ existiert $\in \mathbb{Z}$
+
+$\implies n_0 \in A: n_0 \geq y$ und $n_0 -1 < y$
+
+$m:=n_0 -1 \in \mathbb{Z}$ und $m + 1 \geq y, n <y$
+
+$\implies m \geq y -1 > x \implies x < m < y$
+
+\item Sei $x,y \in \R: x < y \iff a: -y -x > 0$
+
+S.23 $\implies \exists n \in \N: n  \cdot  a > 1 \iff n  \cdot  x - n  \cdot  y > 1$
+
+$\implies \exists m \in \mathbb{Z}: n \cdot x<m<n \cdot y \iff x <\frac{m}{n} < y$
+\end{enumerate}
+
+\section{Endliche und abzählbare Mengen}
+
+\subsection{Definition 27 (Cantor)} A, B Mengen heißen gleichmächtig (oder äquivalent) $A \sim B$, falls es eine Bijektion $f: A \rightarrow B$ gibt.
+
+B heißt mächtiger als A, $|A| \leq |B|$, falls es eine Injektion $f: A \rightarrow B$ gibt.
+
+\subsubsection{Bemerkung}
+\begin{enumerate}[1)]
+\item $A \sim B$ ist eine Äquivalenzrelation, d.h. reflexiv ($A \sim A$), symmetrisch ($A \sim B \implies B \sim A$) und transitiv ($A \sim B, B \sim C \implies A \sim C$)
+\item $A \leq \R \iff \exists$ Surjektion $h: B \rightarrow B$
+\item (Cantor) Bernsten-Schröder-Theorie $|A| \leq |B|$ und $|B| \leq |A| \iff A \sim B$
+\end{enumerate}
+\subsection{Definition 28}
+
+Sei $n \in \N_0 [0] := \emptyset$ und rekursiv $[n + 1] = [n] \cup [n+1]$
+
+($\implies([n]:=\{k \in \N: 1\leq k \leq n \}$)
+
+\subsubsection{Endlich} Eine Menge A heißt endlich, falls $\exists n \in \N_0$ mit $A \sim [n]$, sage A hat n Elemente $card(A) := n$ (Kardinalität)
+
+$card\emptyset = 0$ Eine Menge A ist unendlich, falls sie nicht endlich ist.
+
+ A heißt abzählbar (abzählbar unendlich), falls $A \sim \N$\\A ist höchstens abzählbar, falls A endlich ist oder abzählbar ist, ansonsten heißt sie überabzählbar.
+\subsubsection{Bemerkung}
+\begin{enumerate}[1)]
+\item A höchstens abzählbar $\iff \exists$ Surjektion $f: \N \rightarrow A$
+\item Unendliche Mengen sind schwierig
+
+$G = \{ n \in \N: $n ist gerade$\} = \{2 \cdot n: n \in \N\}$
+
+$f:\N\rightarrow G, n \mapsto 2n$ ist bijektiv, d.h. $\N \sim G$
+\item Hilberts Hotel
+\item $[0,1]\sim [0,1)$
+\subparagraph{Beweis} Konstruieren $f: [0,1] \rightarrow [0,1)$\\Für $x \in [0,1]\backslash (\bigcup_{n\in\N} \{\frac{1}{n}\}):f(x)=x$\\$n\in\N:f(\frac{1}{n}):=\frac{1}{n+1}$ Rechne nach f ist bijektiv!
+\end{enumerate}
+\subsection{Satz 29}
+\begin{enumerate}[1)]
+\item $A\sim [n], A\sim [m] \implies n = m$ (d.h. Kardinalität ist eindeutig)
+\item ist $A \in B, B$ endlich $\implies A$ endlich
+\item $A, B$ endlich und disjunkt $\implies card(A\cup B) = (cardA + cardB)$
+\end{enumerate}
+\subsubsection{Beweis}
+\begin{enumerate}[1)]
+\item $\implies [n] \sim [m]$ durch Induktion $\implies n = m$\\Fall $n = 1$ (CHECK!)\\$n\rightarrow n + 1$: IA $\tilde{\phi}:[n]\rightarrow [m]$\\bijektiv $\implies n = m$\item Sei $\phi:[n+1]\rightarrow[m+1]$ Bijektion:\\Durch Vertauschen von 2 Elementen kann man erreichen, dass $\phi (n + 1) = m+1 \implies \phi |_{[n]}:[n]\rightarrow [n]$ bijektiv $\implies n = m \implies  m + 1 = m$ (WTF?) (q.ed)
+\item Beweis der Induktion: einfach.
+\item Sei $A \sim [n], b \sim [m] \implies B \sim m + [n] := \{ k \in \N: n + 1 \leq k \ leq m + n \} \implies A \cup B \sim [n] \cup (m + [n]) = [n + m]$
+\end{enumerate}
+\subsubsection{Lemma 30} Jede endliche Teilmenge von $\R$ hat ein Minimum und ein Maximum
+
+\begin{proof}
+$A = \{a_1\}$\\Ist $A = \{a_1, a_{n+1}\}$ und $C:= min\{a_1, a_n\} \implies minA = min(C, a_{n+1})$
+\end{proof}
+\subsection{Satz 31}
+\begin{enumerate}[1)]
+\item Ist $A<B,B$ höchstens abzählbar $\implies A$ höchstens abzählbar
+\item Jede unendliche Menge besitzt eine abzählbare Teilmenge
+\item A, B abzählbar $\implies A \times B$ abzählbar\\ insbesondere $\N \times \N$ abzählbar
+\item Sei $\{A_k\}$ eine höchstens abzählbare Menge von Menge $A_3, A_2$ höchstens abzählbar $\implies$ $\bigcap_k$ $A_k$ ist höchstens abzählbar
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}[1)]
+\item O.B.d.A $B = \N$, also $A \subset \N$\\$\implies A$ hat ein kleinstes Element $a_1$\\$\implies A \{a_1\}$ hat ein kleinstes Element $a_2$\\usw\ldots\\ist $A_n = \emptyset \implies A$ ist endlich, ansonsten $A = \{a_1, a_2, a_3, \ldots\}$\\Bijektion $f:\N\rightarrow A, n\mapsto a_n \implies A$ ist abzählbar
+\item ist $A$ unendlich $\implies$ wähle $a_1 \in A$\\
+	$a_2 \in A \backslash \{a_1\} =: A_1$
+	induktiv $a_{n+1} \in A_n := A_{n+1} \backslash \{a_n\}$\\
+	$\implies \{a_1, a_2, \ldots\}$ abzählbar
+	
+\item Da $A \sim \N, B \sim \N \implies$ reicht zu zeigen $\N \times \N$ ist abzählbar, da $\N \times \N$ unendlich ist $\implies$ zu zeigen $\N \times \N$
+\item ist höchstens abzählbar
+
+	$\phi (m,n) = 2^m  \cdot  3^n$
+	
+	$\phi : \N \times \N \implies \N$ ist injektiv
+	
+	In der Tat: Sei $\phi (m,n) = \phi (p,q)$
+	
+	d.h. $2^m  \cdot  3^n = 2^p  \cdot  3^q$
+	
+	o.B.d.A $p \geq m$
+	
+	$\implies 3^n = 2^{p-m}  \cdot  3^q$
+	
+	$\implies p = m$
+	
+	$\implies n = q$
+	
+\item Schreiben $A_k = \{a_{kn} :\underbrace{1\leq n \leq P_k}_{endlich}, P_k \in \N$ oder $\underbrace{1 \leq n \in \N}_{unendlich}\}$
+
+	Falls $A_k$ paarweise disjunkt sind. Dann erzeugt diese Nummerierung von $A_k$ eine Injektion.
+	\[a_{kn} \mapsto (kn) \textbf{ von } A = \bigcup_{k \in I} A_k \rightarrow \N \times \N \leftarrow \textbf{abzählbar}\]
+	
+	sind $A_k, k \in I$ nicht paarweise disjunkt:
+	
+	$B_1 = A_1, B_2 = A_2 \backslash A_1,$
+	
+	$B_{n+1} = A_{n+1} \backslash \{A_1 \cup A_2 \cup \ldots \cup A_n\}$
+	
+	$\implies B_k$ sind paarweise disjunkt und höchstens abzählbar
+	
+	$\implies \bigcup_{k} A_k$ ist höchstens abzählbar
+\end{enumerate}
+\end{proof}
+\subsection{Korollar 32}
+
+$\mathbb{G}$ ist abzählbar
+
+\begin{proof}
+$\mathbb{G} = \{ \frac{m}{n}: m \in \mathbb{Z}, n \in \N\}$ \qq C $\{(m,n), m \in \mathbb{Z}, n \in \N\}$
+\end{proof}
+
+\subsubsection{Bemerkung} Es gibt eine explizite Abbildung von $\mathbb{Q}$ mittels eines Baumes. Literatur: Neil Calkin, Herbert Will: Recounting the Rationals
+\subsection{Satz 33} A enthalte mindestens 2 Elemente $\implies A^\N = \{ f: \N \rightarrow A\}$ überabzählbar
+\subsection{Lemma 34 (Cantor)} Sei A eine Menge $\implies$ Es existiert \underline{keine} surjektive Abbildung $f: A \rightarrow P(A)$
+
+\begin{proof}
+	Sei $f: A \rightarrow P(A)$
+	
+	d.h. $\forall x \in A: 2(x) \subset A$
+	
+	$B:=\{ x \in A: x \notin f(x)\} \subset A$
+	
+	wäre f surjektiv
+	
+	$\implies \exists x \in A, f(x) = B$
+	
+	\begin{enumerate}[1. {Fall}:]
+		\item $x \in B = f(x) \implies x \notin f(x)$ $\lightning$
+		
+		\item $x \notin B = f(x) \implies x \in B = f(x)$ $\lightning$
+		
+			$\implies$ f ist nicht surjektiv!
+	\end{enumerate}
+\end{proof}
+\subsection{Korollar 36} Sei $I := [a,b]$, oder $(a,b) \subset \R$
+
+$a < b \implies I$ ist überabzählbar
+
+\begin{proof}
+Skalieren $\implies$ o.B.d.A. $a = 0, b = 1$ zu $f \in \{0,1\}^\N$
+\end{proof}
+\subsubsection{Dezimalbruchentwicklung:} \[x_f := \sum_{n = 1}^\infty f(n)  \cdot  10^{-n} \in [0,1]\]
+beachte: $f_1 + f_2 \implies xf_1 + xf_2$
+\section{Einfache Folgerung aus Induktion}
+\subsection{Satz 37 (Bernoulli)}
+$\forall x \in \N, x > -1$ | $(1+x)^n \geq 1 + nx$ und Ungleichung ist strikt (d.h. > gilt, falls $n \geq 2, x \neq 0$)
+
+\begin{proof}
+	IA $n = 0$ | $(1 + x)^0 = 1 + 0x$
+	
+	Im Ange. gilt: $(1 + x)^k \geq 1 + k x$
+	
+	$implies (1 + x)^{k + 1} = (1 + x)^k  \cdot  \underbrace{(1 + x)}_{> 0} \geq (1 + kx) (1 + x)$
+	
+	$= 1 + (k + 1)x = 1 + (k + 1)x + k x^2 \geq 1 + (k + 1)x$
+\end{proof}
+\subsection{Definition 38} 0! = 1
+
+	$n \in \N_0 | (n + 1)! := n!(n+1)$
+	
+	d.h. $n! = 1  \cdot  2  \cdot  3 \ldots n)$
+	
+	$0 \leq k \leq n | \binom{n}{k} := \frac{k!}{k!(n-k)!}$ Binominialkoeffizient
+\subsection{Lemma 39} \[1 \leq k \leq n\] \[\binom{n+1}{k} = \binom {n}{k-1} + \binom{n}{k}\]
+
+\begin{proof}
+	\[ \binom {n}{k-1} + \binom{n}{k} = \frac{(k-1)!}{(k-1)!(n-k-1)!} + \frac{k!}{k!(n-k)!}\]
+	\[ = \frac{kn! + (n -1 -k)n!}{k!(n+1-k)!} = \binom{n+1}{k}\]
+\end{proof}
+\subsection{Binomischer Lehrsatz} $\forall a,b \in \R$ oder $a,b, \in \mathbb{K}$ (Körper) $\forall n \in \N_0$
+	\[(a+b)^n = \sum_{l=0}^n \binom{n}{l} a^{n-l}b^l\]
+	\[=a^n + \binom{n}{1}a^{n-1}b^1+\binom{n}{2}a^{n-2}b^2+\ldots+\binom{n}{n-1}ab^{n-1}+b^n\]
+	\begin{proof}
+	$a = 0$ klar, $a \neq 0$,$a+b)^n = a^n(1 + \frac{b}{a})^n$\\
+				$\implies$ zu Zeigen: \[(1 + x)^n = \sum_{l =0}^n \binom{n}{l} x^l\]
+		\begin{enumerate}[a)]
+			\item $n = 0$
+				\[(1 + x)^0 = 1 = \sum_{l=0}^0 \binom{0}{l}x^l\]
+			\item Induktionsannahme für n = k gilt:
+				\[(1+x)^{k+1} = \sum_{l=0}^k \binom{k}{l}x^l+\underbrace{\sum_{l=0}^k\binom{k}{l}x^{l+1}}_{\sum_{l=1}^{k+1}\binom{k}{l-1}x^l}\]
+				\[\binom{k}{0} + \sum_{l=1}^k \binom{k}{l}x^l + \sum_{l=1}^k \binom{k}{l-1}x^l + x^{k+1} \]
+				\[1+\sum_{l=1}^k\underbrace{\left(\binom{k}{l}+\binom{k}{l-1}\right)}_{=\binom{k+1}{l}}x^l + x^{l+1}\]
+		\end{enumerate}
+	\end{proof}
+	
+	

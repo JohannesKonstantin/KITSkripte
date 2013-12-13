@@ -1,0 +1,46 @@
+\chapter{Stetige Funktionen} 
+Im folgen $D \subset \R$ oder $D \subset \K$ nicht leer!
+
+\section{Grenzwerte von Funktionen}
+\subsection{Def 1: Abschluss in einer Menge}
+Die Menge 
+$$ \overline{D} := \{ z \in \K : \exists (z_n)_n \in D \text{ mit } z_n \to z \text{ für } n \to \infty\} $$
+heißt Abschluss in D = Menge der Häufungswerte in D
+Es gilt immer $D \subset \overline{D}$, falls gilt $D = \overline{D}$ so heißt D abgeschlossen.
+Beispiele:
+$\overline{[0,1)} = [0,1]$  \\
+$\overline{\R \ {0}} = \R $ \\
+$\overline{\K \ \R} = \K $
+
+\subsection{Def 2: Grenzwert einer Funktion}
+Sei $D \subset \K $ und $z_0 \in \overline{D}$ und $w \in \K$. \\
+Eine Funktion $f: D \to \K$ ist konvergent gegen den Grenzwert w für $z \to z_0$ falls für jede Folge 
+$z_n \subset D, z_n \to z_0, n \to \infty$ auch $f(z_n) \to w n\to \infty$
+Wir schreiben dann: 
+\begin{enumerate}
+ \item $w = \lim_{z\to z_0} (f)$
+ \item $f(z) \to w z\to z_0$
+\end{enumerate}
+Ist $D \subset R x_z \in \overline{D}$ so schreiben wir
+$w = lim_{x\to x_o} (f(x))$ oder $f(x) \to w x\to x_0$
+
+Falls $D \subset \R$ und man zusätzlich fordert, dass $x_n < x_0 \forall n \in \N$ (bzw. $x_n < x_0 \forall n \in \N$)
+so spricht man von einem links bzw. rechtsseitigen Grenzwert und schreibt $w = lim_{x\to x_o-} (f(x))$ bzw. $w = lim_{x\to x_o+} (f(x))$
+\\
+Bsp:1) $f(x) = x^2 +3, x \in \R$ \\
+$\implies \forall x_0 \in R f(x) \to x_0 +3 \text{ für }x \to x_0$ \\
+2) Sei $D \subset \K, M \subset D$ \\
+%TODO: Keine Ahnung was da für ein Zeichen war und wie man das in Latex schreibt%
+  $Z_M(x) :=  \{ \begin{array}{cc}
+                -1, x \in M \\ 0 x\in D \setminus M
+               \end{array}
+$
+z.B. $D = \R M = [0, \infty]$ \\
+$f(x) = Z_{[0,m]}(x)$
+$\implies \lim_{x\to 0} f(x) existiert nicht.$
+
+
+
+
+
+
